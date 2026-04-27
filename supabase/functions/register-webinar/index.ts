@@ -100,6 +100,7 @@ async function findOrCreatePerson(data: {
     email: [{ value: data.email, primary: true, label: "work" }],
     phone: [{ value: data.phone, primary: true }],
   });
+  if (!created?.data?.id) throw new Error(`Pipedrive person create failed: ${JSON.stringify(created)}`);
   return created.data.id;
 }
 
@@ -114,7 +115,8 @@ async function getOrCreatePipelineStage(): Promise<{ pipelineId: number; stageId
   if (pipeline) {
     pipelineId = pipeline.id;
   } else {
-    const created = await pdFetch("/pipelines", "POST", { name: "Harmony Grove Pipeline", deal_probability: 1 });
+    const created = await pdFetch("/pipelines", "POST", { name: "Harmony Grove Pipeline" });
+    if (!created?.data?.id) throw new Error(`Pipedrive pipeline create failed: ${JSON.stringify(created)}`);
     pipelineId = created.data.id;
   }
 
@@ -155,14 +157,20 @@ async function createPipedriveDeal(data: {
 }
 
 // ─── RESEND EMAILS ────────────────────────────────────────────────────────────
-const FROM = `Kirk, Rosanmi & Claude - Mila Penn Chazak <${Deno.env.get("RESEND_FROM") ?? "invest@milapennchazak.com"}>`;
+// Strip any non-ASCII chars that could break HTTP headers (common copy-paste issue)
+function ascii(s: string): string {
+  return s.replace(/[^\x20-\x7E]/g, "");
+}
 
 async function sendEmail(opts: {
   to: string; subject: string; html: string; scheduledAt?: string;
 }) {
-  const key  = Deno.env.get("RESEND_API_KEY")!;
+  // ascii() strips any invisible/non-ASCII chars that would break HTTP headers
+  const key  = ascii(Deno.env.get("RESEND_API_KEY") ?? "");
+  const from = ascii(`Kirk, Rosanmi & Claude - Mila Penn Chazak <${Deno.env.get("RESEND_FROM") ?? "invest@milapennchazak.com"}>`);
+
   const body: Record<string, unknown> = {
-    from: FROM, to: [opts.to], subject: opts.subject, html: opts.html,
+    from, to: [opts.to], subject: opts.subject, html: opts.html,
   };
   if (opts.scheduledAt) body.scheduled_at = opts.scheduledAt;
 
