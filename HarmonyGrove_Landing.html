@@ -296,12 +296,31 @@
         .zoom-logo-icon { width:36px; height:36px; border-radius:9px; background:linear-gradient(135deg,#1A52FF,#0A2ECC); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
         .zoom-embed-title { font-weight:600; font-size:15px; }
         .zoom-embed-sub { font-size:12px; color:var(--t50); }
-        .zoom-iframe-area { flex:1; min-height:520px; position:relative; }
-        .zoom-iframe-area iframe { width:100%; height:100%; border:none; display:block; min-height:520px; }
-        .zoom-fallback { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px; text-align:center; background:rgba(240,244,252,0.60); }
-        .zoom-fallback .zf-icon { font-size:52px; margin-bottom:18px; }
-        .zoom-fallback h3 { font-family:var(--ff-d); font-size:26px; font-weight:600; margin-bottom:12px; }
-        .zoom-fallback p { font-size:14.5px; color:var(--t70); line-height:1.72; margin-bottom:28px; max-width:360px; }
+        /* ── REGISTRATION FORM ── */
+        .reg-form { padding:28px 32px; display:flex; flex-direction:column; gap:16px; }
+        .reg-name-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        .reg-field { display:flex; flex-direction:column; gap:6px; }
+        .reg-label { font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--t50); }
+        .reg-input, .reg-select {
+            padding:13px 16px; border:1.5px solid rgba(10,22,40,0.14);
+            border-radius:10px; font-size:14.5px; font-family:var(--ff-b);
+            background:rgba(255,255,255,0.85); color:var(--text);
+            transition:border-color .2s, box-shadow .2s; outline:none; width:100%;
+            -webkit-appearance:none; appearance:none;
+        }
+        .reg-input:focus, .reg-select:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(18,68,245,0.10); }
+        .reg-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230A1628' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; cursor:pointer; }
+        .reg-submit { width:100%; padding:16px; font-size:15px; font-weight:600; border-radius:var(--r-pill); background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; border:none; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .25s; box-shadow:0 6px 24px rgba(18,68,245,0.38); margin-top:4px; }
+        .reg-submit:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 10px 32px rgba(18,68,245,0.50); }
+        .reg-submit:disabled { opacity:0.65; cursor:not-allowed; transform:none; }
+        .reg-error { font-size:13px; color:#C0392B; text-align:center; display:none; padding:8px 12px; background:rgba(192,57,43,0.08); border-radius:8px; border:1px solid rgba(192,57,43,0.20); }
+        .reg-success { display:none; padding:56px 32px; text-align:center; flex-direction:column; align-items:center; }
+        .reg-success-icon { font-size:56px; margin-bottom:20px; }
+        .reg-success h3 { font-family:var(--ff-d); font-size:28px; font-weight:600; margin-bottom:14px; }
+        .reg-success p { font-size:15px; color:var(--t70); line-height:1.75; max-width:360px; margin:0 auto 10px; }
+        .reg-success .sig { font-size:13px; color:var(--t40); margin-top:6px; }
+        .reg-success .join-btn { margin-top:24px; }
+        @media(max-width:580px){ .reg-name-row { grid-template-columns:1fr; } .reg-form { padding:22px 20px; } }
         .reg-details { display:flex; flex-direction:column; gap:20px; }
         .reg-event-card { padding:32px; background:linear-gradient(135deg,#050E1F,#0A1830); border-radius:var(--r-card); color:#fff; }
         .reg-event-label { font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:6px; }
@@ -955,32 +974,72 @@
         </div>
 
         <div class="zoom-grid">
-            <!-- ZOOM EMBED — replace src with your Zoom webinar registration URL -->
-            <!-- Format: https://us02web.zoom.us/webinar/register/WN_XXXXXXXXXX -->
-            <div class="zoom-embed-wrap fu">
+            <!-- Custom Registration Form -->
+            <div class="zoom-embed-wrap fu" id="reg-card">
                 <div class="zoom-embed-header">
-                    <div class="zoom-logo-icon">📹</div>
+                    <div class="zoom-logo-icon">📋</div>
                     <div>
-                        <div class="zoom-embed-title">Zoom Webinar Registration</div>
+                        <div class="zoom-embed-title">Reserve Your Seat</div>
                         <div class="zoom-embed-sub">Harmony Grove Investor Webinar · May 4, 2026</div>
                     </div>
                 </div>
-                <div class="zoom-iframe-area">
-                    <!-- ⬇ REPLACE THIS SRC with your actual Zoom registration URL ⬇ -->
-                    <iframe
-                        id="zoom-registration-frame"
-                        src="https://us02web.zoom.us/webinar/register/WN_REPLACE_WITH_YOUR_WEBINAR_ID"
-                        scrolling="yes"
-                        allow="camera; microphone"
-                    ></iframe>
-                    <div class="zoom-fallback" id="zoom-fallback" style="display:none;">
-                        <div class="zf-icon">📋</div>
-                        <h3>Register on Zoom</h3>
-                        <p>Click below to open the Zoom registration form and reserve your spot for the May 4th webinar. Takes less than 60 seconds.</p>
-                        <!-- ⬇ REPLACE THIS HREF with your actual Zoom registration URL ⬇ -->
-                        <a href="https://us02web.zoom.us/webinar/register/WN_REPLACE_WITH_YOUR_WEBINAR_ID"
-                           target="_blank" class="btn btn-primary-lg">Open Registration Form →</a>
+
+                <!-- Form -->
+                <form class="reg-form" id="webinar-form" novalidate>
+                    <div class="reg-name-row">
+                        <div class="reg-field">
+                            <label class="reg-label" for="rf-first">First Name</label>
+                            <input class="reg-input" type="text" id="rf-first" name="first_name" placeholder="First name" required autocomplete="given-name">
+                        </div>
+                        <div class="reg-field">
+                            <label class="reg-label" for="rf-last">Last Name</label>
+                            <input class="reg-input" type="text" id="rf-last" name="last_name" placeholder="Last name" required autocomplete="family-name">
+                        </div>
                     </div>
+                    <div class="reg-field">
+                        <label class="reg-label" for="rf-email">Email Address</label>
+                        <input class="reg-input" type="email" id="rf-email" name="email" placeholder="your@email.com" required autocomplete="email">
+                    </div>
+                    <div class="reg-field">
+                        <label class="reg-label" for="rf-phone">Phone Number</label>
+                        <input class="reg-input" type="tel" id="rf-phone" name="phone" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+                    </div>
+                    <div class="reg-field">
+                        <label class="reg-label" for="rf-source">Where did you hear about us?</label>
+                        <select class="reg-select" id="rf-source" name="referral_source" required>
+                            <option value="" disabled selected>Select one…</option>
+                            <option>Phone</option>
+                            <option>Text</option>
+                            <option>Email</option>
+                            <option>LinkedIn</option>
+                            <option>Social Media</option>
+                            <option>Referral</option>
+                            <option>Google</option>
+                            <option>Website</option>
+                        </select>
+                    </div>
+                    <div class="reg-field">
+                        <label class="reg-label" for="rf-partner">Are you working with one of our partners?</label>
+                        <select class="reg-select" id="rf-partner" name="partner_referral">
+                            <option value="No" selected>No</option>
+                            <option>3DSSS Capital Investment LLC</option>
+                            <option>EagleCap Ventures</option>
+                            <option>Kynectic Capital</option>
+                            <option>P1 Capital Investment</option>
+                        </select>
+                    </div>
+                    <div class="reg-error" id="reg-error"></div>
+                    <button type="submit" class="reg-submit" id="reg-submit">Reserve My Seat →</button>
+                </form>
+
+                <!-- Success State -->
+                <div class="reg-success" id="reg-success">
+                    <div class="reg-success-icon">🎉</div>
+                    <h3>You're registered!</h3>
+                    <p>Your spot is confirmed. Check your inbox — your Zoom link and everything you need is on its way.</p>
+                    <p>We'll see you <strong>Monday, May 4th at 6:30 PM EST</strong>. Come with questions.</p>
+                    <a href="#" id="reg-join-link" class="btn btn-primary-lg join-btn" target="_blank" style="display:none;">Join the Webinar →</a>
+                    <p class="sig">— Kirk, Rosanmi & Claude · Mila Penn Chazak</p>
                 </div>
             </div>
             <!-- Event details -->
@@ -1158,25 +1217,79 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// ── Zoom fallback detection
+// ── Webinar Registration Form
 (function() {
-    const frame = document.getElementById('zoom-registration-frame');
-    const fallback = document.getElementById('zoom-fallback');
-    if (!frame || !fallback) return;
-    if (frame.src.includes('REPLACE_WITH_YOUR_WEBINAR_ID')) {
-        frame.style.display = 'none';
-        fallback.style.display = 'flex';
-        return;
-    }
-    setTimeout(() => {
-        try {
-            const doc = frame.contentDocument || frame.contentWindow.document;
-            if (!doc || doc.title === '') throw new Error();
-        } catch(e) {
-            frame.style.display = 'none';
-            fallback.style.display = 'flex';
+    const EDGE_FN_URL = 'https://lyetmekozlqxzovipflv.supabase.co/functions/v1/register-webinar';
+    const ANON_KEY   = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5ZXRtZWtvemxxeHpvdmlwZmx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMTk0NDMsImV4cCI6MjA5Mjg5NTQ0M30.en2ODQvcWEW04gyNo2Y8yi-EZnNQUxPB2m6AicioFd0';
+
+    const form       = document.getElementById('webinar-form');
+    const submitBtn  = document.getElementById('reg-submit');
+    const errorEl    = document.getElementById('reg-error');
+    const successEl  = document.getElementById('reg-success');
+    const joinLink   = document.getElementById('reg-join-link');
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorEl.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Registering…';
+
+        const data = {
+            first_name:       form.first_name.value.trim(),
+            last_name:        form.last_name.value.trim(),
+            email:            form.email.value.trim(),
+            phone:            form.phone.value.trim(),
+            referral_source:  form.referral_source.value,
+            partner_referral: form.partner_referral.value,
+        };
+
+        // Basic front-end validation
+        if (!data.first_name || !data.last_name || !data.email || !data.phone || !data.referral_source) {
+            showError('Please fill in all fields before continuing.');
+            return;
         }
-    }, 3000);
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+            showError('Please enter a valid email address.');
+            return;
+        }
+
+        try {
+            const res = await fetch(EDGE_FN_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${ANON_KEY}`,
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await res.json();
+
+            if (result.success) {
+                form.style.display = 'none';
+                successEl.style.display = 'flex';
+                if (result.join_url) {
+                    joinLink.href = result.join_url;
+                    joinLink.style.display = 'inline-block';
+                }
+                // Scroll success into view
+                document.getElementById('reg-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                throw new Error(result.error || 'Something went wrong.');
+            }
+        } catch (err) {
+            showError(err.message || 'Registration failed. Please try again or email us directly.');
+        }
+    });
+
+    function showError(msg) {
+        errorEl.textContent = msg;
+        errorEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Reserve My Seat →';
+    }
 })();
 </script>
 </body>
