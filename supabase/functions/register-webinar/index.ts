@@ -80,7 +80,8 @@ const PD_BASE = "https://api.pipedrive.com/v1";
 
 async function pdFetch(path: string, method = "GET", body?: unknown) {
   const apiKey = Deno.env.get("PIPEDRIVE_API_KEY")!;
-  const res = await fetch(`${PD_BASE}${path}?api_token=${apiKey}`, {
+  const sep = path.includes("?") ? "&" : "?";
+  const res = await fetch(`${PD_BASE}${path}${sep}api_token=${apiKey}`, {
     method,
     headers: body ? { "Content-Type": "application/json" } : undefined,
     body: body ? JSON.stringify(body) : undefined,
@@ -154,7 +155,7 @@ async function createPipedriveDeal(data: {
 }
 
 // ─── RESEND EMAILS ────────────────────────────────────────────────────────────
-const FROM = `Kirk, Rosanmi & Claude — Mila Penn Chazak <${Deno.env.get("RESEND_FROM") ?? "webinar@milapennchazak.com"}>`;
+const FROM = `Kirk, Rosanmi & Claude - Mila Penn Chazak <${Deno.env.get("RESEND_FROM") ?? "invest@milapennchazak.com"}>`;
 
 async function sendEmail(opts: {
   to: string; subject: string; html: string; scheduledAt?: string;
@@ -354,12 +355,19 @@ serve(async (req) => {
       console.error("Pipedrive error:", err);
     }
 
+    const emailErrors: string[] = [];
+
     // 4. Welcome email (immediate)
-    await sendEmail({
-      to: email,
-      subject: `You're in, ${first_name} — see you Monday`,
-      html: emailWelcome(first_name, joinUrl),
-    });
+    try {
+      const r = await sendEmail({
+        to: email,
+        subject: `You're in, ${first_name} — see you Monday`,
+        html: emailWelcome(first_name, joinUrl),
+      });
+      if (r.statusCode >= 400 || r.error) emailErrors.push(`Welcome email: ${JSON.stringify(r)}`);
+    } catch (err) {
+      emailErrors.push(`Welcome email threw: ${err}`);
+    }
 
     // 5. Scheduled reminders (only if still in the future)
     const now = Date.now();
@@ -370,7 +378,11 @@ serve(async (req) => {
     ];
     for (const r of reminders) {
       if (new Date(r.at).getTime() > now) {
-        await sendEmail({ to: email, subject: r.subject, html: r.html, scheduledAt: r.at });
+        try {
+          await sendEmail({ to: email, subject: r.subject, html: r.html, scheduledAt: r.at });
+        } catch (err) {
+          emailErrors.push(`Reminder (${r.at}) threw: ${err}`);
+        }
       }
     }
 
@@ -379,23 +391,28 @@ serve(async (req) => {
       const partnerEmails = getPartnerEmails();
       const partnerEmail  = partnerEmails[partner_referral];
       if (partnerEmail) {
-        await sendEmail({
-          to: partnerEmail,
-          subject: `New Harmony Grove registration from your network — ${first_name} ${last_name}`,
-          html: emailPartnerNotify(partner_referral, { first_name, last_name, email, phone }),
-        });
+        try {
+          await sendEmail({
+            to: partnerEmail,
+            subject: `New Harmony Grove registration from your network — ${first_name} ${last_name}`,
+            html: emailPartnerNotify(partner_referral, { first_name, last_name, email, phone }),
+          });
+        } catch (err) {
+          emailErrors.push(`Partner email threw: ${err}`);
+        }
       }
     }
 
     return new Response(
-      JSON.stringify({ success: true, join_url: joinUrl }),
+      JSON.stringify({ success: true, join_url: joinUrl, email_errors: emailErrors }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
 
   } catch (err) {
-    console.error("Registration error:", err);
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("Registration error:", msg);
     return new Response(
-      JSON.stringify({ success: false, error: "Registration failed. Please try again." }),
+      JSON.stringify({ success: false, error: msg }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
