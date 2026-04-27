@@ -74,10 +74,6 @@
         .nav-link:hover { color:var(--text); }
         .nav-actions { display:flex; gap:10px; align-items:center; }
         @media(max-width:860px){ .nav-links{display:none} }
-        @media(max-width:680px){
-            .nav-logo { height:22px; }
-            .btn-ghost { display:none; }
-        }
 
         /* ── BUTTONS ── */
         .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
@@ -496,6 +492,8 @@
         }
         @media(max-width:680px){
             #nav { padding:13px 20px; }
+            .nav-logo { height:22px; }
+            .btn-ghost { display:none !important; }
             .hero-content,.container,.dd-inner,.stats-dark-inner { padding-left:20px; padding-right:20px; }
             .hero-bento { grid-template-columns:1fr; }
             .hb-navy-card,.hb-wide { grid-row:span 1; grid-column:span 1; }
