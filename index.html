@@ -277,6 +277,16 @@
         .zoom-title { font-family:var(--ff-d); font-size:clamp(36px,4.5vw,58px); font-weight:600; line-height:1.12; letter-spacing:-.014em; margin-bottom:14px; }
         .zoom-sub { font-size:17px; color:var(--t70); line-height:1.72; max-width:600px; margin:0 auto; font-weight:300; }
         .zoom-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; max-width:1100px; margin:0 auto; }
+        .partners-strip { background:linear-gradient(135deg,#050E1F,#0A1830); border-radius:var(--r-card); padding:36px 48px; margin-bottom:40px; max-width:1100px; margin-left:auto; margin-right:auto; }
+        .partners-label { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-align:center; margin-bottom:28px; }
+        .partners-logos { display:flex; align-items:center; justify-content:center; gap:56px; flex-wrap:wrap; }
+        .partner-logo { height:36px; width:auto; max-width:160px; object-fit:contain; filter:grayscale(1) brightness(10) contrast(0.85); opacity:0.80; transition:opacity .3s; }
+        .partner-logo:hover { opacity:1; }
+        @media(max-width:680px){
+            .partners-strip { padding:28px 24px; }
+            .partners-logos { gap:32px; }
+            .partner-logo { height:26px; max-width:120px; }
+        }
         .zoom-embed-wrap { background:rgba(255,255,255,0.52); border:1px solid var(--glass-b); border-radius:var(--r-card); overflow:hidden; box-shadow:0 8px 32px rgba(10,22,40,0.08),inset 0 1px 0 rgba(255,255,255,0.96); backdrop-filter:blur(24px); display:flex; flex-direction:column; }
         .zoom-embed-header { padding:20px 28px; border-bottom:1px solid rgba(255,255,255,0.70); display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.40); }
         .zoom-logo-icon { width:36px; height:36px; border-radius:9px; background:linear-gradient(135deg,#1A52FF,#0A2ECC); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
@@ -924,6 +934,16 @@
             <h2 class="zoom-title">Reserve Your Seat<br>for May 4th</h2>
             <p class="zoom-sub">Join Kirk, Rosanmi, and J. Claude live for a complete walkthrough of the Harmony Grove opportunity — the market, the numbers, the strategy, and your path to participating.</p>
         </div>
+        <!-- Deal Partners -->
+        <div class="partners-strip fu">
+            <div class="partners-label">Deal Partners</div>
+            <div class="partners-logos">
+                <img src="partners/LGdMKRpXs6NWEwQ3PXPMbehapcE.png.webp" alt="Priority 1 Capital" class="partner-logo">
+                <img src="partners/dPVwEvb3YFoQbnDfaiFFotoe20.png.webp" alt="EagleCap" class="partner-logo">
+                <img src="partners/seeiISokM50jCrgmRqPiJcy0Jbw.png.webp" alt="Kynectic Capital Investment" class="partner-logo">
+            </div>
+        </div>
+
         <div class="zoom-grid">
             <!-- ZOOM EMBED — replace src with your Zoom webinar registration URL -->
             <!-- Format: https://us02web.zoom.us/webinar/register/WN_XXXXXXXXXX -->
