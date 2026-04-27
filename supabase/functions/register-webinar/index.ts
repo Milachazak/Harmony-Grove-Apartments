@@ -104,37 +104,26 @@ async function findOrCreatePerson(data: {
   return created.data.id;
 }
 
-async function getOrCreatePipelineStage(): Promise<{ pipelineId: number; stageId: number }> {
-  // Find "Harmony Grove Pipeline"
+async function getPipelineAndStage(): Promise<{ pipelineId: number | null; stageId: number | null }> {
+  // Fetch all pipelines — find "Harmony Grove" or fall back to first
   const pipelines = await pdFetch("/pipelines");
-  let pipeline = pipelines.data?.find((p: any) =>
+  if (!pipelines.data?.length) return { pipelineId: null, stageId: null };
+
+  const pipeline = pipelines.data.find((p: any) =>
     p.name.toLowerCase().includes("harmony grove")
-  );
+  ) ?? pipelines.data[0];
 
-  let pipelineId: number;
-  if (pipeline) {
-    pipelineId = pipeline.id;
-  } else {
-    const created = await pdFetch("/pipelines", "POST", { name: "Harmony Grove Pipeline" });
-    if (!created?.data?.id) throw new Error(`Pipedrive pipeline create failed: ${JSON.stringify(created)}`);
-    pipelineId = created.data.id;
-  }
+  const pipelineId = pipeline.id;
 
-  // Find "Incoming Leads" stage
+  // Fetch stages — find "incoming" or fall back to first
   const stages = await pdFetch(`/stages?pipeline_id=${pipelineId}`);
-  let stage = stages.data?.find((s: any) => s.name.toLowerCase().includes("incoming"));
+  if (!stages.data?.length) return { pipelineId, stageId: null };
 
-  let stageId: number;
-  if (stage) {
-    stageId = stage.id;
-  } else if (stages.data?.length > 0) {
-    stageId = stages.data[0].id;
-  } else {
-    const created = await pdFetch("/stages", "POST", { name: "Incoming Leads", pipeline_id: pipelineId });
-    stageId = created.data.id;
-  }
+  const stage = stages.data.find((s: any) =>
+    s.name.toLowerCase().includes("incoming")
+  ) ?? stages.data[0];
 
-  return { pipelineId, stageId };
+  return { pipelineId, stageId: stage.id };
 }
 
 async function createPipedriveDeal(data: {
@@ -143,7 +132,7 @@ async function createPipedriveDeal(data: {
 }): Promise<number> {
   const [personId, { pipelineId, stageId }] = await Promise.all([
     findOrCreatePerson(data),
-    getOrCreatePipelineStage(),
+    getPipelineAndStage(),
   ]);
 
   const deal = await pdFetch("/deals", "POST", {
