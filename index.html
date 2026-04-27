@@ -1020,8 +1020,9 @@
                     </div>
                     <div class="reg-field">
                         <label class="reg-label" for="rf-partner">Are you working with one of our partners?</label>
-                        <select class="reg-select" id="rf-partner" name="partner_referral">
-                            <option value="No" selected>No</option>
+                        <select class="reg-select" id="rf-partner" name="partner_referral" required>
+                            <option value="" disabled selected>Select one…</option>
+                            <option value="No">No</option>
                             <option>3DSSS Capital Investment LLC</option>
                             <option>EagleCap Ventures</option>
                             <option>Kynectic Capital</option>
@@ -1246,7 +1247,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         };
 
         // Basic front-end validation
-        if (!data.first_name || !data.last_name || !data.email || !data.phone || !data.referral_source) {
+        if (!data.first_name || !data.last_name || !data.email || !data.phone || !data.referral_source || !data.partner_referral) {
             showError('Please fill in all fields before continuing.');
             return;
         }
