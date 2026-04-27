@@ -99,6 +99,8 @@ async function findOrCreatePerson(data: {
     name:  `${data.first_name} ${data.last_name}`,
     email: [{ value: data.email, primary: true, label: "work" }],
     phone: [{ value: data.phone, primary: true }],
+    "30c24af921cf3c01b4fb20e21708f6f73cbb4cfc": data.referral_source,
+    "b32ba4545fe0461a49928960b2045183b98d1d80": data.partner_referral,
   });
   if (!created?.data?.id) throw new Error(`Pipedrive person create failed: ${JSON.stringify(created)}`);
   return created.data.id;
