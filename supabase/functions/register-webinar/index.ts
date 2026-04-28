@@ -223,7 +223,7 @@ function emailWelcome(name: string, joinUrl: string): string {
     <p>This is a real conversation — not a pitch deck read out loud. We'll walk through the property, the numbers, the market, and how the deal is structured. You'll have plenty of time to ask us anything.</p>
     <div class="box">
       <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, May 4, 2026</strong></span></div>
-      <div class="box-row"><span class="box-icon">🕕</span><span class="box-val"><strong>6:30 PM EST</strong> &nbsp;·&nbsp; approximately 75 minutes</span></div>
+      <div class="box-row"><span class="box-icon">🕕</span><span class="box-val"><strong>6:30 PM EST</strong> &nbsp;·&nbsp; 40 min Presentation + 20 min Q&A</span></div>
       <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom &nbsp;·&nbsp; your personal link is below</span></div>
       <div class="box-row"><span class="box-icon">🏠</span><span class="box-val">Harmony Grove Apartments &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; 75 Units</span></div>
     </div>
@@ -244,7 +244,7 @@ function email3Day(name: string, joinUrl: string): string {
     <p>We'll be walking through the full picture: the asset, the numbers, the renovation plan, and how this deal is structured for investors like you. Bring your questions — we'll save real time for them.</p>
     <div class="box">
       <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, May 4, 2026 &nbsp;·&nbsp; 6:30 PM EST</strong></span></div>
-      <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">Approximately 75 minutes</span></div>
+      <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">40 min Presentation + 20 min Q&A</span></div>
     </div>
     <div class="btn-wrap"><a href="${joinUrl}" class="btn">Your Zoom Link →</a></div>
     <p>See you Monday.</p>
