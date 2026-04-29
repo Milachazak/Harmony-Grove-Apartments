@@ -2,16 +2,16 @@
 // Deploy via: Supabase Dashboard → Edge Functions → New Function → paste this code
 //
 // Environment variables to set in Supabase Dashboard → Edge Functions → Secrets:
-//   ZOOM_ACCOUNT_ID       — from your Zoom Server-to-Server OAuth app
-//   ZOOM_CLIENT_ID        — from your Zoom Server-to-Server OAuth app
-//   ZOOM_CLIENT_SECRET    — from your Zoom Server-to-Server OAuth app
-//   PIPEDRIVE_API_KEY     — 65486fc56e170311f9f8010f5f18c374c51122bc
-//   RESEND_API_KEY        — re_Tj4bUWkG_C4cyMNfXqSYiamVEbtnryoYJ
-//   RESEND_FROM           — e.g. webinar@milapennchazak.com (must be verified in Resend)
-//   PARTNER_3DSSS_EMAIL   — email for 3DSSS Capital Investment LLC
-//   PARTNER_EAGLECAP_EMAIL — email for EagleCap Ventures
-//   PARTNER_KYNECTIC_EMAIL — email for Kynectic Capital
-//   PARTNER_P1_EMAIL      — email for P1 Capital Investment
+//   ZOOM_ACCOUNT_ID        — from your Zoom Server-to-Server OAuth app
+//   ZOOM_CLIENT_ID         — from your Zoom Server-to-Server OAuth app
+//   ZOOM_CLIENT_SECRET     — from your Zoom Server-to-Server OAuth app
+//   PIPEDRIVE_API_KEY      — 65486fc56e170311f9f8010f5f18c374c51122bc
+//   RESEND_API_KEY         — re_Tj4bUWkG_C4cyMNfXqSYiamVEbtnryoYJ
+//   RESEND_FROM            — e.g. webinar@milapennchazak.com (must be verified in Resend)
+//   PARTNER_EAGLECAP_EMAIL — email for EagleCap Ventures (Fedna Morency)
+//   PARTNER_KYNECTIC_EMAIL — email for Kynectic Capital (Anita Akpunku)
+//   PARTNER_P1_EMAIL       — email for P1 Capital Investment (Leah & Jeremy)
+//   (Dr. Stanley A. Okoro, Dr. Obi Ugwonali, Medval Capital emails are hardcoded below)
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -27,10 +27,12 @@ const WEBINAR_ID = "89370896771"; // Zoom Webinar ID (spaces removed)
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {
   return {
-    "3DSSS Capital Investment LLC": Deno.env.get("PARTNER_3DSSS_EMAIL") ?? "",
-    "EagleCap Ventures":            Deno.env.get("PARTNER_EAGLECAP_EMAIL") ?? "",
-    "Kynectic Capital":             Deno.env.get("PARTNER_KYNECTIC_EMAIL") ?? "",
-    "P1 Capital Investment":        Deno.env.get("PARTNER_P1_EMAIL") ?? "",
+    "EagleCap Ventures (Fedna Morency)":      Deno.env.get("PARTNER_EAGLECAP_EMAIL") ?? "",
+    "Kynectic Capital (Anita Akpunku)":        Deno.env.get("PARTNER_KYNECTIC_EMAIL") ?? "",
+    "P1 Capital Investment (Leah & Jeremy)":   Deno.env.get("PARTNER_P1_EMAIL") ?? "",
+    "Dr. Stanley A. Okoro":                    "drokoro@georgiaplastic.com",
+    "Dr. Obi Ugwonali":                        "obi@medtransgo.com",
+    "Medval Capital (Edwin Valverde)":         "edwinv@medvalcapital.com",
   };
 }
 
@@ -223,7 +225,7 @@ function emailWelcome(name: string, joinUrl: string): string {
     <p>This is a real conversation — not a pitch deck read out loud. We'll walk through the property, the numbers, the market, and how the deal is structured. You'll have plenty of time to ask us anything.</p>
     <div class="box">
       <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, May 4, 2026</strong></span></div>
-      <div class="box-row"><span class="box-icon">🕕</span><span class="box-val"><strong>6:30 PM EST</strong> &nbsp;·&nbsp; 40 min Presentation + 20 min Q&A</span></div>
+      <div class="box-row"><span class="box-icon">🕕</span><span class="box-val"><strong>6:30 PM EST</strong> &nbsp;·&nbsp; approximately 75 minutes</span></div>
       <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom &nbsp;·&nbsp; your personal link is below</span></div>
       <div class="box-row"><span class="box-icon">🏠</span><span class="box-val">Harmony Grove Apartments &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; 75 Units</span></div>
     </div>
@@ -244,7 +246,7 @@ function email3Day(name: string, joinUrl: string): string {
     <p>We'll be walking through the full picture: the asset, the numbers, the renovation plan, and how this deal is structured for investors like you. Bring your questions — we'll save real time for them.</p>
     <div class="box">
       <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, May 4, 2026 &nbsp;·&nbsp; 6:30 PM EST</strong></span></div>
-      <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">40 min Presentation + 20 min Q&A</span></div>
+      <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">Approximately 75 minutes</span></div>
     </div>
     <div class="btn-wrap"><a href="${joinUrl}" class="btn">Your Zoom Link →</a></div>
     <p>See you Monday.</p>
@@ -288,7 +290,7 @@ function emailPartnerNotify(
 ): string {
   return wrap(`
     <h1>A registration from your network.</h1>
-    <p>Hi ${partnerName} team,</p>
+    <p>Hi ${partnerName},</p>
     <p>Someone registered for the Harmony Grove investor webinar and indicated they're working with you. We wanted to make sure you had their details.</p>
     <div class="box">
       <div class="box-row"><span class="box-icon">👤</span><span class="box-val"><strong>${reg.first_name} ${reg.last_name}</strong></span></div>
