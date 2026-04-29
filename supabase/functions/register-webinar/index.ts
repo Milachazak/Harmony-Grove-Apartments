@@ -395,7 +395,7 @@ serve(async (req) => {
         try {
           await sendEmail({
             to: partnerEmail,
-            subject: `New Harmony Grove registration from your network — ${first_name} ${last_name}`,
+            subject: `New Harmony Grove registration from your network: ${first_name} ${last_name}`,
             html: emailPartnerNotify(partner_referral, { first_name, last_name, email, phone }),
           });
         } catch (err) {
