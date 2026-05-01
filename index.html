@@ -762,8 +762,8 @@
             <p class="dd-sub">A full on-the-ground walkthrough of Harmony Grove - the asset, the market, and the opportunity, explained by the operators who know it best. Scroll into view to unmute.</p>
         </div>
         <div class="dd-video-wrap fu">
-            <video id="dd-video" autoplay muted playsinline loop controls>
-                <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Due%20Diligence%20Main-4K.mov" type="video/mp4">
+            <video id="dd-video" autoplay muted playsinline loop controls preload="auto">
+                <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Due%20Diligence%20Main.mov" type="video/mp4">
             </video>
             <div class="dd-sound-indicator" id="sound-indicator">
                 <span id="sound-icon">🔇</span> <span id="sound-label">Scroll to unmute</span>
@@ -1204,7 +1204,7 @@ window.addEventListener('scroll', () => {
     setPos(50);
 })();
 
-// ── Due Diligence Video - Scroll to Unmute
+// ── Due Diligence Video - Autoplay + Scroll to Unmute
 (function() {
     const vid = document.getElementById('dd-video');
     const indicator = document.getElementById('sound-indicator');
@@ -1213,8 +1213,17 @@ window.addEventListener('scroll', () => {
     if (!vid) return;
     let unmuted = false;
 
+    // Force play as soon as enough has loaded
+    vid.muted = true;
+    vid.play().catch(() => {});
+    vid.addEventListener('canplay', () => { vid.play().catch(() => {}); }, { once: true });
+
     const ddObs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
+            // Force play when scrolled into view (catches browsers that blocked autoplay)
+            if (entry.isIntersecting) {
+                vid.play().catch(() => {});
+            }
             if (entry.intersectionRatio >= 0.55 && !unmuted) {
                 vid.muted = false;
                 unmuted = true;
