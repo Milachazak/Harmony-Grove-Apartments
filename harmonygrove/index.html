@@ -189,12 +189,17 @@
             background:rgba(240,246,255,0.16);
             border:1px solid rgba(255,255,255,0.30);
         }
-        /* Dark navy tall card - like right column in screenshot */
+        /* Dark navy card - Hold Period */
         .hb-navy-card {
             background:rgba(5,14,31,0.80);
             border:1px solid rgba(18,68,245,0.35);
-            grid-row:span 2;
             display:flex; flex-direction:column; justify-content:space-between;
+        }
+        /* Emerald tax savings card - striking highlight */
+        .hb-tax-card {
+            background:linear-gradient(135deg,rgba(16,185,129,0.38),rgba(4,120,87,0.28));
+            border:1px solid rgba(52,211,153,0.55);
+            box-shadow:0 0 24px rgba(16,185,129,0.18);
         }
         /* Orange/warm gradient card - replaces the bronze in screenshot */
         .hb-orange-card {
@@ -526,7 +531,6 @@
             .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
             .g-item:first-child { grid-column:span 2; height:240px; }
             .g-item { height:220px; }
-            .hb-navy-card { grid-row:span 1; }
             .hb-wide { grid-column:span 1; }
         }
         @media(max-width:680px){
@@ -535,7 +539,7 @@
             .btn-ghost { display:none !important; }
             .hero-content,.container,.dd-inner,.stats-dark-inner { padding-left:20px; padding-right:20px; }
             .hero-bento { grid-template-columns:1fr; }
-            .hb-navy-card,.hb-wide { grid-row:span 1; grid-column:span 1; }
+            .hb-wide { grid-row:span 1; grid-column:span 1; }
             .cd-inner { gap:20px; padding:0 20px; }
             .cd-num { font-size:28px; padding:8px 10px; }
             .gallery-grid { grid-template-columns:1fr; }
@@ -613,7 +617,19 @@
                 <span class="hb-val">18<span class="hb-accent">–20%</span></span>
                 <span class="hb-sub">Annual Average Return</span>
             </div>
-            <!-- Card 2: Right column tall - Dark navy - Hold Period -->
+            <!-- Card 2: Top Right - Emerald - Tax Savings (NEW) -->
+            <div class="hb-card hb-tax-card">
+                <span class="hb-lbl">Year 1 Tax Savings</span>
+                <span class="hb-val">Up to <span style="color:#34D399;">$35,000</span><span style="color:#34D399;font-size:0.55em;vertical-align:super;">*</span></span>
+                <span class="hb-sub">Figures shown are year 1 tax savings</span>
+            </div>
+            <!-- Card 3: Middle Left - Orange - Occupancy -->
+            <div class="hb-card hb-orange-card">
+                <span class="hb-lbl">Occupancy</span>
+                <span class="hb-val">97<span class="hb-accent">%</span></span>
+                <span class="hb-sub">Current Resident Occupancy</span>
+            </div>
+            <!-- Card 4: Middle Right - Dark navy - Hold Period -->
             <div class="hb-card hb-navy-card">
                 <div>
                     <span class="hb-lbl">Hold Period</span>
@@ -632,12 +648,6 @@
                     <span class="hb-exit">→ EXIT</span>
                 </div>
                 <span class="hb-sub">Targeted exit horizon</span>
-            </div>
-            <!-- Card 3: Bottom Left - Orange - Occupancy -->
-            <div class="hb-card hb-orange-card">
-                <span class="hb-lbl">Occupancy</span>
-                <span class="hb-val">97<span class="hb-accent">%</span></span>
-                <span class="hb-sub">Current Resident Occupancy</span>
             </div>
             <!-- Card 4: Wide bottom - Economic Engine -->
             <div class="hb-card hb-wide">
