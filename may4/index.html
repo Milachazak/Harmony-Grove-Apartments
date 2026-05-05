@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Grove | Webinar Recording — May 4, 2026 | Mila Penn Chazak</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --bg: #F0F4FC; --bg-sec: #E6EDF9;
+            --blue: #1244F5; --blue-dk: #0A2ECC; --blue-xl: #4A78FF;
+            --blue-dim: rgba(18,68,245,0.09); --blue-border: rgba(18,68,245,0.22);
+            --orange: #E8651A; --orange-dk: #BF4A0C; --orange-lt: #FF8640;
+            --orange-dim: rgba(232,101,26,0.10); --orange-border: rgba(232,101,26,0.28);
+            --navy: #050E1F; --navy-2: #0A1830;
+            --text: #0A1628; --t70: rgba(10,22,40,0.70); --t50: rgba(10,22,40,0.50);
+            --t30: rgba(10,22,40,0.30); --t10: rgba(10,22,40,0.10); --t06: rgba(10,22,40,0.06);
+            --glass: rgba(255,255,255,0.55); --glass-b: rgba(255,255,255,0.82);
+            --r-card: 20px; --r-pill: 100px;
+            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-b: 'Jost', -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+        .amb { position:fixed; border-radius:50%; pointer-events:none; z-index:0; filter:blur(90px); }
+        .amb-1 { width:800px;height:800px;top:-10%;right:-5%; background:radial-gradient(circle,rgba(18,68,245,0.10) 0%,transparent 68%); }
+        .amb-2 { width:600px;height:600px;bottom:10%;left:-8%; background:radial-gradient(circle,rgba(232,101,26,0.07) 0%,transparent 68%); }
+
+        /* NAV */
+        #nav {
+            position:fixed; top:0; left:0; right:0; z-index:1000;
+            padding:14px 48px; display:flex; align-items:center; justify-content:space-between;
+            background:rgba(255,255,255,0.65); backdrop-filter:blur(40px) saturate(220%);
+            -webkit-backdrop-filter:blur(40px) saturate(220%);
+            border-bottom:1px solid rgba(255,255,255,0.90);
+            box-shadow:0 2px 20px rgba(10,22,40,0.06);
+        }
+        .nav-logos { display:flex; align-items:center; gap:14px; }
+        .nav-logo { height:32px; width:auto; object-fit:contain; }
+        .nav-sep { width:1px; height:24px; background:var(--t10); }
+        .nav-badge {
+            font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+            color:var(--orange); background:var(--orange-dim); border:1px solid var(--orange-border);
+            padding:4px 14px; border-radius:var(--r-pill);
+        }
+        .nav-cta { padding:10px 24px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
+            background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; text-decoration:none;
+            box-shadow:0 4px 16px rgba(18,68,245,0.32); transition:all .25s; }
+        .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(18,68,245,0.44); }
+        @media(max-width:680px){ #nav{padding:12px 20px;} .nav-badge{display:none;} }
+
+        /* BUTTONS */
+        .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
+        .btn-primary { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; border-radius:var(--r-pill); box-shadow:0 4px 20px rgba(18,68,245,0.38); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(18,68,245,0.50); }
+        .btn-orange { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,#F07030,#C84A10); color:#fff; border-radius:var(--r-pill); box-shadow:0 4px 20px rgba(232,101,26,0.38); }
+        .btn-orange:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(232,101,26,0.50); }
+        .btn-ghost { padding:13px 30px; font-size:14px; font-weight:500; background:rgba(255,255,255,0.80); border:1.5px solid rgba(10,22,40,0.18); color:var(--text); border-radius:var(--r-pill); backdrop-filter:blur(12px); }
+        .btn-ghost:hover { background:white; border-color:rgba(10,22,40,0.28); transform:translateY(-1px); }
+
+        /* HERO */
+        .hero {
+            position:relative; min-height:68vh; display:flex; align-items:flex-end;
+            padding-bottom:0; overflow:hidden;
+            background:linear-gradient(135deg, #050E1F 0%, #0A1830 60%, #0D2050 100%);
+        }
+        .hero-bg-img {
+            position:absolute; inset:0; z-index:0;
+            background:url('../Property Photos/1.png') center/cover no-repeat;
+            opacity:0.18;
+        }
+        .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(130deg,rgba(5,14,31,0.96) 0%,rgba(5,14,31,0.82) 50%,rgba(5,14,31,0.60) 100%); }
+        .hero-inner {
+            position:relative; z-index:2; max-width:1200px; margin:0 auto;
+            padding:130px 48px 70px; width:100%;
+            display:grid; grid-template-columns:1fr 480px; gap:56px; align-items:center;
+        }
+        .rec-badge {
+            display:inline-flex; align-items:center; gap:8px; padding:6px 16px; margin-bottom:18px;
+            background:rgba(232,101,26,0.20); border:1px solid rgba(232,101,26,0.42);
+            border-radius:var(--r-pill); font-size:11.5px; font-weight:600; letter-spacing:.12em;
+            text-transform:uppercase; color:#FFB085; width:fit-content;
+        }
+        .rec-dot { width:8px; height:8px; background:#FF5520; border-radius:50%; }
+        .hero-title { font-family:var(--ff-d); font-size:clamp(40px,5.2vw,72px); font-weight:600; line-height:1.10; letter-spacing:-.02em; color:#fff; margin-bottom:18px; }
+        .hero-title em { font-style:italic; color:#FF9A60; }
+        .hero-sub { font-size:clamp(15px,1.7vw,17px); color:rgba(255,255,255,0.68); max-width:480px; line-height:1.78; font-weight:300; margin-bottom:28px; }
+        .hero-meta { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px; }
+        .hero-meta-pill { display:inline-flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:10px; font-size:13px; color:rgba(255,255,255,0.75); font-weight:500; }
+        .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
+
+        /* HERO STAT CARDS */
+        .hero-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .hc { border-radius:16px; padding:20px 22px; backdrop-filter:blur(28px) saturate(180%); -webkit-backdrop-filter:blur(28px) saturate(180%); }
+        .hc-frost { background:rgba(240,246,255,0.14); border:1px solid rgba(255,255,255,0.28); }
+        .hc-navy { background:rgba(5,14,31,0.78); border:1px solid rgba(18,68,245,0.35); }
+        .hc-orange { background:linear-gradient(135deg,rgba(232,101,26,0.38),rgba(180,55,8,0.30)); border:1px solid rgba(232,101,26,0.48); }
+        .hc-green { background:linear-gradient(135deg,rgba(16,185,129,0.36),rgba(4,120,87,0.26)); border:1px solid rgba(52,211,153,0.50); box-shadow:0 0 20px rgba(16,185,129,0.15); }
+        .hc-lbl { font-family:var(--ff-d); font-size:12.5px; font-style:italic; color:rgba(255,255,255,0.52); margin-bottom:6px; display:block; }
+        .hc-val { font-family:var(--ff-d); font-size:clamp(26px,2.8vw,38px); font-weight:700; color:#fff; line-height:1; margin-bottom:5px; display:block; }
+        .hc-acc-o { color:#FF9A60; }
+        .hc-acc-g { color:#34D399; }
+        .hc-sub { font-size:11.5px; color:rgba(255,255,255,0.48); line-height:1.45; display:block; }
+
+        @media(max-width:960px) { .hero-inner { grid-template-columns:1fr; } .hero-cards { max-width:460px; } }
+        @media(max-width:680px) { .hero-inner { padding:110px 20px 60px; } .hero-cards { grid-template-columns:1fr 1fr; } }
+
+        /* CONTAINER / SECTIONS */
+        .container { max-width:1100px; margin:0 auto; padding:0 48px; }
+        .sec { padding:80px 0; position:relative; z-index:1; }
+        .sec-sm { padding:52px 0; position:relative; z-index:1; }
+        .sec-lbl { font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; display:block; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,3.8vw,52px); font-weight:600; line-height:1.18; letter-spacing:-.018em; color:var(--text); margin-bottom:18px; }
+        .sec-title em { font-style:italic; color:var(--blue); }
+        .sec-body { font-size:16.5px; color:var(--t70); line-height:1.80; max-width:680px; }
+
+        /* VIDEO */
+        .video-wrap {
+            background:var(--navy); border-radius:var(--r-card); overflow:hidden;
+            box-shadow:0 24px 64px rgba(5,14,31,0.28); border:1px solid rgba(255,255,255,0.08);
+            position:relative; z-index:1; margin:0 0 60px;
+        }
+        .video-header { padding:22px 32px; background:rgba(5,14,31,0.90); border-bottom:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; gap:12px; }
+        .video-header-dot { width:10px; height:10px; border-radius:50%; background:#FF5520; box-shadow:0 0 10px rgba(255,85,32,0.60); }
+        .video-header-title { font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,0.72); }
+        .video-header-date { margin-left:auto; font-size:12px; color:rgba(255,255,255,0.38); }
+        .video-player { position:relative; padding-top:56.25%; }
+        .video-player video { position:absolute; top:0; left:0; width:100%; height:100%; background:#000; display:block; }
+
+        /* STATS DARK */
+        .stats-dark { background:linear-gradient(135deg,var(--navy),#0D2050); padding:64px 0; position:relative; z-index:1; overflow:hidden; }
+        .stats-dark::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 50%,rgba(18,68,245,0.15) 0%,transparent 60%); }
+        .stats-dark-inner { max-width:1100px; margin:0 auto; padding:0 48px; position:relative; }
+        .stats-dark-top { font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.38); margin-bottom:10px; }
+        .stats-dark-title { font-family:var(--ff-d); font-size:clamp(30px,3.5vw,46px); font-weight:600; color:#fff; margin-bottom:42px; line-height:1.18; }
+        .stats-dark-title em { color:#FF9A60; font-style:italic; }
+        .stats-dark-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+        .sd-stat { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:28px 24px; }
+        .sd-val { font-family:var(--ff-d); font-size:clamp(32px,3.5vw,48px); font-weight:700; line-height:1; margin-bottom:10px; }
+        .sd-lbl { font-size:13px; color:rgba(255,255,255,0.50); line-height:1.5; }
+        .orange-val { color:#FF9A60; }
+        .blue-val { color:#7BA7FF; }
+        @media(max-width:860px){ .stats-dark-grid { grid-template-columns:1fr 1fr; gap:8px; } }
+        @media(max-width:480px){ .stats-dark-grid { grid-template-columns:1fr; } }
+
+        /* CARD GRID */
+        .card-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+        .card-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+        .card { background:white; border-radius:var(--r-card); padding:32px; border:1px solid var(--t06); box-shadow:0 4px 24px var(--t06); }
+        .card-icon { font-size:28px; margin-bottom:16px; }
+        .card-title { font-family:var(--ff-d); font-size:22px; font-weight:600; color:var(--text); margin-bottom:10px; line-height:1.3; }
+        .card-body { font-size:15px; color:var(--t70); line-height:1.78; }
+        .card-accent { border-top:3px solid var(--orange); }
+        .card-accent-blue { border-top:3px solid var(--blue); }
+        @media(max-width:860px){ .card-grid,.card-grid-3 { grid-template-columns:1fr; } }
+
+        /* HIGHLIGHTS REASONS */
+        .reasons { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+        .reason { background:white; border-radius:16px; padding:28px 28px; border:1px solid var(--t06); border-left:4px solid var(--orange); box-shadow:0 3px 18px var(--t06); }
+        .reason-num { font-family:var(--ff-d); font-size:42px; font-weight:700; color:var(--orange); opacity:.25; line-height:1; margin-bottom:4px; }
+        .reason-title { font-size:16px; font-weight:600; color:var(--text); margin-bottom:8px; }
+        .reason-body { font-size:14.5px; color:var(--t70); line-height:1.72; }
+        @media(max-width:680px){ .reasons { grid-template-columns:1fr; } }
+
+        /* TABLE */
+        .data-table { width:100%; border-collapse:collapse; font-size:14.5px; }
+        .data-table th { background:var(--navy); color:rgba(255,255,255,0.85); font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:12px 18px; text-align:left; }
+        .data-table td { padding:12px 18px; border-bottom:1px solid var(--t10); color:var(--t70); vertical-align:top; }
+        .data-table td:first-child { font-weight:600; color:var(--text); width:45%; }
+        .data-table tr:last-child td { border-bottom:none; }
+        .data-table tr:nth-child(even) td { background:var(--t06); }
+        .table-wrap { background:white; border-radius:var(--r-card); overflow:hidden; border:1px solid var(--t10); box-shadow:0 4px 24px var(--t06); }
+
+        /* CHEAT SHEET */
+        .cheat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+        .cheat-card { background:white; border-radius:16px; padding:26px 24px; border:1px solid var(--t06); box-shadow:0 3px 16px var(--t06); }
+        .cheat-card h4 { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--t10); }
+        .cheat-row { display:flex; justify-content:space-between; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--t06); }
+        .cheat-row:last-child { border-bottom:none; }
+        .cheat-key { font-size:13px; color:var(--t70); max-width:55%; }
+        .cheat-val { font-size:13.5px; font-weight:600; color:var(--text); text-align:right; }
+        .cheat-val.highlight { color:var(--orange); }
+        .cheat-val.blue { color:var(--blue); }
+        @media(max-width:860px){ .cheat-grid { grid-template-columns:1fr 1fr; } }
+        @media(max-width:540px){ .cheat-grid { grid-template-columns:1fr; } }
+
+        /* Q&A */
+        .qa-item { background:white; border-radius:16px; padding:28px 32px; border:1px solid var(--t06); box-shadow:0 3px 18px var(--t06); margin-bottom:16px; }
+        .qa-question { font-size:16px; font-weight:600; color:var(--text); margin-bottom:4px; line-height:1.45; }
+        .qa-asker { font-size:12.5px; color:var(--t50); font-style:italic; margin-bottom:14px; }
+        .qa-answer { border-left:3px solid var(--blue-border); padding-left:16px; margin-bottom:10px; }
+        .qa-answer:last-child { margin-bottom:0; }
+        .qa-speaker { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--blue); margin-bottom:4px; }
+        .qa-text { font-size:14.5px; color:var(--t70); line-height:1.75; font-style:italic; }
+
+        /* QUOTES */
+        .quotes-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+        .quote-card { background:var(--navy); border-radius:16px; padding:28px 28px; border:1px solid rgba(255,255,255,0.07); }
+        .quote-mark { font-family:var(--ff-d); font-size:64px; line-height:.6; color:var(--orange); margin-bottom:12px; display:block; opacity:.6; }
+        .quote-text { font-family:var(--ff-d); font-size:18px; font-style:italic; color:rgba(255,255,255,0.88); line-height:1.55; margin-bottom:14px; }
+        .quote-attr { font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,0.40); }
+        @media(max-width:680px){ .quotes-grid { grid-template-columns:1fr; } }
+
+        /* TEAM */
+        .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+        .team-card { background:white; border-radius:16px; padding:24px; border:1px solid var(--t06); box-shadow:0 3px 16px var(--t06); }
+        .team-role { font-size:10.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:8px; }
+        .team-name { font-family:var(--ff-d); font-size:20px; font-weight:600; color:var(--text); margin-bottom:6px; line-height:1.25; }
+        .team-bio { font-size:13.5px; color:var(--t70); line-height:1.68; }
+        @media(max-width:860px){ .team-grid { grid-template-columns:1fr 1fr; } }
+        @media(max-width:540px){ .team-grid { grid-template-columns:1fr; } }
+
+        /* LESSONS */
+        .lesson-group { margin-bottom:36px; }
+        .lesson-group-title { font-size:13px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--blue-border); }
+        .lesson-list { list-style:none; }
+        .lesson-list li { padding:9px 0 9px 24px; border-bottom:1px solid var(--t06); font-size:15px; color:var(--t70); line-height:1.65; position:relative; }
+        .lesson-list li::before { content:''; position:absolute; left:0; top:18px; width:8px; height:8px; border-radius:50%; background:var(--orange); }
+        .lesson-list li:last-child { border-bottom:none; }
+        .lesson-quote { font-style:italic; color:var(--text); font-weight:500; }
+
+        /* APPRECIATION */
+        .app-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+        .app-card { background:white; border-radius:14px; padding:20px 22px; border:1px solid var(--t06); border-left:3px solid var(--orange); }
+        .app-name { font-size:13px; font-weight:700; color:var(--text); margin-bottom:5px; }
+        .app-text { font-size:14px; color:var(--t70); font-style:italic; line-height:1.6; }
+        @media(max-width:680px){ .app-grid { grid-template-columns:1fr; } }
+
+        /* CTA FINAL */
+        .final-cta { background:linear-gradient(135deg,var(--navy),#0D1F50); border-radius:24px; padding:64px 56px; text-align:center; position:relative; overflow:hidden; }
+        .final-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%,rgba(18,68,245,0.18) 0%,transparent 65%); }
+        .final-cta-inner { position:relative; z-index:1; }
+        .final-cta-tag { display:inline-block; padding:5px 18px; margin-bottom:18px; background:rgba(232,101,26,0.22); border:1px solid rgba(232,101,26,0.40); border-radius:var(--r-pill); font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:#FFB085; }
+        .final-cta h2 { font-family:var(--ff-d); font-size:clamp(32px,4vw,54px); font-weight:600; color:#fff; margin-bottom:16px; line-height:1.18; }
+        .final-cta h2 em { font-style:italic; color:#FF9A60; }
+        .final-cta p { font-size:16.5px; color:rgba(255,255,255,0.65); margin-bottom:32px; max-width:560px; margin-left:auto; margin-right:auto; line-height:1.75; }
+        .final-cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+        /* FOOTER */
+        .footer { background:var(--navy); padding:40px 0; text-align:center; }
+        .footer p { font-size:12.5px; color:rgba(255,255,255,0.30); line-height:1.70; }
+        .footer a { color:rgba(255,255,255,0.45); text-decoration:none; }
+        .footer a:hover { color:rgba(255,255,255,0.65); }
+
+        /* DIVIDER */
+        .divider { height:1px; background:var(--t10); margin:0; }
+
+        /* SCROLL ANIM */
+        .fu { opacity:0; transform:translateY(24px); transition:opacity .70s ease,transform .70s ease; }
+        .fu.vis { opacity:1; transform:translateY(0); }
+
+        /* PARTNER LOGOS */
+        .partners-row { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:32px; }
+        .p-pill { display:flex; align-items:center; justify-content:center; padding:10px 22px; border-radius:50px; }
+        .p-pill.dark { background:#0B1628; border:1px solid rgba(255,255,255,0.10); }
+        .p-pill.light { background:#fff; border:1px solid rgba(0,0,0,0.07); box-shadow:0 2px 10px rgba(0,0,0,0.07); }
+        .p-logo { height:28px; width:auto; max-width:130px; object-fit:contain; }
+
+        /* SECTION DIVIDER LABEL */
+        .sec-divider { display:flex; align-items:center; gap:16px; margin-bottom:40px; }
+        .sec-divider::before,.sec-divider::after { content:''; flex:1; height:1px; background:var(--t10); }
+        .sec-divider span { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--t30); white-space:nowrap; }
+    </style>
+</head>
+<body>
+
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logos">
+        <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+        <div class="nav-sep"></div>
+        <img src="../Chazak Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+    </div>
+    <div class="nav-badge">May 4, 2026 Recording</div>
+    <a href="../harmonygrove/" class="nav-cta">Register for May 12th →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="rec-badge">
+                <span class="rec-dot"></span>
+                Webinar Recording
+            </div>
+            <h1 class="hero-title">Harmony Grove.<br><em>The Full Picture.</em></h1>
+            <p class="hero-sub">You asked the right questions. Here's everything from the live investor presentation on May 4th — the recording, the numbers, the Q&A, and the team behind the deal.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-pill">📅 May 4, 2026</div>
+                <div class="hero-meta-pill">🏠 75 Units · Marietta, GA</div>
+                <div class="hero-meta-pill">⏱ ~75 Minutes</div>
+            </div>
+            <div class="hero-ctas">
+                <a href="#recording" class="btn btn-orange">Watch the Recording ↓</a>
+                <a href="../harmonygrove/" class="btn btn-ghost">Register for May 12th →</a>
+            </div>
+        </div>
+        <div class="hero-cards">
+            <div class="hc hc-frost">
+                <span class="hc-lbl">AAR</span>
+                <span class="hc-val"><span class="hc-acc-o">20%</span></span>
+                <span class="hc-sub">Annual Average Return</span>
+            </div>
+            <div class="hc hc-green">
+                <span class="hc-lbl">Tax Savings</span>
+                <span class="hc-val">At least <span class="hc-acc-g">$35,000</span></span>
+                <span class="hc-sub">Figures shown are year 1 tax savings</span>
+            </div>
+            <div class="hc hc-orange">
+                <span class="hc-lbl">Occupancy</span>
+                <span class="hc-val">97<span class="hc-acc-o">%</span></span>
+                <span class="hc-sub">Current Resident Occupancy</span>
+            </div>
+            <div class="hc hc-navy">
+                <span class="hc-lbl">Hold Period</span>
+                <span class="hc-val">5<span class="hc-acc-o"> Yrs</span></span>
+                <span class="hc-sub">Targeted exit horizon</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RECORDING VIDEO -->
+<section class="sec" id="recording">
+    <div class="container">
+        <div class="sec-divider fu"><span>Full Webinar Recording</span></div>
+        <div class="video-wrap fu">
+            <div class="video-header">
+                <div class="video-header-dot"></div>
+                <div class="video-header-title">Harmony Grove Investor Webinar — Full Recording</div>
+                <div class="video-header-date">May 4, 2026 &nbsp;·&nbsp; 75-Unit Multifamily · Marietta, GA</div>
+            </div>
+            <div class="video-player">
+                <video controls preload="metadata" poster="">
+                    <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Webinar.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+        <p class="sec-body fu" style="text-align:center;max-width:700px;margin:0 auto 12px;">This is the complete, unedited recording of the live investor webinar. The team walks through the asset, the market, the capital stack, and the projected returns — followed by an extended live Q&A.</p>
+    </div>
+</section>
+
+<!-- STATS DARK -->
+<div class="stats-dark">
+    <div class="stats-dark-inner">
+        <div class="stats-dark-top">By the numbers · Harmony Grove Apartments</div>
+        <div class="stats-dark-title">The Opportunity <em>at a glance</em></div>
+        <div class="stats-dark-grid">
+            <div class="sd-stat fu">
+                <div class="sd-val orange-val">75</div>
+                <div class="sd-lbl">Total Residential Units<br>Studio, 1BR &amp; 2BR mix</div>
+            </div>
+            <div class="sd-stat fu">
+                <div class="sd-val blue-val">$1,092</div>
+                <div class="sd-lbl">Avg. In-Place Rent<br>vs. $1,435 comp set avg.</div>
+            </div>
+            <div class="sd-stat fu">
+                <div class="sd-val orange-val">$103K</div>
+                <div class="sd-lbl">Per-Door Basis<br>vs. $155K most recent comp</div>
+            </div>
+            <div class="sd-stat fu">
+                <div class="sd-val blue-val">$18B</div>
+                <div class="sd-lbl">Battery Atlanta<br>Annual Economic Impact</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Webinar Companion eBook</div>
+        <h2 class="sec-title fu">Why the team <em>loves this deal</em></h2>
+        <p class="sec-body fu" style="margin-bottom:48px;">Harmony Grove Apartments is a 75-unit, 1966-vintage, 100% unrenovated multifamily asset in Marietta, Georgia — approximately 20 minutes from downtown Atlanta. Four fundamentals make this deal compelling.</p>
+        <div class="reasons">
+            <div class="reason fu">
+                <div class="reason-num">01</div>
+                <div class="reason-title">Massive rent upside</div>
+                <div class="reason-body">Current rents are $1,092 versus market rents of $1,435 — roughly a $300 per-unit, per-month delta. The plan calls for renovating ~50% of units and pushing rents by approximately $175 per renovated door over a 12-month period.</div>
+            </div>
+            <div class="reason fu">
+                <div class="reason-num">02</div>
+                <div class="reason-title">Bought below comparable basis</div>
+                <div class="reason-body">Acquisition at $103,000 per unit. The most recent comparable sale (December 2025) traded at $155,000 per unit; the trailing 6-month average is $141,000; replacement cost is ~$200,000. Equity is built in on day one.</div>
+            </div>
+            <div class="reason fu">
+                <div class="reason-num">03</div>
+                <div class="reason-title">Supply-constrained, high-demand sub-market</div>
+                <div class="reason-body">Zero new construction within a 3-mile radius. Atlanta supply has fallen by ~8,500 units over the past 24 months. The team underwrites 2.5% rent growth despite Atlanta projections of ~4.1%.</div>
+            </div>
+            <div class="reason fu">
+                <div class="reason-num">04</div>
+                <div class="reason-title">Real, conservative debt and reserves</div>
+                <div class="reason-body">Fixed Fannie Mae or Freddie Mac debt at ~70% LTV, with a $1M renovation budget plus 10-15% contingency, and a $155,000 operating reserve held for unforeseen circumstances.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROPERTY HIGHLIGHTS -->
+<section class="sec" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-lbl fu">Property Details</div>
+        <h2 class="sec-title fu">Asset <em>&amp; Market</em> Snapshot</h2>
+        <div class="card-grid fu" style="margin-top:32px;">
+            <div>
+                <div class="table-wrap" style="margin-bottom:18px;">
+                    <table class="data-table">
+                        <thead><tr><th colspan="2">Asset Snapshot</th></tr></thead>
+                        <tbody>
+                            <tr><td>Property Name</td><td>Harmony Grove Apartments</td></tr>
+                            <tr><td>Location</td><td>Marietta, GA — Cobb County, Greater Atlanta MSA</td></tr>
+                            <tr><td>Distance from Atlanta</td><td>~20 minutes</td></tr>
+                            <tr><td>Year Built</td><td>1966</td></tr>
+                            <tr><td>Total Units</td><td>75 (12 studios / 23 one-bed / ~40 two-bed)</td></tr>
+                            <tr><td>Current Condition</td><td>100% classic / unrenovated</td></tr>
+                            <tr><td>Current Occupancy</td><td>97%</td></tr>
+                            <tr><td>5-Year Occupancy Floor</td><td>94%</td></tr>
+                            <tr><td>Re-lease Velocity</td><td>Under 1 week to re-rent a unit</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead><tr><th colspan="2">Pricing &amp; Comps</th></tr></thead>
+                        <tbody>
+                            <tr><td>Purchase Price</td><td>$7,750,000</td></tr>
+                            <tr><td>Price Per Unit</td><td>$103,000</td></tr>
+                            <tr><td>Most Recent Comp (Dec 2025)</td><td>$155,000 / unit</td></tr>
+                            <tr><td>Trailing 6-Month Avg. Comp</td><td>$141,000 / unit</td></tr>
+                            <tr><td>Replacement Cost</td><td>~$200,000 / unit</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="table-wrap" style="margin-bottom:18px;">
+                    <table class="data-table">
+                        <thead><tr><th colspan="2">Rent Strategy</th></tr></thead>
+                        <tbody>
+                            <tr><td>Current Average Rent</td><td>$1,092</td></tr>
+                            <tr><td>Market Rent (Comp Set)</td><td>$1,435</td></tr>
+                            <tr><td>Premium per Renovated Unit</td><td>+$175 / month</td></tr>
+                            <tr><td>Renovation Pace</td><td>~3 units / month from month 9</td></tr>
+                            <tr><td>Renovation Scope</td><td>~50% of units (~37 doors)</td></tr>
+                            <tr><td>Year-3 Stabilized Rent</td><td>~$1,424 — still below today's market</td></tr>
+                            <tr><td>Underwritten Rent Growth</td><td>2.5% (vs. ~4.1% Atlanta projection)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead><tr><th colspan="2">Capital Stack</th></tr></thead>
+                        <tbody>
+                            <tr><td>Debt Source</td><td>Fannie Mae or Freddie Mac, fixed-rate</td></tr>
+                            <tr><td>Loan-to-Value</td><td>~70%</td></tr>
+                            <tr><td>Renovation Budget</td><td>~$1,000,000 + 10-15% contingency</td></tr>
+                            <tr><td>Operating Reserve</td><td>$155,000 held in bank</td></tr>
+                            <tr><td>GP Co-Investment</td><td>~10-15% of equity</td></tr>
+                            <tr><td>Minimum LP Investment</td><td>$100,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RETURNS / CHEAT SHEET -->
+<section class="sec" style="background:var(--bg-sec);padding-top:64px;padding-bottom:64px;">
+    <div class="container">
+        <div class="sec-lbl fu">Investment Cheat Sheet</div>
+        <h2 class="sec-title fu">If you only remember <em>one page</em></h2>
+        <p class="sec-body fu" style="margin-bottom:40px;">The headline numbers — asset, deal, and returns — all in one place.</p>
+        <div class="cheat-grid">
+            <div class="cheat-card fu">
+                <h4>The Asset</h4>
+                <div class="cheat-row"><span class="cheat-key">Property</span><span class="cheat-val">Harmony Grove Apts.</span></div>
+                <div class="cheat-row"><span class="cheat-key">Location</span><span class="cheat-val">Marietta, GA</span></div>
+                <div class="cheat-row"><span class="cheat-key">Vintage</span><span class="cheat-val">1966</span></div>
+                <div class="cheat-row"><span class="cheat-key">Units</span><span class="cheat-val highlight">75</span></div>
+                <div class="cheat-row"><span class="cheat-key">Condition</span><span class="cheat-val">100% unrenovated</span></div>
+                <div class="cheat-row"><span class="cheat-key">Occupancy</span><span class="cheat-val highlight">97%</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <h4>The Deal</h4>
+                <div class="cheat-row"><span class="cheat-key">Purchase Price</span><span class="cheat-val highlight">$7.75M</span></div>
+                <div class="cheat-row"><span class="cheat-key">Per-Door Basis</span><span class="cheat-val highlight">$103,000</span></div>
+                <div class="cheat-row"><span class="cheat-key">Comp Sale (Dec 2025)</span><span class="cheat-val">$155,000 / unit</span></div>
+                <div class="cheat-row"><span class="cheat-key">Replacement Cost</span><span class="cheat-val">~$200,000 / unit</span></div>
+                <div class="cheat-row"><span class="cheat-key">Debt</span><span class="cheat-val">Fixed, ~70% LTV</span></div>
+                <div class="cheat-row"><span class="cheat-key">Operating Reserve</span><span class="cheat-val">$155,000</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <h4>Returns — Class B, 5-Year Hold</h4>
+                <div class="cheat-row"><span class="cheat-key">Min. Investment</span><span class="cheat-val blue">$100,000</span></div>
+                <div class="cheat-row"><span class="cheat-key">Preferred Return</span><span class="cheat-val blue">7% / yr (quarterly)</span></div>
+                <div class="cheat-row"><span class="cheat-key">Target Annual Return</span><span class="cheat-val highlight">20%</span></div>
+                <div class="cheat-row"><span class="cheat-key">Equity Multiple</span><span class="cheat-val highlight">~2x</span></div>
+                <div class="cheat-row"><span class="cheat-key">Year-1 Tax Loss</span><span class="cheat-val highlight">~$35,000 K-1</span></div>
+                <div class="cheat-row"><span class="cheat-key">Base Exit (Yr 5)</span><span class="cheat-val">$13.5M @ 5.6% cap</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">The Co-General Partnership</div>
+        <h2 class="sec-title fu">Meet <em>the team</em></h2>
+        <p class="sec-body fu" style="margin-bottom:40px;">A multidisciplinary group of healthcare professionals and seasoned operators — many of whom have worked together on prior deals.</p>
+        <div class="team-grid">
+            <div class="team-card fu">
+                <div class="team-role">Lead Sponsor</div>
+                <div class="team-name">Dr. Kirk Campbell</div>
+                <div class="team-bio">Orthopedic surgeon, deal lead and underwriter for the Harmony Grove acquisition. Invested his mother's retirement account. "Rule 1: don't lose money."</div>
+            </div>
+            <div class="team-card fu">
+                <div class="team-role">Lead Sponsor</div>
+                <div class="team-name">Claude Mouaffi</div>
+                <div class="team-bio">Investment partner and "the numbers guy." Responsible for market cycle analysis, capital structure, and ensuring the team eats their own cookie.</div>
+            </div>
+            <div class="team-card fu">
+                <div class="team-role">Co-General Partner</div>
+                <div class="team-name">Leah Krebs, CRNA</div>
+                <div class="team-bio">Certified Registered Nurse Anesthesiologist. Co-GP active in tenant-experience and project oversight. Three prior Georgia properties with the team.</div>
+            </div>
+            <div class="team-card fu">
+                <div class="team-role">Co-General Partner</div>
+                <div class="team-name">Anita Akpunku</div>
+                <div class="team-bio">Real estate professional with 10+ years across multiple sides of real estate. Focuses on value-add scope and tenant interviews.</div>
+            </div>
+            <div class="team-card fu">
+                <div class="team-role">Co-General Partner</div>
+                <div class="team-name">Edwin Valverde, CRNA</div>
+                <div class="team-bio">MedVal Capital. Co-GP with deep familiarity in the Greater Atlanta MSA. CRNA background, investor mindset.</div>
+            </div>
+            <div class="team-card fu">
+                <div class="team-role">Co-General Partner</div>
+                <div class="team-name">Fedna Morency, PA</div>
+                <div class="team-bio">Physician Assistant and founder of EagleCap Ventures. Lives in the Atlanta market and provides on-the-ground sub-market insight.</div>
+            </div>
+            <div class="team-card fu">
+                <div class="team-role">Co-General Partner</div>
+                <div class="team-name">Dr. Stanley Okoro</div>
+                <div class="team-bio">Plastic surgeon with a primary office ~7 minutes from the asset. Intimate knowledge of the Marietta sub-market from a practitioner's lens.</div>
+            </div>
+            <div class="team-card fu">
+                <div class="team-role">Co-General Partner</div>
+                <div class="team-name">Jeremy Krebs</div>
+                <div class="team-bio">Co-GP and partnership team member. Multiple prior Georgia assets. The team's operating agreement and pre-existing relationships are the strongest safeguard.</div>
+            </div>
+            <div class="team-card fu" style="background:var(--navy-2);border-color:rgba(255,255,255,0.07);">
+                <div class="team-role" style="color:#FF9A60;">Strategic Partners</div>
+                <div class="team-name" style="color:#fff;">Operational Backbone</div>
+                <div class="team-bio" style="color:rgba(255,255,255,0.55);">Strategic operating partners with $250M+ of multifamily AUM. Property management firm already active in this Atlanta sub-market across three prior deals.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Q&A -->
+<section class="sec" style="background:var(--bg-sec);padding-top:64px;padding-bottom:64px;">
+    <div class="container">
+        <div class="sec-lbl fu">Live Q&amp;A — Restructured for Clarity</div>
+        <h2 class="sec-title fu">Every question. <em>Every answer.</em></h2>
+        <p class="sec-body fu" style="margin-bottom:40px;">Every question asked during the live session, restructured for readability. Original wording preserved where possible.</p>
+
+        <div class="qa-item fu">
+            <div class="qa-question">With respect to the rent delta, did you calculate it on a square-foot basis? These units appear fairly small on average.</div>
+            <div class="qa-asker">Asked by Victor</div>
+            <div class="qa-answer"><div class="qa-speaker">Claude Mouaffi</div><div class="qa-text">"On the rent delta — we benchmark against the market rent of properties in the same condition we plan to deliver. We pick comparable assets of similar vintage and similar renovation level, then capture the gap between those rents and ours, and that is the lead we follow."</div></div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"Current average rent is about $1,092. Today's market rent in this sub-market is $1,435. That $343 gap is the opportunity. We're targeting a $175 premium per renovated unit — deliberately conservative."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">What property management company are you using, and what is their track record?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"Our strategic operating partners have over $250 million of multifamily assets under management. The property management firm is already managing another asset in this same Atlanta sub-market and has been used on three of our strategic partners' Atlanta deals. That's not a theoretical relationship — it's a proven one."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">What is the minimum investment for limited partners?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"The minimum investment is $100,000. That gets you a 7% preferred return — roughly $7,000 per year — paid quarterly. At the 5-year exit, your target return is approximately 20% annually, equating to a ~2x equity multiple."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">How are distributions structured — GPs first, LPs first, or everyone at the same time?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Claude Mouaffi</div><div class="qa-text">"Limited partners receive their preferred return first. At exit, LPs are paid until they meet their target return; only then does the operating sponsorship team get paid. That alignment forces us to outperform — to make a dollar, we have to deliver what we promised."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">What about the tax benefits? Can you explain the K-1 loss?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"The cost segregation study projects approximately a $35,000 first-year tax loss on a $100,000 investment. That's delivered via K-1 for your CPA to apply. Depending on your income level and tax situation, that can be a meaningful offset. Always run it by your CPA first."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">How is the renovation budget funded? Will you be borrowing additional money?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Anita Akpunku</div><div class="qa-text">"Renovations are funded out of the raise. Every line item has been sourced and estimated, and we carry a 10-20% contingency on top of that for unforeseen issues. We are not borrowing additional money for the renovation budget."</div></div>
+            <div class="qa-answer"><div class="qa-speaker">Claude Mouaffi</div><div class="qa-text">"Beyond that, we hold a $155,000 operating reserve in the bank, doing nothing, available only for unforeseen circumstances."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Given the 1966 vintage, will property insurance increase for the new owner?</div>
+            <div class="qa-asker">Asked by Jose Bordes</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"The opposite. We have multiple insurance quotes in hand. We budgeted approximately $1,950 per door, but quotes are coming in around $600-700 per door, which actually helps NOI. We always budget insurance conservatively, and real-world quotes tend to come in lower."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Have you physically inspected the property — plumbing, roof, mechanicals?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"About a week and a half before this webinar, we toured the asset, looked at every single unit, opened every door and closet, walked the roofs with our general contractors, and inspected the pipes. We then ran a full financial audit of lease files and historical operations. As I sometimes say in the spirit of Jay-Z: men lie, women lie, numbers don't."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">How did your last deal perform compared to projections? Have you ever had a deal underperform?</div>
+            <div class="qa-asker">Asked by Alea Thomas</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"I have not had a deal I personally participated in underperform, because I underwrite to very conservative assumptions. We also partner with experienced operators with $250M+ of AUM. I take Warren Buffett's rules to heart: Rule 1 — don't lose money. Rule 2 — see Rule 1."</div></div>
+            <div class="qa-answer"><div class="qa-speaker">Claude Mouaffi</div><div class="qa-text">"And we eat our own cookie."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Why are the current owners selling?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Claude Mouaffi</div><div class="qa-text">"The same reason we plan to sell at year 5. Buying an apartment building is buying a business; people sell when their business plan is complete and they move on to a bigger one. That's how the industry functions."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Your projection calls for almost doubling the property value in 5 years. How much of a discount are you getting today?</div>
+            <div class="qa-asker">Asked by Victor</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"We are buying at $103,000 per unit. The trailing 6-month average comp is $141,000 per unit. The most recent sale (December 2025) was $155,000 per unit. Replacement cost is $200,000 per unit. Equity is built in at the basis."</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">What happens if target funding goals are not reached?</div>
+            <div class="qa-asker">Asked by Audience</div>
+            <div class="qa-answer"><div class="qa-speaker">Dr. Kirk Campbell</div><div class="qa-text">"Our previous deals have consistently been oversubscribed and this raise is relatively small. If you are interested, get your soft commitment in as soon as possible — spots are limited, and I do not foresee us not raising enough capital."</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- LESSONS LEARNT -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Lessons Learnt</div>
+        <h2 class="sec-title fu">The investing <em>playbook</em></h2>
+        <p class="sec-body fu" style="margin-bottom:40px;">Across the conversation, the team returned to a handful of principles. Distilled, they form a small but durable playbook.</p>
+        <div class="card-grid">
+            <div>
+                <div class="lesson-group fu">
+                    <div class="lesson-group-title">On Wisdom &amp; Mindset</div>
+                    <ul class="lesson-list">
+                        <li><span class="lesson-quote">"Real estate is one of the greatest wealth accelerators. Period."</span></li>
+                        <li>When people are retreating, they are advancing. You follow your fundamentals, and if that is right, you take action.</li>
+                        <li><span class="lesson-quote">"Allow your money to scrub in for you. Allow your money to work harder than you do."</span></li>
+                    </ul>
+                </div>
+                <div class="lesson-group fu">
+                    <div class="lesson-group-title">On Risk &amp; Underwriting</div>
+                    <ul class="lesson-list">
+                        <li>Warren Buffett's rules are non-negotiable: Rule 1 — don't lose money. Rule 2 — see Rule 1.</li>
+                        <li>Always start with the end in mind. Map the downside first, then work upward.</li>
+                        <li>Under-promise and over-deliver. Underwrite rent growth conservatively.</li>
+                        <li>Hold a meaningful operating reserve in cash so it is available the day you need it.</li>
+                    </ul>
+                </div>
+                <div class="lesson-group fu">
+                    <div class="lesson-group-title">On Trust &amp; Verification</div>
+                    <ul class="lesson-list">
+                        <li><span class="lesson-quote">"Men lie, women lie, numbers don't."</span></li>
+                        <li>Walk every unit, open every door, and put eyes and hands on plumbing, roofs, and mechanicals.</li>
+                        <li>Audit lease files and historical operations alongside the physical inspection.</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="lesson-group fu">
+                    <div class="lesson-group-title">On Alignment</div>
+                    <ul class="lesson-list">
+                        <li><span class="lesson-quote">"We eat our own cookie."</span> — GPs co-invest meaningfully (10-15% of equity).</li>
+                        <li>Limited partners are paid first; sponsors only earn after LPs meet their target return.</li>
+                        <li>Strong, pre-existing co-GP relationships and an operating agreement are the best safeguards.</li>
+                    </ul>
+                </div>
+                <div class="lesson-group fu">
+                    <div class="lesson-group-title">On Wealth &amp; Time</div>
+                    <ul class="lesson-list">
+                        <li>Real estate is uncorrelated to the stock market and offers tax benefits unavailable to most asset classes.</li>
+                        <li>"Mailbox money" unhinges time from money — a critical lever for high-income professionals.</li>
+                        <li>One good decision — the right deal, the right team — can compound for years.</li>
+                        <li>If you can, start earlier rather than later.</li>
+                    </ul>
+                </div>
+                <div class="lesson-group fu">
+                    <div class="lesson-group-title">On Market Cycles</div>
+                    <ul class="lesson-list">
+                        <li>Atlanta supply has fallen by ~8,500 units over 24 months — a tailwind for rents and asset values.</li>
+                        <li>Sub-markets that were oversupplied two years ago are now turning in favor of well-located assets.</li>
+                        <li>Economic cycles reset within 18-24 months; build a balance sheet that can patiently outwait them.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MEMORABLE QUOTES -->
+<section class="sec" style="background:var(--navy);padding-top:64px;padding-bottom:64px;">
+    <div class="container">
+        <div class="sec-lbl fu" style="color:rgba(255,154,96,0.80);">From the Presentation</div>
+        <h2 class="sec-title fu" style="color:#fff;">Memorable <em style="color:#FF9A60;">quotes</em></h2>
+        <p class="sec-body fu" style="color:rgba(255,255,255,0.55);margin-bottom:40px;">The lines worth remembering.</p>
+        <div class="quotes-grid">
+            <div class="quote-card fu">
+                <span class="quote-mark">"</span>
+                <div class="quote-text">This is a supply-constrained market. There's zero new construction within 3 miles of this property. Let me repeat that. Zero new construction.</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <span class="quote-mark">"</span>
+                <div class="quote-text">Buying an apartment building is buying a business. People have a business plan when they buy a business. When the business plan is completed, they exit and move to a bigger one.</div>
+                <div class="quote-attr">Claude Mouaffi</div>
+            </div>
+            <div class="quote-card fu">
+                <span class="quote-mark">"</span>
+                <div class="quote-text">We start with downside protection, and then we work our way up.</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <span class="quote-mark">"</span>
+                <div class="quote-text">All you had to do was make one good decision, and that business plan is carried out on your behalf.</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <span class="quote-mark">"</span>
+                <div class="quote-text">Allow your money to scrub in for you. Allow your money to work harder than you do.</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <span class="quote-mark">"</span>
+                <div class="quote-text">When people are retreating, they are advancing. I never in my lifetime saw a perfect economic season to invest. You follow your fundamentals, and you take action.</div>
+                <div class="quote-attr">Claude Mouaffi</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- APPRECIATION -->
+<section class="sec-sm">
+    <div class="container">
+        <div class="sec-lbl fu">How the Room Responded</div>
+        <h2 class="sec-title fu">Appreciation <em>received</em></h2>
+        <p class="sec-body fu" style="margin-bottom:36px;">Messages from attendees as the session closed — reproduced here as a snapshot of how the audience received the presentation.</p>
+        <div class="app-grid">
+            <div class="app-card fu"><div class="app-name">Victor Owusu</div><div class="app-text">"Thank you. Very well done."</div></div>
+            <div class="app-card fu"><div class="app-name">Alea Thomas</div><div class="app-text">"Thank you! Very thorough presentation."</div></div>
+            <div class="app-card fu"><div class="app-name">Blaise Nzeda</div><div class="app-text">"Thank you."</div></div>
+            <div class="app-card fu"><div class="app-name">Fedna Morency</div><div class="app-text">"Thank you everyone."</div></div>
+            <div class="app-card fu"><div class="app-name">Teteisha Pearson</div><div class="app-text">"Thank you."</div></div>
+            <div class="app-card fu"><div class="app-name">Fabrice NGOUFACK</div><div class="app-text">"Thank You."</div></div>
+        </div>
+        <div style="margin-top:32px;">
+            <div class="qa-item fu" style="background:var(--navy-2);border-color:rgba(255,255,255,0.07);">
+                <div class="qa-answer" style="border-left-color:rgba(255,154,96,0.35);">
+                    <div class="qa-speaker" style="color:#FF9A60;">Dr. Kirk Campbell</div>
+                    <div class="qa-text" style="color:rgba(255,255,255,0.70);">"I'd like to really thank everyone who took time out of their Monday evening to join us here. We really value your time, your potential partnership, and the really outstanding questions."</div>
+                </div>
+                <div class="qa-answer" style="border-left-color:rgba(255,154,96,0.35);">
+                    <div class="qa-speaker" style="color:#FF9A60;">Claude Mouaffi</div>
+                    <div class="qa-text" style="color:rgba(255,255,255,0.70);">"Really looking forward to having you on board. Thank you, everyone."</div>
+                </div>
+                <div class="qa-answer" style="border-left-color:rgba(255,154,96,0.35);">
+                    <div class="qa-speaker" style="color:#FF9A60;">Mila Penn Chazak</div>
+                    <div class="qa-text" style="color:rgba(255,255,255,0.70);">"Thank you, and good night, good evening, or even good morning, depending on where you are joining from. The recordings will be sent out shortly."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DEAL PARTNERS -->
+<div class="sec-sm" style="background:var(--bg-sec);">
+    <div class="container" style="text-align:center;">
+        <div class="sec-lbl fu" style="text-align:center;">Deal Partners</div>
+        <div class="partners-row fu">
+            <div class="p-pill dark"><img src="../partners/LGdMKRpXs6NWEwQ3PXPMbehapcE.png.webp" alt="Priority 1 Capital" class="p-logo"></div>
+            <div class="p-pill light"><img src="../partners/dPVwEvb3YFoQbnDfaiFFotoe20.png.webp" alt="EagleCap" class="p-logo"></div>
+            <div class="p-pill light"><img src="../partners/seeiISokM50jCrgmRqPiJcy0Jbw.png.webp" alt="Kynectic Capital" class="p-logo"></div>
+            <div class="p-pill light"><img src="../partners/medval.png.webp" alt="Medval Capital" class="p-logo"></div>
+            <div class="p-pill dark"><img src="../partners/enhance.jpg" alt="Enhance Holdings LLC" class="p-logo"></div>
+        </div>
+    </div>
+</div>
+
+<!-- NEXT STEPS / CTA -->
+<section class="sec">
+    <div class="container">
+        <div class="final-cta fu">
+            <div class="final-cta-inner">
+                <div class="final-cta-tag">📅 Next Webinar — May 12, 2026 · 6:45 PM ET</div>
+                <h2>Ready to take <em>the next step?</em></h2>
+                <p>The May 12th webinar is a live session with the full team. Bring your questions — the team will walk through every line item, every assumption, and every number with you personally.</p>
+                <div class="final-cta-btns">
+                    <a href="../harmonygrove/" class="btn btn-orange" style="padding:16px 40px;font-size:15.5px;">Reserve My Seat for May 12th →</a>
+                    <a href="../harmonygrove/#due-diligence" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,0.28);padding:16px 36px;font-size:15.5px;">Watch Due Diligence Video</a>
+                </div>
+                <p style="margin-top:24px;font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:0;">Previous deals from this team have been oversubscribed. Get your soft commitment in early.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>
+        Harmony Grove Apartments &nbsp;·&nbsp; Private Offering &nbsp;·&nbsp; Accredited Investors Only<br>
+        &copy; 2026 <a href="../harmonygrove/">Mila Penn Chazak</a> &nbsp;·&nbsp;
+        This page is shared privately and is not indexed by search engines.<br>
+        Past performance does not guarantee future results. All projections are estimates only. Consult your CPA and financial advisor before investing.
+    </p>
+</footer>
+
+<script>
+    // Scroll animations
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
