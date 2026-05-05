@@ -22,7 +22,7 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const WEBINAR_ID = "89370896771"; // Zoom Webinar ID (spaces removed)
+const WEBINAR_ID = "82636547252"; // Zoom Webinar ID (spaces removed)
 
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {

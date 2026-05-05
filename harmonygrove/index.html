@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmony Grove | Live Investor Webinar - May 4, 2026 | Mila Penn Chazak</title>
-    <meta name="description" content="Join our live investor webinar May 4th at 6:30 PM EST. Harmony Grove Apartments - a 75-unit multifamily value-add opportunity in Marietta, GA.">
+    <title>Harmony Grove | Live Investor Webinar - May 12, 2026 | Mila Penn Chazak</title>
+    <meta name="description" content="Join our live investor webinar May 12th at 6:45 PM ET. Harmony Grove Apartments - a 75-unit multifamily value-add opportunity in Marietta, GA.">
     <link rel="canonical" href="https://www.milapennchazak.com/harmonygrove">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -590,7 +590,7 @@
         <div class="hero-text">
             <div class="live-badge">
                 <span class="live-dot"></span>
-                Live Investor Webinar · May 4, 2026
+                Live Investor Webinar · May 12, 2026
             </div>
             <div class="hero-tag">Private Offering · Accredited Investors · Marietta, GA</div>
             <h1 class="hero-title">
@@ -601,7 +601,7 @@
             </p>
             <div class="webinar-when">
                 <span>📅</span>
-                Monday, May 4, 2026 &nbsp;·&nbsp; 6:30 PM EST &nbsp;·&nbsp; Live on Zoom
+                Tuesday, May 12, 2026 &nbsp;·&nbsp; 6:45 PM ET &nbsp;·&nbsp; Live on Zoom
             </div>
             <div class="hero-ctas">
                 <a href="#form-start" class="btn btn-orange-lg">Reserve My Seat →</a>
@@ -967,7 +967,7 @@
 <!-- ═══════════════ FINAL CTA ═══════════════ -->
 <section class="final-cta">
     <div class="container">
-        <div class="final-cta-tag">📅 May 4, 2026 · 6:30 PM EST</div>
+        <div class="final-cta-tag">📅 May 12, 2026 · 6:45 PM ET</div>
         <h2>Seats Are Limited.<br>Don't Miss the Webinar.</h2>
         <p>Join us live for a complete walkthrough of Harmony Grove - the deal, the team, the market, and your path to participating as a limited partner.</p>
         <div class="final-cta-btns">
@@ -982,7 +982,7 @@
     <div class="container">
         <div class="zoom-header fu">
             <div class="zoom-tag">📋 Live Webinar Registration</div>
-            <h2 class="zoom-title">Reserve Your Seat<br>for May 4th</h2>
+            <h2 class="zoom-title">Reserve Your Seat<br>for May 12th</h2>
             <p class="zoom-sub">Join Kirk, Rosanmi, and J. Claude live for a complete walkthrough of the Harmony Grove opportunity - the market, the numbers, the strategy, and your path to participating.</p>
         </div>
         <!-- Deal Partners -->
@@ -1014,7 +1014,7 @@
                     <div class="zoom-logo-icon">📋</div>
                     <div>
                         <div class="zoom-embed-title">Reserve Your Seat</div>
-                        <div class="zoom-embed-sub">Harmony Grove Investor Webinar · May 4, 2026</div>
+                        <div class="zoom-embed-sub">Harmony Grove Investor Webinar · May 12, 2026</div>
                     </div>
                 </div>
 
@@ -1053,11 +1053,10 @@
                             <option>Website</option>
                         </select>
                     </div>
-                    <div class="reg-field">
+                    <div class="reg-field" style="display:none;">
                         <label class="reg-label" for="rf-partner">Are you working with one of our partners?</label>
-                        <select class="reg-select" id="rf-partner" name="partner_referral" required>
-                            <option value="" disabled selected>Select one…</option>
-                            <option value="No">No</option>
+                        <select class="reg-select" id="rf-partner" name="partner_referral">
+                            <option value="No" selected>No</option>
                             <option>EagleCap Ventures (Fedna Morency)</option>
                             <option>Kynectic Capital (Anita Akpunku)</option>
                             <option>P1 Capital Investment (Leah &amp; Jeremy)</option>
@@ -1075,7 +1074,7 @@
                     <div class="reg-success-icon">🎉</div>
                     <h3>You're registered!</h3>
                     <p>Your spot is confirmed. Check your inbox - your Zoom link and everything you need is on its way.</p>
-                    <p>We'll see you <strong>Monday, May 4th at 6:30 PM EST</strong>. Come with questions.</p>
+                    <p>We'll see you <strong>Tuesday, May 12th at 6:45 PM ET</strong>. Come with questions.</p>
                     <a href="#" id="reg-join-link" class="btn btn-primary-lg join-btn" target="_blank" style="display:none;">Join the Webinar →</a>
                     <p class="sig">- Kirk, Rosanmi & Claude · Mila Penn Chazak</p>
                 </div>
@@ -1143,7 +1142,7 @@
 <script>
 // ── Countdown
 function updateCountdown() {
-    const webinar = new Date('2026-05-04T22:30:00Z'); // 6:30 PM EDT = 10:30 PM UTC
+    const webinar = new Date('2026-05-12T22:45:00Z'); // 6:45 PM ET = 10:45 PM UTC
     const now = new Date();
     const diff = webinar - now;
     if (diff <= 0) {
@@ -1293,7 +1292,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         };
 
         // Basic front-end validation
-        if (!data.first_name || !data.last_name || !data.email || !data.phone || !data.referral_source || !data.partner_referral) {
+        if (!data.first_name || !data.last_name || !data.email || !data.phone || !data.referral_source) {
             showError('Please fill in all fields before continuing.');
             return;
         }
