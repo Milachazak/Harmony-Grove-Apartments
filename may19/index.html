@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Grove | Webinar Recording May 19, 2026 | Mila Penn Chazak</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --bg: #F0F4FC; --bg-sec: #E6EDF9;
+            --blue: #1244F5; --blue-dk: #0A2ECC; --blue-xl: #4A78FF;
+            --blue-dim: rgba(18,68,245,0.09); --blue-border: rgba(18,68,245,0.22);
+            --orange: #E8651A; --orange-dk: #BF4A0C; --orange-lt: #FF8640;
+            --orange-dim: rgba(232,101,26,0.10); --orange-border: rgba(232,101,26,0.28);
+            --navy: #050E1F; --navy-2: #0A1830;
+            --text: #0A1628; --t70: rgba(10,22,40,0.70); --t50: rgba(10,22,40,0.50);
+            --t30: rgba(10,22,40,0.30); --t10: rgba(10,22,40,0.10); --t06: rgba(10,22,40,0.06);
+            --glass: rgba(255,255,255,0.55); --glass-b: rgba(255,255,255,0.82);
+            --r-card: 20px; --r-pill: 100px;
+            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-b: 'Jost', -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+        .amb { position:fixed; border-radius:50%; pointer-events:none; z-index:0; filter:blur(90px); }
+        .amb-1 { width:800px;height:800px;top:-10%;right:-5%; background:radial-gradient(circle,rgba(18,68,245,0.10) 0%,transparent 68%); }
+        .amb-2 { width:600px;height:600px;bottom:10%;left:-8%; background:radial-gradient(circle,rgba(232,101,26,0.07) 0%,transparent 68%); }
+
+        /* NAV */
+        #nav {
+            position:fixed; top:0; left:0; right:0; z-index:1000;
+            padding:14px 48px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+            background:rgba(255,255,255,0.65); backdrop-filter:blur(40px) saturate(220%);
+            -webkit-backdrop-filter:blur(40px) saturate(220%);
+            border-bottom:1px solid rgba(255,255,255,0.90);
+            box-shadow:0 2px 20px rgba(10,22,40,0.06);
+        }
+        .nav-logos { display:flex; align-items:center; gap:14px; }
+        .nav-logo { height:32px; width:auto; object-fit:contain; }
+        .nav-sep { width:1px; height:24px; background:var(--t10); }
+        .nav-badge {
+            font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+            color:var(--orange); background:var(--orange-dim); border:1px solid var(--orange-border);
+            padding:4px 14px; border-radius:var(--r-pill);
+        }
+        .nav-cta { padding:10px 22px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
+            background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; text-decoration:none;
+            box-shadow:0 4px 16px rgba(18,68,245,0.32); transition:all .25s; white-space:nowrap; }
+        .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(18,68,245,0.44); }
+        @media(max-width:680px){ #nav{padding:12px 20px;} .nav-badge{display:none;} }
+
+        /* BUTTONS */
+        .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
+        .btn-primary { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; border-radius:var(--r-pill); box-shadow:0 4px 20px rgba(18,68,245,0.38); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(18,68,245,0.50); }
+        .btn-orange { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,#F07030,#C84A10); color:#fff; border-radius:var(--r-pill); box-shadow:0 4px 20px rgba(232,101,26,0.38); }
+        .btn-orange:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(232,101,26,0.50); }
+
+        /* HERO */
+        .hero {
+            position:relative; min-height:62vh; display:flex; align-items:flex-end;
+            overflow:hidden;
+            background:linear-gradient(135deg, #050E1F 0%, #0A1830 60%, #0D2050 100%);
+        }
+        .hero-bg-img {
+            position:absolute; inset:0; z-index:0;
+            background:url('../1.png') center/cover no-repeat;
+            opacity:0.18;
+        }
+        .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(130deg,rgba(5,14,31,0.96) 0%,rgba(5,14,31,0.82) 50%,rgba(5,14,31,0.60) 100%); }
+        .hero-inner {
+            position:relative; z-index:2; max-width:1200px; margin:0 auto;
+            padding:130px 48px 70px; width:100%;
+            display:grid; grid-template-columns:1fr 480px; gap:56px; align-items:center;
+        }
+        .rec-badge {
+            display:inline-flex; align-items:center; gap:8px; padding:6px 16px; margin-bottom:18px;
+            background:rgba(232,101,26,0.20); border:1px solid rgba(232,101,26,0.42);
+            border-radius:var(--r-pill); font-size:11.5px; font-weight:600; letter-spacing:.12em;
+            text-transform:uppercase; color:#FFB085; width:fit-content;
+        }
+        .rec-dot { width:8px; height:8px; background:#FF5520; border-radius:50%; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .hero-title { font-family:var(--ff-d); font-size:clamp(40px,5.2vw,72px); font-weight:600; line-height:1.10; letter-spacing:-.02em; color:#fff; margin-bottom:18px; }
+        .hero-title em { font-style:italic; color:#FF9A60; }
+        .hero-sub { font-size:clamp(15px,1.7vw,17px); color:rgba(255,255,255,0.68); max-width:480px; line-height:1.78; font-weight:300; margin-bottom:28px; }
+        .hero-meta { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px; }
+        .hero-meta-pill { display:inline-flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:10px; font-size:13px; color:rgba(255,255,255,0.75); font-weight:500; }
+        .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
+
+        /* HERO STAT CARDS */
+        .hero-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .hb-card { border-radius:16px; padding:20px 22px; position:relative; overflow:hidden; }
+        .hb-frost { background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.18); backdrop-filter:blur(20px); }
+        .hb-orange-card { background:linear-gradient(135deg,rgba(232,101,26,0.38),rgba(191,74,12,0.28)); border:1px solid rgba(255,134,64,0.55); box-shadow:0 0 24px rgba(232,101,26,0.18); }
+        .hb-navy-card { background:rgba(5,14,31,0.80); border:1px solid rgba(18,68,245,0.35); display:flex; flex-direction:column; justify-content:space-between; }
+        .hb-tax-card { background:linear-gradient(135deg,rgba(16,185,129,0.38),rgba(4,120,87,0.28)); border:1px solid rgba(52,211,153,0.55); box-shadow:0 0 24px rgba(16,185,129,0.18); }
+        .hb-lbl { display:block; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:6px; }
+        .hb-val { display:block; font-family:var(--ff-d); font-size:clamp(28px,3.5vw,42px); font-weight:700; color:#fff; line-height:1; margin-bottom:6px; }
+        .hb-accent { color:var(--orange-lt); }
+        .hb-sub { display:block; font-size:11px; color:rgba(255,255,255,0.45); font-weight:400; }
+        @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:110px 24px 50px;} .hero-cards{max-width:400px;} }
+
+        /* SECTIONS */
+        .sec { padding:80px 0; position:relative; }
+        .sec-sm { padding:48px 0; position:relative; }
+        .container { max-width:1100px; margin:0 auto; padding:0 48px; }
+        .sec-lbl { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,52px); font-weight:600; line-height:1.12; letter-spacing:-.02em; color:var(--text); margin-bottom:18px; }
+        .sec-title em { font-style:italic; color:var(--blue); }
+        .sec-body { font-size:16px; color:var(--t70); line-height:1.78; }
+        @media(max-width:700px){ .container{padding:0 20px;} .sec{padding:60px 0;} }
+
+        /* VIDEO */
+        .video-wrap { border-radius:20px; overflow:hidden; box-shadow:0 12px 60px rgba(10,22,40,0.22); background:#000; position:relative; }
+        .video-wrap video { width:100%; display:block; max-height:540px; }
+
+        /* STATS DARK BAND */
+        .stats-band { background:var(--navy); padding:60px 0; }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+        .stat-item { padding:32px 28px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); }
+        .stat-item:last-child { border-right:none; }
+        .stat-num { font-family:var(--ff-d); font-size:clamp(36px,4vw,56px); font-weight:700; color:var(--orange-lt); line-height:1; margin-bottom:8px; }
+        .stat-lbl { font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); }
+        @media(max-width:700px){ .stats-grid{grid-template-columns:repeat(2,1fr);} .stat-item{border-right:none; border-bottom:1px solid rgba(255,255,255,0.07);} }
+
+        /* REASONS */
+        .reasons-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:40px; }
+        .reason-card { background:white; border-radius:18px; padding:30px; border:1px solid var(--t06); box-shadow:0 3px 20px var(--t06); }
+        .reason-num { font-family:var(--ff-d); font-size:48px; font-weight:700; color:var(--blue-dim); line-height:1; margin-bottom:12px; }
+        .reason-title { font-size:15px; font-weight:700; color:var(--text); margin-bottom:10px; letter-spacing:.01em; }
+        .reason-body { font-size:14px; color:var(--t70); line-height:1.72; }
+        @media(max-width:700px){ .reasons-grid{grid-template-columns:1fr;} }
+
+        /* CLASS TABLE */
+        .class-table { width:100%; border-collapse:separate; border-spacing:0; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px var(--t06); margin-top:32px; }
+        .class-table th { padding:16px 20px; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+        .class-table th:first-child { background:var(--navy); color:rgba(255,255,255,0.55); text-align:left; }
+        .class-table th.col-a { background:rgba(18,68,245,0.12); color:var(--blue-dk); text-align:center; }
+        .class-table th.col-b { background:rgba(232,101,26,0.12); color:var(--orange-dk); text-align:center; }
+        .class-table td { padding:14px 20px; font-size:14px; border-top:1px solid var(--t06); }
+        .class-table td:first-child { background:#fafbfd; color:var(--t70); font-weight:600; font-size:13px; }
+        .class-table td.col-a { background:rgba(18,68,245,0.04); color:var(--text); text-align:center; }
+        .class-table td.col-b { background:rgba(232,101,26,0.04); color:var(--text); text-align:center; font-weight:600; }
+
+        /* RENOVATION */
+        .reno-timeline { margin-top:36px; display:flex; flex-direction:column; gap:0; }
+        .reno-item { display:grid; grid-template-columns:130px 1fr; gap:24px; padding:24px 0; border-bottom:1px solid var(--t06); }
+        .reno-item:last-child { border-bottom:none; }
+        .reno-phase { font-size:12px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--orange); padding-top:2px; }
+        .reno-body { font-size:15px; color:var(--t70); line-height:1.7; }
+        .reno-body strong { color:var(--text); }
+
+        /* Q&A */
+        .qa-item { background:white; border-radius:16px; padding:28px 32px; margin-bottom:16px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); }
+        .qa-question { font-size:16px; font-weight:600; color:var(--text); line-height:1.5; margin-bottom:6px; }
+        .qa-asker { font-size:12px; color:var(--t50); font-weight:500; letter-spacing:.04em; margin-bottom:16px; }
+        .qa-answer { margin-top:12px; padding-top:12px; border-top:1px solid var(--t06); }
+        .qa-speaker { font-size:11px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--orange); margin-bottom:6px; }
+        .qa-text { font-size:14.5px; color:var(--t70); line-height:1.75; font-style:italic; }
+
+        /* LESSONS */
+        .lessons-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:36px; }
+        .lesson-card { background:white; border-radius:16px; padding:26px 28px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); }
+        .lesson-cat { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); margin-bottom:12px; }
+        .lesson-list { list-style:none; }
+        .lesson-list li { font-size:14px; color:var(--t70); line-height:1.7; padding:5px 0 5px 18px; position:relative; }
+        .lesson-list li::before { content:''; position:absolute; left:0; top:14px; width:6px; height:6px; background:var(--orange); border-radius:50%; }
+        @media(max-width:700px){ .lessons-grid{grid-template-columns:1fr;} }
+
+        /* QUOTES */
+        .quotes-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+        .quote-card { background:var(--navy); border-radius:16px; padding:28px 30px; border:1px solid rgba(255,255,255,0.07); }
+        .quote-text { font-family:var(--ff-d); font-size:18px; font-style:italic; color:rgba(255,255,255,0.88); line-height:1.65; margin-bottom:14px; }
+        .quote-attr { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--orange-lt); }
+        @media(max-width:700px){ .quotes-grid{grid-template-columns:1fr;} }
+
+        /* CHEAT SHEET */
+        .cheat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
+        .cheat-card { background:white; border-radius:14px; padding:22px 24px; border:1px solid var(--t06); box-shadow:0 2px 10px var(--t06); }
+        .cheat-card-title { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--t06); }
+        .cheat-row { display:flex; justify-content:space-between; gap:12px; padding:5px 0; border-bottom:1px solid var(--t06); }
+        .cheat-row:last-child { border-bottom:none; }
+        .cheat-key { font-size:12.5px; color:var(--t50); font-weight:500; }
+        .cheat-val { font-size:12.5px; color:var(--text); font-weight:600; text-align:right; }
+        @media(max-width:700px){ .cheat-grid{grid-template-columns:1fr;} }
+
+        /* APPRECIATION */
+        .appr-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
+        .appr-card { background:white; border-radius:14px; padding:22px 24px; border:1px solid var(--t06); box-shadow:0 2px 10px var(--t06); }
+        .appr-name { font-size:12px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--blue); margin-bottom:6px; }
+        .appr-text { font-size:14.5px; color:var(--t70); font-style:italic; line-height:1.65; }
+        @media(max-width:700px){ .appr-grid{grid-template-columns:1fr;} }
+
+        /* DATA TABLES */
+        .data-table { width:100%; border-collapse:collapse; margin-top:20px; font-size:14px; }
+        .data-table th { background:var(--navy); color:rgba(255,255,255,0.70); font-size:11px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; padding:12px 16px; text-align:left; }
+        .data-table td { padding:12px 16px; border-bottom:1px solid var(--t06); color:var(--t70); }
+        .data-table td:first-child { font-weight:600; color:var(--text); }
+        .data-table tr:last-child td { border-bottom:none; }
+        .data-table tr:nth-child(even) td { background:var(--bg-sec); }
+
+        /* CTA */
+        .final-cta { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%); padding:80px 0; text-align:center; }
+        .final-cta .sec-title { color:#fff; }
+        .final-cta .sec-title em { color:#FF9A60; }
+        .final-cta .sec-body { color:rgba(255,255,255,0.60); margin-bottom:36px; }
+        .cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+        /* FOOTER */
+        footer { background:var(--navy-2); padding:32px 48px; text-align:center; }
+        .footer-text { font-size:12px; color:rgba(255,255,255,0.30); line-height:1.8; }
+
+        /* SCROLL ANIM */
+        .fu { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+        .vis { opacity:1; transform:none; }
+    </style>
+</head>
+<body>
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logos">
+        <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+        <div class="nav-sep"></div>
+        <img src="../Chazak Logo.png" alt="Chazak" class="nav-logo">
+    </div>
+    <div class="nav-badge">May 19, 2026 Recording</div>
+    <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="nav-cta">Create your investment account</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="rec-badge"><span class="rec-dot"></span> Webinar 3 Recording</div>
+            <h1 class="hero-title">Harmony Grove.<br><em>Third Webinar.</em></h1>
+            <p class="hero-sub">The full recording and companion notes from the third live investor presentation on May 19, 2026. New this session: how the asset performs through a downturn, a transparent walk-through of the physical due diligence (roof, HVAC, electrical), full-cycle track record, and the on-site and surrounding amenities.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-pill">📅 May 19, 2026</div>
+                <div class="hero-meta-pill">75 Units · Marietta, GA</div>
+                <div class="hero-meta-pill">Dr. Kirk Campbell · Claude Mouaffi · Fedna Morency</div>
+            </div>
+            <div class="hero-ctas">
+                <a href="#video" class="btn btn-orange">Watch the Recording</a>
+                <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="btn btn-primary">Create Investment Account</a>
+            </div>
+        </div>
+        <div class="hero-cards">
+            <div class="hb-card hb-frost">
+                <span class="hb-lbl">AAR</span>
+                <span class="hb-val"><span class="hb-accent">20%</span></span>
+                <span class="hb-sub">Annual Average Return</span>
+            </div>
+            <div class="hb-card hb-tax-card">
+                <span class="hb-lbl">Tax Savings</span>
+                <span class="hb-val">At least <span class="hb-accent">$35,000</span></span>
+                <span class="hb-sub">Year 1 tax savings (K-1)</span>
+            </div>
+            <div class="hb-card hb-orange-card">
+                <span class="hb-lbl">Occupancy</span>
+                <span class="hb-val"><span class="hb-accent">97%</span></span>
+                <span class="hb-sub">5-year floor: 94%</span>
+            </div>
+            <div class="hb-card hb-navy-card">
+                <span class="hb-lbl">Mortgage Rate</span>
+                <span class="hb-val"><span class="hb-accent">6.25%</span></span>
+                <span class="hb-sub">Fixed, agency loan, 30-yr</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="sec" id="video">
+    <div class="container">
+        <div class="sec-lbl fu">Third Investor Webinar · May 19, 2026</div>
+        <h2 class="sec-title fu">Watch the <em>full recording</em></h2>
+        <p class="sec-body fu" style="text-align:center;max-width:700px;margin:0 auto 32px;">The complete unedited recording. Kirk, Claude, and Fedna walk through the asset and the business plan, then field a live Q&amp;A covering recession resilience, physical due diligence, full-cycle track record, and the surrounding amenities.</p>
+        <div class="video-wrap fu">
+            <video controls preload="metadata" poster="../1.png">
+                <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Webinar%20May%2012.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-num">$7.75M</div>
+                <div class="stat-lbl">Purchase Price</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">$103K</div>
+                <div class="stat-lbl">Per Door</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">$141K</div>
+                <div class="stat-lbl">Sub-Market Comp Avg</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">2x</div>
+                <div class="stat-lbl">Target Equity Multiple</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 4 REASONS -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Why This Deal Pencils</div>
+        <h2 class="sec-title fu">Four reasons the team <em>loves this deal</em></h2>
+        <div class="reasons-grid">
+            <div class="reason-card fu">
+                <div class="reason-num">01</div>
+                <div class="reason-title">Resilient through downturns</div>
+                <div class="reason-body">Occupancy has not fallen below 94% over the past 5 years a period that included COVID and a high-inflation cycle. In the 2008 downturn, apartment rents actually grew as displaced single-family owners moved into multifamily; 2020 produced the highest rent growth of the last decade after the initial shock.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">02</div>
+                <div class="reason-title">Built-in equity at acquisition</div>
+                <div class="reason-body">Entry basis is $103,000 per door. Trailing 6-month sub-market comps average $141,000 per door; the most recent 1964-vintage sale traded at $155,000 per door, and replacement cost alone is approximately $200,000 per door. The team makes its money on the buy.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">03</div>
+                <div class="reason-title">Supply-constrained Cobb County</div>
+                <div class="reason-body">Zero new construction over the next 8 quarters within the sub-market alongside strong job and population growth. Lockheed Martin ($4.5B in annual economic activity), the Battery Atlanta ($18B), Home Depot HQ, Truist, and 80,000 jobs at Cumberland Galleria sit minutes away.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">04</div>
+                <div class="reason-title">Cash flows from day one</div>
+                <div class="reason-body">97% occupied today with a 76% year-1 break-even occupancy that falls to ~68% as operations stabilize. This is not a turnaround story it is a value-add layered onto an already healthy income stream, financed with a fixed 6.25% agency loan at ~70% LTV.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROPERTY DATA -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Property Details</div>
+        <h2 class="sec-title fu">The asset, <em>by the numbers</em></h2>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px;" class="fu">
+            <div>
+                <p style="font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--t50);margin-bottom:8px;">Asset Snapshot</p>
+                <table class="data-table">
+                    <tr><td>Property</td><td>Harmony Grove Apartments</td></tr>
+                    <tr><td>Location</td><td>Marietta, GA Cobb County</td></tr>
+                    <tr><td>Total Units</td><td>75</td></tr>
+                    <tr><td>Unit Mix</td><td>~53% 2-bed, ~30% 1-bed, ~16% studio</td></tr>
+                    <tr><td>Condition</td><td>100% classic / unrenovated</td></tr>
+                    <tr><td>Occupancy</td><td>97% (5-year floor: 94%)</td></tr>
+                    <tr><td>Distance from Atlanta</td><td>15 minutes</td></tr>
+                </table>
+            </div>
+            <div>
+                <p style="font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--t50);margin-bottom:8px;">Capital Stack &amp; Debt</p>
+                <table class="data-table">
+                    <tr><td>Loan Type</td><td>Fixed-rate agency (Fannie Mae / Freddie Mac)</td></tr>
+                    <tr><td>Mortgage Rate</td><td>6.25% fixed (5-year term)</td></tr>
+                    <tr><td>Amortization</td><td>30 years</td></tr>
+                    <tr><td>Loan-to-Value</td><td>~70%</td></tr>
+                    <tr><td>Renovation Budget</td><td>~$1.0M + 10–15% contingency</td></tr>
+                    <tr><td>Working Capital Reserve</td><td>~$155,000</td></tr>
+                    <tr><td>Minimum LP Investment</td><td>$100,000</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div style="margin-top:32px;" class="fu">
+            <p style="font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--t50);margin-bottom:8px;">Rent Strategy</p>
+            <table class="data-table">
+                <tr><th>Metric</th><th>Value</th></tr>
+                <tr><td>Current Average Rent</td><td>$1,092</td></tr>
+                <tr><td>Today's Market Rent (Comparable Properties)</td><td>$1,435</td></tr>
+                <tr><td>Rent Premium per Renovated Unit</td><td>~+$175/month</td></tr>
+                <tr><td>Washer/Dryer Rental Program (per unit)</td><td>~+$50–$55/month</td></tr>
+                <tr><td>Existing Manager's Planned Renewal Increase</td><td>~+$75/unit at lease renewal</td></tr>
+                <tr><td>Renovation Scope</td><td>~50% of units at ~$12,000 per unit</td></tr>
+                <tr><td>New Revenue Streams (Other Income)</td><td>Trash fee (~$28/mo), pest control (~$5/mo)</td></tr>
+            </table>
+        </div>
+
+        <div style="margin-top:32px;" class="fu">
+            <p style="font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--t50);margin-bottom:8px;">Exit Sensitivity (5-Year Sale)</p>
+            <table class="data-table">
+                <tr><th>Scenario</th><th>Sale Price</th><th>Annual IRR</th><th>Cap Rate</th></tr>
+                <tr><td>Base Case</td><td>~$13.59M</td><td>~20%</td><td>Holds at 5.6%</td></tr>
+                <tr><td>Best Case</td><td>~$14.36M</td><td>~23%</td><td>Compresses</td></tr>
+                <tr><td>Worst Case</td><td>~$12.68M</td><td>~16.86%</td><td>Expands</td></tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- DUE DILIGENCE HIGHLIGHTS -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Physical Due Diligence</div>
+        <h2 class="sec-title fu">What we found <em>on site</em></h2>
+        <p class="sec-body fu" style="max-width:680px;">The team and their general contractor opened every door, turned on every faucet, looked at every electrical panel. Here is what the inspection produced and how the renovation budget already accounts for it.</p>
+        <div class="reasons-grid">
+            <div class="reason-card fu">
+                <div class="reason-num">01</div>
+                <div class="reason-title">Roofs in solid shape across 9 buildings</div>
+                <div class="reason-body">Newest roof is 2 years old; oldest is 5 years old. Across all 9 buildings on the property, the roofing was assessed and is expected to hold through the 5-year business plan.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">02</div>
+                <div class="reason-title">HVAC already replaced by the seller</div>
+                <div class="reason-body">The current owner replaced the HVAC systems prior to sale a meaningful capital item the buyer does not need to underwrite again.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">03</div>
+                <div class="reason-title">Electrical & plumbing already budgeted</div>
+                <div class="reason-body">No surprises. The renovation plan was built around bringing electrical and plumbing up to current standards. The general contractor quoted the scope on-site at a number consistent with the team's underwriting.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">04</div>
+                <div class="reason-title">Healthy contingency on top</div>
+                <div class="reason-body">10–15% contingency inside the $1M renovation budget, plus ~$155,000 of working capital reserves in the bank. Under-promise, over-deliver: unused contingency is returned.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLASS A vs CLASS B -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Investment Structure</div>
+        <h2 class="sec-title fu">Class A vs <em>Class B</em></h2>
+        <p class="sec-body fu" style="max-width:680px;">Two investment classes accommodate different goals. Class A is for investors prioritizing cash flow today; Class B is for investors prioritizing wealth growth over the 5-year hold.</p>
+        <table class="class-table fu">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="col-a">Class A</th>
+                    <th class="col-b">Class B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Preferred Return</td>
+                    <td class="col-a">11% / year</td>
+                    <td class="col-b">7% / year</td>
+                </tr>
+                <tr>
+                    <td>Priority of Cash Distributions</td>
+                    <td class="col-a">Priority paid before Class B</td>
+                    <td class="col-b">Behind Class A</td>
+                </tr>
+                <tr>
+                    <td>Share of Profits at Sale</td>
+                    <td class="col-a">Not entitled to upside</td>
+                    <td class="col-b">70% of profits</td>
+                </tr>
+                <tr>
+                    <td>Target Annual Rate of Return</td>
+                    <td class="col-a">~11%</td>
+                    <td class="col-b">~20%</td>
+                </tr>
+                <tr>
+                    <td>Equity Multiple (5-yr hold)</td>
+                    <td class="col-a">Capital preservation + yield</td>
+                    <td class="col-b">~2x ($100K to ~$201,781)</td>
+                </tr>
+                <tr>
+                    <td>Best For</td>
+                    <td class="col-a">Cash flow today</td>
+                    <td class="col-b">Long-term capital appreciation</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-top:28px;background:white;border-radius:16px;padding:28px 32px;border:1px solid var(--t06);" class="fu">
+            <p style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">Sample 5-Year Pathway for $100,000 in Class B</p>
+            <p style="font-size:15px;color:var(--t70);line-height:1.78;">Year 1 distributions are modest (~$2,300) because renovation is capital-intensive; year 2 steps to ~$4,700. Beginning in year 3, distributions reach the full $7,000 and begin catching up on the deferred amounts from years 1 and 2. At sale (~year 5), Class B receives its split of the profit. Total projected outcome: approximately <strong style="color:var(--text);">$201,781</strong> doubling the original $100,000, before adding the year-1 K-1 tax benefit of approximately $35,000.</p>
+        </div>
+    </div>
+</section>
+
+<!-- RENOVATION ROADMAP -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Renovation Roadmap</div>
+        <h2 class="sec-title fu">Phased to protect <em>occupancy</em></h2>
+        <p class="sec-body fu" style="max-width:680px;">The renovation is sequenced to protect occupancy and tenant goodwill while creating visible value at the asset. Exteriors first, interiors second residents feel the upgrade before any rent conversation arrives.</p>
+        <div class="reno-timeline">
+            <div class="reno-item fu">
+                <div class="reno-phase">Month 1–2</div>
+                <div class="reno-body"><strong>Onboarding and baseline.</strong> Lease-up disciplines installed, vendor onboarding, due diligence baseline established. New ancillary income streams (trash, pest, parking) introduced.</div>
+            </div>
+            <div class="reno-item fu">
+                <div class="reno-phase">Month 3</div>
+                <div class="reno-body"><strong>Exterior renovation begins.</strong> Fence repair, fresh paint, curb appeal, playground refresh, and the new clubhouse / BBQ-picnic area. Residents see value before any rent letter arrives.</div>
+            </div>
+            <div class="reno-item fu">
+                <div class="reno-phase">Month 9</div>
+                <div class="reno-body"><strong>Interior renovations begin.</strong> Kitchens, baths, countertops, cabinets, stainless appliances, in-unit washer/dryer where applicable. ~3 units renovated at a time; ~1 month downtime per unit.</div>
+            </div>
+            <div class="reno-item fu">
+                <div class="reno-phase">Two strategies</div>
+                <div class="reno-body"><strong>Tenant moves out at lease end</strong> unit renovated, full +$175 rent premium captured. <strong>Tenant stays</strong> offered an already-renovated unit to move into, then their previous unit is renovated. Either way, the renovation gets done.</div>
+            </div>
+            <div class="reno-item fu">
+                <div class="reno-phase">Break-even</div>
+                <div class="reno-body"><strong>Year-1 break-even occupancy: ~76%</strong> well below the 94% five-year occupancy floor. As operations stabilize, break-even falls to approximately 68%.</div>
+            </div>
+            <div class="reno-item fu">
+                <div class="reno-phase">Year 3 rent</div>
+                <div class="reno-body"><strong>Average effective rent year 3: ~$1,424</strong> still below today's market rent of $1,435. The underwriting is intentionally conservative.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Q&A -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Live Q&A May 19, 2026</div>
+        <h2 class="sec-title fu">Every question. <em>Every answer.</em></h2>
+        <p class="sec-body fu" style="margin-bottom:40px;">Every question fielded during the live session, restructured for clarity. Where multiple panelists answered, their contributions are stacked in the order they were given.</p>
+
+        <div class="qa-item fu">
+            <div class="qa-question">How would a potential economic recession impact the property's income and investors' targeted returns?</div>
+            <div class="qa-asker">Asked by Blaise Nzeda</div>
+            <div class="qa-answer">
+                <div class="qa-speaker">Dr. Kirk Campbell</div>
+                <div class="qa-text">"Over the last 5 years a period that included COVID, high inflation, and a lot of economic uncertainty this property never dropped below 94% occupied. People need somewhere to live, and the rents here are basement-floor versus a $1,435 market. We've also conservatively underwritten: there are ancillary income streams (~$28/month trash fee, ~$5/month pest control) the current owner is not charging that we will. Even in our cap-rate-expansion worst case, the property still sells at a profit and delivers approximately 16.86% annual return."</div>
+            </div>
+            <div class="qa-answer">
+                <div class="qa-speaker">J. Claude Mouaffi</div>
+                <div class="qa-text">"Look at the data from the two recent downturns. In 2008, when single-family homes were losing value and people were losing their homes, apartment rent growth was phenomenal people moved into apartments. After the initial shock of COVID in 2020, the next 7–8 months produced the highest rent growth of the decade. History tells us what tends to happen when the market dislocates."</div>
+            </div>
+            <div class="qa-answer">
+                <div class="qa-speaker">Fedna Morency</div>
+                <div class="qa-text">"By the time we finish the renovation and add the rent premium, we will still be below market. If anything, more people will want to move into this particular spot because of the rate of the rent."</div>
+            </div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Given the age of the property, during due diligence what is the condition of the roof and HVAC?</div>
+            <div class="qa-asker">Asked by Antoine Tounou</div>
+            <div class="qa-answer">
+                <div class="qa-speaker">J. Claude Mouaffi</div>
+                <div class="qa-text">"During due diligence we had the roofs checked. The newest roof on site is 2 years old; the oldest is 5 years old across a total of 9 buildings on the property. The HVAC has already been replaced by the current seller. Everything that we checked is expected to hold through the business plan."</div>
+            </div>
+            <div class="qa-answer">
+                <div class="qa-speaker">Dr. Kirk Campbell</div>
+                <div class="qa-text">"The video playing right now is from our due diligence aerial shots of the property, our team on site with the property manager and our general contractors. We opened every single door, turned on every faucet, looked at every electrical panel. Yes, the asset has age but that is precisely where the opportunity sits: a 1964-vintage comp just traded at $155,000 per door."</div>
+            </div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Are there electrical or plumbing renovations required to meet code, or did the seller already address that?</div>
+            <div class="qa-asker">Asked by Antoine Tounou</div>
+            <div class="qa-answer">
+                <div class="qa-speaker">J. Claude Mouaffi</div>
+                <div class="qa-text">"The electrical upgrades are already in our renovation plan we knew before sending the offer. We're buying this asset because there is an opportunity to come in, fix things, and bring it to market. Nothing was a surprise. Our general contractor was on site with us during due diligence and gave us a quote in the same scale we had built into the underwriting."</div>
+            </div>
+            <div class="qa-answer">
+                <div class="qa-speaker">Dr. Kirk Campbell</div>
+                <div class="qa-text">"We've already accounted for it inside a very healthy renovation budget $1M with a 10–15% contingency on top. Under-promise, over-deliver."</div>
+            </div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">How many deals has the partnership taken full cycle purchase, manage, and sell?</div>
+            <div class="qa-asker">Asked by Gabriel Kuiatse</div>
+            <div class="qa-answer">
+                <div class="qa-speaker">Dr. Kirk Campbell</div>
+                <div class="qa-text">"I am personally invested across 10 different deals. Our most recent acquisition closed with operating partners who have taken multiple deals full cycle they have over $270 million of assets under management, with many of them located right within the Atlanta market. So while I personally have not yet taken a deal full cycle, the operating partners taking deals full cycle is exactly what they do. Real estate is a team sport, and this is a plain-vanilla value-add strategy we are very confident in."</div>
+            </div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">What are the closest amenities at this location, and what's coming?</div>
+            <div class="qa-asker">Asked by Antoine Tounou</div>
+            <div class="qa-answer">
+                <div class="qa-speaker">Fedna Morency</div>
+                <div class="qa-text">"There is a beautiful golf course nearby it is where Usher goes, so the area knows it. A family-friendly water park is about 28 minutes away. The Atlanta United soccer practice facility is close by, and the Battery Atlanta (where the Braves play) is just minutes away and hosts concerts and family-friendly activities year-round."</div>
+            </div>
+            <div class="qa-answer">
+                <div class="qa-speaker">Dr. Kirk Campbell</div>
+                <div class="qa-text">"On the asset itself, there isn't currently a clubhouse or a barbecue area we're going to introduce both. Behind where Claude is standing in the video, we're turning that area into a clubhouse, putting in grills and a picnic area, and fixing up the playground to be more family-friendly. Within a 6-mile radius there are roughly 38 miles of trails along the Chattahoochee, plus excellent employment Lockheed Martin, the Battery, Cumberland Galleria's ~80,000 jobs, the Home Depot HQ, and Truist."</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LESSONS LEARNT -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Operating Wisdom</div>
+        <h2 class="sec-title fu">Lessons from the <em>partnership</em></h2>
+        <div class="lessons-grid">
+            <div class="lesson-card fu">
+                <div class="lesson-cat">On Mindset</div>
+                <ul class="lesson-list">
+                    <li>Let your money work harder than you do, in a more tax-advantaged manner.</li>
+                    <li>You build wealth passively even an old 401(k) can earn more than the stock market over a 5-year hold.</li>
+                    <li>Real estate is one of the oldest, most reliable engines of generational wealth.</li>
+                </ul>
+            </div>
+            <div class="lesson-card fu">
+                <div class="lesson-cat">On Risk &amp; Underwriting</div>
+                <ul class="lesson-list">
+                    <li>You make your money on the buy entry basis at $103K/door versus $141K comp avg and $155K most-recent sale.</li>
+                    <li>Be conservative. Out of 120+ deals evaluated, only two checked every box.</li>
+                    <li>Don't over-leverage. Fixed-rate agency loan, ~70% LTV.</li>
+                    <li>Contingencies on top of contingencies 10–15% inside a $1M renovation budget.</li>
+                </ul>
+            </div>
+            <div class="lesson-card fu">
+                <div class="lesson-cat">On Operations</div>
+                <ul class="lesson-list">
+                    <li>Lease up with a property manager already running comparable plans in the market.</li>
+                    <li>Phase exteriors before interiors so residents feel value first.</li>
+                    <li>Listen to on-site staff and tenants they tell you what residents will pay for.</li>
+                    <li>Capture every ancillary income stream the current owner has left on the table.</li>
+                </ul>
+            </div>
+            <div class="lesson-card fu">
+                <div class="lesson-cat">On Resilience &amp; Trust</div>
+                <ul class="lesson-list">
+                    <li>Multifamily is a basic human need and historically grew rent through downturns.</li>
+                    <li>Walk the building open every door, turn on every faucet, look at every panel.</li>
+                    <li>Get the general contractor on site during DD; not after.</li>
+                    <li>Real estate is a team sport surround yourself with operators who have done it before.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MEMORABLE QUOTES -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Direct from the Webinar</div>
+        <h2 class="sec-title fu">Lines worth <em>remembering</em></h2>
+        <div class="quotes-grid">
+            <div class="quote-card fu">
+                <div class="quote-text">"You make your money on the buy and we're making a lot of money on this buy."</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"This is the needle in the haystack. We looked at 120 of these deals; this is one of two that made sense for us."</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"Real estate is a team sport. We're not reinventing the wheel this is a very plain-vanilla value-add strategy we're extremely confident in."</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"In 2008, when single-family was losing value, rent growth in apartments was phenomenal. After COVID, we experienced the highest rent growth of the last decade."</div>
+                <div class="quote-attr">J. Claude Mouaffi</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"We understand the culture, we understand what residents ask for. We heard them and we're going to add the value."</div>
+                <div class="quote-attr">Fedna Morency</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"You can build wealth passively. You can have your money work hard for you."</div>
+                <div class="quote-attr">Fedna Morency</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CHEAT SHEET -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Single-Page Summary</div>
+        <h2 class="sec-title fu">Investment <em>cheat sheet</em></h2>
+        <div class="cheat-grid">
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">The Asset</div>
+                <div class="cheat-row"><span class="cheat-key">Property</span><span class="cheat-val">Harmony Grove Apts</span></div>
+                <div class="cheat-row"><span class="cheat-key">Location</span><span class="cheat-val">Marietta, GA</span></div>
+                <div class="cheat-row"><span class="cheat-key">Units</span><span class="cheat-val">75 across 9 bldgs</span></div>
+                <div class="cheat-row"><span class="cheat-key">Condition</span><span class="cheat-val">100% unrenovated</span></div>
+                <div class="cheat-row"><span class="cheat-key">Occupancy</span><span class="cheat-val">97% (floor: 94%)</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">The Deal</div>
+                <div class="cheat-row"><span class="cheat-key">Purchase Price</span><span class="cheat-val">$7.75M</span></div>
+                <div class="cheat-row"><span class="cheat-key">Per Door</span><span class="cheat-val">$103,000</span></div>
+                <div class="cheat-row"><span class="cheat-key">6-Mo Comp Avg</span><span class="cheat-val">$141,000/unit</span></div>
+                <div class="cheat-row"><span class="cheat-key">Mortgage Rate</span><span class="cheat-val">6.25% fixed</span></div>
+                <div class="cheat-row"><span class="cheat-key">LTV</span><span class="cheat-val">~70%</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">Investor Economics</div>
+                <div class="cheat-row"><span class="cheat-key">Min Investment</span><span class="cheat-val">$100,000</span></div>
+                <div class="cheat-row"><span class="cheat-key">Class A Pref</span><span class="cheat-val">11%/yr (cash flow)</span></div>
+                <div class="cheat-row"><span class="cheat-key">Class B Pref</span><span class="cheat-val">7%/yr + 70% profits</span></div>
+                <div class="cheat-row"><span class="cheat-key">Target IRR</span><span class="cheat-val">~20% (Class B)</span></div>
+                <div class="cheat-row"><span class="cheat-key">Year-1 K-1 Loss</span><span class="cheat-val">~$35,000</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- APPRECIATION -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Closing the Session</div>
+        <h2 class="sec-title fu">Appreciation <em>received</em></h2>
+        <div class="appr-grid">
+            <div class="appr-card fu">
+                <div class="appr-name">Blaise Nzeda</div>
+                <div class="appr-text">"Thank you!"</div>
+            </div>
+            <div class="appr-card fu">
+                <div class="appr-name">Antoine Tounou</div>
+                <div class="appr-text">"Thank you."</div>
+            </div>
+            <div class="appr-card fu">
+                <div class="appr-name">Stantafferta Sparrow</div>
+                <div class="appr-text">"Thank you."</div>
+            </div>
+            <div class="appr-card fu">
+                <div class="appr-name">Celestine Douglas</div>
+                <div class="appr-text">"Thanks."</div>
+            </div>
+            <div class="appr-card fu">
+                <div class="appr-name">Dr. Kirk Campbell</div>
+                <div class="appr-text">"Thank you so much for taking time out of your extremely busy schedules and spending a couple of minutes with us. We're really excited about this opportunity."</div>
+            </div>
+            <div class="appr-card fu">
+                <div class="appr-name">Fedna Morency</div>
+                <div class="appr-text">"Thank you so much for being here to just hear us out. We are in this together you can build wealth passively, and you can have your money work hard for you."</div>
+            </div>
+            <div class="appr-card fu">
+                <div class="appr-name">J. Claude Mouaffi</div>
+                <div class="appr-text">"Thank you to everyone who showed up tonight. Looking forward to having you on board."</div>
+            </div>
+            <div class="appr-card fu">
+                <div class="appr-name">Mila Penn Chazak</div>
+                <div class="appr-text">"Looking forward to seeing you all be partners in this asset."</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container">
+        <div class="sec-lbl" style="color:rgba(255,255,255,0.45);text-align:center;">Next Steps</div>
+        <h2 class="sec-title" style="text-align:center;margin-bottom:16px;">Ready to <em>move forward?</em></h2>
+        <p class="sec-body" style="text-align:center;max-width:560px;margin:0 auto 36px;">The cash flow portal has the offering documents, the due diligence video, and the soft commitment form. Book a call with Dr. Campbell if you want to walk through any assumption line by line.</p>
+        <div class="cta-btns">
+            <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="btn btn-orange">Create Investment Account</a>
+            <a href="https://calendly.com/kirk-a-campbell-md/milapenn_investment_call" target="_blank" rel="noopener" class="btn btn-primary">Book a Call with Dr. Campbell</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p class="footer-text">
+        Mila Penn &amp; Chazak &nbsp;·&nbsp; invest@milapennchazak.com<br>
+        This page is intended for accredited investors only and is not a public solicitation. Past performance is not indicative of future results.<br>
+        This is a private, unindexed page shared only with invited guests.
+    </p>
+</footer>
+
+<script>
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
