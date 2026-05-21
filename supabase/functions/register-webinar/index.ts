@@ -33,6 +33,7 @@ function getPartnerEmails(): Record<string, string> {
     "Dr. Stanley A. Okoro":                    "drokoro@georgiaplastic.com",
     "Dr. Obi Ugwonali":                        "obi@medtransgo.com",
     "Medval Capital (Edwin Valverde)":         "edwinv@medvalcapital.com",
+    "FaithBridge Capital (Dr. Ntiense Robin)": "robin@faithbridgecap.com",
   };
 }
 
