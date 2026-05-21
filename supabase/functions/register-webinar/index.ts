@@ -10,7 +10,7 @@
 //   RESEND_FROM            — e.g. webinar@milapennchazak.com (must be verified in Resend)
 //   PARTNER_EAGLECAP_EMAIL — email for EagleCap Ventures (Fedna Morency)
 //   PARTNER_KYNECTIC_EMAIL — email for Kynectic Capital (Anita Akpunku)
-//   PARTNER_P1_EMAIL       — email for P1 Capital Investment (Leah & Jeremy)
+//   PARTNER_P1_EMAIL       — email for Priority 1 Capital (Leah & Jeremy)
 //   (Dr. Stanley A. Okoro, Dr. Obi Ugwonali, Medval Capital emails are hardcoded below)
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
@@ -29,7 +29,7 @@ function getPartnerEmails(): Record<string, string> {
   return {
     "EagleCap Ventures (Fedna Morency)":      Deno.env.get("PARTNER_EAGLECAP_EMAIL") ?? "",
     "Kynectic Capital (Anita Akpunku)":        Deno.env.get("PARTNER_KYNECTIC_EMAIL") ?? "",
-    "P1 Capital Investment (Leah & Jeremy)":   Deno.env.get("PARTNER_P1_EMAIL") ?? "",
+    "Priority 1 Capital (Leah & Jeremy)":      Deno.env.get("PARTNER_P1_EMAIL") ?? "",
     "Dr. Stanley A. Okoro":                    "drokoro@georgiaplastic.com",
     "Dr. Obi Ugwonali":                        "obi@medtransgo.com",
     "Medval Capital (Edwin Valverde)":         "edwinv@medvalcapital.com",
