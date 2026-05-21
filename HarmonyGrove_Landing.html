@@ -1053,10 +1053,11 @@
                             <option>Website</option>
                         </select>
                     </div>
-                    <div class="reg-field" style="display:none;">
+                    <div class="reg-field">
                         <label class="reg-label" for="rf-partner">Are you working with one of our partners?</label>
-                        <select class="reg-select" id="rf-partner" name="partner_referral">
-                            <option value="No" selected>No</option>
+                        <select class="reg-select" id="rf-partner" name="partner_referral" required>
+                            <option value="" disabled selected>Select one…</option>
+                            <option value="No">No / Mila Penn Chazak direct</option>
                             <option>EagleCap Ventures (Fedna Morency)</option>
                             <option>Kynectic Capital (Anita Akpunku)</option>
                             <option>P1 Capital Investment (Leah &amp; Jeremy)</option>
