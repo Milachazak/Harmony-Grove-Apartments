@@ -11,7 +11,7 @@
 //   PARTNER_EAGLECAP_EMAIL — email for EagleCap Ventures (Fedna Morency)
 //   PARTNER_KYNECTIC_EMAIL — email for Kynectic Capital (Anita Akpunku)
 //   PARTNER_P1_EMAIL       — email for Priority 1 Capital (Leah & Jeremy)
-//   (Dr. Stanley A. Okoro, Dr. Obi Ugwonali, Medval Capital emails are hardcoded below)
+//   (Dr. Stanley A. Okoro, Dr. Obi Ugwonali, Medval Capital, FaithBridge Capital, Vanguard Consultants emails are hardcoded below)
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -34,6 +34,7 @@ function getPartnerEmails(): Record<string, string> {
     "Dr. Obi Ugwonali":                        "obi@medtransgo.com",
     "Medval Capital (Edwin Valverde)":         "edwinv@medvalcapital.com",
     "FaithBridge Capital (Dr. Ntiense Robin)": "robin@faithbridgecap.com",
+    "Vanguard Consultants LLC (Blaise Nzeda)": "bnzeda@gmail.com",
   };
 }
 
