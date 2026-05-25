@@ -8,10 +8,7 @@
 //   PIPEDRIVE_API_KEY      — 65486fc56e170311f9f8010f5f18c374c51122bc
 //   RESEND_API_KEY         — re_Tj4bUWkG_C4cyMNfXqSYiamVEbtnryoYJ
 //   RESEND_FROM            — e.g. webinar@milapennchazak.com (must be verified in Resend)
-//   PARTNER_EAGLECAP_EMAIL — email for EagleCap Ventures (Fedna Morency)
-//   PARTNER_KYNECTIC_EMAIL — email for Kynectic Capital (Anita Akpunku)
-//   PARTNER_P1_EMAIL       — email for Priority 1 Capital (Leah & Jeremy)
-//   (Dr. Stanley A. Okoro, Dr. Obi Ugwonali, Medval Capital, FaithBridge Capital, Vanguard Consultants emails are hardcoded below)
+//   (All partner emails are now hardcoded in getPartnerEmails() below)
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -27,9 +24,9 @@ const WEBINAR_ID = "84922604577"; // Zoom Webinar ID (spaces removed)
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {
   return {
-    "EagleCap Ventures (Fedna Morency)":      Deno.env.get("PARTNER_EAGLECAP_EMAIL") ?? "",
-    "Kynectic Capital (Anita Akpunku)":        Deno.env.get("PARTNER_KYNECTIC_EMAIL") ?? "",
-    "Priority 1 Capital (Leah & Jeremy)":      Deno.env.get("PARTNER_P1_EMAIL") ?? "",
+    "EagleCap Ventures (Fedna Morency)":       "fedna@eaglecapventures.com",
+    "Kynectic Capital (Anita Akpunku)":        "anita@kynecticcap.com",
+    "Priority 1 Capital (Leah & Jeremy)":      "lkrebs@p1capitalinvestment.com",
     "Dr. Stanley A. Okoro":                    "drokoro@georgiaplastic.com",
     "Dr. Obi Ugwonali":                        "obi@medtransgo.com",
     "Medval Capital (Edwin Valverde)":         "edwinv@medvalcapital.com",
