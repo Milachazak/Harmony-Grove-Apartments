@@ -283,6 +283,23 @@ function email30Min(name: string, joinUrl: string): string {
   `);
 }
 
+function emailAnpaThanks(name: string): string {
+  return wrap(`
+    <h1>It was great seeing you, ${name}.</h1>
+    <p>Thank you for stopping by our booth at <strong>ANPA Chicago 2026</strong> and for the conversation about Harmony Grove Apartments. Moments like these &mdash; connecting with fellow physicians who care about building lasting wealth on their own terms &mdash; are why we built Mila Penn Chazak in the first place.</p>
+    <p>As promised, here is everything you need to dive deeper into the offering:</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">🎥</span><span class="box-val"><strong>A special invitation to join us at our investor webinar.</strong> A complete walkthrough of the deal &mdash; the property, the numbers, the team, and your path to participating as a limited partner.</span></div>
+    </div>
+    <div class="btn-wrap"><a href="https://www.milapennchazak.com/harmonygrove" class="btn">Special Invitation to Join Us at the Webinar &rarr;</a></div>
+    <p>If a question comes to mind before you join us, just reply to this email. We read every message personally.</p>
+    <div class="sig">
+      <div class="sig-name">Dr. Kirk A. Campbell<br>Rosanmi Campbell<br>J. Claude Mouaffi</div>
+      <div class="sig-co">Mila Penn Chazak</div>
+    </div>
+  `);
+}
+
 function emailPartnerNotify(
   partnerName: string,
   reg: { first_name: string; last_name: string; email: string; phone: string }
@@ -328,27 +345,32 @@ serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    // 1. Zoom registration
+    // ─── ANPA branch: skip Zoom + standard welcome + reminders, just send a thank-you ───
+    const isAnpa = (referral_source || "").trim().toLowerCase() === "anpa";
+
     let joinUrl = "";
     let zoomRegistrantId = "";
-    try {
-      const token = await getZoomToken();
-      const zoom  = await registerOnZoom(token, { first_name, last_name, email, phone });
-      joinUrl         = zoom.join_url;
-      zoomRegistrantId = zoom.registrant_id;
-    } catch (err) {
-      console.error("Zoom error:", err);
-      // Non-fatal — continue registration without Zoom link
+
+    if (!isAnpa) {
+      // 1. Zoom registration (only for non-ANPA leads)
+      try {
+        const token = await getZoomToken();
+        const zoom  = await registerOnZoom(token, { first_name, last_name, email, phone });
+        joinUrl         = zoom.join_url;
+        zoomRegistrantId = zoom.registrant_id;
+      } catch (err) {
+        console.error("Zoom error:", err);
+      }
     }
 
-    // 2. Save to Supabase
+    // 2. Save to Supabase (always)
     await supabase.from("webinar_registrants").upsert(
       { first_name, last_name, email, phone, referral_source, partner_referral,
         zoom_join_url: joinUrl, zoom_registrant_id: zoomRegistrantId },
       { onConflict: "email" }
     );
 
-    // 3. Pipedrive deal
+    // 3. Pipedrive deal (always — including ANPA, tagged via referral_source)
     try {
       await createPipedriveDeal({ first_name, last_name, email, phone, referral_source, partner_referral });
     } catch (err) {
@@ -357,48 +379,62 @@ serve(async (req) => {
 
     const emailErrors: string[] = [];
 
-    // 4. Welcome email (immediate)
-    try {
-      const r = await sendEmail({
-        to: email,
-        subject: `You're in, ${first_name} — see you Monday`,
-        html: emailWelcome(first_name, joinUrl),
-      });
-      if (r.statusCode >= 400 || r.error) emailErrors.push(`Welcome email: ${JSON.stringify(r)}`);
-    } catch (err) {
-      emailErrors.push(`Welcome email threw: ${err}`);
-    }
+    if (isAnpa) {
+      // 4a. ANPA thank-you email (only — no Zoom email, no reminders)
+      try {
+        const r = await sendEmail({
+          to: email,
+          subject: `Thank you for stopping by — Mila Penn Chazak at ANPA Chicago 2026`,
+          html: emailAnpaThanks(first_name),
+        });
+        if (r.statusCode >= 400 || r.error) emailErrors.push(`ANPA email: ${JSON.stringify(r)}`);
+      } catch (err) {
+        emailErrors.push(`ANPA email threw: ${err}`);
+      }
+    } else {
+      // 4. Welcome email (immediate)
+      try {
+        const r = await sendEmail({
+          to: email,
+          subject: `You're in, ${first_name} — see you Monday`,
+          html: emailWelcome(first_name, joinUrl),
+        });
+        if (r.statusCode >= 400 || r.error) emailErrors.push(`Welcome email: ${JSON.stringify(r)}`);
+      } catch (err) {
+        emailErrors.push(`Welcome email threw: ${err}`);
+      }
 
-    // 5. Scheduled reminders (only if still in the future)
-    const now = Date.now();
-    const reminders = [
-      { at: "2026-06-05T14:00:00.000Z", subject: `Three days away, ${first_name} — Harmony Grove Webinar`,   html: email3Day(first_name, joinUrl) },
-      { at: "2026-06-08T13:00:00.000Z", subject: `Today's the day, ${first_name} — Harmony Grove is tonight`, html: emailDayOf(first_name, joinUrl) },
-      { at: "2026-06-08T22:00:00.000Z", subject: `${first_name} — we start in 30 minutes`,                    html: email30Min(first_name, joinUrl) },
-    ];
-    for (const r of reminders) {
-      if (new Date(r.at).getTime() > now) {
-        try {
-          await sendEmail({ to: email, subject: r.subject, html: r.html, scheduledAt: r.at });
-        } catch (err) {
-          emailErrors.push(`Reminder (${r.at}) threw: ${err}`);
+      // 5. Scheduled reminders (only if still in the future)
+      const now = Date.now();
+      const reminders = [
+        { at: "2026-06-05T14:00:00.000Z", subject: `Three days away, ${first_name} — Harmony Grove Webinar`,   html: email3Day(first_name, joinUrl) },
+        { at: "2026-06-08T13:00:00.000Z", subject: `Today's the day, ${first_name} — Harmony Grove is tonight`, html: emailDayOf(first_name, joinUrl) },
+        { at: "2026-06-08T22:00:00.000Z", subject: `${first_name} — we start in 30 minutes`,                    html: email30Min(first_name, joinUrl) },
+      ];
+      for (const r of reminders) {
+        if (new Date(r.at).getTime() > now) {
+          try {
+            await sendEmail({ to: email, subject: r.subject, html: r.html, scheduledAt: r.at });
+          } catch (err) {
+            emailErrors.push(`Reminder (${r.at}) threw: ${err}`);
+          }
         }
       }
-    }
 
-    // 6. Partner notification
-    if (partner_referral && partner_referral !== "No") {
-      const partnerEmails = getPartnerEmails();
-      const partnerEmail  = partnerEmails[partner_referral];
-      if (partnerEmail) {
-        try {
-          await sendEmail({
-            to: partnerEmail,
-            subject: `New Harmony Grove registration from your network: ${first_name} ${last_name}`,
-            html: emailPartnerNotify(partner_referral, { first_name, last_name, email, phone }),
-          });
-        } catch (err) {
-          emailErrors.push(`Partner email threw: ${err}`);
+      // 6. Partner notification
+      if (partner_referral && partner_referral !== "No") {
+        const partnerEmails = getPartnerEmails();
+        const partnerEmail  = partnerEmails[partner_referral];
+        if (partnerEmail) {
+          try {
+            await sendEmail({
+              to: partnerEmail,
+              subject: `New Harmony Grove registration from your network: ${first_name} ${last_name}`,
+              html: emailPartnerNotify(partner_referral, { first_name, last_name, email, phone }),
+            });
+          } catch (err) {
+            emailErrors.push(`Partner email threw: ${err}`);
+          }
         }
       }
     }
