@@ -559,26 +559,15 @@
 }
 .anpa-bar-inner {
   max-width: 1280px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px;
 }
-.anpa-bar-left { display: flex; align-items: center; gap: 18px; flex: 1 1 auto; min-width: 0; }
-.anpa-logo { height: 56px; width: auto; background: #fff; padding: 6px 12px; border-radius: 6px; flex-shrink: 0; }
-.anpa-bar-text { min-width: 0; }
-.anpa-bar-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #FF9A60; margin-bottom: 4px; }
-.anpa-bar-headline { font-family: var(--ff-d); font-size: 18px; font-weight: 500; line-height: 1.3; color: #fff; }
-.anpa-bar-cta {
-  background: #E8651A; color: #fff; text-decoration: none;
-  padding: 12px 22px; border-radius: 50px; font-weight: 700; font-size: 14px;
-  letter-spacing: 0.02em; white-space: nowrap; transition: transform .2s, box-shadow .2s;
-}
-.anpa-bar-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(232,101,26,0.35); }
+.anpa-logo { height: 72px; width: auto; background: #fff; padding: 8px 16px; border-radius: 8px; }
+.anpa-bar-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #FF9A60; margin-top: 4px; }
+.anpa-bar-headline { font-family: var(--ff-d); font-size: 20px; font-weight: 500; line-height: 1.3; color: #fff; max-width: 720px; }
 @media (max-width: 720px) {
-  .anpa-bar { padding: 14px 16px; }
-  .anpa-bar-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .anpa-bar-left { gap: 14px; width: 100%; }
-  .anpa-logo { height: 44px; padding: 4px 8px; }
-  .anpa-bar-headline { font-size: 15px; }
-  .anpa-bar-cta { width: 100%; text-align: center; padding: 14px 22px; }
+  .anpa-bar { padding: 18px 16px; }
+  .anpa-logo { height: 56px; padding: 6px 10px; }
+  .anpa-bar-headline { font-size: 16px; }
 }
 
 /* ═══════════════ ANPA LEAD FORM ═══════════════ */
@@ -666,14 +655,9 @@
 <!-- ═══════════════ ANPA WELCOME BAR ═══════════════ -->
 <div class="anpa-bar">
   <div class="anpa-bar-inner">
-    <div class="anpa-bar-left">
-      <img src="ANPA-Footer-Logo2.png" alt="ANPA" class="anpa-logo">
-      <div class="anpa-bar-text">
-        <div class="anpa-bar-eyebrow">Welcome, ANPA members</div>
-        <div class="anpa-bar-headline">An exclusive briefing on Harmony Grove Apartments</div>
-      </div>
-    </div>
-    <a href="#anpa-form" class="anpa-bar-cta">Get the deal package →</a>
+    <img src="ANPA-Footer-Logo2.png" alt="ANPA" class="anpa-logo">
+    <div class="anpa-bar-eyebrow">Welcome, ANPA members</div>
+    <div class="anpa-bar-headline">An exclusive briefing on Harmony Grove Apartments</div>
   </div>
 </div>
 
@@ -682,10 +666,10 @@
   <div class="anpa-form-grid">
     <div class="anpa-form-left">
       <div class="anpa-form-eyebrow">Built by physicians, for physicians</div>
-      <h2 class="anpa-form-title">A private offering for the<br>Mila Penn Chazak network.</h2>
-      <p class="anpa-form-sub">Drop your details below and we'll send the full deal package &mdash; investment memorandum, market analysis, and renovation playbook &mdash; plus an invitation to a one-on-one call with our team.</p>
+      <h2 class="anpa-form-title">Welcome, ANPA Members.</h2>
+      <p class="anpa-form-sub">Drop your details below to receive the full deal package, including the investment memorandum, market analysis, and renovation playbook.</p>
       <ul class="anpa-form-bullets">
-        <li>Co-founded by <strong>Dr. Kirk A. Campbell</strong> &mdash; an orthopedic surgeon who built this for his peers</li>
+        <li>Co-founded by <strong>Dr. Kirk A. Campbell</strong> &mdash; a physician who built this for his peers</li>
         <li>Three physician partners already on the platform: <strong>Dr. Stanley A. Okoro</strong>, <strong>Dr. Obi Ugwonali</strong>, <strong>Dr. Ntiense Robin</strong></li>
         <li>Accredited-investor offering &middot; Strict confidentiality</li>
       </ul>
@@ -698,29 +682,14 @@
         </div>
         <div class="anpa-field"><label>Email</label><input type="email" name="email" required></div>
         <div class="anpa-field"><label>Phone</label><input type="tel" name="phone" required></div>
-        <div class="anpa-field">
-          <label>Are you working with one of our partners?</label>
-          <select name="partner_referral" required>
-            <option value="" disabled selected>Select one&hellip;</option>
-            <option value="No">No / Mila Penn Chazak direct</option>
-            <option>EagleCap Ventures (Fedna Morency)</option>
-            <option>Kynectic Capital (Anita Akpunku)</option>
-            <option>Priority 1 Capital (Leah &amp; Jeremy)</option>
-            <option>Dr. Stanley A. Okoro</option>
-            <option>Dr. Obi Ugwonali</option>
-            <option>Medval Capital (Edwin Valverde)</option>
-            <option>FaithBridge Capital (Dr. Ntiense Robin)</option>
-            <option>Vanguard Consultants LLC (Blaise Nzeda)</option>
-          </select>
-        </div>
-        <div class="anpa-form-error" id="anpa-form-error"></div>
-        <button type="submit" class="anpa-submit" id="anpa-submit">Send Me the Deal Package &rarr;</button>
+<div class="anpa-form-error" id="anpa-form-error"></div>
+        <button type="submit" class="anpa-submit" id="anpa-submit">Confirm My Interest &rarr;</button>
         <div class="anpa-form-fine">Accredited investors only &middot; We never share your information.</div>
       </form>
       <div class="anpa-form-success" id="anpa-form-success">
         <div class="anpa-success-icon">&#10003;</div>
         <h3>You're in.</h3>
-        <p>Your deal package is on its way. A member of our team will reach out within 24 hours to schedule a private call.</p>
+        <p>Your interest has been recorded. Our team will be in touch shortly with the full deal package.</p>
       </div>
     </div>
   </div>
@@ -1132,7 +1101,7 @@
         <p>Join us live for a complete walkthrough of Harmony Grove - the deal, the team, the market, and your path to participating as a limited partner.</p>
         <div class="final-cta-btns">
             <a href="#anpa-form" class="btn btn-orange-lg">Get the Full Deal Package →</a>
-            <a href="https://calendly.com/milapenncapital" target="_blank" class="btn btn-hero-white">Book a Private Call</a>
+            
         </div>
     </div>
 </section>
@@ -1170,7 +1139,7 @@
             </div>
         </div>
 
-        <div class="zoom-grid">
+        <div class="zoom-grid" style="grid-template-columns: minmax(0,640px); justify-content: center;">
             <!-- Custom Registration Form -->
             <div class="zoom-embed-wrap fu" id="reg-card">
                 <div class="zoom-embed-header">
@@ -1206,6 +1175,7 @@
                         <label class="reg-label" for="rf-source">Where did you hear about us?</label>
                         <select class="reg-select" id="rf-source" name="referral_source" required>
                             <option value="" disabled selected>Select one…</option>
+                            <option>ANPA</option>
                             <option>Phone</option>
                             <option>Text</option>
                             <option>Email</option>
@@ -1216,23 +1186,8 @@
                             <option>Website</option>
                         </select>
                     </div>
-                    <div class="reg-field">
-                        <label class="reg-label" for="rf-partner">Are you working with one of our partners?</label>
-                        <select class="reg-select" id="rf-partner" name="partner_referral" required>
-                            <option value="" disabled selected>Select one…</option>
-                            <option value="No">No / Mila Penn Chazak direct</option>
-                            <option>EagleCap Ventures (Fedna Morency)</option>
-                            <option>Kynectic Capital (Anita Akpunku)</option>
-                            <option>Priority 1 Capital (Leah &amp; Jeremy)</option>
-                            <option>Dr. Stanley A. Okoro</option>
-                            <option>Dr. Obi Ugwonali</option>
-                            <option>Medval Capital (Edwin Valverde)</option>
-                            <option>FaithBridge Capital (Dr. Ntiense Robin)</option>
-                            <option>Vanguard Consultants LLC (Blaise Nzeda)</option>
-                        </select>
-                    </div>
-                    <div class="reg-error" id="reg-error"></div>
-                    <button type="submit" class="reg-submit" id="reg-submit">Send Me the Deal Package →</button>
+<div class="reg-error" id="reg-error"></div>
+                    <button type="submit" class="reg-submit" id="reg-submit">Confirm My Interest →</button>
                 </form>
 
                 <!-- Success State -->
@@ -1243,33 +1198,6 @@
                     <p>Your deal package is on the way. A member of our team will reach out within 24 hours to schedule a private call.</p>
                     
                     <p class="sig">- Kirk, Rosanmi & Claude · Mila Penn Chazak</p>
-                </div>
-            </div>
-            <!-- Event details -->
-            <div class="reg-details">
-                <div class="reg-event-card fu">
-                    <div class="reg-event-label">Upcoming Event</div>
-                    <div class="reg-event-title">Harmony Grove<br>Apartments</div>
-                    
-                    <div class="reg-detail-row"><span class="reg-detail-icon">🕕</span><span class="reg-detail-val"><strong>6:30 PM ET</strong> - approx. 75 minutes</span></div>
-                    <div class="reg-detail-row"><span class="reg-detail-icon">💻</span><span class="reg-detail-val">Live on Zoom - link sent on registration</span></div>
-                    <div class="reg-detail-row"><span class="reg-detail-icon">🏠</span><span class="reg-detail-val">Harmony Grove, Marietta, GA · 75 Units</span></div>
-                    <div class="reg-detail-row"><span class="reg-detail-icon">🔒</span><span class="reg-detail-val">Accredited Investors Only · Private Offering</span></div>
-                </div>
-                <div class="reg-will-cover fu">
-                    <div class="reg-cover-title">What we'll cover</div>
-                    <ul class="reg-cover-list">
-                        <li>Full deal walkthrough &amp; financial projections</li>
-                        <li>The Marietta/Cobb County market thesis</li>
-                        <li>Value-add renovation plan &amp; timeline</li>
-                        <li>Tax strategy &amp; depreciation benefits</li>
-                        <li>Waterfall structure &amp; preferred returns</li>
-                        <li>Live Q&amp;A with Kirk, Rosanmi &amp; J. Claude</li>
-                    </ul>
-                </div>
-                <div class="gc fu" style="padding:22px 26px;display:flex;align-items:center;gap:14px;">
-                    <span style="font-size:26px;flex-shrink:0;">🔒</span>
-                    <p style="font-size:13.5px;color:var(--t70);line-height:1.60;">This offering is limited to accredited investors. Your information is held in strict confidence.</p>
                 </div>
             </div>
         </div>
@@ -1298,7 +1226,7 @@
             <div class="footer-links">
                 <a href="https://www.milapennchazak.com/harmonygrove" target="_blank" class="fl">Mila Penn Chazak</a>
                 <a href="#anpa-form" class="fl">Get Deal Package</a>
-                <a href="https://calendly.com/milapenncapital" target="_blank" class="fl">Book a Call</a>
+                
             </div>
         </div>
     </div>
@@ -1481,7 +1409,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         errorEl.textContent = msg;
         errorEl.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Me the Deal Package →';
+        submitBtn.textContent = 'Confirm My Interest →';
     }
 })();
 
@@ -1511,7 +1439,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       email:      form.email.value.trim(),
       phone:      form.phone.value.trim(),
       referral_source: 'ANPA Chicago 2026',
-      partner_referral: form.partner_referral.value,
+      partner_referral: 'No',
     };
     try {
       const res = await fetch(EDGE_FN_URL, {
@@ -1522,15 +1450,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.success !== false) {
         okEl.classList.add('show');
+        // Booth mode: thank-you flashes for 3 seconds, then refresh for next signup
+        setTimeout(() => { window.location.reload(); }, 3000);
       } else {
         errEl.textContent = (data && data.error) || 'Something went wrong. Please try again.';
         btn.disabled = false;
-        btn.textContent = 'Send Me the Deal Package →';
+        btn.textContent = 'Confirm My Interest →';
       }
     } catch (err) {
       errEl.textContent = 'Network error. Please try again.';
       btn.disabled = false;
-      btn.textContent = 'Send Me the Deal Package →';
+      btn.textContent = 'Confirm My Interest →';
     }
   });
 })();
