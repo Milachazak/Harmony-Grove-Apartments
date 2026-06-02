@@ -553,7 +553,8 @@
 .anpa-bar {
   background: linear-gradient(135deg, #0A1628 0%, #0F2347 100%);
   color: #fff;
-  padding: 16px 24px;
+  /* extra top padding clears the fixed #nav (which is ~72px tall) */
+  padding: 96px 24px 32px;
   position: relative;
   z-index: 50;
 }
@@ -565,7 +566,7 @@
 .anpa-bar-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #FF9A60; margin-top: 4px; }
 .anpa-bar-headline { font-family: var(--ff-d); font-size: 20px; font-weight: 500; line-height: 1.3; color: #fff; max-width: 720px; }
 @media (max-width: 720px) {
-  .anpa-bar { padding: 18px 16px; }
+  .anpa-bar { padding: 80px 16px 24px; }
   .anpa-logo { height: 56px; padding: 6px 10px; }
   .anpa-bar-headline { font-size: 16px; }
 }
