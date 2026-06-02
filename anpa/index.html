@@ -1412,7 +1412,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // ── ANPA Lead Form
 (function(){
   const EDGE_FN_URL = 'https://lyetmekozlqxzovipflv.supabase.co/functions/v1/register-webinar';
-  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5ZXRtZWtvemxxeHpvdmlwZmx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1MjQzNjUsImV4cCI6MjA2MzEwMDM2NX0.placeholder';
+  const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5ZXRtZWtvemxxeHpvdmlwZmx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMTk0NDMsImV4cCI6MjA5Mjg5NTQ0M30.en2ODQvcWEW04gyNo2Y8yi-EZnNQUxPB2m6AicioFd0';
   const form = document.getElementById('anpa-lead-form');
   if (!form) return;
   const errEl = document.getElementById('anpa-form-error');
@@ -1444,7 +1444,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     try {
       const res = await fetch(EDGE_FN_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${ANON_KEY}`,
+        },
         body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => ({}));
