@@ -1363,7 +1363,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             email:            form.email.value.trim(),
             phone:            form.phone.value.trim(),
             referral_source:  form.referral_source.value,
-            partner_referral: form.partner_referral.value,
+            partner_referral: 'No',
         };
 
         // Basic front-end validation
@@ -1391,12 +1391,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             if (result.success) {
                 form.style.display = 'none';
                 successEl.style.display = 'flex';
-                if (result.join_url) {
-                    joinLink.href = result.join_url;
-                    joinLink.style.display = 'inline-block';
-                }
                 // Scroll success into view
                 document.getElementById('reg-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Booth mode: thank-you flashes for 3 seconds, then refresh for next signup
+                setTimeout(() => { window.location.reload(); }, 3000);
             } else {
                 throw new Error(result.error || 'Something went wrong.');
             }
