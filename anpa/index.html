@@ -804,23 +804,6 @@
     </div>
 </section>
 
-<div><a href="#anpa-form" class="btn btn-primary">Secure Your Spot</a></div>
-    </div>
-</div>
-
-<!-- Partner Strip -->
-<div class="strip">
-    <div class="container">
-        <div class="strip-inner">
-            <img src="Mila Penn Logo.png" alt="Mila Penn Chazak" class="strip-logo">
-            <span style="color:rgba(10,22,40,0.22);font-size:22px;font-weight:300;">×</span>
-            <img src="Chazak Logo.png" alt="Mila Penn Chazak" class="strip-logo">
-            <span style="width:1px;height:32px;background:var(--t10);margin:0 8px;"></span>
-            <span style="font-size:13px;color:var(--t50);letter-spacing:.08em;">Brought to you by Mila Penn Chazak</span>
-        </div>
-    </div>
-</div>
-
 <!-- ═══════════════ STATS DARK BANNER ═══════════════ -->
 <div class="stats-dark">
     <div class="stats-dark-inner">
@@ -1425,7 +1408,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     e.preventDefault();
     errEl.textContent = '';
     if (!form.first_name.value.trim() || !form.last_name.value.trim() ||
-        !form.email.value.trim() || !form.phone.value.trim()) {
+        !form.email.value.trim() || !form.phone.value.trim() ||
+        !form.referral_source.value) {
       errEl.textContent = 'Please fill in every field.';
       return;
     }
@@ -1440,7 +1424,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       last_name:  form.last_name.value.trim(),
       email:      form.email.value.trim(),
       phone:      form.phone.value.trim(),
-      referral_source: 'ANPA Chicago 2026',
+      referral_source: form.referral_source.value,
       partner_referral: 'No',
     };
     try {
