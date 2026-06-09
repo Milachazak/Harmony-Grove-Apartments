@@ -19,7 +19,7 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const WEBINAR_ID = "83714757132"; // Zoom Webinar ID 837 1475 7132 (spaces removed)
+const WEBINAR_ID = "82375789024"; // Zoom Webinar ID 823 7578 9024 (spaces removed)
 
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {
@@ -220,10 +220,10 @@ function wrap(content: string): string {
 function emailWelcome(name: string, joinUrl: string): string {
   return wrap(`
     <h1>You're in, ${name}.</h1>
-    <p>We're really glad you're here. The Harmony Grove webinar is set for <strong>Monday, June 8th at 6:30 PM ET</strong>, and we've put a lot of care into making sure it's worth your time.</p>
+    <p>We're really glad you're here. The Harmony Grove webinar is set for <strong>Monday, June 15th at 6:30 PM ET</strong>, and we've put a lot of care into making sure it's worth your time.</p>
     <p>This is a real conversation — not a pitch deck read out loud. We'll walk through the property, the numbers, the market, and how the deal is structured. You'll have plenty of time to ask us anything.</p>
     <div class="box">
-      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, June 8, 2026</strong></span></div>
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, June 15, 2026</strong></span></div>
       <div class="box-row"><span class="box-icon">🕕</span><span class="box-val"><strong>6:30 PM ET</strong> &nbsp;·&nbsp; approximately 75 minutes</span></div>
       <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom &nbsp;·&nbsp; your personal link is below</span></div>
       <div class="box-row"><span class="box-icon">🏠</span><span class="box-val">Harmony Grove Apartments &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; 75 Units</span></div>
@@ -244,7 +244,7 @@ function email3Day(name: string, joinUrl: string): string {
     <p>Just a heads up — the Harmony Grove webinar is this <strong>Monday at 6:30 PM ET</strong>.</p>
     <p>We'll be walking through the full picture: the asset, the numbers, the renovation plan, and how this deal is structured for investors like you. Bring your questions — we'll save real time for them.</p>
     <div class="box">
-      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, June 8, 2026 &nbsp;·&nbsp; 6:30 PM ET</strong></span></div>
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, June 15, 2026 &nbsp;·&nbsp; 6:30 PM ET</strong></span></div>
       <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">Approximately 75 minutes</span></div>
     </div>
     <div class="btn-wrap"><a href="${joinUrl}" class="btn">Your Zoom Link →</a></div>
@@ -312,7 +312,7 @@ function emailPartnerNotify(
       <div class="box-row"><span class="box-icon">👤</span><span class="box-val"><strong>${reg.first_name} ${reg.last_name}</strong></span></div>
       <div class="box-row"><span class="box-icon">📧</span><span class="box-val">${reg.email}</span></div>
       <div class="box-row"><span class="box-icon">📞</span><span class="box-val">${reg.phone}</span></div>
-      <div class="box-row"><span class="box-icon">📅</span><span class="box-val">Registered for Monday, June 8, 2026 · 6:30 PM ET</span></div>
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val">Registered for Monday, June 15, 2026 · 6:30 PM ET</span></div>
     </div>
     <p>We'll take care of them on the webinar side. Feel free to reach out to them directly in the meantime — they're expecting to hear from you.</p>
     <p>Thank you for the introduction. We're grateful for this partnership.</p>
@@ -407,9 +407,9 @@ serve(async (req) => {
       // 5. Scheduled reminders (only if still in the future)
       const now = Date.now();
       const reminders = [
-        { at: "2026-06-05T14:00:00.000Z", subject: `Three days away, ${first_name} — Harmony Grove Webinar`,   html: email3Day(first_name, joinUrl) },
-        { at: "2026-06-08T13:00:00.000Z", subject: `Today's the day, ${first_name} — Harmony Grove is tonight`, html: emailDayOf(first_name, joinUrl) },
-        { at: "2026-06-08T22:00:00.000Z", subject: `${first_name} — we start in 30 minutes`,                    html: email30Min(first_name, joinUrl) },
+        { at: "2026-06-12T14:00:00.000Z", subject: `Three days away, ${first_name} — Harmony Grove Webinar`,   html: email3Day(first_name, joinUrl) },
+        { at: "2026-06-15T13:00:00.000Z", subject: `Today's the day, ${first_name} — Harmony Grove is tonight`, html: emailDayOf(first_name, joinUrl) },
+        { at: "2026-06-15T22:00:00.000Z", subject: `${first_name} — we start in 30 minutes`,                    html: email30Min(first_name, joinUrl) },
       ];
       for (const r of reminders) {
         if (new Date(r.at).getTime() > now) {
