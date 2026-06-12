@@ -19,7 +19,8 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const WEBINAR_ID = "82375789024"; // Zoom Webinar ID 823 7578 9024 (spaces removed)
+const WEBINAR_ID = "82375789024"; // Zoom Webinar ID 823 7578 9024 (spaces removed) — standard /harmonygrove flow
+const WEBINAR_ID_ANPA = "81291983940"; // Zoom Webinar ID 812 9198 3940 — ANPA-exclusive webinar, June 20 2026 12:30 PM ET
 
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {
@@ -55,10 +56,11 @@ async function getZoomToken(): Promise<string> {
 
 async function registerOnZoom(
   token: string,
-  reg: { first_name: string; last_name: string; email: string; phone: string }
+  reg: { first_name: string; last_name: string; email: string; phone: string },
+  webinarId: string = WEBINAR_ID
 ): Promise<{ join_url: string; registrant_id: string }> {
   const res = await fetch(
-    `https://api.zoom.us/v2/webinars/${WEBINAR_ID}/registrants`,
+    `https://api.zoom.us/v2/webinars/${webinarId}/registrants`,
     {
       method: "POST",
       headers: { "Authorization": `Bearer ${token}`, "Content-Type": "application/json" },
@@ -155,11 +157,13 @@ function ascii(s: string): string {
 }
 
 async function sendEmail(opts: {
-  to: string; subject: string; html: string; scheduledAt?: string;
+  to: string; subject: string; html: string; scheduledAt?: string; fromName?: string;
 }) {
   // ascii() strips any invisible/non-ASCII chars that would break HTTP headers
-  const key  = ascii(Deno.env.get("RESEND_API_KEY") ?? "");
-  const from = ascii(`Kirk, Rosanmi & Claude - Mila Penn Chazak <${Deno.env.get("RESEND_FROM") ?? "invest@milapennchazak.com"}>`);
+  const key      = ascii(Deno.env.get("RESEND_API_KEY") ?? "");
+  const mailbox  = Deno.env.get("RESEND_FROM") ?? "invest@milapennchazak.com";
+  const fromName = opts.fromName ?? "Kirk, Rosanmi & Claude - Mila Penn Chazak";
+  const from     = ascii(`${fromName} <${mailbox}>`);
 
   const body: Record<string, unknown> = {
     from, to: [opts.to], subject: opts.subject, html: opts.html,
@@ -283,20 +287,64 @@ function email30Min(name: string, joinUrl: string): string {
   `);
 }
 
-function emailAnpaThanks(name: string): string {
-  return wrap(`
-    <h1>It was great seeing you, ${name}.</h1>
-    <p>Thank you for stopping by our booth at <strong>ANPA Chicago 2026</strong> and for the conversation about Harmony Grove Apartments. Moments like these &mdash; connecting with fellow physicians who care about building lasting wealth on their own terms &mdash; are why we built Mila Penn Chazak in the first place.</p>
-    <p>As promised, here is everything you need to dive deeper into the offering:</p>
-    <div class="box">
-      <div class="box-row"><span class="box-icon">🎥</span><span class="box-val"><strong>A special invitation to join us at our investor webinar.</strong> A complete walkthrough of the deal &mdash; the property, the numbers, the team, and your path to participating as a limited partner.</span></div>
-    </div>
-    <div class="btn-wrap"><a href="https://www.milapennchazak.com/harmonygrove" class="btn">Special Invitation to Join Us at the Webinar &rarr;</a></div>
-    <p>If a question comes to mind before you join us, just reply to this email. We read every message personally.</p>
+// ─── ANPA-EXCLUSIVE WEBINAR (June 20, 2026 · 12:30 PM ET) ─────────────────────
+const ANPA_SIG = `
     <div class="sig">
-      <div class="sig-name">Dr. Kirk A. Campbell<br>Rosanmi Campbell<br>J. Claude Mouaffi</div>
+      <div class="sig-name">Dr. Kirk A. Campbell &amp; J. Claude Mouaffi</div>
       <div class="sig-co">Mila Penn Chazak</div>
+    </div>`;
+
+function emailAnpaWelcome(name: string, joinUrl: string): string {
+  return wrap(`
+    <h1>You're registered, ${name}.</h1>
+    <p>Thank you for registering for our <strong>ANPA-exclusive investor webinar</strong> on Harmony Grove Apartments. We're glad you'll be joining us, and we've reserved your spot.</p>
+    <p>This is a real conversation, built for fellow physicians and high-income professionals &mdash; not a pitch deck read out loud. We'll walk through the property, the numbers, the market, and how the deal is structured, with plenty of time to ask us anything.</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Saturday, June 20, 2026</strong></span></div>
+      <div class="box-row"><span class="box-icon">🕧</span><span class="box-val"><strong>12:30 PM ET</strong> &nbsp;·&nbsp; approximately 75 minutes</span></div>
+      <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom &nbsp;·&nbsp; your personal link is below</span></div>
+      <div class="box-row"><span class="box-icon">🏠</span><span class="box-val">Harmony Grove Apartments &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; 75 Units</span></div>
     </div>
+    <div class="btn-wrap"><a href="${joinUrl}" class="btn">Join the Webinar →</a></div>
+    <p>Save that link somewhere easy to find. We'll send you a couple of reminders as the date approaches &mdash; you don't need to do anything else.</p>
+    <p>If a question comes to mind beforehand, just reply here. We read every email.</p>
+    ${ANPA_SIG}
+  `);
+}
+
+function emailAnpa3Day(name: string, joinUrl: string): string {
+  return wrap(`
+    <h1>A few days away, ${name}.</h1>
+    <p>Just a heads up &mdash; our ANPA-exclusive Harmony Grove webinar is this <strong>Saturday, June 20 at 12:30 PM ET</strong>.</p>
+    <p>We'll walk through the full picture: the asset, the numbers, the renovation plan, and how this deal is structured for investors like you. Bring your questions &mdash; we'll save real time for them.</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Saturday, June 20, 2026 &nbsp;·&nbsp; 12:30 PM ET</strong></span></div>
+      <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">Approximately 75 minutes</span></div>
+    </div>
+    <div class="btn-wrap"><a href="${joinUrl}" class="btn">Your Zoom Link →</a></div>
+    <p>See you Saturday.</p>
+    ${ANPA_SIG}
+  `);
+}
+
+function emailAnpaDayOf(name: string, joinUrl: string): string {
+  return wrap(`
+    <h1>Today's the day, ${name}.</h1>
+    <p>Our ANPA-exclusive Harmony Grove webinar is <strong>today at 12:30 PM ET</strong>. We're looking forward to it.</p>
+    <p>Grab a quiet room, a good chair, and your questions. This is the real conversation &mdash; no fluff, no rehearsed script. Just the deal, the market, and honest answers.</p>
+    <div class="btn-wrap"><a href="${joinUrl}" class="btn">Join Today at 12:30 PM ET →</a></div>
+    <p>If something comes up and you can't make it, reply to this email and we'll make sure you get the recording.</p>
+    ${ANPA_SIG}
+  `);
+}
+
+function emailAnpa30Min(name: string, joinUrl: string): string {
+  return wrap(`
+    <h1>We start in 30 minutes.</h1>
+    <p>${name}, the room is open. Jump in whenever you're ready &mdash; you can join a few minutes early and we'll be there.</p>
+    <div class="btn-wrap"><a href="${joinUrl}" class="btn">Join Now →</a></div>
+    <p>See you in a few.</p>
+    ${ANPA_SIG}
   `);
 }
 
@@ -345,22 +393,25 @@ serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    // ─── ANPA branch: skip Zoom + standard welcome + reminders, just send a thank-you ───
+    // ─── ANPA branch: register on the ANPA-exclusive June 20 webinar with its own
+    //     Zoom webinar ID + a thank-you/confirmation email from Kirk & Claude ───
     const isAnpa = (referral_source || "").trim().toLowerCase() === "anpa";
 
     let joinUrl = "";
     let zoomRegistrantId = "";
 
-    if (!isAnpa) {
-      // 1. Zoom registration (only for non-ANPA leads)
-      try {
-        const token = await getZoomToken();
-        const zoom  = await registerOnZoom(token, { first_name, last_name, email, phone });
-        joinUrl         = zoom.join_url;
-        zoomRegistrantId = zoom.registrant_id;
-      } catch (err) {
-        console.error("Zoom error:", err);
-      }
+    // 1. Zoom registration — ANPA leads go on the June 20 webinar, everyone else on the standard one
+    try {
+      const token = await getZoomToken();
+      const zoom  = await registerOnZoom(
+        token,
+        { first_name, last_name, email, phone },
+        isAnpa ? WEBINAR_ID_ANPA : WEBINAR_ID
+      );
+      joinUrl          = zoom.join_url;
+      zoomRegistrantId = zoom.registrant_id;
+    } catch (err) {
+      console.error("Zoom error:", err);
     }
 
     // 2. Save to Supabase (always)
@@ -380,16 +431,36 @@ serve(async (req) => {
     const emailErrors: string[] = [];
 
     if (isAnpa) {
-      // 4a. ANPA thank-you email (only — no Zoom email, no reminders)
+      const ANPA_FROM = "Dr. Kirk A. Campbell & J. Claude Mouaffi - Mila Penn Chazak";
+
+      // 4a. ANPA confirmation email (immediate) — from Kirk & Claude, with the Zoom join link
       try {
         const r = await sendEmail({
           to: email,
-          subject: `Thank you for stopping by — Mila Penn Chazak at ANPA Chicago 2026`,
-          html: emailAnpaThanks(first_name),
+          fromName: ANPA_FROM,
+          subject: `You're registered, ${first_name} — Harmony Grove webinar, June 20`,
+          html: emailAnpaWelcome(first_name, joinUrl),
         });
-        if (r.statusCode >= 400 || r.error) emailErrors.push(`ANPA email: ${JSON.stringify(r)}`);
+        if (r.statusCode >= 400 || r.error) emailErrors.push(`ANPA welcome email: ${JSON.stringify(r)}`);
       } catch (err) {
-        emailErrors.push(`ANPA email threw: ${err}`);
+        emailErrors.push(`ANPA welcome email threw: ${err}`);
+      }
+
+      // 5a. ANPA reminders (only if still in the future). Webinar: June 20, 2026, 12:30 PM ET.
+      const nowA = Date.now();
+      const anpaReminders = [
+        { at: "2026-06-17T14:00:00.000Z", subject: `A few days away, ${first_name} — Harmony Grove webinar Saturday`, html: emailAnpa3Day(first_name, joinUrl) },
+        { at: "2026-06-20T13:00:00.000Z", subject: `Today's the day, ${first_name} — Harmony Grove webinar at 12:30 PM ET`, html: emailAnpaDayOf(first_name, joinUrl) },
+        { at: "2026-06-20T16:00:00.000Z", subject: `${first_name} — we start in 30 minutes`, html: emailAnpa30Min(first_name, joinUrl) },
+      ];
+      for (const r of anpaReminders) {
+        if (new Date(r.at).getTime() > nowA) {
+          try {
+            await sendEmail({ to: email, fromName: ANPA_FROM, subject: r.subject, html: r.html, scheduledAt: r.at });
+          } catch (err) {
+            emailErrors.push(`ANPA reminder (${r.at}) threw: ${err}`);
+          }
+        }
       }
     } else {
       // 4. Welcome email (immediate)
