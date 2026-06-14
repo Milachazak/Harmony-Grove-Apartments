@@ -808,11 +808,11 @@
 <nav id="nav">
     <div class="nav-logos">
         <a href="https://www.milapennchazak.com/harmonygrove" rel="noopener">
-            <img src="Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+            <img src="Mila%20Penn%20Logo.png" alt="Mila Penn Chazak" class="nav-logo">
         </a>
         <div class="nav-sep"></div>
         <a href="https://www.milapennchazak.com/harmonygrove" rel="noopener">
-            <img src="Chazak Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+            <img src="Chazak%20Logo.png" alt="Mila Penn Chazak" class="nav-logo">
         </a>
     </div>
     <div class="nav-links">
@@ -1119,7 +1119,7 @@
         </div>
         <div class="team-grid">
             <div class="gc team-card fu">
-                <div class="team-photo-wrap"><img src="Kirk.png" alt="Dr. Kirk A. Campbell" class="team-photo"></div>
+                <div class="team-photo-wrap"><img src="Kirk.png" alt="Dr. Kirk A. Campbell" class="team-photo" loading="lazy"></div>
                 <div class="team-info">
                     <div class="team-firm">Mila Penn Chazak</div>
                     <h3 class="team-name">Dr. Kirk A. Campbell</h3>
@@ -1128,7 +1128,7 @@
                 </div>
             </div>
             <div class="gc team-card fu">
-                <div class="team-photo-wrap"><img src="Rosanmi Campbell.png" alt="Rosanmi M. Campbell" class="team-photo"></div>
+                <div class="team-photo-wrap"><img src="Rosanmi%20Campbell.png" alt="Rosanmi M. Campbell" class="team-photo" loading="lazy"></div>
                 <div class="team-info">
                     <div class="team-firm">Mila Penn Chazak</div>
                     <h3 class="team-name">Rosanmi M. Campbell</h3>
@@ -1137,7 +1137,7 @@
                 </div>
             </div>
             <div class="gc team-card fu">
-                <div class="team-photo-wrap"><img src="Jean Claude Headshot.png" alt="J. Claude Mouaffi" class="team-photo"></div>
+                <div class="team-photo-wrap"><img src="Jean%20Claude%20Headshot.png" alt="J. Claude Mouaffi" class="team-photo" loading="lazy"></div>
                 <div class="team-info">
                     <div class="team-firm">Mila Penn Chazak</div>
                     <h3 class="team-name">J. Claude Mouaffi</h3>
@@ -1146,9 +1146,9 @@
                 </div>
             </div>
             <div class="gc team-card fu">
-                <div class="team-photo-wrap"><img src="Dr.%20Okoro.png" alt="Dr. Stanley A. Okoro" class="team-photo"></div>
+                <div class="team-photo-wrap"><img src="Dr.%20Okoro.png" alt="Dr. Stanley A. Okoro" class="team-photo" loading="lazy"></div>
                 <div class="team-info">
-                    <div class="team-firm">Mila Penn Chazak</div>
+                    <div class="team-firm">Enhance Holdings LLC</div>
                     <h3 class="team-name">Dr. Stanley A. Okoro</h3>
                     <div class="team-role">Co-Principal GP</div>
                     <p class="team-bio">World-class plastic surgeon based in metro Atlanta with his practice located approximately nine minutes from Harmony Grove. A long-time real estate investor, Dr. Okoro brings on-the-ground submarket knowledge and a physician investor's perspective on the asset and the surrounding corridor.</p>
@@ -1245,8 +1245,8 @@
     <div class="container">
         <div class="footer-inner">
             <div class="footer-logos">
-                <img src="Mila Penn Logo.png" alt="Mila Penn Chazak" class="footer-logo">
-                <img src="Chazak Logo.png" alt="Mila Penn Chazak" class="footer-logo">
+                <img src="Mila%20Penn%20Logo.png" alt="Mila Penn Chazak" class="footer-logo">
+                <img src="Chazak%20Logo.png" alt="Mila Penn Chazak" class="footer-logo">
             </div>
             <div class="footer-copy">© 2026 Mila Penn Chazak · All Rights Reserved</div>
             <div class="footer-links">
@@ -1267,6 +1267,14 @@ const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.07, rootMargin: '0px 0px -48px 0px' });
 document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+// iOS Safari safety: if IntersectionObserver hasn't kicked in within 1.2s, force everything visible
+setTimeout(() => {
+    document.querySelectorAll('.fu:not(.vis)').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100) el.classList.add('vis');
+    });
+}, 1200);
 
 // Stagger grid children
 document.querySelectorAll('.why-grid,.hl-grid,.team-grid,.test-grid,.reno-grid,.ba-grid,.stats-dark-grid').forEach(grid => {
