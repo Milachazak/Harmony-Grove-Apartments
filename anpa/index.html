@@ -475,7 +475,20 @@
 
         /* ── TEAM ── */
         .team-sec { background:linear-gradient(180deg,rgba(230,237,249,0.55) 0%,rgba(240,244,252,0.10) 100%); }
-        .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:36px; }
+        .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:36px; }
+        @media (max-width:1100px) { .team-grid { grid-template-columns:repeat(2,1fr) !important; } }
+
+        /* Strategic Partners (XSITE) sub-section inside team */
+        .strat-partners { margin-top:48px; padding:32px 36px; background:#FBFCFE; border:1px solid rgba(10,22,40,0.08); border-radius:var(--r-card); }
+        .strat-header { display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid rgba(10,22,40,0.10); }
+        .strat-logo { height:44px; width:auto; max-width:220px; object-fit:contain; }
+        .strat-label { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(10,22,40,0.55); }
+        .strat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+        @media (max-width:760px) { .strat-grid { grid-template-columns:1fr; } }
+        .strat-card { display:flex; align-items:center; gap:18px; padding:14px; background:#fff; border:1px solid rgba(10,22,40,0.06); border-radius:14px; }
+        .strat-photo { width:84px; height:84px; border-radius:50%; object-fit:cover; object-position:center 22%; flex-shrink:0; border:2px solid #fff; box-shadow:0 0 0 1px rgba(10,22,40,0.10); }
+        .strat-name { font-family:var(--ff-d); font-size:18px; font-weight:600; color:#0A1628; line-height:1.15; }
+        .strat-role { font-size:12px; color:rgba(10,22,40,0.55); letter-spacing:.10em; text-transform:uppercase; margin-top:4px; font-weight:600; }
         .team-card { overflow:hidden; padding:0; }
         .team-photo-wrap { overflow:hidden; }
         .team-photo { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center 12%; transition:transform .6s ease; }
@@ -1132,7 +1145,41 @@
                     <p class="team-bio">Founding Principal of Mila Penn Chazak, with deep expertise in real estate capital formation and alternative investment structuring. He brings a proven deal-sourcing framework and capital markets perspective that complements the firm's operational strength.</p>
                 </div>
             </div>
+            <div class="gc team-card fu">
+                <div class="team-photo-wrap"><img src="Dr.%20Okoro.png" alt="Dr. Stanley A. Okoro" class="team-photo"></div>
+                <div class="team-info">
+                    <div class="team-firm">Mila Penn Chazak</div>
+                    <h3 class="team-name">Dr. Stanley A. Okoro</h3>
+                    <div class="team-role">Co-Principal GP</div>
+                    <p class="team-bio">World-class plastic surgeon based in metro Atlanta with his practice located approximately nine minutes from Harmony Grove. A long-time real estate investor, Dr. Okoro brings on-the-ground submarket knowledge and a physician investor's perspective on the asset and the surrounding corridor.</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Strategic Partners: XSITE Capital -->
+        <div class="strat-partners fu">
+            <div class="strat-header">
+                <img src="partners/XSITE%20logo%20Black.png" alt="XSITE Capital Investment" class="strat-logo">
+                <span class="strat-label">Strategic Partners</span>
+            </div>
+            <div class="strat-grid">
+                <div class="strat-card">
+                    <img src="partners/Leslie-web-opt.jpg" alt="Leslie Awasom" class="strat-photo">
+                    <div>
+                        <div class="strat-name">Leslie Awasom</div>
+                        <div class="strat-role">XSITE Capital</div>
+                    </div>
+                </div>
+                <div class="strat-card">
+                    <img src="partners/Tenny-web-opt.jpg" alt="Tenny Tolofari" class="strat-photo">
+                    <div>
+                        <div class="strat-name">Tenny Tolofari</div>
+                        <div class="strat-role">XSITE Capital</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="mission-quote fu">
             "We believe in investing with purpose, managing with integrity, and growing together - providing a modern path to financial freedom that complements a traditional portfolio and restores the kind of passive income opportunities physicians once took for granted."
         </div>
