@@ -267,7 +267,23 @@
         .sec-divider { display:flex; align-items:center; gap:16px; margin-bottom:40px; }
         .sec-divider::before,.sec-divider::after { content:''; flex:1; height:1px; background:var(--t10); }
         .sec-divider span { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--t30); white-space:nowrap; }
-    </style>
+    
+        /* === XSITE Strategic Partners section === */
+        .xsite-sec { padding: 60px 0; background: linear-gradient(180deg, #FBFCFE 0%, #F4F7FC 100%); }
+        .xsite-sec .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+        .xsite-header { display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:wrap; margin-bottom:14px; }
+        .xsite-logo { height:50px; width:auto; max-width:240px; object-fit:contain; }
+        .xsite-label { font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#64748B; }
+        .xsite-sub { text-align:center; font-size:14px; color:#475569; max-width:560px; margin:0 auto 32px; line-height:1.6; }
+        .xsite-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:920px; margin:0 auto; }
+        @media (max-width: 760px) { .xsite-grid { grid-template-columns:1fr; max-width:380px; } }
+        .xsite-card { background:#fff; border:1px solid rgba(10,22,40,0.08); border-radius:16px; padding:22px 18px; text-align:center; transition:transform .25s, box-shadow .25s; }
+        .xsite-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(10,22,40,0.08); }
+        .xsite-photo { width:110px; height:110px; border-radius:50%; object-fit:cover; object-position:center 22%; display:block; margin:0 auto 14px; border:3px solid #fff; box-shadow:0 0 0 1px rgba(10,22,40,0.10); }
+        .xsite-name { font-family: Georgia, 'Times New Roman', serif; font-size:18px; font-weight:600; color:#0A1628; line-height:1.2; margin-bottom:4px; }
+        .xsite-role { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#94A3B8; }
+
+</style>
 </head>
 <body>
 
@@ -703,6 +719,35 @@
                 <span class="quote-mark">"</span>
                 <div class="quote-text">When people are retreating, they are advancing. I never in my lifetime saw a perfect economic season to invest. You follow your fundamentals, and you take action.</div>
                 <div class="quote-attr">Claude Mouaffi</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- XSITE STRATEGIC PARTNERS -->
+<section class="xsite-sec">
+    <div class="container">
+        <div class="xsite-header">
+            <img src="../partners/XSITE%20logo%20Black.png" alt="XSITE Capital Investment" class="xsite-logo">
+            <span class="xsite-label">Strategic Partners</span>
+        </div>
+        <p class="xsite-sub">Our strategic partners at XSITE Capital bring institutional multifamily expertise and a track record of disciplined operations across the Southeast.</p>
+        <div class="xsite-grid">
+            <div class="xsite-card">
+                <img src="../partners/Julius-web-opt.jpg" alt="Dr. Julius Oni" class="xsite-photo">
+                <div class="xsite-name">Dr. Julius Oni</div>
+                <div class="xsite-role">XSITE Capital</div>
+            </div>
+            <div class="xsite-card">
+                <img src="../partners/Leslie-web-opt.jpg" alt="Leslie Awasom" class="xsite-photo">
+                <div class="xsite-name">Leslie Awasom</div>
+                <div class="xsite-role">XSITE Capital</div>
+            </div>
+            <div class="xsite-card">
+                <img src="../partners/Tenny-web-opt.jpg" alt="Tenny Tolofari" class="xsite-photo">
+                <div class="xsite-name">Tenny Tolofari</div>
+                <div class="xsite-role">XSITE Capital</div>
             </div>
         </div>
     </div>
