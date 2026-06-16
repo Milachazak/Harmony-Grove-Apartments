@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Tax Strategy Briefing | Mila Penn Chazak · with Kim Hopkins, EA</title>
+    <meta name="description" content="An exclusive members-only briefing for the Mila Penn Chazak community. Kim Hopkins, EA (Doc Wealth | Physician Taxes) on the 2026 tax-saving strategies high earners are quietly using, depreciation, cost segregation, and more. Tuesday, June 23, 6:30 PM ET.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --bg: #F0F4FC; --bg-sec: #E6EDF9; --cream:#FBF9F4;
+            --blue: #1244F5; --blue-dk: #0A2ECC; --blue-xl: #4A78FF;
+            --orange: #E8651A; --orange-dk: #BF4A0C; --orange-lt: #FF8640;
+            --gold: #C9A24B; --gold-lt:#E6B450; --emerald:#10B981; --emerald-lt:#34D399;
+            --navy: #050E1F; --navy-2: #0A1830; --navy-3:#0D2050;
+            --text: #0A1628; --t70: rgba(10,22,40,0.70); --t50: rgba(10,22,40,0.50);
+            --t30: rgba(10,22,40,0.30); --t10: rgba(10,22,40,0.10); --t06: rgba(10,22,40,0.06);
+            --w70: rgba(255,255,255,0.70); --w50: rgba(255,255,255,0.50); --w14:rgba(255,255,255,0.14);
+            --r-pill: 100px;
+            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-b: 'Jost', -apple-system, sans-serif;
+        }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size:16px; line-height:1.6; overflow-x:hidden; }
+
+        /* NAV */
+        #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:14px 48px;
+            display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+            background:rgba(7,16,33,0.55); backdrop-filter:blur(30px) saturate(180%); -webkit-backdrop-filter:blur(30px) saturate(180%);
+            border-bottom:1px solid rgba(255,255,255,0.08); transition:background .4s; }
+        #nav.solid { background:rgba(7,16,33,0.92); }
+        .nav-logos { display:flex; align-items:center; gap:13px; background:#fff; padding:7px 15px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.20); }
+        .nav-logo { height:23px; width:auto; object-fit:contain; }
+        .nav-sep { width:1px; height:19px; background:rgba(10,22,40,0.16); }
+        @media(max-width:680px){ .nav-logos{ padding:6px 12px; gap:10px; } .nav-logo{ height:20px; } }
+        .nav-badge { font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+            color:#0A1628; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); padding:6px 15px; border-radius:var(--r-pill); }
+        .nav-cta { padding:10px 22px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
+            background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; text-decoration:none;
+            box-shadow:0 4px 16px rgba(18,68,245,0.32); transition:all .25s; white-space:nowrap; }
+        .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(18,68,245,0.44); }
+        @media(max-width:680px){ #nav{padding:11px 18px;} .nav-badge{display:none;} }
+
+        /* BUTTONS */
+        .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
+        .btn-gold { padding:15px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); color:#1A1304; border-radius:var(--r-pill); box-shadow:0 6px 26px rgba(201,162,75,0.40); }
+        .btn-gold:hover { transform:translateY(-2px); box-shadow:0 10px 36px rgba(201,162,75,0.55); }
+        .btn-ghost { padding:15px 32px; font-size:14.5px; font-weight:600; background:transparent; color:#fff; border:1.5px solid var(--w14); border-radius:var(--r-pill); }
+        .btn-ghost:hover { border-color:rgba(255,255,255,0.45); background:rgba(255,255,255,0.04); }
+
+        /* ============ HERO ============ */
+        .hero { position:relative; min-height:100vh; display:flex; align-items:flex-start; overflow:hidden;
+            background:radial-gradient(120% 120% at 80% -10%, #0D2050 0%, #0A1830 45%, #050E1F 100%); }
+        /* Aurora */
+        .aurora { position:absolute; inset:-20%; z-index:0; filter:blur(70px); opacity:.9; }
+        .blob { position:absolute; border-radius:50%; mix-blend-mode:screen; will-change:transform; }
+        .b1 { width:46vw; height:46vw; top:-6%; left:-4%; background:radial-gradient(circle at 30% 30%, rgba(74,120,255,0.55), transparent 62%); }
+        .b2 { width:42vw; height:42vw; top:8%; right:-6%; background:radial-gradient(circle at 60% 40%, rgba(201,162,75,0.40), transparent 60%); }
+        .b3 { width:50vw; height:50vw; bottom:-22%; left:18%; background:radial-gradient(circle at 50% 50%, rgba(16,185,129,0.26), transparent 62%); }
+        .b4 { width:32vw; height:32vw; bottom:2%; right:14%; background:radial-gradient(circle at 50% 50%, rgba(232,101,26,0.28), transparent 60%); }
+        /* Particle canvas + curve */
+        #fx { position:absolute; inset:0; z-index:1; pointer-events:none; }
+        .curve-wrap { position:absolute; left:0; right:0; bottom:0; height:62%; z-index:1; pointer-events:none; opacity:.9; }
+        .curve-wrap svg { width:100%; height:100%; }
+        .grid-lines { position:absolute; inset:0; z-index:0; pointer-events:none;
+            background-image:linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size:64px 64px; mask-image:radial-gradient(80% 70% at 50% 60%, #000 30%, transparent 80%); -webkit-mask-image:radial-gradient(80% 70% at 50% 60%, #000 30%, transparent 80%); }
+
+        .hero-inner { position:relative; z-index:3; max-width:1220px; margin:0 auto; width:100%;
+            padding:118px 48px 60px; display:grid; grid-template-columns:1fr 430px; gap:54px; align-items:start; }
+        .eyebrow { display:inline-flex; align-items:center; gap:9px; padding:7px 16px; margin-bottom:22px;
+            background:rgba(201,162,75,0.12); border:1px solid rgba(201,162,75,0.40); border-radius:var(--r-pill);
+            font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-lt); width:fit-content; }
+        .eyebrow .dot { width:7px; height:7px; border-radius:50%; background:var(--gold-lt); box-shadow:0 0 0 0 rgba(230,180,80,.6); animation:pp 2.4s infinite; }
+        @keyframes pp { 0%{box-shadow:0 0 0 0 rgba(230,180,80,.5)} 70%{box-shadow:0 0 0 9px rgba(230,180,80,0)} 100%{box-shadow:0 0 0 0 rgba(230,180,80,0)} }
+        .hero h1 { font-family:var(--ff-d); font-weight:500; color:#fff; line-height:1.04; letter-spacing:-.02em;
+            font-size:clamp(40px,5.6vw,76px); margin-bottom:20px; }
+        .hero h1 em { font-style:italic; background:linear-gradient(120deg,var(--gold-lt),#FFE6A8 50%,var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .hero-sub { font-size:clamp(15px,1.6vw,17.5px); color:var(--w70); max-width:520px; line-height:1.75; font-weight:300; margin-bottom:26px; }
+        .hero-meta { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:30px; }
+        .meta-pill { display:inline-flex; align-items:center; gap:8px; padding:9px 16px; background:rgba(255,255,255,0.06);
+            border:1px solid var(--w14); border-radius:11px; font-size:13px; color:var(--w70); font-weight:400; }
+        .meta-pill b { color:#fff; font-weight:600; }
+        /* speaker mini */
+        .spk-mini { display:flex; align-items:center; gap:13px; padding-top:6px; }
+        .spk-mini img { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid rgba(201,162,75,0.5); }
+        .spk-mini .t { font-size:13px; color:var(--w50); line-height:1.45; }
+        .spk-mini .t b { display:block; color:#fff; font-size:14.5px; font-weight:600; letter-spacing:.01em; }
+
+        /* floating chips */
+        .chip { position:absolute; z-index:2; display:flex; align-items:center; gap:8px; padding:11px 16px;
+            background:rgba(255,255,255,0.07); border:1px solid var(--w14); border-radius:13px; backdrop-filter:blur(14px);
+            font-size:12.5px; font-weight:500; color:rgba(255,255,255,0.86); white-space:nowrap; will-change:transform;
+            box-shadow:0 10px 40px rgba(0,0,0,0.25); }
+        .chip i { width:8px; height:8px; border-radius:3px; display:inline-block; }
+        /* floating concept chips, parked in the open lower-right so they never cover text */
+        .chip.c1 { top:auto; bottom:23%; right:7%;  } .chip.c1 i{ background:var(--gold-lt);}
+        .chip.c2 { top:auto; bottom:14%; right:25%; } .chip.c2 i{ background:var(--blue-xl);}
+        .chip.c3 { bottom:6%;  left:auto; right:9%;  } .chip.c3 i{ background:var(--emerald-lt);}
+        .chip.c4 { bottom:1%;  left:auto; right:28%; } .chip.c4 i{ background:var(--orange-lt);}
+        /* hide all floating chips on tablet/mobile so the stacked layout stays clean */
+        @media(max-width:1100px){ .chip{ display:none !important; } }
+
+        /* SAVINGS CHART CARD */
+        .save-card { position:relative; margin:6px 0 28px; max-width:440px; padding:20px 24px 16px; border-radius:18px;
+            background:rgba(255,255,255,0.05); border:1px solid var(--w14); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+            box-shadow:0 22px 64px rgba(0,0,0,0.38); overflow:hidden; }
+        .save-glow { position:absolute; width:300px; height:220px; right:-50px; top:-70px; border-radius:50%; filter:blur(62px);
+            background:radial-gradient(circle, rgba(230,180,80,0.32), transparent 65%); pointer-events:none; z-index:0;
+            will-change:transform, opacity; }
+        .save-glow.two { left:-60px; bottom:-80px; top:auto; right:auto; width:240px; height:180px;
+            background:radial-gradient(circle, rgba(74,120,255,0.28), transparent 66%); }
+        .save-head { position:relative; z-index:1; display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:12px; }
+        .save-t { font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--w50); font-weight:600; max-width:190px; line-height:1.45; }
+        .save-total { font-family:var(--ff-d); font-size:34px; font-weight:700; color:#fff; line-height:1; white-space:nowrap; text-shadow:0 0 22px rgba(230,180,80,0.35); }
+        .save-total small { display:block; font-family:var(--ff-b); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-lt); font-weight:600; margin-top:5px; text-align:right; }
+        .save-svg { position:relative; z-index:1; width:100%; height:auto; display:block; overflow:visible; }
+        .save-bar { filter:drop-shadow(0 0 12px rgba(230,180,80,0.45)); }
+        .save-val { fill:#fff; font-family:var(--ff-d); font-size:15px; font-weight:700; opacity:0; }
+        .save-x { position:relative; z-index:1; display:flex; justify-content:space-around; margin-top:7px; padding:0 6px; }
+        .save-x span { font-size:11px; color:var(--w50); font-weight:500; }
+        .save-foot { position:relative; z-index:1; margin-top:11px; font-size:10px; color:rgba(255,255,255,0.42); line-height:1.45; }
+        @media(max-width:980px){ .save-card{ max-width:460px; } }
+
+        /* REG CARD */
+        .reg-card { position:relative; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.16);
+            border-radius:22px; padding:30px 30px 26px; backdrop-filter:blur(26px) saturate(160%); -webkit-backdrop-filter:blur(26px) saturate(160%);
+            box-shadow:0 30px 80px rgba(0,0,0,0.45); }
+        .reg-card::before{ content:""; position:absolute; inset:0; border-radius:22px; padding:1px;
+            background:linear-gradient(140deg, rgba(201,162,75,0.6), rgba(255,255,255,0.05) 40%, rgba(74,120,255,0.4));
+            -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; opacity:.6; }
+        .reg-free { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+            color:var(--emerald-lt); background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.36); padding:4px 12px; border-radius:var(--r-pill); margin-bottom:14px; }
+        .reg-card h3 { font-family:var(--ff-d); font-size:27px; font-weight:600; color:#fff; line-height:1.15; margin-bottom:6px; }
+        .reg-card p.s { font-size:13px; color:var(--w50); margin-bottom:18px; line-height:1.5; }
+        .reg-field { margin-bottom:11px; }
+        .reg-row { display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+        .reg-input { width:100%; padding:13px 15px; font-family:var(--ff-b); font-size:14px; color:#fff;
+            background:rgba(255,255,255,0.06); border:1px solid var(--w14); border-radius:11px; transition:border .2s, background .2s; }
+        .reg-input::placeholder { color:rgba(255,255,255,0.40); }
+        .reg-input:focus { outline:none; border-color:var(--gold-lt); background:rgba(255,255,255,0.10); }
+        .reg-select { appearance:none; -webkit-appearance:none; cursor:pointer; color:rgba(255,255,255,0.92);
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E6B450' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat:no-repeat; background-position:right 15px center; padding-right:38px; }
+        .reg-select:invalid { color:rgba(255,255,255,0.40); }
+        .reg-select option { color:#0A1628; background:#fff; }
+        .reg-submit { width:100%; margin-top:6px; padding:15px; font-size:15px; font-weight:600; cursor:pointer;
+            background:linear-gradient(135deg,var(--gold-lt),var(--gold)); color:#1A1304; border:none; border-radius:12px;
+            transition:all .25s; letter-spacing:.01em; }
+        .reg-submit:hover { transform:translateY(-1px); box-shadow:0 10px 30px rgba(201,162,75,0.45); }
+        .reg-submit:disabled { opacity:.65; cursor:not-allowed; transform:none; }
+        .reg-fine { margin-top:12px; font-size:11px; color:var(--w50); text-align:center; line-height:1.5; }
+        .reg-error { display:none; margin-top:10px; font-size:12.5px; color:#FF9A9A; background:rgba(255,80,80,0.10); border:1px solid rgba(255,80,80,0.3); padding:9px 12px; border-radius:9px; }
+        .reg-success { display:none; flex-direction:column; align-items:center; text-align:center; padding:14px 4px; }
+        .reg-success .tick { width:54px; height:54px; border-radius:50%; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); display:flex; align-items:center; justify-content:center; font-size:26px; color:var(--emerald-lt); margin-bottom:14px; }
+        .reg-success h4 { font-family:var(--ff-d); font-size:23px; color:#fff; font-weight:600; margin-bottom:8px; }
+        .reg-success p { font-size:13.5px; color:var(--w70); line-height:1.6; }
+        .reg-join { display:none; margin-top:16px; }
+
+        @media(max-width:980px){ .hero-inner{ grid-template-columns:1fr; gap:34px; padding:104px 24px 56px; } .reg-card{ max-width:520px; } .save-card{ max-width:520px; } }
+        @media(max-width:560px){
+            .hero-inner{ padding:96px 18px 48px; }
+            .save-card{ padding:18px 18px 14px; }
+            .save-head{ flex-direction:column; align-items:flex-start; gap:6px; }
+            .save-total{ font-size:30px; } .save-total small{ text-align:left; }
+            .meta-pill{ font-size:12px; padding:8px 13px; }
+            .reg-card{ padding:24px 20px 22px; }
+        }
+        @media(max-width:380px){ .reg-row{ grid-template-columns:1fr; } }
+
+        /* ============ SECTIONS ============ */
+        .sec { padding:90px 0; position:relative; }
+        .container { max-width:1120px; margin:0 auto; padding:0 48px; }
+        .sec-lbl { font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
+        .sec-lbl.gold { color:var(--gold); }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4.2vw,54px); font-weight:600; line-height:1.1; letter-spacing:-.02em; margin-bottom:18px; }
+        .sec-title em { font-style:italic; color:var(--blue); }
+        .sec-body { font-size:16.5px; color:var(--t70); line-height:1.78; max-width:680px; }
+        @media(max-width:700px){ .container{ padding:0 22px; } .sec{ padding:64px 0; } }
+
+        /* community band */
+        .band { background:linear-gradient(135deg,var(--cream),#F4EFE3); border-top:1px solid rgba(201,162,75,0.25); border-bottom:1px solid rgba(201,162,75,0.25); }
+        .band-inner { display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap; text-align:center; padding:30px 24px; }
+        .band-inner .k { font-family:var(--ff-d); font-style:italic; font-size:clamp(19px,2.4vw,27px); color:#5A4A1E; }
+        .band-inner .k b { font-style:normal; font-weight:600; color:#0A1628; }
+
+        /* value cards */
+        .val-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:42px; }
+        .val-card { background:#fff; border-radius:20px; padding:32px; border:1px solid var(--t06); box-shadow:0 4px 26px rgba(10,22,40,0.05); transition:transform .3s, box-shadow .3s; }
+        .val-card:hover { transform:translateY(-4px); box-shadow:0 16px 44px rgba(10,22,40,0.10); }
+        .val-ic { width:50px; height:50px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:23px; margin-bottom:18px;
+            background:linear-gradient(135deg,rgba(201,162,75,0.16),rgba(232,101,26,0.10)); border:1px solid rgba(201,162,75,0.28); }
+        .val-card h3 { font-size:18px; font-weight:600; color:var(--text); margin-bottom:10px; letter-spacing:.01em; }
+        .val-card p { font-size:14.5px; color:var(--t70); line-height:1.7; }
+        @media(max-width:760px){ .val-grid{ grid-template-columns:1fr; } }
+
+        /* speaker spotlight (dark) */
+        .spotlight { background:radial-gradient(120% 120% at 15% 0%, #0D2050, #0A1830 50%, #050E1F); color:#fff; position:relative; overflow:hidden; }
+        .spot-glow { position:absolute; width:540px; height:540px; right:-8%; top:-20%; border-radius:50%; filter:blur(80px);
+            background:radial-gradient(circle, rgba(201,162,75,0.22), transparent 65%); z-index:0; }
+        .spot-grid { position:relative; z-index:1; display:grid; grid-template-columns:330px 1fr; gap:54px; align-items:center; }
+        .spot-photo-wrap { position:relative; }
+        .spot-photo { width:100%; border-radius:22px; display:block; box-shadow:0 30px 70px rgba(0,0,0,0.5); border:1px solid rgba(201,162,75,0.3); }
+        .spot-cred { position:absolute; left:-18px; bottom:22px; background:rgba(7,16,33,0.86); border:1px solid rgba(201,162,75,0.4); backdrop-filter:blur(12px);
+            border-radius:14px; padding:14px 18px; box-shadow:0 14px 40px rgba(0,0,0,0.4); }
+        .spot-cred .nm { font-family:var(--ff-d); font-size:20px; font-weight:600; color:#fff; line-height:1.1; }
+        .spot-cred .rl { font-size:11px; letter-spacing:.10em; text-transform:uppercase; color:var(--gold-lt); margin-top:4px; font-weight:600; }
+        .spot-grid h2 { font-family:var(--ff-d); font-size:clamp(30px,3.6vw,46px); font-weight:600; line-height:1.12; color:#fff; margin-bottom:18px; }
+        .spot-grid h2 em { font-style:italic; color:var(--gold-lt); }
+        .spot-grid p { font-size:16px; color:var(--w70); line-height:1.78; margin-bottom:16px; font-weight:300; }
+        .spot-list { list-style:none; margin-top:22px; display:grid; gap:12px; }
+        .spot-list li { position:relative; padding-left:30px; font-size:15px; color:rgba(255,255,255,0.82); line-height:1.6; }
+        .spot-list li::before { content:"✓"; position:absolute; left:0; top:0; width:20px; height:20px; border-radius:50%; background:rgba(201,162,75,0.18); color:var(--gold-lt); font-size:11px; display:flex; align-items:center; justify-content:center; }
+        @media(max-width:860px){ .spot-grid{ grid-template-columns:1fr; gap:32px; } .spot-photo{ max-width:320px; } .spot-cred{ left:0; } }
+
+        /* agenda */
+        .agenda { margin-top:42px; display:grid; grid-template-columns:1fr 1fr; gap:0 56px; }
+        .ag-item { display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--t06); }
+        .ag-num { font-family:var(--ff-d); font-size:26px; font-weight:700; color:var(--gold); line-height:1; flex-shrink:0; width:34px; }
+        .ag-item h4 { font-size:15.5px; font-weight:600; color:var(--text); margin-bottom:5px; }
+        .ag-item p { font-size:13.5px; color:var(--t70); line-height:1.6; }
+        @media(max-width:760px){ .agenda{ grid-template-columns:1fr; gap:0; } }
+
+        /* HG tie-in */
+        .tiein { background:var(--navy); }
+        .tiein-card { display:grid; grid-template-columns:1fr auto; gap:36px; align-items:center;
+            background:linear-gradient(135deg, rgba(201,162,75,0.10), rgba(18,68,245,0.06)); border:1px solid rgba(201,162,75,0.26);
+            border-radius:22px; padding:40px 44px; }
+        .tiein-card .lbl { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-lt); margin-bottom:12px; }
+        .tiein-card h3 { font-family:var(--ff-d); font-size:clamp(24px,3vw,34px); font-weight:600; color:#fff; line-height:1.2; margin-bottom:12px; }
+        .tiein-card h3 em { font-style:italic; color:var(--gold-lt); }
+        .tiein-card p { font-size:15px; color:var(--w70); line-height:1.7; max-width:560px; font-weight:300; }
+        .tiein-card a.lnk { color:var(--gold-lt); font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid rgba(201,162,75,0.4); padding-bottom:2px; white-space:nowrap; }
+        .tiein-card a.lnk:hover { color:#fff; }
+        @media(max-width:760px){ .tiein-card{ grid-template-columns:1fr; gap:20px; padding:30px 26px; } }
+
+        /* hosts */
+        .hosts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:42px; max-width:840px; margin-left:auto; margin-right:auto; }
+        .host-card { text-align:center; background:#fff; border-radius:18px; padding:28px 22px; border:1px solid var(--t06); box-shadow:0 4px 22px rgba(10,22,40,0.05); }
+        .host-card img { width:120px; height:120px; border-radius:50%; object-fit:cover; object-position:center 20%; margin:0 auto 16px; border:3px solid #fff; box-shadow:0 0 0 1px var(--t10), 0 8px 24px rgba(10,22,40,0.10); }
+        .host-card .nm { font-family:var(--ff-d); font-size:21px; font-weight:600; color:var(--text); line-height:1.15; }
+        .host-card .rl { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--t50); margin-top:6px; }
+        @media(max-width:760px){ .hosts-grid{ grid-template-columns:1fr; max-width:320px; } }
+
+        /* final CTA */
+        .final { background:radial-gradient(120% 120% at 50% 0%, #0D2050, #0A1830 55%, #050E1F); text-align:center; color:#fff; }
+        .final .sec-title { color:#fff; }
+        .final .sec-title em { color:var(--gold-lt); }
+        .final p { color:var(--w70); max-width:560px; margin:0 auto 34px; font-weight:300; }
+        .final .seats { display:inline-flex; align-items:center; gap:9px; margin-bottom:26px; font-size:12.5px; letter-spacing:.10em; text-transform:uppercase; color:var(--gold-lt); }
+        .final .seats .d { width:7px; height:7px; border-radius:50%; background:var(--gold-lt); animation:pp 2.4s infinite; }
+
+        /* footer */
+        footer { background:var(--navy-2); padding:34px 48px; text-align:center; }
+        .footer-text { font-size:12px; color:rgba(255,255,255,0.32); line-height:1.85; }
+
+        /* Deal Partners + XSITE (ported from main page) */
+        .partners-strip { background:linear-gradient(135deg,#050E1F,#0A1830); border-radius:24px; padding:36px 48px; max-width:1100px; margin:0 auto; border:1px solid rgba(255,255,255,0.06); }
+        .partners-label { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-align:center; margin-bottom:28px; }
+        .partners-logos { display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; }
+        .partner-pill { display:flex; align-items:center; justify-content:center; padding:14px 28px; border-radius:50px; transition:transform .25s, box-shadow .25s; }
+        .partner-pill:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.18); }
+        .partner-pill.dark { background:#0B1628; border:1px solid rgba(255,255,255,0.10); }
+        .partner-pill.light { background:#fff; border:1px solid rgba(0,0,0,0.07); box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+        .partner-logo { height:34px; width:auto; max-width:160px; object-fit:contain; }
+        @media(max-width:680px){ .partners-strip{padding:28px 20px;} .partners-logos{gap:14px;} .partner-pill{padding:10px 20px;} .partner-logo{height:24px;max-width:120px;} }
+
+        .fu { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+        .vis { opacity:1; transform:none; }
+        @media (prefers-reduced-motion: reduce){ .fu{ transition:none; } .blob{ animation:none !important; } }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logos">
+        <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+        <div class="nav-sep"></div>
+        <img src="../Chazak Logo.png" alt="Chazak" class="nav-logo">
+    </div>
+    <div class="nav-badge">Members-Only Briefing</div>
+    <a href="#register" class="nav-cta">Reserve my seat</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="aurora">
+        <span class="blob b1"></span><span class="blob b2"></span>
+        <span class="blob b3"></span><span class="blob b4"></span>
+    </div>
+    <div class="grid-lines"></div>
+    <canvas id="fx"></canvas>
+    <div class="curve-wrap">
+        <svg viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+                <linearGradient id="cstroke" x1="0" y1="1" x2="1" y2="0">
+                    <stop offset="0" stop-color="#4A78FF"/><stop offset="0.55" stop-color="#C9A24B"/><stop offset="1" stop-color="#E6B450"/>
+                </linearGradient>
+                <linearGradient id="cfill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="rgba(201,162,75,0.22)"/><stop offset="1" stop-color="rgba(201,162,75,0)"/>
+                </linearGradient>
+            </defs>
+            <path id="curveFill" d="M0,490 C260,470 520,430 720,300 C900,185 1040,95 1200,40 L1200,500 L0,500 Z" fill="url(#cfill)" opacity="0"/>
+            <path id="curveLine" d="M0,490 C260,470 520,430 720,300 C900,185 1040,95 1200,40" fill="none" stroke="url(#cstroke)" stroke-width="3" stroke-linecap="round"/>
+            <circle id="curveDot" r="6" fill="#FFE6A8"/>
+        </svg>
+    </div>
+
+    <!-- floating chips -->
+    <div class="chip c1"><i></i> Cost segregation</div>
+    <div class="chip c2"><i></i> Bonus depreciation · 2026</div>
+    <div class="chip c3"><i></i> K-1 paper losses</div>
+    <div class="chip c4"><i></i> Entity &amp; timing strategy</div>
+
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="eyebrow"><span class="dot"></span> Exclusive · Mila Penn Chazak Community</div>
+            <h1>Keep more of <em>what you earn</em> in 2026.</h1>
+            <p class="hero-sub">A private tax-strategy briefing for high earners, the depreciation, cost-segregation, and lesser-known moves the wealthy use to quietly lower their tax bill. Hosted for our community and led by a specialist in physician and high-income taxes.</p>
+
+            <!-- Animated tax-savings chart -->
+            <div class="save-card">
+                <div class="save-glow"></div>
+                <div class="save-glow two"></div>
+                <div class="save-head">
+                    <span class="save-t">Year-1 tax savings a high earner can capture through real-estate depreciation</span>
+                    <span class="save-total">$<span id="saveTotal">0</span><small>on a $500K position</small></span>
+                </div>
+                <svg class="save-svg" viewBox="0 0 420 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="barG" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#FFE9B0"/><stop offset="1" stop-color="#C9A24B"/>
+                        </linearGradient>
+                    </defs>
+                    <line x1="8" y1="120" x2="412" y2="120" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+                    <rect class="save-bar" id="b100" x="40"  y="120" width="62" height="0" rx="6" fill="url(#barG)"/>
+                    <rect class="save-bar" id="b250" x="179" y="120" width="62" height="0" rx="6" fill="url(#barG)"/>
+                    <rect class="save-bar" id="b500" x="318" y="120" width="62" height="0" rx="6" fill="url(#barG)"/>
+                    <text class="save-val" id="v100" x="71"  y="94" text-anchor="middle">$35K</text>
+                    <text class="save-val" id="v250" x="210" y="64" text-anchor="middle">$88K</text>
+                    <text class="save-val" id="v500" x="349" y="14" text-anchor="middle">$175K</text>
+                </svg>
+                <div class="save-x"><span>$100K</span><span>$250K</span><span>$500K</span></div>
+                <div class="save-foot">Illustrative Year-1 paper loss at roughly 35% of the position via cost segregation. Educational only, not tax advice.</div>
+            </div>
+
+            <div class="hero-meta">
+                <div class="meta-pill">📅 <b>Tuesday, June 23</b></div>
+                <div class="meta-pill">🕡 <b>6:30 PM ET</b> · Live on Zoom</div>
+                <div class="meta-pill">🎟️ Complimentary for members</div>
+            </div>
+            <div class="spk-mini">
+                <img src="../Kim-web.jpg" alt="Kim Hopkins, EA">
+                <div class="t"><b>Kim Hopkins, EA</b> Director of Tax Planning · Doc Wealth | Physician Taxes</div>
+            </div>
+        </div>
+
+        <!-- REGISTRATION CARD -->
+        <div class="reg-card" id="register">
+            <span class="reg-free">Free for the community</span>
+            <h3>Reserve your seat</h3>
+            <p class="s">Seats are limited and held for members &amp; invited guests. We'll send your private Zoom link instantly.</p>
+            <form id="tax-form" novalidate>
+                <div class="reg-row">
+                    <div class="reg-field"><input class="reg-input" type="text" name="first_name" placeholder="First name" autocomplete="given-name" required></div>
+                    <div class="reg-field"><input class="reg-input" type="text" name="last_name" placeholder="Last name" autocomplete="family-name" required></div>
+                </div>
+                <div class="reg-field"><input class="reg-input" type="email" name="email" placeholder="Email address" autocomplete="email" required></div>
+                <div class="reg-field"><input class="reg-input" type="tel" name="phone" placeholder="Mobile number" autocomplete="tel" required></div>
+                <div class="reg-field">
+                    <select class="reg-input reg-select" name="partner_referral" required>
+                        <option value="" disabled selected>Are you working with one of our partners?</option>
+                        <option value="No">No / Mila Penn Chazak direct</option>
+                        <option>EagleCap Ventures (Fedna Morency)</option>
+                        <option>Kynectic Capital (Anita Akpunku)</option>
+                        <option>Priority 1 Capital (Leah &amp; Jeremy)</option>
+                        <option>Dr. Stanley A. Okoro</option>
+                        <option>Dr. Obi Ugwonali</option>
+                        <option>Medval Capital (Edwin Valverde)</option>
+                        <option>FaithBridge Capital (Dr. Ntiense Robin)</option>
+                        <option>Vanguard Consultants LLC (Blaise Nzeda)</option>
+                    </select>
+                </div>
+                <input type="hidden" name="referral_source" value="TAX">
+                <button type="submit" class="reg-submit" id="tax-submit">Reserve My Seat →</button>
+                <div class="reg-error" id="tax-error"></div>
+                <p class="reg-fine">No cost · No pitch-fest · Real, actionable tax strategy.<br>Your information stays private to Mila Penn Chazak.</p>
+            </form>
+            <div class="reg-success" id="tax-success">
+                <div class="tick">✓</div>
+                <h4>You're in.</h4>
+                <p>Check your inbox for your private Zoom link and a calendar hold. See you Tuesday, June 23 at 6:30 PM ET.</p>
+                <a href="#" id="tax-join" class="btn btn-gold reg-join">Add to calendar / Join link →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- community band -->
+<div class="band">
+    <div class="band-inner">
+        <div class="k">An exclusive briefing for the <b>Mila Penn Chazak</b> community, our way of adding value beyond the deal.</div>
+    </div>
+</div>
+
+<!-- VALUE -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl gold fu">Why this session is worth your evening</div>
+        <h2 class="sec-title fu">Walk away with <em>strategy you can use</em></h2>
+        <p class="sec-body fu">Most high earners overpay, not because they're careless, but because no one ever showed them the other side of the menu. In 60 focused minutes, Kim will translate the strategies the wealthy use into plain, actionable steps.</p>
+        <div class="val-grid">
+            <div class="val-card fu">
+                <div class="val-ic">📉</div>
+                <h3>The depreciation playbook</h3>
+                <p>How real-estate depreciation turns into a paper loss on your K-1, a deduction that can offset income even in a year the asset is cash-flowing. Why it's one of the most powerful and least-understood tools available to high earners.</p>
+            </div>
+            <div class="val-card fu">
+                <div class="val-ic">⚡</div>
+                <h3>Cost segregation &amp; bonus depreciation in 2026</h3>
+                <p>What changed for 2026, and how cost-segregation studies accelerate depreciation into year one. The mechanics behind a potential <strong>$35,000+ first-year tax loss</strong> on a $100K real-estate position.</p>
+            </div>
+            <div class="val-card fu">
+                <div class="val-ic">🧩</div>
+                <h3>The moves people don't know about</h3>
+                <p>Entity selection, timing, retirement-account leverage (self-directed IRAs), and pairing W-2/1099 income with passive real-estate losses, the quiet levers that compound year after year.</p>
+            </div>
+            <div class="val-card fu">
+                <div class="val-ic">🩺</div>
+                <h3>Built for physicians &amp; high earners</h3>
+                <p>Kim specializes in physician and high-income tax planning at Doc Wealth. You'll get strategy tailored to W-2 doctors, practice owners, and professionals carrying a heavy marginal rate, not generic advice.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SPEAKER SPOTLIGHT -->
+<section class="sec spotlight">
+    <div class="spot-glow"></div>
+    <div class="container">
+        <div class="spot-grid">
+            <div class="spot-photo-wrap fu">
+                <img src="../Kim-web.jpg" alt="Kim Hopkins, EA" class="spot-photo">
+                <div class="spot-cred">
+                    <div class="nm">Kim Hopkins, EA</div>
+                    <div class="rl">Doc Wealth · Physician Taxes</div>
+                </div>
+            </div>
+            <div>
+                <div class="sec-lbl gold fu">Your speaker</div>
+                <h2 class="fu">Meet <em>Kim Hopkins, EA</em></h2>
+                <p class="fu">Kim is the Director of Tax Planning at Doc Wealth | Physician Taxes, an Enrolled Agent (the highest credential the IRS awards) who spends her days helping high earners legally and strategically lower their tax bill.</p>
+                <p class="fu">She'll cut through the noise and show you exactly how depreciation, cost segregation, and smart structuring work, with real numbers, in plain English.</p>
+                <ul class="spot-list">
+                    <li class="fu">How to use real-estate depreciation to offset your highest-taxed income</li>
+                    <li class="fu">The 2026 bonus-depreciation landscape and what it means for your return</li>
+                    <li class="fu">Where physicians and professionals leave the most money on the table</li>
+                    <li class="fu">A live Q&amp;A, bring your situation and your questions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AGENDA -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl gold fu">The 60-minute agenda</div>
+        <h2 class="sec-title fu">What we'll <em>cover</em></h2>
+        <p class="sec-body fu">A tight, high-signal hour. No fluff, no hour-long sales pitch, just the strategies and a live Q&amp;A.</p>
+        <div class="agenda">
+            <div class="ag-item fu"><div class="ag-num">01</div><div><h4>The mindset shift</h4><p>Why the tax code rewards investors and owners, and how to legally move from the wrong side of the menu to the right one.</p></div></div>
+            <div class="ag-item fu"><div class="ag-num">02</div><div><h4>Depreciation, demystified</h4><p>How a paper loss is created, why it doesn't require cash out of pocket, and how it lands on your K-1.</p></div></div>
+            <div class="ag-item fu"><div class="ag-num">03</div><div><h4>Cost segregation &amp; bonus depreciation</h4><p>Accelerating deductions into year one, what's available in 2026, and the math on a $100K position.</p></div></div>
+            <div class="ag-item fu"><div class="ag-num">04</div><div><h4>The lesser-known levers</h4><p>Entity structure, timing, self-directed retirement accounts, and pairing active income with passive losses.</p></div></div>
+            <div class="ag-item fu"><div class="ag-num">05</div><div><h4>Strategy, applied</h4><p>A real-world look at how these mechanics play out inside an actual value-add real-estate investment.</p></div></div>
+            <div class="ag-item fu"><div class="ag-num">06</div><div><h4>Live Q&amp;A</h4><p>Open floor. Bring your scenario, Kim and the team will work through it with you.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- QUIET HARMONY GROVE TIE-IN -->
+<section class="sec tiein">
+    <div class="container">
+        <div class="tiein-card fu">
+            <div>
+                <div class="lbl">Strategy, in the wild</div>
+                <h3>See these mechanics <em>actually applied</em></h3>
+                <p>The depreciation and cost-segregation strategies Kim teaches aren't theory, they're exactly how a $100K position in a value-add multifamily like our Harmony Grove offering can target roughly <strong style="color:#fff;">$35,000 in Year-1 tax losses</strong>. We'll reference a real example on the call. No pressure, just a useful illustration.</p>
+            </div>
+            <a href="../june15/" class="lnk">Explore the live example →</a>
+        </div>
+    </div>
+</section>
+
+<!-- HOSTS -->
+<section class="sec">
+    <div class="container" style="text-align:center;">
+        <div class="sec-lbl gold fu" style="text-align:center;">Hosted by your community</div>
+        <h2 class="sec-title fu">Brought to you by <em>Mila Penn Chazak</em></h2>
+        <p class="sec-body fu" style="margin:0 auto;">We bring our community more than deals, we bring access to the specialists and strategies that help you keep and compound your wealth. Your hosts for the evening:</p>
+        <div class="hosts-grid">
+            <div class="host-card fu">
+                <img src="../Kirk-web.jpg" alt="Dr. Kirk A. Campbell">
+                <div class="nm">Dr. Kirk A. Campbell</div>
+                <div class="rl">Founding Principal</div>
+            </div>
+            <div class="host-card fu">
+                <img src="../Rosanmi-web.jpg" alt="Rosanmi Campbell">
+                <div class="nm">Rosanmi Campbell</div>
+                <div class="rl">Founding Principal</div>
+            </div>
+            <div class="host-card fu">
+                <img src="../JClaude-web.jpg" alt="J. Claude Mouaffi">
+                <div class="nm">J. Claude Mouaffi</div>
+                <div class="rl">Founding Principal</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DEAL PARTNERS + XSITE STRATEGIC PARTNERS -->
+<section class="sec" style="padding-top:0;">
+    <div class="container">
+        <div class="partners-strip fu">
+            <div class="partners-label">Our Partners</div>
+            <div class="partners-logos">
+                <div class="partner-pill dark"><img src="../partners/LGdMKRpXs6NWEwQ3PXPMbehapcE.png.webp" alt="Priority 1 Capital" class="partner-logo"></div>
+                <div class="partner-pill light"><img src="../partners/dPVwEvb3YFoQbnDfaiFFotoe20.png.webp" alt="EagleCap" class="partner-logo"></div>
+                <div class="partner-pill light"><img src="../partners/seeiISokM50jCrgmRqPiJcy0Jbw.png.webp" alt="Kynectic Capital Investment" class="partner-logo"></div>
+                <div class="partner-pill light"><img src="../partners/medval.png.webp" alt="Medval Capital" class="partner-logo"></div>
+                <div class="partner-pill dark"><img src="../partners/enhance.jpg" alt="Enhance Holdings LLC" class="partner-logo"></div>
+                <div class="partner-pill dark"><img src="../partners/FBlogowhite.png.webp" alt="FaithBridge Capital" class="partner-logo"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec final">
+    <div class="container">
+        <div class="seats"><span class="d"></span> Limited seats · Members &amp; invited guests</div>
+        <h2 class="sec-title fu">Your evening with <em>real tax strategy</em></h2>
+        <p class="fu">Tuesday, June 23 · 6:30 PM ET · Live on Zoom. Complimentary for the Mila Penn Chazak community. Bring your questions.</p>
+        <a href="#register" class="btn btn-gold fu">Reserve My Seat →</a>
+    </div>
+</section>
+
+<footer>
+    <p class="footer-text">
+        Mila Penn &amp; Chazak &nbsp;·&nbsp; invest@milapennchazak.com<br>
+        *Tax figures shown are illustrative for educational purposes only and depend on individual circumstances. This session is educational and is not tax, legal, or investment advice; consult your own advisor. Not an offer to sell or a solicitation to buy securities.<br>
+        This is a private, unindexed page shared with the Mila Penn Chazak community and invited guests.
+    </p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* nav solidify */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 40), {passive:true});
+
+/* reveal */
+const obs = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target);} }), {threshold:0.08});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+/* ---- HERO ANIMATION (A+C hybrid) ---- */
+if (window.gsap && !REDUCED) {
+    /* aurora drift */
+    gsap.to('.b1', {xPercent:8, yPercent:10, scale:1.12, duration:18, repeat:-1, yoyo:true, ease:'sine.inOut'});
+    gsap.to('.b2', {xPercent:-10, yPercent:8, scale:1.15, duration:22, repeat:-1, yoyo:true, ease:'sine.inOut'});
+    gsap.to('.b3', {xPercent:6, yPercent:-8, scale:1.1, duration:26, repeat:-1, yoyo:true, ease:'sine.inOut'});
+    gsap.to('.b4', {xPercent:-8, yPercent:-6, scale:1.18, duration:20, repeat:-1, yoyo:true, ease:'sine.inOut'});
+
+    /* idle float on chips */
+    gsap.utils.toArray('.chip').forEach((c,i)=>{
+        gsap.to(c, {y: (i%2?14:-14), duration: 3.4+i*0.4, repeat:-1, yoyo:true, ease:'sine.inOut', delay:i*0.2});
+    });
+
+    /* self-drawing curve */
+    const line = document.getElementById('curveLine');
+    const dot  = document.getElementById('curveDot');
+    const fill = document.getElementById('curveFill');
+    const len  = line.getTotalLength();
+    line.style.strokeDasharray = len; line.style.strokeDashoffset = len;
+    gsap.to(line, {strokeDashoffset:0, duration:2.6, ease:'power2.inOut', delay:0.3,
+        onUpdate:function(){ const p=line.getPointAtLength(len*this.progress()); dot.setAttribute('cx',p.x); dot.setAttribute('cy',p.y); }});
+    gsap.to(fill, {opacity:1, duration:1.6, delay:1.8, ease:'power1.out'});
+    gsap.to(dot, {attr:{r:8}, duration:1.1, repeat:-1, yoyo:true, ease:'sine.inOut', delay:2.9});
+
+    /* savings bar chart: bars grow from baseline, values fade in, total ticks up */
+    [['#b100',20,100],['#b250',50,70],['#b500',100,20]].forEach(([sel,h,y],i)=>{
+        gsap.to(sel, {attr:{height:h, y:y}, duration:1.15, delay:0.5+i*0.16, ease:'power3.out'});
+    });
+    gsap.to('.save-val', {opacity:1, duration:0.6, stagger:0.16, delay:1.05, ease:'power1.out'});
+    const st=document.getElementById('saveTotal'); const sv={v:0};
+    gsap.to(sv, {v:175000, duration:1.7, delay:0.5, ease:'power1.out',
+        onUpdate:()=> st.textContent = Math.round(sv.v).toLocaleString('en-US')});
+    /* subtle breathing glow on the chart */
+    gsap.to('.save-glow', {opacity:0.75, scale:1.12, duration:4.5, repeat:-1, yoyo:true, ease:'sine.inOut', transformOrigin:'center'});
+
+    /* mouse parallax */
+    const layers = [...document.querySelectorAll('.chip')].map((el,i)=>({el, d:(i%3+1)*8}));
+    addEventListener('mousemove', (e)=>{
+        const x=(e.clientX/innerWidth-0.5), y=(e.clientY/innerHeight-0.5);
+        layers.forEach(l=> gsap.to(l.el, {x:x*l.d*2, y:y*l.d*2, duration:0.8, ease:'power2.out', overwrite:'auto'}));
+    });
+} else {
+    /* reduced motion: show final states, no animation */
+    const st=document.getElementById('saveTotal'); if(st) st.textContent='175,000';
+    [['b100',20,100],['b250',50,70],['b500',100,20]].forEach(([id,h,y])=>{
+        const r=document.getElementById(id); if(r){ r.setAttribute('height',h); r.setAttribute('y',y); }
+    });
+    document.querySelectorAll('.save-val').forEach(t=>t.style.opacity=1);
+    const line=document.getElementById('curveLine'); if(line) line.style.strokeDashoffset=0;
+    const fill=document.getElementById('curveFill'); if(fill) fill.setAttribute('opacity','1');
+}
+
+/* ---- particle field ---- */
+(function(){
+    const cv=document.getElementById('fx'); if(!cv) return;
+    const ctx=cv.getContext('2d'); let w,h,parts=[],raf,running=true;
+    const COLORS=['rgba(230,180,80,', 'rgba(74,120,255,', 'rgba(52,211,153,'];
+    function size(){ w=cv.width=cv.offsetWidth*devicePixelRatio; h=cv.height=cv.offsetHeight*devicePixelRatio; }
+    function init(){ const n = innerWidth<700?34:Math.min(78, Math.floor(innerWidth/16));
+        parts=[...Array(n)].map(()=>({ x:Math.random()*w, y:Math.random()*h,
+            r:(Math.random()*1.6+0.5)*devicePixelRatio, vy:-(Math.random()*0.18+0.05)*devicePixelRatio,
+            vx:(Math.random()-0.5)*0.12*devicePixelRatio, a:Math.random()*0.4+0.12, c:COLORS[Math.floor(Math.random()*COLORS.length)] })); }
+    function tick(){ if(!running) return; ctx.clearRect(0,0,w,h);
+        for(const p of parts){ p.x+=p.vx; p.y+=p.vy; if(p.y<-10){p.y=h+10;p.x=Math.random()*w;} if(p.x<-10)p.x=w+10; if(p.x>w+10)p.x=-10;
+            ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fillStyle=p.c+p.a+')'; ctx.fill(); }
+        raf=requestAnimationFrame(tick); }
+    function start(){ size(); init(); if(!REDUCED){ running=true; cancelAnimationFrame(raf); tick(); } else { ctx.clearRect(0,0,w,h);} }
+    addEventListener('resize', start); start();
+    document.addEventListener('visibilitychange', ()=>{ running=!document.hidden; if(running && !REDUCED){ tick(); } });
+})();
+
+/* ---- FORM (wired to Supabase edge function) ---- */
+(function(){
+    const EDGE_FN_URL='https://lyetmekozlqxzovipflv.supabase.co/functions/v1/register-webinar';
+    const ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5ZXRtZWtvemxxeHpvdmlwZmx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMTk0NDMsImV4cCI6MjA5Mjg5NTQ0M30.en2ODQvcWEW04gyNo2Y8yi-EZnNQUxPB2m6AicioFd0';
+    const form=document.getElementById('tax-form'), submitBtn=document.getElementById('tax-submit'),
+          errorEl=document.getElementById('tax-error'), successEl=document.getElementById('tax-success'),
+          joinLink=document.getElementById('tax-join');
+    if(!form) return;
+    form.addEventListener('submit', async (e)=>{
+        e.preventDefault(); errorEl.style.display='none'; submitBtn.disabled=true; submitBtn.textContent='Reserving…';
+        const data={ first_name:form.first_name.value.trim(), last_name:form.last_name.value.trim(),
+            email:form.email.value.trim(), phone:form.phone.value.trim(),
+            referral_source:form.referral_source.value, partner_referral:form.partner_referral.value };
+        if(!data.first_name||!data.last_name||!data.email||!data.phone||!data.partner_referral){ return showErr('Please fill in all fields before continuing.'); }
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){ return showErr('Please enter a valid email address.'); }
+        try{
+            const res=await fetch(EDGE_FN_URL,{ method:'POST',
+                headers:{'Content-Type':'application/json','Authorization':`Bearer ${ANON_KEY}`}, body:JSON.stringify(data) });
+            const result=await res.json();
+            if(result.success){ form.style.display='none'; successEl.style.display='flex';
+                if(result.join_url){ joinLink.href=result.join_url; joinLink.style.display='inline-block'; }
+                document.getElementById('register').scrollIntoView({behavior:'smooth', block:'center'});
+            } else { throw new Error(result.error||'Something went wrong.'); }
+        }catch(err){ showErr(err.message||'Registration failed. Please try again or email invest@milapennchazak.com.'); }
+    });
+    function showErr(m){ errorEl.textContent=m; errorEl.style.display='block'; submitBtn.disabled=false; submitBtn.textContent='Reserve My Seat →'; }
+})();
+</script>
+</body>
+</html>
