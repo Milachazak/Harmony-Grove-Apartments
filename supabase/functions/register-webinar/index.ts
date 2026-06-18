@@ -506,10 +506,18 @@ serve(async (req) => {
       console.error("Zoom error:", err);
     }
 
-    // 2. Save to Supabase (always)
+    // 2. Save to Supabase (always). 10DLC: SMS consent is upgrade-only (once true, stays true),
+    //    so a later registration without the checkbox never erases a prior opt-in.
+    let priorConsent = false;
+    try {
+      const { data: existing } = await supabase
+        .from("webinar_registrants").select("sms_consent").eq("email", email).maybeSingle();
+      priorConsent = existing?.sms_consent === true;
+    } catch (_) { /* first-time registrant or read error: treat as no prior consent */ }
+
     await supabase.from("webinar_registrants").upsert(
       { first_name, last_name, email, phone, referral_source, partner_referral,
-        sms_consent: smsConsent,
+        sms_consent: smsConsent || priorConsent,
         zoom_join_url: joinUrl, zoom_registrant_id: zoomRegistrantId },
       { onConflict: "email" }
     );
