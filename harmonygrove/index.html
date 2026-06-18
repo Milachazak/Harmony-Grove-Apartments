@@ -316,6 +316,10 @@
         }
         .reg-input:focus, .reg-select:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(18,68,245,0.10); }
         .reg-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230A1628' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; cursor:pointer; }
+        .reg-consent { display:flex; align-items:flex-start; gap:10px; margin-top:2px; }
+        .reg-consent input[type="checkbox"] { width:18px; height:18px; margin-top:1px; flex-shrink:0; accent-color:var(--blue); cursor:pointer; }
+        .reg-consent .consent-text { font-size:11.5px; line-height:1.55; color:var(--t70); }
+        .reg-consent .consent-text a { color:var(--blue); text-decoration:underline; }
         .reg-submit { width:100%; padding:16px; font-size:15px; font-weight:600; border-radius:var(--r-pill); background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; border:none; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .25s; box-shadow:0 6px 24px rgba(18,68,245,0.38); margin-top:4px; }
         .reg-submit:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 10px 32px rgba(18,68,245,0.50); }
         .reg-submit:disabled { opacity:0.65; cursor:not-allowed; transform:none; }
@@ -1088,6 +1092,10 @@
                         <label class="reg-label" for="rf-phone">Phone Number</label>
                         <input class="reg-input" type="tel" id="rf-phone" name="phone" placeholder="+1 (555) 000-0000" required autocomplete="tel">
                     </div>
+                    <div class="reg-consent">
+                        <input type="checkbox" id="rf-sms" name="sms_consent" aria-describedby="sms-consent-text">
+                        <span id="sms-consent-text" class="consent-text">I agree to receive recurring text messages from Mila Penn Chazak at the phone number provided (webinar reminders and investment updates), some sent using automated technology. Consent is not a condition of registration. Message frequency varies. Message &amp; data rates may apply. Reply STOP to unsubscribe, HELP for help. See our <a href="https://www.milapennchazak.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://www.milapennchazak.com/sms-terms" target="_blank" rel="noopener">SMS Terms</a>.</span>
+                    </div>
                     <div class="reg-field">
                         <label class="reg-label" for="rf-source">Where did you hear about us?</label>
                         <select class="reg-select" id="rf-source" name="referral_source" required>
@@ -1341,6 +1349,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             phone:            form.phone.value.trim(),
             referral_source:  form.referral_source.value,
             partner_referral: form.partner_referral.value,
+            sms_consent:      form.sms_consent.checked ? "yes" : "no",
         };
 
         // Basic front-end validation
