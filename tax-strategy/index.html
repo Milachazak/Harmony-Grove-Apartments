@@ -29,22 +29,30 @@
         body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size:16px; line-height:1.6; overflow-x:hidden; }
 
         /* NAV */
-        #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:14px 48px;
-            display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
-            background:rgba(7,16,33,0.55); backdrop-filter:blur(30px) saturate(180%); -webkit-backdrop-filter:blur(30px) saturate(180%);
+        #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:9px 20px;
+            display:flex; align-items:center; gap:18px; flex-wrap:nowrap;
+            background:rgba(7,16,33,0.62); backdrop-filter:blur(30px) saturate(180%); -webkit-backdrop-filter:blur(30px) saturate(180%);
             border-bottom:1px solid rgba(255,255,255,0.08); transition:background .4s; }
-        #nav.solid { background:rgba(7,16,33,0.92); }
-        .nav-logos { display:flex; align-items:center; gap:13px; background:#fff; padding:7px 15px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.20); }
-        .nav-logo { height:23px; width:auto; object-fit:contain; }
-        .nav-sep { width:1px; height:19px; background:rgba(10,22,40,0.16); }
-        @media(max-width:680px){ .nav-logos{ padding:6px 12px; gap:10px; } .nav-logo{ height:20px; } }
-        .nav-badge { font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-            color:#0A1628; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); padding:6px 15px; border-radius:var(--r-pill); }
-        .nav-cta { padding:10px 22px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
+        #nav.solid { background:rgba(7,16,33,0.94); }
+
+        /* logo ticker, auto-scroll, brand + partners for constant visibility */
+        .logo-marquee { position:relative; flex:1 1 auto; min-width:0; overflow:hidden;
+            -webkit-mask:linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+                    mask:linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); }
+        .marquee-track { display:flex; align-items:center; width:max-content; animation:mqscroll 38s linear infinite; }
+        .logo-marquee:hover .marquee-track { animation-play-state:paused; }
+        @keyframes mqscroll { from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+        .mq-pill { display:flex; align-items:center; justify-content:center; height:40px; padding:0 17px; margin-right:14px; border-radius:9px; flex-shrink:0; }
+        .mq-pill.light { background:#fff; box-shadow:0 1px 7px rgba(0,0,0,0.20); }
+        .mq-pill.dark { background:#0B1628; border:1px solid rgba(255,255,255,0.12); }
+        .mq-pill img { height:21px; width:auto; max-width:132px; object-fit:contain; display:block; }
+        @media(prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
+
+        .nav-cta { flex-shrink:0; padding:10px 22px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
             background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; text-decoration:none;
             box-shadow:0 4px 16px rgba(18,68,245,0.32); transition:all .25s; white-space:nowrap; }
         .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(18,68,245,0.44); }
-        @media(max-width:680px){ #nav{padding:11px 18px;} .nav-badge{display:none;} }
+        @media(max-width:680px){ #nav{padding:8px 13px; gap:11px;} .mq-pill{ height:34px; padding:0 13px; margin-right:11px; } .mq-pill img{ height:18px; max-width:112px; } .nav-cta{ padding:9px 15px; font-size:12px; } }
 
         /* BUTTONS */
         .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
@@ -282,12 +290,28 @@
 
 <!-- NAV -->
 <nav id="nav">
-    <div class="nav-logos">
-        <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
-        <div class="nav-sep"></div>
-        <img src="../Chazak Logo.png" alt="Chazak" class="nav-logo">
+    <div class="logo-marquee">
+        <div class="marquee-track">
+            <!-- set 1 -->
+            <div class="mq-pill light"><img src="../Mila Penn Logo.png" alt="Mila Penn"></div>
+            <div class="mq-pill light"><img src="../Chazak Logo.png" alt="Chazak Investment"></div>
+            <div class="mq-pill dark"><img src="../partners/LGdMKRpXs6NWEwQ3PXPMbehapcE.png.webp" alt="Priority 1 Capital"></div>
+            <div class="mq-pill light"><img src="../partners/dPVwEvb3YFoQbnDfaiFFotoe20.png.webp" alt="EagleCap Ventures"></div>
+            <div class="mq-pill light"><img src="../partners/seeiISokM50jCrgmRqPiJcy0Jbw.png.webp" alt="Kynectic Capital"></div>
+            <div class="mq-pill light"><img src="../partners/medval.png.webp" alt="Medval Capital"></div>
+            <div class="mq-pill dark"><img src="../partners/enhance.jpg" alt="Enhance Holdings"></div>
+            <div class="mq-pill dark"><img src="../partners/FBlogowhite.png.webp" alt="FaithBridge Capital"></div>
+            <!-- set 2 (duplicate for seamless loop) -->
+            <div class="mq-pill light" aria-hidden="true"><img src="../Mila Penn Logo.png" alt=""></div>
+            <div class="mq-pill light" aria-hidden="true"><img src="../Chazak Logo.png" alt=""></div>
+            <div class="mq-pill dark" aria-hidden="true"><img src="../partners/LGdMKRpXs6NWEwQ3PXPMbehapcE.png.webp" alt=""></div>
+            <div class="mq-pill light" aria-hidden="true"><img src="../partners/dPVwEvb3YFoQbnDfaiFFotoe20.png.webp" alt=""></div>
+            <div class="mq-pill light" aria-hidden="true"><img src="../partners/seeiISokM50jCrgmRqPiJcy0Jbw.png.webp" alt=""></div>
+            <div class="mq-pill light" aria-hidden="true"><img src="../partners/medval.png.webp" alt=""></div>
+            <div class="mq-pill dark" aria-hidden="true"><img src="../partners/enhance.jpg" alt=""></div>
+            <div class="mq-pill dark" aria-hidden="true"><img src="../partners/FBlogowhite.png.webp" alt=""></div>
+        </div>
     </div>
-    <div class="nav-badge">Members-Only Briefing</div>
     <a href="#register" class="nav-cta">Reserve my seat</a>
 </nav>
 
