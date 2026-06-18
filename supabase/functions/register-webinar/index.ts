@@ -21,7 +21,7 @@ const corsHeaders = {
 
 const WEBINAR_ID = "82375789024"; // Zoom Webinar ID 823 7578 9024 (spaces removed) — standard /harmonygrove flow
 const WEBINAR_ID_ANPA = "81291983940"; // Zoom Webinar ID 812 9198 3940 — ANPA-exclusive webinar, June 20 2026 12:30 PM ET
-const WEBINAR_ID_TAX = "85774551628"; // Zoom Webinar ID 857 7455 1628, Tax Strategy briefing, June 23 2026 6:30 PM ET (/tax-strategy)
+const WEBINAR_ID_TAX = "85774551628"; // Zoom Webinar ID 857 7455 1628, Tax Strategy briefing, June 29 2026 6:30 PM ET (/tax-strategy)
 
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {
@@ -349,7 +349,7 @@ function emailAnpa30Min(name: string, joinUrl: string): string {
   `);
 }
 
-// ─── TAX STRATEGY BRIEFING (June 23, 2026 · 6:30 PM ET · with Kim Hopkins, EA) ──
+// ─── TAX STRATEGY BRIEFING (June 29, 2026 · 6:30 PM ET · with Kim Hopkins, EA) ──
 const TAX_SIG = `
     <div class="sig">
       <div class="sig-name">Kirk, Rosanmi &amp; Claude</div>
@@ -362,8 +362,8 @@ function emailTaxWelcome(name: string, joinUrl: string): string {
     <p>Thank you for registering for our members-only <strong>2026 Tax Strategy Briefing</strong>. This is our way of bringing the community more than a deal, real, actionable strategy for keeping more of what you earn.</p>
     <p>Your speaker is <strong>Kim Hopkins, EA</strong>, Director of Tax Planning at Doc Wealth | Physician Taxes. She will walk through depreciation, cost segregation, and the lesser-known moves high earners use to lower their tax bill, in plain English, with real numbers. There will be plenty of time for live Q&amp;A.</p>
     <div class="box">
-      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Tuesday, June 23, 2026</strong></span></div>
-      <div class="box-row"><span class="box-icon">🕡</span><span class="box-val"><strong>6:30 PM ET</strong> &nbsp;·&nbsp; approximately 60 minutes</span></div>
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, June 29, 2026</strong></span></div>
+      <div class="box-row"><span class="box-icon">🕡</span><span class="box-val"><strong>6:30 PM ET</strong> &nbsp;·&nbsp; 60 minutes</span></div>
       <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom &nbsp;·&nbsp; your personal link is below</span></div>
       <div class="box-row"><span class="box-icon">🎙️</span><span class="box-val">Kim Hopkins, EA &nbsp;·&nbsp; Doc Wealth | Physician Taxes</span></div>
     </div>
@@ -377,14 +377,14 @@ function emailTaxWelcome(name: string, joinUrl: string): string {
 function emailTax3Day(name: string, joinUrl: string): string {
   return wrap(`
     <h1>A few days away, ${name}.</h1>
-    <p>Just a heads up, our members-only <strong>2026 Tax Strategy Briefing</strong> is this <strong>Tuesday, June 23 at 6:30 PM ET</strong>.</p>
+    <p>Just a heads up, our members-only <strong>2026 Tax Strategy Briefing</strong> is this <strong>Monday, June 29 at 6:30 PM ET</strong>.</p>
     <p>Kim Hopkins, EA will cover how to legally lower your tax bill through depreciation, cost segregation, and smart structuring. Bring your questions, we will save real time for them.</p>
     <div class="box">
-      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Tuesday, June 23, 2026 &nbsp;·&nbsp; 6:30 PM ET</strong></span></div>
-      <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">Approximately 60 minutes &nbsp;·&nbsp; live Q&amp;A included</span></div>
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Monday, June 29, 2026 &nbsp;·&nbsp; 6:30 PM ET</strong></span></div>
+      <div class="box-row"><span class="box-icon">⏱</span><span class="box-val">60 minutes &nbsp;·&nbsp; live Q&amp;A included</span></div>
     </div>
     <div class="btn-wrap"><a href="${joinUrl}" class="btn">Your Zoom Link →</a></div>
-    <p>See you Tuesday.</p>
+    <p>See you Monday.</p>
     ${TAX_SIG}
   `);
 }
@@ -422,7 +422,7 @@ function emailTaxPartnerNotify(
       <div class="box-row"><span class="box-icon">👤</span><span class="box-val"><strong>${reg.first_name} ${reg.last_name}</strong></span></div>
       <div class="box-row"><span class="box-icon">📧</span><span class="box-val">${reg.email}</span></div>
       <div class="box-row"><span class="box-icon">📞</span><span class="box-val">${reg.phone}</span></div>
-      <div class="box-row"><span class="box-icon">📅</span><span class="box-val">Registered for Tuesday, June 23, 2026 · 6:30 PM ET</span></div>
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val">Registered for Monday, June 29, 2026 · 6:30 PM ET</span></div>
     </div>
     <p>We will take care of them on the webinar side. Feel free to reach out to them directly in the meantime, they are expecting to hear from you.</p>
     <p>Thank you for the introduction. We are grateful for this partnership.</p>
@@ -480,7 +480,7 @@ serve(async (req) => {
 
     // ─── Flow detection ───────────────────────────────────────────────────────
     //   "anpa" → ANPA-exclusive June 20 webinar
-    //   "tax"  → 2026 Tax Strategy briefing, June 23 (/tax-strategy)
+    //   "tax"  → 2026 Tax Strategy briefing, June 29 (/tax-strategy)
     //   else   → standard /harmonygrove flow
     const src    = (referral_source || "").trim().toLowerCase();
     const isAnpa = src === "anpa";
@@ -552,13 +552,13 @@ serve(async (req) => {
         }
       }
     } else if (isTax) {
-      // ─── TAX STRATEGY BRIEFING (June 23, 2026 · 6:30 PM ET) ───────────────────
+      // ─── TAX STRATEGY BRIEFING (June 29, 2026 · 6:30 PM ET) ───────────────────
 
       // 4b. Confirmation email (immediate) with the Zoom join link
       try {
         const r = await sendEmail({
           to: email,
-          subject: `Your seat is reserved, ${first_name}. 2026 Tax Strategy Briefing, June 23`,
+          subject: `Your seat is reserved, ${first_name}. 2026 Tax Strategy Briefing, June 29`,
           html: emailTaxWelcome(first_name, joinUrl),
         });
         if (r.statusCode >= 400 || r.error) emailErrors.push(`Tax welcome email: ${JSON.stringify(r)}`);
@@ -566,12 +566,12 @@ serve(async (req) => {
         emailErrors.push(`Tax welcome email threw: ${err}`);
       }
 
-      // 5b. Reminders (only if still in the future). Briefing: June 23, 2026, 6:30 PM ET (EDT = UTC-4).
+      // 5b. Reminders (only if still in the future). Briefing: June 29, 2026, 6:30 PM ET (EDT = UTC-4).
       const nowT = Date.now();
       const taxReminders = [
-        { at: "2026-06-20T14:00:00.000Z", subject: `A few days away, ${first_name}. Tax Strategy Briefing Tuesday`, html: emailTax3Day(first_name, joinUrl) },
-        { at: "2026-06-23T13:00:00.000Z", subject: `Today's the day, ${first_name}. Tax Strategy Briefing at 6:30 PM ET`, html: emailTaxDayOf(first_name, joinUrl) },
-        { at: "2026-06-23T22:00:00.000Z", subject: `${first_name}, we start in 30 minutes`, html: emailTax30Min(first_name, joinUrl) },
+        { at: "2026-06-26T14:00:00.000Z", subject: `A few days away, ${first_name}. Tax Strategy Briefing Monday`, html: emailTax3Day(first_name, joinUrl) },
+        { at: "2026-06-29T13:00:00.000Z", subject: `Today's the day, ${first_name}. Tax Strategy Briefing at 6:30 PM ET`, html: emailTaxDayOf(first_name, joinUrl) },
+        { at: "2026-06-29T22:00:00.000Z", subject: `${first_name}, we start in 30 minutes`, html: emailTax30Min(first_name, joinUrl) },
       ];
       for (const r of taxReminders) {
         if (new Date(r.at).getTime() > nowT) {
