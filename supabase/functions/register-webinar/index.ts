@@ -463,8 +463,11 @@ serve(async (req) => {
   }
 
   try {
-    const { first_name, last_name, email, phone, referral_source, partner_referral } =
+    const { first_name, last_name, email, phone, referral_source, partner_referral, sms_consent } =
       await req.json();
+
+    // 10DLC SMS opt-in: normalize the checkbox value to a boolean for the consent log
+    const smsConsent = sms_consent === true || sms_consent === "yes" || sms_consent === "true";
 
     if (!first_name || !last_name || !email || !phone) {
       return new Response(
@@ -506,6 +509,7 @@ serve(async (req) => {
     // 2. Save to Supabase (always)
     await supabase.from("webinar_registrants").upsert(
       { first_name, last_name, email, phone, referral_source, partner_referral,
+        sms_consent: smsConsent,
         zoom_join_url: joinUrl, zoom_registrant_id: zoomRegistrantId },
       { onConflict: "email" }
     );
