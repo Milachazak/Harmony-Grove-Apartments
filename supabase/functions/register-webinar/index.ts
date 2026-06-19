@@ -30,7 +30,6 @@ function getPartnerEmails(): Record<string, string> {
     "Kynectic Capital (Anita Akpunku)":        "anita@kynecticcap.com",
     "Priority 1 Capital (Leah & Jeremy)":      "lkrebs@p1capitalinvestment.com",
     "Dr. Stanley A. Okoro":                    "drokoro@georgiaplastic.com",
-    "Dr. Obi Ugwonali":                        "obi@medtransgo.com",
     "Medval Capital (Edwin Valverde)":         "edwinv@medvalcapital.com",
     "FaithBridge Capital (Dr. Ntiense Robin)": "robin@faithbridgecap.com",
     "Vanguard Consultants LLC (Blaise Nzeda)": "bnzeda@gmail.com",
