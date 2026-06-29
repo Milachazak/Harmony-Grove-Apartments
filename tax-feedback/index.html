@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your feedback | 2026 Tax Strategy Briefing</title>
+<meta name="description" content="Share what you took away from tonight's 2026 Tax Strategy Briefing with Mila Penn Chazak.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#050E1F; --navy-2:#0A1830; --card:#0E1B33; --line:rgba(255,255,255,0.12);
+    --gold:#C9A24B; --gold-lt:#E6B450; --emerald-lt:#34D399;
+    --w90:rgba(255,255,255,0.92); --w70:rgba(255,255,255,0.70); --w50:rgba(255,255,255,0.50);
+    --ff-d:'Cormorant Garamond',Georgia,serif; --ff-b:'Jost',-apple-system,sans-serif;
+  }
+  body{background:var(--navy);color:var(--w90);font-family:var(--ff-b);font-size:16px;line-height:1.6;
+    background-image:radial-gradient(120% 90% at 80% -10%, #0D2050 0%, #0A1830 45%, #050E1F 100%);
+    min-height:100vh;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:620px;margin:0 auto;padding:40px 20px 64px;}
+  .brandbar{display:flex;justify-content:center;margin-bottom:26px;}
+  .logos{display:inline-flex;align-items:center;gap:13px;background:#fff;padding:8px 16px;border-radius:12px;box-shadow:0 2px 14px rgba(0,0,0,0.28);}
+  .logo{height:24px;width:auto;object-fit:contain;display:block;}
+  .sep{width:1px;height:20px;background:rgba(10,22,40,0.16);}
+  .eyebrow{text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  h1{font-family:var(--ff-d);font-weight:500;font-size:clamp(30px,6vw,42px);line-height:1.1;text-align:center;color:#fff;margin-bottom:10px;letter-spacing:-.01em;}
+  .lede{text-align:center;color:var(--w70);font-size:15.5px;line-height:1.6;max-width:460px;margin:0 auto 30px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 26px;box-shadow:0 30px 80px rgba(0,0,0,0.45);}
+  .q{margin-bottom:26px;}
+  .q:last-of-type{margin-bottom:8px;}
+  .q-label{display:block;font-size:15.5px;font-weight:600;color:#fff;margin-bottom:12px;line-height:1.4;}
+  .q-label .opt{font-weight:400;color:var(--w50);font-size:13px;}
+  /* stars */
+  .stars{display:flex;gap:8px;}
+  .star{font-size:34px;line-height:1;cursor:pointer;color:rgba(255,255,255,0.22);transition:color .12s,transform .12s;user-select:none;}
+  .star:hover,.star.on{color:var(--gold-lt);}
+  .star:active{transform:scale(.9);}
+  /* checkbox chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{position:relative;}
+  .chip input{position:absolute;opacity:0;width:0;height:0;}
+  .chip label{display:block;padding:11px 15px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,0.04);
+    font-size:14px;color:var(--w90);cursor:pointer;transition:all .15s;line-height:1.35;}
+  .chip input:checked + label{background:rgba(201,162,75,0.16);border-color:var(--gold);color:#fff;}
+  .chip input:focus-visible + label{outline:2px solid var(--gold-lt);outline-offset:2px;}
+  textarea,input[type=text],input[type=email]{width:100%;padding:13px 15px;font-family:var(--ff-b);font-size:15px;color:#fff;
+    background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:12px;transition:border .2s,background .2s;}
+  textarea{min-height:92px;resize:vertical;}
+  textarea::placeholder,input::placeholder{color:rgba(255,255,255,0.40);}
+  textarea:focus,input:focus{outline:none;border-color:var(--gold-lt);background:rgba(255,255,255,0.10);}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:480px){.row2{grid-template-columns:1fr;}}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .submit{width:100%;margin-top:8px;padding:16px;font-family:var(--ff-b);font-size:15.5px;font-weight:600;cursor:pointer;
+    color:#1A1304;background:linear-gradient(135deg,var(--gold-lt),var(--gold));border:none;border-radius:12px;transition:transform .2s,box-shadow .2s;letter-spacing:.01em;}
+  .submit:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(201,162,75,0.4);}
+  .submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+  .err{display:none;margin-top:12px;font-size:13px;color:#FF9A9A;background:rgba(255,80,80,0.10);border:1px solid rgba(255,80,80,0.3);padding:10px 13px;border-radius:10px;}
+  .fine{margin-top:14px;font-size:12px;color:var(--w50);text-align:center;line-height:1.5;}
+  .success{display:none;text-align:center;padding:18px 6px;}
+  .success .tick{width:60px;height:60px;border-radius:50%;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.4);
+    display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--emerald-lt);margin:0 auto 18px;}
+  .success h2{font-family:var(--ff-d);font-size:30px;color:#fff;font-weight:500;margin-bottom:10px;}
+  .success p{color:var(--w70);font-size:15px;line-height:1.6;max-width:380px;margin:0 auto;}
+  .foot{text-align:center;margin-top:26px;font-size:11px;color:var(--w50);line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brandbar">
+    <span class="logos">
+      <img src="../Mila%20Penn%20Logo.png" alt="Mila Penn" class="logo">
+      <span class="sep"></span>
+      <img src="../Chazak%20Logo.png" alt="Chazak Investment" class="logo">
+    </span>
+  </div>
+  <div class="eyebrow">2026 Tax Strategy Briefing</div>
+  <h1>How was tonight?</h1>
+  <p class="lede">Thank you for joining us. Two minutes of feedback helps us make the next one even better.</p>
+
+  <form id="fb" class="card" novalidate>
+
+    <div class="q">
+      <span class="q-label">Overall, how valuable was tonight's session?</span>
+      <div class="stars" id="stars" role="radiogroup" aria-label="Overall rating">
+        <span class="star" data-v="1" role="radio" aria-label="1 star" tabindex="0">&#9733;</span>
+        <span class="star" data-v="2" role="radio" aria-label="2 stars" tabindex="0">&#9733;</span>
+        <span class="star" data-v="3" role="radio" aria-label="3 stars" tabindex="0">&#9733;</span>
+        <span class="star" data-v="4" role="radio" aria-label="4 stars" tabindex="0">&#9733;</span>
+        <span class="star" data-v="5" role="radio" aria-label="5 stars" tabindex="0">&#9733;</span>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="q-label">What did you find most useful? <span class="opt">(choose any)</span></span>
+      <div class="chips" id="useful">
+        <span class="chip"><input type="checkbox" id="u1" value="Depreciation & cost segregation"><label for="u1">Depreciation & cost segregation</label></span>
+        <span class="chip"><input type="checkbox" id="u2" value="Offsetting income (REPS / short-term rentals)"><label for="u2">Offsetting income (REPS / STRs)</label></span>
+        <span class="chip"><input type="checkbox" id="u3" value="Entity selection & the quiet levers"><label for="u3">Entity selection & quiet levers</label></span>
+        <span class="chip"><input type="checkbox" id="u4" value="Retirement plans (Solo 401k, cash balance, SEP)"><label for="u4">Retirement plans</label></span>
+        <span class="chip"><input type="checkbox" id="u5" value="Business deductions & the Augusta Rule"><label for="u5">Business deductions & Augusta Rule</label></span>
+        <span class="chip"><input type="checkbox" id="u6" value="Pitfalls to avoid"><label for="u6">Pitfalls to avoid</label></span>
+        <span class="chip"><input type="checkbox" id="u7" value="The Harmony Grove opportunity"><label for="u7">The Harmony Grove opportunity</label></span>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="q-label" for="benefit">What is one thing you will act on, or benefit from?</label>
+      <textarea id="benefit" placeholder="e.g. Looking into a cost-seg study, or pairing real estate losses with my W-2 income..."></textarea>
+    </div>
+
+    <div class="q">
+      <label class="q-label" for="comment">Any other comments about the webinar? <span class="opt">(optional)</span></label>
+      <textarea id="comment" placeholder="What you liked, what we could improve, anything at all."></textarea>
+    </div>
+
+    <div class="q">
+      <span class="q-label">Would you like a follow-up? <span class="opt">(choose any)</span></span>
+      <div class="chips" id="followup">
+        <span class="chip"><input type="checkbox" id="f1" value="Tax-planning conversation with Doc Wealth"><label for="f1">A tax-planning chat with Doc Wealth</label></span>
+        <span class="chip"><input type="checkbox" id="f2" value="More on the Harmony Grove investment"><label for="f2">More on Harmony Grove</label></span>
+        <span class="chip"><input type="checkbox" id="f3" value="Send me the replay"><label for="f3">Just send me the replay</label></span>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="q-label">Your details <span class="opt">(optional, so we can follow up)</span></span>
+      <div class="row2">
+        <input type="text" id="name" placeholder="Name" autocomplete="name">
+        <input type="email" id="email" placeholder="Email" autocomplete="email">
+      </div>
+    </div>
+
+    <input type="text" class="hp" id="company" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Company">
+
+    <button type="submit" class="submit" id="btn">Send feedback</button>
+    <div class="err" id="err"></div>
+    <p class="fine">Your feedback goes only to Mila Penn Chazak. Thank you for helping us improve.</p>
+  </form>
+
+  <div class="success card" id="ok">
+    <div class="tick">&#10003;</div>
+    <h2>Thank you</h2>
+    <p id="okmsg">Your feedback is in. We are grateful you spent the evening with us, and we will be in touch.</p>
+  </div>
+
+  <p class="foot">Mila Penn Chazak &middot; Harmony Grove Apartments &middot; Marietta, GA</p>
+</div>
+
+<script>
+  const SUPA_URL = "https://lyetmekozlqxzovipflv.supabase.co";
+  const ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5ZXRtZWtvemxxeHpvdmlwZmx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMTk0NDMsImV4cCI6MjA5Mjg5NTQ0M30.en2ODQvcWEW04gyNo2Y8yi-EZnNQUxPB2m6AicioFd0";
+  const WEBINAR = "tax-2026-06-29";
+
+  // star rating
+  let rating = 0;
+  const stars = [...document.querySelectorAll('.star')];
+  function paint(n){ stars.forEach(s => s.classList.toggle('on', +s.dataset.v <= n)); }
+  stars.forEach(s=>{
+    s.addEventListener('mouseenter', ()=>paint(+s.dataset.v));
+    s.addEventListener('mouseleave', ()=>paint(rating));
+    s.addEventListener('click', ()=>{ rating = +s.dataset.v; paint(rating); });
+    s.addEventListener('keydown', e=>{ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); rating=+s.dataset.v; paint(rating);} });
+  });
+
+  const checks = sel => [...document.querySelectorAll(sel+' input:checked')].map(i=>i.value);
+  const form = document.getElementById('fb');
+  const btn = document.getElementById('btn');
+  const errEl = document.getElementById('err');
+  function showErr(m){ errEl.textContent=m; errEl.style.display='block'; btn.disabled=false; btn.textContent='Send feedback'; }
+
+  form.addEventListener('submit', async e=>{
+    e.preventDefault();
+    errEl.style.display='none';
+    if(document.getElementById('company').value){ return; } // honeypot: silently ignore bots
+    const benefit = document.getElementById('benefit').value.trim();
+    const comment = document.getElementById('comment').value.trim();
+    const useful = checks('#useful');
+    if(!rating && !benefit && !comment && !useful.length){
+      return showErr('Please add a rating or a quick note before sending.');
+    }
+    btn.disabled=true; btn.textContent='Sending...';
+    const payload = {
+      webinar: WEBINAR,
+      rating: rating || null,
+      most_useful: useful,
+      benefit: benefit || null,
+      comment: comment || null,
+      follow_up: checks('#followup'),
+      name: document.getElementById('name').value.trim() || null,
+      email: document.getElementById('email').value.trim() || null
+    };
+    try{
+      const r = await fetch(SUPA_URL + "/rest/v1/webinar_feedback", {
+        method:'POST',
+        headers:{ 'apikey':ANON, 'Authorization':'Bearer '+ANON, 'Content-Type':'application/json', 'Prefer':'return=minimal' },
+        body: JSON.stringify(payload)
+      });
+      if(!r.ok){ const t = await r.text(); throw new Error(t || ('HTTP '+r.status)); }
+      form.style.display='none';
+      document.getElementById('ok').style.display='block';
+    }catch(ex){
+      showErr('Something went wrong sending your feedback. Please try again, or reply to our email.');
+      console.error(ex);
+    }
+  });
+</script>
+</body>
+</html>
