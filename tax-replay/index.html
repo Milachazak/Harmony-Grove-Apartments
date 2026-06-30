@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Tax Strategy Briefing | Replay &amp; Notes | Mila Penn Chazak</title>
+    <meta name="description" content="The full replay and companion notes from the 2026 Tax Strategy Briefing with Kim Hopkins, EA (Doc Wealth), hosted by Mila Penn Chazak on June 29, 2026.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg: #F4F6FB; --bg-sec: #ECEFF7;
+            --blue: #1244F5; --blue-dk: #0A2ECC; --blue-xl: #4A78FF; --blue-dim: rgba(18,68,245,0.09);
+            --gold: #C9A24B; --gold-dk: #9C7A2E; --gold-lt: #E6B450;
+            --gold-dim: rgba(201,162,75,0.12); --gold-border: rgba(201,162,75,0.30);
+            --emerald: #10B981; --emerald-dk:#0E9E6E; --emerald-lt:#34D399;
+            --navy: #050E1F; --navy-2: #0A1830;
+            --text: #0A1628; --t70: rgba(10,22,40,0.70); --t50: rgba(10,22,40,0.50);
+            --t30: rgba(10,22,40,0.30); --t10: rgba(10,22,40,0.10); --t06: rgba(10,22,40,0.06);
+            --r-card: 20px; --r-pill: 100px;
+            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-b: 'Jost', -apple-system, sans-serif;
+        }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+        .amb { position:fixed; border-radius:50%; pointer-events:none; z-index:0; filter:blur(90px); }
+        .amb-1 { width:800px;height:800px;top:-10%;right:-5%; background:radial-gradient(circle,rgba(201,162,75,0.10) 0%,transparent 68%); }
+        .amb-2 { width:600px;height:600px;bottom:10%;left:-8%; background:radial-gradient(circle,rgba(18,68,245,0.06) 0%,transparent 68%); }
+
+        /* NAV */
+        #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:14px 48px;
+            display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+            background:rgba(255,255,255,0.70); backdrop-filter:blur(40px) saturate(200%); -webkit-backdrop-filter:blur(40px) saturate(200%);
+            border-bottom:1px solid rgba(255,255,255,0.90); box-shadow:0 2px 20px rgba(10,22,40,0.06); }
+        .nav-logos { display:flex; align-items:center; gap:14px; }
+        .nav-logo { height:30px; width:auto; object-fit:contain; }
+        .nav-sep { width:1px; height:24px; background:var(--t10); }
+        .nav-badge { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+            color:#1A1304; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); padding:6px 16px; border-radius:var(--r-pill); }
+        .nav-cta { padding:10px 22px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
+            background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; text-decoration:none;
+            box-shadow:0 4px 16px rgba(18,68,245,0.30); transition:all .25s; white-space:nowrap; }
+        .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(18,68,245,0.42); }
+        @media(max-width:680px){ #nav{padding:11px 18px;} .nav-badge{display:none;} .nav-logo{height:24px;} }
+
+        /* BUTTONS */
+        .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
+        .btn-primary { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; border-radius:var(--r-pill); box-shadow:0 4px 20px rgba(18,68,245,0.36); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(18,68,245,0.48); }
+        .btn-gold { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); color:#1A1304; border-radius:var(--r-pill); box-shadow:0 6px 22px rgba(201,162,75,0.42); }
+        .btn-gold:hover { transform:translateY(-2px); box-shadow:0 10px 34px rgba(201,162,75,0.55); }
+        .btn-ghost { padding:13px 30px; font-size:14px; font-weight:600; background:transparent; color:var(--text); border:1.5px solid var(--t10); border-radius:var(--r-pill); }
+        .btn-ghost:hover { border-color:var(--gold); }
+
+        /* HERO */
+        .hero { position:relative; min-height:60vh; display:flex; align-items:flex-end; overflow:hidden;
+            background:linear-gradient(135deg, #050E1F 0%, #0A1830 55%, #0D2050 100%); }
+        .hero-bg-img { position:absolute; inset:0; z-index:0;
+            background:url('../Property Photos/harmony-grove-marietta-ga-primary-photo.jpg') center/cover no-repeat; opacity:0.14; }
+        .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(130deg,rgba(5,14,31,0.96) 0%,rgba(5,14,31,0.84) 50%,rgba(5,14,31,0.62) 100%); }
+        .hero-inner { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:130px 48px 70px; width:100%;
+            display:grid; grid-template-columns:1fr 460px; gap:56px; align-items:center; }
+        .rec-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; margin-bottom:18px;
+            background:rgba(201,162,75,0.18); border:1px solid rgba(201,162,75,0.42); border-radius:var(--r-pill);
+            font-size:11.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#E6C77A; width:fit-content; }
+        .rec-dot { width:8px; height:8px; background:var(--gold-lt); border-radius:50%; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .hero-title { font-family:var(--ff-d); font-size:clamp(38px,5vw,68px); font-weight:600; line-height:1.10; letter-spacing:-.02em; color:#fff; margin-bottom:18px; }
+        .hero-title em { font-style:italic; color:var(--gold-lt); }
+        .hero-sub { font-size:clamp(15px,1.6vw,16.5px); color:rgba(255,255,255,0.70); max-width:500px; line-height:1.78; font-weight:300; margin-bottom:26px; }
+        .hero-meta { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:30px; }
+        .hero-meta-pill { display:inline-flex; align-items:center; gap:7px; padding:8px 15px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:10px; font-size:12.5px; color:rgba(255,255,255,0.78); font-weight:500; }
+        .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
+
+        .hero-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .hb-card { border-radius:16px; padding:20px 22px; position:relative; overflow:hidden; }
+        .hb-frost { background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.18); backdrop-filter:blur(20px); }
+        .hb-gold-card { background:linear-gradient(135deg,rgba(201,162,75,0.40),rgba(156,122,46,0.28)); border:1px solid rgba(230,180,80,0.55); box-shadow:0 0 24px rgba(201,162,75,0.18); }
+        .hb-navy-card { background:rgba(5,14,31,0.80); border:1px solid rgba(18,68,245,0.35); display:flex; flex-direction:column; justify-content:space-between; }
+        .hb-tax-card { background:linear-gradient(135deg,rgba(16,185,129,0.38),rgba(4,120,87,0.28)); border:1px solid rgba(52,211,153,0.55); box-shadow:0 0 24px rgba(16,185,129,0.18); }
+        .hb-lbl { display:block; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:6px; }
+        .hb-val { display:block; font-family:var(--ff-d); font-size:clamp(24px,3vw,36px); font-weight:700; color:#fff; line-height:1; margin-bottom:6px; }
+        .hb-accent { color:var(--gold-lt); }
+        .hb-sub { display:block; font-size:11px; color:rgba(255,255,255,0.50); font-weight:400; line-height:1.4; }
+        @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:110px 24px 50px;gap:36px;} .hero-cards{max-width:420px;} }
+
+        /* SECTIONS */
+        .sec { padding:78px 0; position:relative; }
+        .container { max-width:1100px; margin:0 auto; padding:0 48px; }
+        .sec-lbl { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:13px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(30px,3.8vw,48px); font-weight:600; line-height:1.12; letter-spacing:-.02em; color:var(--text); margin-bottom:16px; }
+        .sec-title em { font-style:italic; color:var(--gold-dk); }
+        .sec-body { font-size:16px; color:var(--t70); line-height:1.78; }
+        @media(max-width:700px){ .container{padding:0 20px;} .sec{padding:56px 0;} }
+
+        /* VIDEO */
+        .video-wrap { border-radius:20px; overflow:hidden; box-shadow:0 12px 60px rgba(10,22,40,0.22); background:#000; position:relative; }
+        .video-wrap video { width:100%; display:block; max-height:560px; }
+        .framing { margin-top:30px; background:linear-gradient(135deg,rgba(201,162,75,0.12),rgba(18,68,245,0.05)); border:1px solid var(--gold-border); border-radius:18px; padding:26px 32px; text-align:center; }
+        .framing-q { font-family:var(--ff-d); font-size:clamp(22px,3vw,30px); font-style:italic; color:var(--text); line-height:1.3; }
+        .framing-q b { font-style:normal; color:var(--gold-dk); }
+        .framing-sub { margin-top:8px; font-size:13.5px; color:var(--t50); }
+
+        /* SPEAKER */
+        .spk-wrap { display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:center; margin-top:10px; }
+        .spk-photo { width:100%; max-width:260px; aspect-ratio:1/1; object-fit:cover; border-radius:20px; box-shadow:0 12px 40px rgba(10,22,40,0.18); }
+        .spk-name { font-family:var(--ff-d); font-size:34px; font-weight:600; color:var(--text); line-height:1.1; margin-bottom:4px; }
+        .spk-role { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:16px; }
+        .spk-bio { font-size:15px; color:var(--t70); line-height:1.78; margin-bottom:12px; }
+        @media(max-width:760px){ .spk-wrap{grid-template-columns:1fr;gap:22px;text-align:center;} .spk-photo{margin:0 auto;max-width:200px;} .spk-role{margin-left:auto;margin-right:auto;} }
+
+        /* PANEL */
+        .panel-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:30px; }
+        .panel-card { background:white; border-radius:14px; padding:20px 20px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); }
+        .panel-name { font-family:var(--ff-d); font-size:19px; font-weight:600; color:var(--text); line-height:1.2; margin-bottom:4px; }
+        .panel-role { font-size:10.5px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--gold-dk); }
+        @media(max-width:860px){ .panel-grid{grid-template-columns:repeat(2,1fr);} }
+
+        /* AGENDA / REASONS */
+        .reasons-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:38px; }
+        .reason-card { background:white; border-radius:18px; padding:28px 30px; border:1px solid var(--t06); box-shadow:0 3px 20px var(--t06); }
+        .reason-num { font-family:var(--ff-d); font-size:40px; font-weight:700; color:var(--gold-dim); line-height:1; margin-bottom:10px; }
+        .reason-title { font-size:15px; font-weight:700; color:var(--text); margin-bottom:9px; letter-spacing:.01em; }
+        .reason-body { font-size:14px; color:var(--t70); line-height:1.72; }
+        @media(max-width:700px){ .reasons-grid{grid-template-columns:1fr;} }
+
+        /* STATS BAND */
+        .stats-band { background:var(--navy); padding:54px 0; }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+        .stat-item { padding:28px 24px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); }
+        .stat-item:last-child { border-right:none; }
+        .stat-num { font-family:var(--ff-d); font-size:clamp(30px,3.6vw,48px); font-weight:700; color:var(--gold-lt); line-height:1; margin-bottom:8px; }
+        .stat-lbl { font-size:11.5px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:rgba(255,255,255,0.45); line-height:1.4; }
+        @media(max-width:700px){ .stats-grid{grid-template-columns:repeat(2,1fr);} .stat-item{border-right:none; border-bottom:1px solid rgba(255,255,255,0.07);} }
+
+        /* Q&A */
+        .qa-item { background:white; border-radius:16px; padding:26px 30px; margin-bottom:14px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); }
+        .qa-question { font-size:16px; font-weight:600; color:var(--text); line-height:1.5; margin-bottom:5px; }
+        .qa-asker { font-size:12px; color:var(--gold-dk); font-weight:600; letter-spacing:.03em; margin-bottom:14px; }
+        .qa-answer { margin-top:10px; padding-top:14px; border-top:1px solid var(--t06); }
+        .qa-text { font-size:14.5px; color:var(--t70); line-height:1.75; }
+        .qa-text em { color:var(--text); font-style:italic; }
+
+        /* CHEAT */
+        .cheat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
+        .cheat-card { background:white; border-radius:14px; padding:22px 24px; border:1px solid var(--t06); box-shadow:0 2px 10px var(--t06); }
+        .cheat-card-title { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--t06); }
+        .cheat-row { display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-bottom:1px solid var(--t06); }
+        .cheat-row:last-child { border-bottom:none; }
+        .cheat-key { font-size:12.5px; color:var(--t50); font-weight:500; }
+        .cheat-val { font-size:12.5px; color:var(--text); font-weight:600; text-align:right; }
+        @media(max-width:760px){ .cheat-grid{grid-template-columns:1fr;} }
+
+        /* QUOTES */
+        .quotes-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+        .quote-card { background:var(--navy); border-radius:16px; padding:28px 30px; border:1px solid rgba(255,255,255,0.07); }
+        .quote-text { font-family:var(--ff-d); font-size:18px; font-style:italic; color:rgba(255,255,255,0.90); line-height:1.6; margin-bottom:14px; }
+        .quote-attr { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-lt); }
+        @media(max-width:700px){ .quotes-grid{grid-template-columns:1fr;} }
+
+        /* TIE-IN */
+        .tiein { background:linear-gradient(135deg,rgba(16,185,129,0.10),rgba(201,162,75,0.07)); border:1px solid rgba(16,185,129,0.26); border-radius:20px; padding:40px 44px; margin-top:8px; }
+        .tiein h3 { font-family:var(--ff-d); font-size:28px; font-weight:600; color:var(--text); margin-bottom:14px; line-height:1.2; }
+        .tiein p { font-size:15px; color:var(--t70); line-height:1.78; margin-bottom:14px; }
+        .tiein .ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+        @media(max-width:700px){ .tiein{padding:30px 24px;} }
+
+        /* DEAL PARTNERS */
+        .partners-strip { background:linear-gradient(135deg,#050E1F,#0A1830); border-radius:24px; padding:34px 48px; max-width:1100px; margin:0 auto; }
+        .partners-label { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-align:center; margin-bottom:26px; }
+        .partners-logos { display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap; }
+        .partner-pill { display:flex; align-items:center; justify-content:center; padding:13px 26px; border-radius:50px; }
+        .partner-pill.dark { background:#0B1628; border:1px solid rgba(255,255,255,0.10); }
+        .partner-pill.light { background:#ffffff; border:1px solid rgba(0,0,0,0.07); box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+        .partner-logo { height:32px; width:auto; max-width:150px; object-fit:contain; }
+        @media (max-width:680px){ .partners-strip{padding:26px 18px;} .partners-logos{gap:12px;} .partner-pill{padding:10px 18px;} .partner-logo{height:22px;max-width:110px;} }
+
+        /* FEEDBACK STRIP */
+        .fb-strip { text-align:center; margin-top:30px; font-size:14px; color:var(--t70); }
+        .fb-strip a { color:var(--gold-dk); font-weight:600; text-decoration:none; border-bottom:1px solid var(--gold-border); }
+        .fb-strip a:hover { border-color:var(--gold-dk); }
+
+        /* FINAL CTA */
+        .final-cta { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%); padding:78px 0; text-align:center; }
+        .final-cta .sec-title { color:#fff; }
+        .final-cta .sec-title em { color:var(--gold-lt); }
+        .final-cta .sec-body { color:rgba(255,255,255,0.62); margin-bottom:34px; }
+        .cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+        /* DISCLAIMER + FOOTER */
+        .disc { max-width:1100px; margin:0 auto; padding:26px 48px 0; font-size:11.5px; color:var(--t50); line-height:1.7; text-align:center; }
+        footer { background:var(--navy-2); padding:30px 48px; text-align:center; margin-top:40px; }
+        .footer-text { font-size:12px; color:rgba(255,255,255,0.32); line-height:1.8; }
+
+        .fu { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+        .vis { opacity:1; transform:none; }
+    </style>
+</head>
+<body>
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logos">
+        <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+        <div class="nav-sep"></div>
+        <img src="../Chazak Logo.png" alt="Chazak" class="nav-logo">
+    </div>
+    <div class="nav-badge">June 29, 2026 · Replay</div>
+    <a href="https://calendly.com/kirk-a-campbell-md/milapenn_investment_call" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="rec-badge"><span class="rec-dot"></span> Tax Strategy Briefing · Replay</div>
+            <h1 class="hero-title">Keep more of<br><em>what you earn.</em></h1>
+            <p class="hero-sub">The full replay and companion notes from our 2026 Tax Strategy Briefing with Kim Hopkins, EA of Doc Wealth, on Monday, June 29, 2026. Sixty focused minutes on the moves high earners use to legally keep more of every dollar: depreciation, cost segregation, real estate professional status, entity selection, retirement leverage, and the pitfalls to avoid.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-pill">📅 June 29, 2026</div>
+                <div class="hero-meta-pill">Kim Hopkins, EA · Doc Wealth</div>
+                <div class="hero-meta-pill">Hosted by Mila Penn Chazak</div>
+            </div>
+            <div class="hero-ctas">
+                <a href="#video" class="btn btn-gold">Watch the Replay</a>
+                <a href="#qa" class="btn btn-primary">Jump to the Q&amp;A</a>
+            </div>
+        </div>
+        <div class="hero-cards">
+            <div class="hb-card hb-tax-card">
+                <span class="hb-lbl">Typical Annual Savings</span>
+                <span class="hb-val"><span class="hb-accent">$20K–$40K</span></span>
+                <span class="hb-sub">From planning, before any investing</span>
+            </div>
+            <div class="hb-card hb-gold-card">
+                <span class="hb-lbl">Cost-Seg Paper Loss</span>
+                <span class="hb-val">~<span class="hb-accent">$25K</span></span>
+                <span class="hb-sub">Per $100K invested, often year one</span>
+            </div>
+            <div class="hb-card hb-frost">
+                <span class="hb-lbl">Augusta Rule</span>
+                <span class="hb-val"><span class="hb-accent">14</span> days</span>
+                <span class="hb-sub">Rent your home to your business, tax-free</span>
+            </div>
+            <div class="hb-card hb-navy-card">
+                <span class="hb-lbl">Depreciation Life</span>
+                <span class="hb-val"><span class="hb-accent">27.5</span> yrs</span>
+                <span class="hb-sub">Accelerated via cost segregation</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="sec" id="video">
+    <div class="container">
+        <div class="sec-lbl fu">2026 Tax Strategy Briefing · June 29, 2026</div>
+        <h2 class="sec-title fu">Watch the <em>full replay</em></h2>
+        <p class="sec-body fu" style="text-align:center;max-width:720px;margin:0 auto 30px;">The complete recording. Kim Hopkins, EA of Doc Wealth walks through the tax playbook most high-income earners were never taught, from depreciation and cost segregation to entity selection and retirement leverage, then fields a long live Q&amp;A with our partners and attendees.</p>
+        <div class="video-wrap fu">
+            <video controls preload="metadata" poster="../Property Photos/harmony-grove-marietta-ga-primary-photo.jpg">
+                <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Untitled.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="framing fu">
+            <div class="framing-q">"You don't have an income problem. <b>You have a tax problem.</b>"</div>
+            <div class="framing-sub">The idea behind the evening: it is not how much you earn, it is how much you keep.</div>
+        </div>
+    </div>
+</section>
+
+<!-- SPEAKER -->
+<section class="sec" style="background:var(--bg-sec);padding-top:64px;">
+    <div class="container">
+        <div class="sec-lbl fu">Your Speaker</div>
+        <h2 class="sec-title fu">Kim Hopkins, <em>EA</em></h2>
+        <div class="spk-wrap fu">
+            <img src="../Kim-web.jpg" alt="Kim Hopkins, EA" class="spk-photo">
+            <div>
+                <div class="spk-name">Kim Hopkins, EA</div>
+                <div class="spk-role">Director of Tax Planning · Doc Wealth</div>
+                <p class="spk-bio">Kim is an Enrolled Agent, the highest credential the IRS grants, with about 17 years of tax experience and roughly a decade focused on physicians and high-income professionals. She leads tax planning at Doc Wealth, a full-service, physician-focused tax planning and filing firm.</p>
+                <p class="spk-bio">Her message all evening was simple: reactive filing tells you what you owe, proactive planning changes what you owe. As she put it, "if you are being reactive, you are leaving dollars on the table."</p>
+            </div>
+        </div>
+        <div class="sec-lbl fu" style="margin-top:46px;">On the Panel</div>
+        <div class="panel-grid">
+            <div class="panel-card fu"><div class="panel-name">Dr. Kirk Campbell</div><div class="panel-role">Host · Mila Penn Chazak</div></div>
+            <div class="panel-card fu"><div class="panel-name">J. Claude Mouaffi</div><div class="panel-role">Host · Mila Penn Chazak</div></div>
+            <div class="panel-card fu"><div class="panel-name">Fedna Morency</div><div class="panel-role">EagleCap Ventures</div></div>
+            <div class="panel-card fu"><div class="panel-name">Leah Krebs</div><div class="panel-role">Priority 1 Capital</div></div>
+            <div class="panel-card fu"><div class="panel-name">Anita Akpunku</div><div class="panel-role">Kynectic Capital</div></div>
+            <div class="panel-card fu"><div class="panel-name">Edwin Valverde</div><div class="panel-role">MedVal · CRNA</div></div>
+            <div class="panel-card fu"><div class="panel-name">Blaise Nzeda</div><div class="panel-role">Vanguard Consultants</div></div>
+            <div class="panel-card fu"><div class="panel-name">Dr. Ntiense Robin</div><div class="panel-role">FaithBridge Capital</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT KIM COVERED -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">The Playbook</div>
+        <h2 class="sec-title fu">What Kim <em>covered</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">The evening moved from mindset to mechanics. Here is the path, in the order she walked it.</p>
+        <div class="reasons-grid">
+            <div class="reason-card fu">
+                <div class="reason-num">01</div>
+                <div class="reason-title">Filing vs. planning</div>
+                <div class="reason-body">Filing is reactive and happens once a year. Planning is proactive and year-round. The difference is not small: $20,000 to $40,000 a year in savings is typical from the low-hanging fruit alone, before any investing.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">02</div>
+                <div class="reason-title">Why multifamily</div>
+                <div class="reason-body">Versus single-family: multiple income streams so one vacancy is not a 100% loss, economies of scale, accelerated depreciation, easier financing, and built-in equity. The trade-off is higher upfront capital and more active management.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">03</div>
+                <div class="reason-title">Depreciation and cost segregation</div>
+                <div class="reason-body">Residential buildings depreciate over 27.5 years. A cost-segregation study reclassifies components into 5, 7, and 15-year property and applies 100% bonus depreciation, often taking around 25% of the building's cost in the study year.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">04</div>
+                <div class="reason-title">Offsetting your income: REPS and STRs</div>
+                <div class="reason-body">Rental losses are normally passive. Real Estate Professional Status or a short-term rental (average stay 7 days or less) lets those losses offset W-2 or active income. Most physicians cannot hit REPS themselves; a spouse usually can.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">05</div>
+                <div class="reason-title">The quiet levers</div>
+                <div class="reason-body">Entity selection (LLCs for rentals, not S-corps), timing the placed-in-service date and grouping activities to meet participation tests, harvesting losses against gains, and self-directing retirement accounts to hold real estate.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">06</div>
+                <div class="reason-title">Savings for healthcare pros</div>
+                <div class="reason-body">Business deductions (direct, indirect, professional, travel), the home-office deduction, the Augusta Rule (rent your home to your business up to 14 days tax-free), and retirement plans: SEP IRA, Solo 401(k), and cash balance plans.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">07</div>
+                <div class="reason-title">Things to watch out for</div>
+                <div class="reason-body">Passive loss limits, REPS documentation that must be contemporaneous and defensible, depreciation recapture, short-term-rental material participation, over-leveraging, and commingling personal and business funds.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">08</div>
+                <div class="reason-title">Pro tips and how Doc Wealth helps</div>
+                <div class="reason-body">Plan year-round, track real-estate hours from day one, order cost-seg on larger buys, keep clean books (one LLC per property), and coordinate your CPA, attorney, and advisor. Doc Wealth is built as a proactive, one-stop shop for exactly this.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-num">27.5 yr</div><div class="stat-lbl">Depreciation Life</div></div>
+            <div class="stat-item"><div class="stat-num">750 hrs</div><div class="stat-lbl">REPS Hours Test</div></div>
+            <div class="stat-item"><div class="stat-num">7 days</div><div class="stat-lbl">STR Avg Stay or Less</div></div>
+            <div class="stat-item"><div class="stat-num">14 days</div><div class="stat-lbl">Augusta Rule Limit</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Q&A -->
+<section class="sec" id="qa" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Live Q&amp;A · June 29, 2026</div>
+        <h2 class="sec-title fu">Every question. <em>Every answer.</em></h2>
+        <p class="sec-body fu" style="margin-bottom:40px;">The questions our partners and attendees put to Kim during the live session, summarized for clarity. This is educational and is not tax advice; confirm specifics for your own situation with a professional.</p>
+
+        <div class="qa-item fu">
+            <div class="qa-question">How much is never planning actually costing people?</div>
+            <div class="qa-asker">Asked by Anita Akpunku</div>
+            <div class="qa-answer"><div class="qa-text">It depends on the situation, but $20,000 to $40,000 a year in savings is very typical just from the low-hanging fruit, before any investing. Some clients save hundreds of thousands. Compounded over a working life, the difference is life-changing.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">If someone puts $100,000 into a multifamily deal, how big is the paper loss from cost segregation?</div>
+            <div class="qa-asker">Asked by Leah Krebs</div>
+            <div class="qa-answer"><div class="qa-text">Typically around 25%, give or take, so roughly $25,000 on a $100,000 investment, allocated to you per the operating agreement.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Why is one apartment building better than several single-family homes?</div>
+            <div class="qa-asker">Asked by Fedna Morency</div>
+            <div class="qa-answer"><div class="qa-text">More to leverage: multiple tenants so a single vacancy is not a 100% loss, economies of scale, easier financing (you can refinance by unit), and more built-in equity. Several single-families can get close, but multifamily achieves it with less vacancy risk and more ease.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">As busy medical professionals without time for REPS, how do we still get the savings?</div>
+            <div class="qa-asker">Asked by Anita Akpunku</div>
+            <div class="qa-answer"><div class="qa-text">Doctors almost never qualify, not mainly because of the 750 hours but because real estate must exceed the hours you spend in any other income source, and physicians earn more from medicine. The workaround is a spouse qualifying. <em>"If any tax professional ever tells you that they'll take that REP status for you, that should be a pretty big red flag."</em></div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">As a full-time physician who cannot spend 750 hours, is there another way to use real estate losses against my salary?</div>
+            <div class="qa-asker">Asked by Dr. Kirk Campbell</div>
+            <div class="qa-answer"><div class="qa-text">Yes, a short-term rental is the easiest unlock. It requires material participation but not much time (answering renter questions, facilitating fixes, working with a manager). To count as short-term the average stay must be 7 days or less, with at least two rentals showing income. Long-term rentals are capped at $25,000 a year per property.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Which strategy gives the best bang for the buck in year one?</div>
+            <div class="qa-asker">Asked by Dr. Kirk Campbell</div>
+            <div class="qa-answer"><div class="qa-text">If you have a passive-loss offset (a short-term rental or a spouse with REPS), the cost-segregation study is the biggest. Without that offset, a non-professional with a long-term rental is capped at $25,000 per property, so the 1031 exchange becomes the biggest lever because it defers all of the capital gains.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Who initiates the cost-segregation study on a multifamily deal?</div>
+            <div class="qa-asker">Asked by Leah Krebs</div>
+            <div class="qa-answer"><div class="qa-text">The owner of the property or partnership initiates it, and a good tax professional should recommend it. Doc Wealth provides a referral list of engineering companies to choose from.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Can taxes "disappear" if you pass the property to your kids?</div>
+            <div class="qa-asker">Asked by Fedna Morency</div>
+            <div class="qa-answer"><div class="qa-text">Not entirely. Depreciation recapture is normally taxed at your marginal rate. A step-up in basis at death converts it to the lower capital-gains treatment, and heirs can then do a 1031 to defer further. It lowers the tax substantially, but it does not erase it outright.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">How can you invest in real estate inside a cash balance plan?</div>
+            <div class="qa-asker">Asked by Dr. Ntiense Robin</div>
+            <div class="qa-answer"><div class="qa-text">By self-directing it. Instead of holding stocks, you self-direct the plan, make the purchase, sell later, and roll the proceeds back into the plan (kept at arm's length). The money keeps growing inside the plan. <em>"That's actually how Warren Buffett got as rich as he did, through his cash balance plan."</em></div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Outside of real estate, what is the most common tax-saving move high earners miss?</div>
+            <div class="qa-asker">Asked by Edwin Valverde</div>
+            <div class="qa-answer"><div class="qa-text">Oil and gas investment. Investors typically deduct 80% to 90% of the investment in the first year via depreciation, depletion, and drilling costs, and those losses can offset active earned income. The back-end ROI is also tax-advantaged.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">As a 1099 earner, how far can deductions go before raising IRS flags?</div>
+            <div class="qa-asker">Asked by Edwin Valverde</div>
+            <div class="qa-answer"><div class="qa-text">It is not the number of deductions, it is the percentage of each category versus your gross revenue. The IRS keeps a database of normal expense percentages by business type. Claiming 30% rent when 10% is typical, or 40% marketing when 5% is typical, is a major flag and is how fact-based (non-random) audits are selected.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">For a practice owner, how much can the right business setup save, and is it worth the paperwork?</div>
+            <div class="qa-asker">Asked by Blaise Nzeda</div>
+            <div class="qa-answer"><div class="qa-text">A big difference. Above roughly $80,000 of net income, an S-corp election starts saving meaningfully, easily $5,000 to $6,000 or more a year for a typical practice, because distribution income is not subject to self-employment tax. One caveat: some states penalize S-corps.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">With the Augusta Rule, do you rent the whole house or a room, and how do you set the rate?</div>
+            <div class="qa-asker">Asked by Dr. Ntiense Robin</div>
+            <div class="qa-answer"><div class="qa-text">It is about the type of event, not the room. For a large gathering, pull comparables from event centers or hotel ballrooms; for a smaller meeting, use hotel meeting rooms or coworking spaces. Deductions can run $600 to $1,000 or more per rental, totaling roughly $11,000 to $14,000 across the year.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">If I own an LLC and do 1099 work, how do I write off my car payments?</div>
+            <div class="qa-asker">Asked by Salvador, an attendee</div>
+            <div class="qa-answer"><div class="qa-text">The principal of the payment is not deductible. You write off the vehicle either by actual expenses (gas, repairs, interest, depreciation) at your business-use percentage, or by mileage (about 72.5 cents per mile this year). To take 100% of the purchase price in year one, the vehicle must be over 6,000 pounds.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Are there tax benefits for someone with a busy job who just wants to invest in real estate, with no time for another role?</div>
+            <div class="qa-asker">Asked by Dr. Kirk Campbell</div>
+            <div class="qa-answer"><div class="qa-text">Yes, options that do not require hours: REITs, Qualified Opportunity Funds (hold 10 years and pay no capital gain on the sale), and syndications. In a syndication, if a cost-seg is done at the entity level the losses pass through to you, and as a passive investor they accumulate and carry forward, typically reducing taxable income to zero without a negative hit.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">What is the most common mistake smart, high-earning investors make?</div>
+            <div class="qa-asker">Asked by Blaise Nzeda</div>
+            <div class="qa-answer"><div class="qa-text">Backdoor Roth conversions reported incorrectly, which are costly and time-consuming to unwind. The fix is working with a well-seasoned professional. The other mistake is simply waiting too long to start, people kick themselves for not doing it sooner.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">If someone takes one thing from tonight and starts this week, what should it be?</div>
+            <div class="qa-asker">Asked by Leah Krebs</div>
+            <div class="qa-answer"><div class="qa-text">Get with a proactive tax-planning professional you trust. Reactive filing only tells you what you owe; the investment vehicle does not matter nearly as much without a seasoned planner on your side. <em>"Tax planning is really where it's at."</em></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- TAX CHEAT SHEET -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Single-Page Summary</div>
+        <h2 class="sec-title fu">Tax <em>cheat sheet</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">The key numbers from the evening in one place. These were shared live for education; confirm the current-year figures with your tax professional.</p>
+        <div class="cheat-grid">
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">Depreciation &amp; Cost Seg</div>
+                <div class="cheat-row"><span class="cheat-key">Residential life</span><span class="cheat-val">27.5 years</span></div>
+                <div class="cheat-row"><span class="cheat-key">Cost-seg buckets</span><span class="cheat-val">5 / 7 / 15-yr</span></div>
+                <div class="cheat-row"><span class="cheat-key">Bonus depreciation</span><span class="cheat-val">100%</span></div>
+                <div class="cheat-row"><span class="cheat-key">Taken in study year</span><span class="cheat-val">~25% of cost</span></div>
+                <div class="cheat-row"><span class="cheat-key">Per $100K invested</span><span class="cheat-val">~$25K paper loss</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">Offsetting Income</div>
+                <div class="cheat-row"><span class="cheat-key">REPS hours test</span><span class="cheat-val">750+ hrs</span></div>
+                <div class="cheat-row"><span class="cheat-key">REPS binding test</span><span class="cheat-val">&gt; any other job</span></div>
+                <div class="cheat-row"><span class="cheat-key">Short-term rental</span><span class="cheat-val">avg ≤ 7-day stay</span></div>
+                <div class="cheat-row"><span class="cheat-key">Long-term cap</span><span class="cheat-val">$25K/yr/property</span></div>
+                <div class="cheat-row"><span class="cheat-key">Defer gains</span><span class="cheat-val">1031 exchange</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">Levers &amp; Limits</div>
+                <div class="cheat-row"><span class="cheat-key">Augusta Rule</span><span class="cheat-val">14 days (~$11–14K)</span></div>
+                <div class="cheat-row"><span class="cheat-key">S-corp worth it above</span><span class="cheat-val">~$80K net</span></div>
+                <div class="cheat-row"><span class="cheat-key">SEP / Solo 401(k)</span><span class="cheat-val">~$72K</span></div>
+                <div class="cheat-row"><span class="cheat-key">Oil &amp; gas yr 1</span><span class="cheat-val">80–90% deduct</span></div>
+                <div class="cheat-row"><span class="cheat-key">Opp. Zone fund</span><span class="cheat-val">no gain after 10 yr</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUOTES -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Direct from the Briefing</div>
+        <h2 class="sec-title fu">Lines worth <em>remembering</em></h2>
+        <div class="quotes-grid">
+            <div class="quote-card fu">
+                <div class="quote-text">"We shouldn't have to make $2 to take home one."</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"Tax planning should be done on a proactive basis. It's not something you do only on April 15th."</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"If you are being reactive, you are leaving dollars on the table. You are paying more than you are required to."</div>
+                <div class="quote-attr">Kim Hopkins, EA</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"If any tax professional ever tells you they'll take that REP status for you, that should be a pretty big red flag."</div>
+                <div class="quote-attr">Kim Hopkins, EA</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"That's actually how Warren Buffett got as rich as he did, through his cash balance plan."</div>
+                <div class="quote-attr">Kim Hopkins, EA</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"What's the benefit of performing your own surgery versus having a professional do it? It's pretty much the same with taxes."</div>
+                <div class="quote-attr">Kim Hopkins, EA</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HARMONY GROVE TIE-IN -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Putting It to Work</div>
+        <h2 class="sec-title fu">Where this meets <em>Harmony Grove</em></h2>
+        <div class="tiein fu">
+            <h3>The strategies Kim described are exactly what our deal delivers.</h3>
+            <p>Everything covered tonight about multifamily, accelerated depreciation, and cost segregation is live in our current offering: <strong>Harmony Grove</strong>, a 75-unit community in Marietta, Georgia, now in the final stretch of fundraising. An investor's allocated share of the cost-segregation loss is roughly <strong>$25,000 of paper loss for every $100,000 invested</strong>, with a year-one tax benefit targeted around <strong>$35,000</strong> on a $100K position.</p>
+            <p>As Claude put it to close the evening: if tonight made you think about getting into real estate to capture those multifamily tax strategies, the deal is open, and the team will walk you through exactly how it helps our investors save on tax. For the planning side, Kim and the Doc Wealth team are there to help you implement it.</p>
+            <div class="ctas">
+                <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="btn btn-gold">Explore Harmony Grove</a>
+                <a href="https://calendly.com/kirk-a-campbell-md/milapenn_investment_call" target="_blank" rel="noopener" class="btn btn-ghost">Book a Call with the Team</a>
+            </div>
+        </div>
+        <p class="fb-strip fu">Were you there tonight? <a href="https://milapennchazak.com/tax-feedback/">Share your quick feedback &rarr;</a></p>
+    </div>
+</section>
+
+<!-- DEAL PARTNERS -->
+<section class="sec" style="padding-top:0;">
+    <div class="container">
+        <div class="partners-strip fu">
+            <div class="partners-label">Our Partners</div>
+            <div class="partners-logos">
+                <div class="partner-pill dark"><img src="../partners/LGdMKRpXs6NWEwQ3PXPMbehapcE.png.webp" alt="Priority 1 Capital" class="partner-logo"></div>
+                <div class="partner-pill light"><img src="../partners/dPVwEvb3YFoQbnDfaiFFotoe20.png.webp" alt="EagleCap" class="partner-logo"></div>
+                <div class="partner-pill light"><img src="../partners/seeiISokM50jCrgmRqPiJcy0Jbw.png.webp" alt="Kynectic Capital Investment" class="partner-logo"></div>
+                <div class="partner-pill light"><img src="../partners/medval.png.webp" alt="Medval Capital" class="partner-logo"></div>
+                <div class="partner-pill dark"><img src="../partners/enhance.jpg" alt="Enhance Holdings LLC" class="partner-logo"></div>
+                <div class="partner-pill dark"><img src="../partners/FBlogowhite.png.webp" alt="FaithBridge Capital" class="partner-logo"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container">
+        <div class="sec-lbl" style="color:rgba(255,255,255,0.45);text-align:center;">Next Steps</div>
+        <h2 class="sec-title" style="text-align:center;margin-bottom:16px;">Keep more of <em>what you earn</em></h2>
+        <p class="sec-body" style="text-align:center;max-width:600px;margin:0 auto 34px;">Two ways to act on tonight: build the tax plan with Doc Wealth, and put a multifamily deal to work with Harmony Grove. Book a call and we will walk you through both, line by line.</p>
+        <div class="cta-btns">
+            <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="btn btn-gold">Explore Harmony Grove</a>
+            <a href="https://calendly.com/kirk-a-campbell-md/milapenn_investment_call" target="_blank" rel="noopener" class="btn btn-primary">Book a Call with Dr. Campbell</a>
+        </div>
+        <p style="text-align:center;margin-top:22px;font-size:13px;color:rgba(255,255,255,0.50);">For tax planning, reach Doc Wealth at <a href="https://www.docwealth.io" target="_blank" rel="noopener" style="color:#E6B450;text-decoration:none;">docwealth.io</a></p>
+    </div>
+</section>
+
+<p class="disc">
+    This briefing and recap are for educational purposes only and are not tax, legal, or investment advice. Figures were shared live during the session and may reflect prior-year amounts; confirm current limits and your own eligibility with a qualified tax professional. Investment references are intended for accredited investors and are not a public solicitation.
+</p>
+
+<footer>
+    <p class="footer-text">
+        Mila Penn Chazak &nbsp;·&nbsp; invest@milapennchazak.com<br>
+        This is a private, unindexed page shared only with invited guests and attendees.
+    </p>
+</footer>
+
+<script>
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
