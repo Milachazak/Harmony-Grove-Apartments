@@ -272,6 +272,13 @@
         .wl-count-text strong { color:#fff; font-weight:700; }
         @media(max-width:680px){ .wl-inner { gap:20px; padding:0 20px; } .wl-meter-wrap { min-width:220px; width:100%; } }
 
+        /* ── WAITLIST COUNTER (in-hero variant, under the CTAs) ── */
+        .hero-wl { margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.16); max-width:440px; }
+        .hero-wl-label { display:flex; align-items:center; gap:9px; font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#FF9A60; margin-bottom:13px; }
+        .hero-wl-pips { display:flex; gap:6px; margin-bottom:10px; }
+        .hero-wl-text { font-size:13px; color:rgba(255,255,255,0.66); letter-spacing:.01em; }
+        .hero-wl-text strong { color:#fff; font-weight:700; }
+
         /* ── STATS DARK BANNER ── */
         .stats-dark {
             background:linear-gradient(135deg,#050E1F,#0A1830 50%,#060C20);
@@ -641,6 +648,12 @@
                 <a href="#form-start" class="btn btn-orange-lg">Join the Waitlist →</a>
                 <a href="#due-diligence" class="btn btn-hero-white">Watch Due Diligence Video</a>
             </div>
+            <!-- Live waitlist counter (sits under the CTAs so it is seen above the fold) -->
+            <div class="hero-wl">
+                <div class="hero-wl-label"><span class="live-dot"></span> Priority Waitlist</div>
+                <div class="hero-wl-pips" id="wl-pips"></div>
+                <div class="hero-wl-text" id="wl-count-text"><strong>0</strong> of 10 waitlist slots reserved</div>
+            </div>
         </div>
 
         <!-- RIGHT: Bento stat cards (reference image concept in blue+orange) -->
@@ -694,18 +707,6 @@
         </div>
     </div>
 </section>
-
-<!-- ═══════════════ WAITLIST COUNTER ═══════════════ -->
-<div class="wl-bar">
-    <div class="wl-inner">
-        <div class="wl-label"><span class="live-dot"></span>Priority Waitlist</div>
-        <div class="wl-meter-wrap">
-            <div class="wl-pips" id="wl-pips"></div>
-            <div class="wl-count-text" id="wl-count-text"><strong>0</strong> of 10 waitlist slots reserved</div>
-        </div>
-        <div><a href="#form-start" class="btn btn-primary">Join the Waitlist</a></div>
-    </div>
-</div>
 
 <!-- Partner Strip -->
 <div class="strip">
