@@ -22,9 +22,8 @@ const corsHeaders = {
 const WEBINAR_ID = "82375789024"; // Zoom Webinar ID 823 7578 9024 (spaces removed) — standard /harmonygrove flow
 const WEBINAR_ID_ANPA = "81291983940"; // Zoom Webinar ID 812 9198 3940 — ANPA-exclusive webinar, June 20 2026 12:30 PM ET
 const WEBINAR_ID_TAX = "85774551628"; // Zoom Webinar ID 857 7455 1628, Tax Strategy briefing, June 29 2026 6:30 PM ET (/tax-strategy)
-// Post-close celebration webinar (/celebrate). Date + Zoom ID TBD. Paste the ID here when it is set, then redeploy.
-// While empty, the CELEBRATE branch skips Zoom (join_url stays "") and the confirmation email promises timing "soon".
-const WEBINAR_ID_CELEBRATE = "";
+// Post-close celebration webinar (/celebrate). Tuesday, July 21, 2026, 6:30 PM ET, Zoom 849 4880 5806.
+const WEBINAR_ID_CELEBRATE = "84948805806";
 
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {
@@ -512,7 +511,9 @@ function emailCelebrateWelcome(name: string, joinUrl: string): string {
     <p>This is not a pitch. It is a thank-you. We will share the story of the raise, what comes next, and raise a glass together, whether you invested this time or simply cheered us on.</p>
     <div class="box">
       <div class="box-row"><span class="box-icon">🎉</span><span class="box-val"><strong>Harmony Grove Closing Celebration</strong></span></div>
-      <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom &nbsp;·&nbsp; open to the whole community</span></div>
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Tuesday, July 21, 2026</strong></span></div>
+      <div class="box-row"><span class="box-icon">🕡</span><span class="box-val"><strong>6:30 PM ET</strong> &nbsp;·&nbsp; live on Zoom</span></div>
+      <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Open to the whole community</span></div>
       <div class="box-row"><span class="box-icon">🏠</span><span class="box-val">Harmony Grove Apartments &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; 75 Units</span></div>
     </div>
     ${joinBlock}
@@ -537,6 +538,41 @@ function emailCelebratePartnerNotify(
     </div>
     <p>Feel free to reach out to them directly and celebrate together. We are glad they will be with us.</p>
     <p>Thank you for everything you have done to make this raise a success.</p>
+    ${RAISE_SIG}
+  `);
+}
+
+function emailCelebrate3Day(name: string, joinUrl: string): string {
+  return wrap(`
+    <h1>A few days away, ${name}.</h1>
+    <p>Our Harmony Grove closing celebration is this <strong>Tuesday, July 21 at 6:30 PM ET</strong>. We would love to have you there.</p>
+    <p>This is a relaxed hour to mark the milestone together, share the story of the raise, and look at what comes next. Come as you are.</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">📅</span><span class="box-val"><strong>Tuesday, July 21, 2026 &nbsp;·&nbsp; 6:30 PM ET</strong></span></div>
+      <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom</span></div>
+    </div>
+    <div class="btn-wrap"><a href="${joinUrl}" class="btn">Your Zoom Link →</a></div>
+    <p>See you Tuesday.</p>
+    ${RAISE_SIG}
+  `);
+}
+
+function emailCelebrateDayOf(name: string, joinUrl: string): string {
+  return wrap(`
+    <h1>Today's the day, ${name}.</h1>
+    <p>Our Harmony Grove closing celebration is <strong>tonight at 6:30 PM ET</strong>. We are looking forward to raising a glass with you.</p>
+    <div class="btn-wrap"><a href="${joinUrl}" class="btn">Join Tonight at 6:30 PM ET →</a></div>
+    <p>If something comes up and you cannot make it, no worries at all. We are grateful you are part of this community.</p>
+    ${RAISE_SIG}
+  `);
+}
+
+function emailCelebrate30Min(name: string, joinUrl: string): string {
+  return wrap(`
+    <h1>We start in 30 minutes.</h1>
+    <p>${name}, the room is open. Jump in whenever you are ready, you can join a few minutes early and we will be there.</p>
+    <div class="btn-wrap"><a href="${joinUrl}" class="btn">Join Now →</a></div>
+    <p>See you in a few.</p>
     ${RAISE_SIG}
   `);
 }
@@ -752,7 +788,24 @@ serve(async (req) => {
         emailErrors.push(`Celebrate email threw: ${err}`);
       }
 
-      // 5d. Partner notification (if a referring partner was selected)
+      // 5d. Reminders (only if still in the future). Celebration: July 21, 2026, 6:30 PM ET (EDT = UTC-4).
+      const nowC = Date.now();
+      const celebrateReminders = [
+        { at: "2026-07-18T14:00:00.000Z", subject: `A few days away, ${first_name}. Harmony Grove celebration Tuesday`, html: emailCelebrate3Day(first_name, joinUrl) },
+        { at: "2026-07-21T13:00:00.000Z", subject: `Today's the day, ${first_name}. Harmony Grove celebration at 6:30 PM ET`, html: emailCelebrateDayOf(first_name, joinUrl) },
+        { at: "2026-07-21T22:00:00.000Z", subject: `${first_name}, we start in 30 minutes`, html: emailCelebrate30Min(first_name, joinUrl) },
+      ];
+      for (const rem of celebrateReminders) {
+        if (new Date(rem.at).getTime() > nowC) {
+          try {
+            await sendEmail({ to: email, subject: rem.subject, html: rem.html, scheduledAt: rem.at, fromName: "Dr. Kirk A. Campbell, Rosanmi Campbell & J. Claude Mouaffi - Mila Penn Chazak" });
+          } catch (err) {
+            emailErrors.push(`Celebrate reminder (${rem.at}) threw: ${err}`);
+          }
+        }
+      }
+
+      // 6d. Partner notification (if a referring partner was selected)
       if (partner_referral && partner_referral !== "No") {
         const partnerEmail = getPartnerEmails()[partner_referral];
         if (partnerEmail) {
