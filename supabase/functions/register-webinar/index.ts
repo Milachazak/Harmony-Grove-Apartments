@@ -22,6 +22,9 @@ const corsHeaders = {
 const WEBINAR_ID = "82375789024"; // Zoom Webinar ID 823 7578 9024 (spaces removed) — standard /harmonygrove flow
 const WEBINAR_ID_ANPA = "81291983940"; // Zoom Webinar ID 812 9198 3940 — ANPA-exclusive webinar, June 20 2026 12:30 PM ET
 const WEBINAR_ID_TAX = "85774551628"; // Zoom Webinar ID 857 7455 1628, Tax Strategy briefing, June 29 2026 6:30 PM ET (/tax-strategy)
+// Post-close celebration webinar (/celebrate). Date + Zoom ID TBD. Paste the ID here when it is set, then redeploy.
+// While empty, the CELEBRATE branch skips Zoom (join_url stays "") and the confirmation email promises timing "soon".
+const WEBINAR_ID_CELEBRATE = "";
 
 // ─── Partner email map ────────────────────────────────────────────────────────
 function getPartnerEmails(): Record<string, string> {
@@ -455,6 +458,89 @@ function emailPartnerNotify(
   `);
 }
 
+// ─── WAITLIST (raise is fully subscribed) ─────────────────────────────────────
+const RAISE_SIG = `
+    <div class="sig">
+      <div class="sig-name">Dr. Kirk A. Campbell, Rosanmi Campbell &amp; J. Claude Mouaffi</div>
+      <div class="sig-co">Mila Penn Chazak</div>
+    </div>`;
+
+function emailWaitlistWelcome(name: string): string {
+  return wrap(`
+    <h1>You're on the list, ${name}.</h1>
+    <p>Thank you for your interest in Harmony Grove. The current allocation is fully subscribed, and you are now on our priority waitlist.</p>
+    <p>Here is what that means. If a slot opens before we close, or as we bring the next opportunity forward, a member of our team will reach out to you personally by phone. You do not need to do anything else. Your place is held.</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">✅</span><span class="box-val"><strong>Your waitlist spot is confirmed</strong></span></div>
+      <div class="box-row"><span class="box-icon">📞</span><span class="box-val">We will call you the moment a slot becomes available</span></div>
+      <div class="box-row"><span class="box-icon">🏠</span><span class="box-val">Harmony Grove Apartments &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; 75 Units</span></div>
+    </div>
+    <p>We are grateful for the trust our community has shown in this raise. If you would like to talk in the meantime, just reply here. We read every email.</p>
+    ${RAISE_SIG}
+  `);
+}
+
+function emailWaitlistPartnerNotify(
+  partnerName: string,
+  reg: { first_name: string; last_name: string; email: string; phone: string }
+): string {
+  return wrap(`
+    <h1>A waitlist signup from your network.</h1>
+    <p>Hi ${partnerName},</p>
+    <p>Someone joined the Harmony Grove waitlist and indicated they are working with you. We wanted to make sure you had their details.</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">👤</span><span class="box-val"><strong>${reg.first_name} ${reg.last_name}</strong></span></div>
+      <div class="box-row"><span class="box-icon">📧</span><span class="box-val">${reg.email}</span></div>
+      <div class="box-row"><span class="box-icon">📞</span><span class="box-val">${reg.phone}</span></div>
+      <div class="box-row"><span class="box-icon">📝</span><span class="box-val">Joined the Harmony Grove priority waitlist</span></div>
+    </div>
+    <p>Feel free to reach out to them directly. We will keep you posted as slots open up.</p>
+    <p>Thank you for the introduction. We are grateful for this partnership.</p>
+    ${RAISE_SIG}
+  `);
+}
+
+// ─── CELEBRATION WEBINAR (post-close · date + Zoom ID TBD) ─────────────────────
+function emailCelebrateWelcome(name: string, joinUrl: string): string {
+  const joinBlock = joinUrl
+    ? `<div class="btn-wrap"><a href="${joinUrl}" class="btn">Save Your Zoom Link →</a></div>
+       <p>Save that link somewhere easy to find. We will send a reminder as the date approaches.</p>`
+    : `<p>The exact date and time are being finalized now. As soon as they are set, we will email you the Zoom link and everything you need. Your spot is saved.</p>`;
+  return wrap(`
+    <h1>You're in, ${name}.</h1>
+    <p>Thank you for joining us to celebrate the closing of Harmony Grove Apartments. This is a milestone for our whole community, and it would not have happened without people like you.</p>
+    <p>This is not a pitch. It is a thank-you. We will share the story of the raise, what comes next, and raise a glass together, whether you invested this time or simply cheered us on.</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">🎉</span><span class="box-val"><strong>Harmony Grove Closing Celebration</strong></span></div>
+      <div class="box-row"><span class="box-icon">💻</span><span class="box-val">Live on Zoom &nbsp;·&nbsp; open to the whole community</span></div>
+      <div class="box-row"><span class="box-icon">🏠</span><span class="box-val">Harmony Grove Apartments &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; 75 Units</span></div>
+    </div>
+    ${joinBlock}
+    <p>If a question comes to mind beforehand, just reply here. We read every email.</p>
+    ${RAISE_SIG}
+  `);
+}
+
+function emailCelebratePartnerNotify(
+  partnerName: string,
+  reg: { first_name: string; last_name: string; email: string; phone: string }
+): string {
+  return wrap(`
+    <h1>A celebration signup from your network.</h1>
+    <p>Hi ${partnerName},</p>
+    <p>Someone signed up for the Harmony Grove closing celebration and indicated they are working with you. We wanted to make sure you had their details.</p>
+    <div class="box">
+      <div class="box-row"><span class="box-icon">👤</span><span class="box-val"><strong>${reg.first_name} ${reg.last_name}</strong></span></div>
+      <div class="box-row"><span class="box-icon">📧</span><span class="box-val">${reg.email}</span></div>
+      <div class="box-row"><span class="box-icon">📞</span><span class="box-val">${reg.phone}</span></div>
+      <div class="box-row"><span class="box-icon">🎉</span><span class="box-val">Signed up for the Harmony Grove closing celebration</span></div>
+    </div>
+    <p>Feel free to reach out to them directly and celebrate together. We are glad they will be with us.</p>
+    <p>Thank you for everything you have done to make this raise a success.</p>
+    ${RAISE_SIG}
+  `);
+}
+
 // ─── MAIN HANDLER ─────────────────────────────────────────────────────────────
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -481,28 +567,40 @@ serve(async (req) => {
     );
 
     // ─── Flow detection ───────────────────────────────────────────────────────
-    //   "anpa" → ANPA-exclusive June 20 webinar
-    //   "tax"  → 2026 Tax Strategy briefing, June 29 (/tax-strategy)
-    //   else   → standard /harmonygrove flow
-    const src    = (referral_source || "").trim().toLowerCase();
-    const isAnpa = src === "anpa";
-    const isTax  = src === "tax";
+    //   "anpa"      → ANPA-exclusive June 20 webinar
+    //   "tax"       → 2026 Tax Strategy briefing, June 29 (/tax-strategy)
+    //   "waitlist"  → raise fully subscribed, priority waitlist (/ and /harmonygrove), no Zoom, no reminders
+    //   "celebrate" → post-close celebration webinar (/celebrate), Zoom TBD, no reminders yet
+    //   else        → standard /harmonygrove flow
+    const src        = (referral_source || "").trim().toLowerCase();
+    const isAnpa     = src === "anpa";
+    const isTax      = src === "tax";
+    const isWaitlist = src === "waitlist";
+    const isCelebrate = src === "celebrate";
 
     let joinUrl = "";
     let zoomRegistrantId = "";
 
-    // 1. Zoom registration — each flow registers on its own webinar
-    try {
-      const token = await getZoomToken();
-      const zoom  = await registerOnZoom(
-        token,
-        { first_name, last_name, email, phone },
-        isAnpa ? WEBINAR_ID_ANPA : isTax ? WEBINAR_ID_TAX : WEBINAR_ID
-      );
-      joinUrl          = zoom.join_url;
-      zoomRegistrantId = zoom.registrant_id;
-    } catch (err) {
-      console.error("Zoom error:", err);
+    // 1. Zoom registration — each flow registers on its own webinar.
+    //    Waitlist has no event; celebration has no Zoom ID until scheduled. Both skip Zoom.
+    const celebrateHasZoom = isCelebrate && WEBINAR_ID_CELEBRATE !== "";
+    const skipZoom = isWaitlist || (isCelebrate && !celebrateHasZoom);
+    if (!skipZoom) {
+      try {
+        const token = await getZoomToken();
+        const zoom  = await registerOnZoom(
+          token,
+          { first_name, last_name, email, phone },
+          isAnpa ? WEBINAR_ID_ANPA
+            : isTax ? WEBINAR_ID_TAX
+            : isCelebrate ? WEBINAR_ID_CELEBRATE
+            : WEBINAR_ID
+        );
+        joinUrl          = zoom.join_url;
+        zoomRegistrantId = zoom.registrant_id;
+      } catch (err) {
+        console.error("Zoom error:", err);
+      }
     }
 
     // 2. Save to Supabase (always). 10DLC: SMS consent is upgrade-only (once true, stays true),
@@ -606,6 +704,66 @@ serve(async (req) => {
             });
           } catch (err) {
             emailErrors.push(`Tax partner email threw: ${err}`);
+          }
+        }
+      }
+    } else if (isWaitlist) {
+      // ─── WAITLIST (raise fully subscribed), no Zoom, no reminders ─────────────
+
+      // 4c. Waitlist confirmation email (immediate)
+      try {
+        const r = await sendEmail({
+          to: email,
+          subject: `You're on the Harmony Grove waitlist, ${first_name}`,
+          html: emailWaitlistWelcome(first_name),
+        });
+        if (r.statusCode >= 400 || r.error) emailErrors.push(`Waitlist email: ${JSON.stringify(r)}`);
+      } catch (err) {
+        emailErrors.push(`Waitlist email threw: ${err}`);
+      }
+
+      // 5c. Partner notification (if a referring partner was selected)
+      if (partner_referral && partner_referral !== "No") {
+        const partnerEmail = getPartnerEmails()[partner_referral];
+        if (partnerEmail) {
+          try {
+            await sendEmail({
+              to: partnerEmail,
+              subject: `New waitlist signup from your network: ${first_name} ${last_name}`,
+              html: emailWaitlistPartnerNotify(partner_referral, { first_name, last_name, email, phone }),
+            });
+          } catch (err) {
+            emailErrors.push(`Waitlist partner email threw: ${err}`);
+          }
+        }
+      }
+    } else if (isCelebrate) {
+      // ─── CELEBRATION WEBINAR (post-close · date + Zoom ID TBD) ─────────────────
+
+      // 4d. Confirmation email (immediate). joinUrl is "" until a Zoom ID is set.
+      try {
+        const r = await sendEmail({
+          to: email,
+          subject: `You're in, ${first_name}. Harmony Grove closing celebration`,
+          html: emailCelebrateWelcome(first_name, joinUrl),
+        });
+        if (r.statusCode >= 400 || r.error) emailErrors.push(`Celebrate email: ${JSON.stringify(r)}`);
+      } catch (err) {
+        emailErrors.push(`Celebrate email threw: ${err}`);
+      }
+
+      // 5d. Partner notification (if a referring partner was selected)
+      if (partner_referral && partner_referral !== "No") {
+        const partnerEmail = getPartnerEmails()[partner_referral];
+        if (partnerEmail) {
+          try {
+            await sendEmail({
+              to: partnerEmail,
+              subject: `New celebration signup from your network: ${first_name} ${last_name}`,
+              html: emailCelebratePartnerNotify(partner_referral, { first_name, last_name, email, phone }),
+            });
+          } catch (err) {
+            emailErrors.push(`Celebrate partner email threw: ${err}`);
           }
         }
       }
