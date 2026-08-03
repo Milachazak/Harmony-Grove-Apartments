@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Grove Closing Celebration | Replay | Mila Penn Chazak</title>
+    <meta name="description" content="The full recording of the Harmony Grove closing celebration, hosted by Mila Penn Chazak on Thursday, July 30, 2026. A thank-you to the community that made it happen.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg: #F4F6FB; --bg-sec: #ECEFF7;
+            --blue: #1244F5; --blue-dk: #0A2ECC; --blue-xl: #4A78FF; --blue-dim: rgba(18,68,245,0.09);
+            --gold: #C9A24B; --gold-dk: #9C7A2E; --gold-lt: #E6B450;
+            --gold-dim: rgba(201,162,75,0.12); --gold-border: rgba(201,162,75,0.30);
+            --emerald: #10B981; --emerald-dk:#0E9E6E; --emerald-lt:#34D399;
+            --navy: #050E1F; --navy-2: #0A1830;
+            --text: #0A1628; --t70: rgba(10,22,40,0.70); --t50: rgba(10,22,40,0.50);
+            --t30: rgba(10,22,40,0.30); --t10: rgba(10,22,40,0.10); --t06: rgba(10,22,40,0.06);
+            --r-card: 20px; --r-pill: 100px;
+            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-b: 'Jost', -apple-system, sans-serif;
+        }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+        .amb { position:fixed; border-radius:50%; pointer-events:none; z-index:0; filter:blur(90px); }
+        .amb-1 { width:800px;height:800px;top:-10%;right:-5%; background:radial-gradient(circle,rgba(201,162,75,0.10) 0%,transparent 68%); }
+        .amb-2 { width:600px;height:600px;bottom:10%;left:-8%; background:radial-gradient(circle,rgba(18,68,245,0.06) 0%,transparent 68%); }
+
+        /* NAV */
+        #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:14px 48px;
+            display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+            background:rgba(255,255,255,0.70); backdrop-filter:blur(40px) saturate(200%); -webkit-backdrop-filter:blur(40px) saturate(200%);
+            border-bottom:1px solid rgba(255,255,255,0.90); box-shadow:0 2px 20px rgba(10,22,40,0.06); }
+        .nav-logos { display:flex; align-items:center; gap:14px; }
+        .nav-logo { height:30px; width:auto; object-fit:contain; }
+        .nav-sep { width:1px; height:24px; background:var(--t10); }
+        .nav-badge { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+            color:#1A1304; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); padding:6px 16px; border-radius:var(--r-pill); }
+        .nav-cta { padding:10px 22px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
+            background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; text-decoration:none;
+            box-shadow:0 4px 16px rgba(18,68,245,0.30); transition:all .25s; white-space:nowrap; }
+        .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(18,68,245,0.42); }
+        @media(max-width:680px){ #nav{padding:11px 18px;} .nav-badge{display:none;} .nav-logo{height:24px;} }
+
+        /* BUTTONS */
+        .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
+        .btn-primary { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; border-radius:var(--r-pill); box-shadow:0 4px 20px rgba(18,68,245,0.36); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(18,68,245,0.48); }
+        .btn-gold { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); color:#1A1304; border-radius:var(--r-pill); box-shadow:0 6px 22px rgba(201,162,75,0.42); }
+        .btn-gold:hover { transform:translateY(-2px); box-shadow:0 10px 34px rgba(201,162,75,0.55); }
+        .btn-ghost { padding:13px 30px; font-size:14px; font-weight:600; background:transparent; color:var(--text); border:1.5px solid var(--t10); border-radius:var(--r-pill); }
+        .btn-ghost:hover { border-color:var(--gold); }
+
+        /* HERO */
+        .hero { position:relative; min-height:60vh; display:flex; align-items:flex-end; overflow:hidden;
+            background:linear-gradient(135deg, #050E1F 0%, #0A1830 55%, #0D2050 100%); }
+        .hero-bg-img { position:absolute; inset:0; z-index:0;
+            background:url('../Property Photos/harmony-grove-marietta-ga-primary-photo.jpg') center/cover no-repeat; opacity:0.14; }
+        .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(130deg,rgba(5,14,31,0.96) 0%,rgba(5,14,31,0.84) 50%,rgba(5,14,31,0.62) 100%); }
+        .hero-inner { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:130px 48px 70px; width:100%;
+            display:grid; grid-template-columns:1fr 460px; gap:56px; align-items:center; }
+        .rec-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; margin-bottom:18px;
+            background:rgba(201,162,75,0.18); border:1px solid rgba(201,162,75,0.42); border-radius:var(--r-pill);
+            font-size:11.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#E6C77A; width:fit-content; }
+        .rec-dot { width:8px; height:8px; background:var(--gold-lt); border-radius:50%; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .hero-title { font-family:var(--ff-d); font-size:clamp(38px,5vw,68px); font-weight:600; line-height:1.10; letter-spacing:-.02em; color:#fff; margin-bottom:18px; }
+        .hero-title em { font-style:italic; color:var(--gold-lt); }
+        .hero-sub { font-size:clamp(15px,1.6vw,16.5px); color:rgba(255,255,255,0.70); max-width:500px; line-height:1.78; font-weight:300; margin-bottom:26px; }
+        .hero-meta { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:30px; }
+        .hero-meta-pill { display:inline-flex; align-items:center; gap:7px; padding:8px 15px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:10px; font-size:12.5px; color:rgba(255,255,255,0.78); font-weight:500; }
+        .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
+
+        .hero-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .hb-card { border-radius:16px; padding:20px 22px; position:relative; overflow:hidden; }
+        .hb-frost { background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.18); backdrop-filter:blur(20px); }
+        .hb-gold-card { background:linear-gradient(135deg,rgba(201,162,75,0.40),rgba(156,122,46,0.28)); border:1px solid rgba(230,180,80,0.55); box-shadow:0 0 24px rgba(201,162,75,0.18); }
+        .hb-navy-card { background:rgba(5,14,31,0.80); border:1px solid rgba(18,68,245,0.35); display:flex; flex-direction:column; justify-content:space-between; }
+        .hb-tax-card { background:linear-gradient(135deg,rgba(16,185,129,0.38),rgba(4,120,87,0.28)); border:1px solid rgba(52,211,153,0.55); box-shadow:0 0 24px rgba(16,185,129,0.18); }
+        .hb-lbl { display:block; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:6px; }
+        .hb-val { display:block; font-family:var(--ff-d); font-size:clamp(24px,3vw,36px); font-weight:700; color:#fff; line-height:1; margin-bottom:6px; }
+        .hb-accent { color:var(--gold-lt); }
+        .hb-sub { display:block; font-size:11px; color:rgba(255,255,255,0.50); font-weight:400; line-height:1.4; }
+        @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:110px 24px 50px;gap:36px;} .hero-cards{max-width:420px;} }
+
+        /* SECTIONS */
+        .sec { padding:78px 0; position:relative; }
+        .container { max-width:1100px; margin:0 auto; padding:0 48px; }
+        .sec-lbl { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:13px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(30px,3.8vw,48px); font-weight:600; line-height:1.12; letter-spacing:-.02em; color:var(--text); margin-bottom:16px; }
+        .sec-title em { font-style:italic; color:var(--gold-dk); }
+        .sec-body { font-size:16px; color:var(--t70); line-height:1.78; }
+        @media(max-width:700px){ .container{padding:0 20px;} .sec{padding:56px 0;} }
+
+        /* VIDEO */
+        .video-wrap { border-radius:20px; overflow:hidden; box-shadow:0 12px 60px rgba(10,22,40,0.22); background:#000; position:relative; }
+        .video-wrap video { width:100%; display:block; max-height:560px; }
+        .framing { margin-top:30px; background:linear-gradient(135deg,rgba(201,162,75,0.12),rgba(18,68,245,0.05)); border:1px solid var(--gold-border); border-radius:18px; padding:26px 32px; text-align:center; }
+        .framing-q { font-family:var(--ff-d); font-size:clamp(22px,3vw,30px); font-style:italic; color:var(--text); line-height:1.3; }
+        .framing-q b { font-style:normal; color:var(--gold-dk); }
+        .framing-sub { margin-top:8px; font-size:13.5px; color:var(--t50); }
+
+        /* SPEAKER */
+        .spk-wrap { display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:center; margin-top:10px; }
+        .spk-photo { width:100%; max-width:260px; aspect-ratio:1/1; object-fit:cover; border-radius:20px; box-shadow:0 12px 40px rgba(10,22,40,0.18); }
+        .spk-name { font-family:var(--ff-d); font-size:34px; font-weight:600; color:var(--text); line-height:1.1; margin-bottom:4px; }
+        .spk-role { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:16px; }
+        .spk-bio { font-size:15px; color:var(--t70); line-height:1.78; margin-bottom:12px; }
+        @media(max-width:760px){ .spk-wrap{grid-template-columns:1fr;gap:22px;text-align:center;} .spk-photo{margin:0 auto;max-width:200px;} .spk-role{margin-left:auto;margin-right:auto;} }
+
+        /* PANEL */
+        .panel-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:30px; }
+        .panel-card { background:white; border-radius:14px; padding:20px 20px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); }
+        .panel-name { font-family:var(--ff-d); font-size:19px; font-weight:600; color:var(--text); line-height:1.2; margin-bottom:4px; }
+        .panel-role { font-size:10.5px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--gold-dk); }
+        @media(max-width:860px){ .panel-grid{grid-template-columns:repeat(2,1fr);} }
+
+        /* AGENDA / REASONS */
+        .reasons-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:38px; }
+        .reason-card { background:white; border-radius:18px; padding:28px 30px; border:1px solid var(--t06); box-shadow:0 3px 20px var(--t06); }
+        .reason-num { font-family:var(--ff-d); font-size:40px; font-weight:700; color:var(--gold-dim); line-height:1; margin-bottom:10px; }
+        .reason-title { font-size:15px; font-weight:700; color:var(--text); margin-bottom:9px; letter-spacing:.01em; }
+        .reason-body { font-size:14px; color:var(--t70); line-height:1.72; }
+        @media(max-width:700px){ .reasons-grid{grid-template-columns:1fr;} }
+
+        /* STATS BAND */
+        .stats-band { background:var(--navy); padding:54px 0; }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+        .stat-item { padding:28px 24px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); }
+        .stat-item:last-child { border-right:none; }
+        .stat-num { font-family:var(--ff-d); font-size:clamp(30px,3.6vw,48px); font-weight:700; color:var(--gold-lt); line-height:1; margin-bottom:8px; }
+        .stat-lbl { font-size:11.5px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:rgba(255,255,255,0.45); line-height:1.4; }
+        @media(max-width:700px){ .stats-grid{grid-template-columns:repeat(2,1fr);} .stat-item{border-right:none; border-bottom:1px solid rgba(255,255,255,0.07);} }
+
+        /* Q&A */
+        .qa-item { background:white; border-radius:16px; padding:26px 30px; margin-bottom:14px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); }
+        .qa-question { font-size:16px; font-weight:600; color:var(--text); line-height:1.5; margin-bottom:5px; }
+        .qa-asker { font-size:12px; color:var(--gold-dk); font-weight:600; letter-spacing:.03em; margin-bottom:14px; }
+        .qa-answer { margin-top:10px; padding-top:14px; border-top:1px solid var(--t06); }
+        .qa-text { font-size:14.5px; color:var(--t70); line-height:1.75; }
+        .qa-text em { color:var(--text); font-style:italic; }
+
+        /* CHEAT */
+        .cheat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
+        .cheat-card { background:white; border-radius:14px; padding:22px 24px; border:1px solid var(--t06); box-shadow:0 2px 10px var(--t06); }
+        .cheat-card-title { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--t06); }
+        .cheat-row { display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-bottom:1px solid var(--t06); }
+        .cheat-row:last-child { border-bottom:none; }
+        .cheat-key { font-size:12.5px; color:var(--t50); font-weight:500; }
+        .cheat-val { font-size:12.5px; color:var(--text); font-weight:600; text-align:right; }
+        @media(max-width:760px){ .cheat-grid{grid-template-columns:1fr;} }
+
+        /* QUOTES */
+        .quotes-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+        .quote-card { background:var(--navy); border-radius:16px; padding:28px 30px; border:1px solid rgba(255,255,255,0.07); }
+        .quote-text { font-family:var(--ff-d); font-size:18px; font-style:italic; color:rgba(255,255,255,0.90); line-height:1.6; margin-bottom:14px; }
+        .quote-attr { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-lt); }
+        @media(max-width:700px){ .quotes-grid{grid-template-columns:1fr;} }
+
+        /* TIE-IN */
+        .tiein { background:linear-gradient(135deg,rgba(16,185,129,0.10),rgba(201,162,75,0.07)); border:1px solid rgba(16,185,129,0.26); border-radius:20px; padding:40px 44px; margin-top:8px; }
+        .tiein h3 { font-family:var(--ff-d); font-size:28px; font-weight:600; color:var(--text); margin-bottom:14px; line-height:1.2; }
+        .tiein p { font-size:15px; color:var(--t70); line-height:1.78; margin-bottom:14px; }
+        .tiein .ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+        @media(max-width:700px){ .tiein{padding:30px 24px;} }
+
+        /* DEAL PARTNERS */
+        .partners-strip { background:linear-gradient(135deg,#050E1F,#0A1830); border-radius:24px; padding:34px 48px; max-width:1100px; margin:0 auto; }
+        .partners-label { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-align:center; margin-bottom:26px; }
+        .partners-logos { display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap; }
+        .partner-pill { display:flex; align-items:center; justify-content:center; padding:13px 26px; border-radius:50px; }
+        .partner-pill.dark { background:#0B1628; border:1px solid rgba(255,255,255,0.10); }
+        .partner-pill.light { background:#ffffff; border:1px solid rgba(0,0,0,0.07); box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+        .partner-logo { height:32px; width:auto; max-width:150px; object-fit:contain; }
+        @media (max-width:680px){ .partners-strip{padding:26px 18px;} .partners-logos{gap:12px;} .partner-pill{padding:10px 18px;} .partner-logo{height:22px;max-width:110px;} }
+
+        /* FEEDBACK STRIP */
+        .fb-strip { text-align:center; margin-top:30px; font-size:14px; color:var(--t70); }
+        .fb-strip a { color:var(--gold-dk); font-weight:600; text-decoration:none; border-bottom:1px solid var(--gold-border); }
+        .fb-strip a:hover { border-color:var(--gold-dk); }
+
+        /* FINAL CTA */
+        .final-cta { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%); padding:78px 0; text-align:center; }
+        .final-cta .sec-title { color:#fff; }
+        .final-cta .sec-title em { color:var(--gold-lt); }
+        .final-cta .sec-body { color:rgba(255,255,255,0.62); margin-bottom:34px; }
+        .cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+        /* DISCLAIMER + FOOTER */
+        .disc { max-width:1100px; margin:0 auto; padding:26px 48px 0; font-size:11.5px; color:var(--t50); line-height:1.7; text-align:center; }
+        footer { background:var(--navy-2); padding:30px 48px; text-align:center; margin-top:40px; }
+        .footer-text { font-size:12px; color:rgba(255,255,255,0.32); line-height:1.8; }
+
+        .fu { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+        .vis { opacity:1; transform:none; }
+    
+        /* ── CELEBRATION REPLAY ADDITIONS ── */
+        .qa-list { display:flex; flex-direction:column; gap:12px; }
+        .qa-q { font-size:16px; font-weight:600; color:var(--text); line-height:1.5; display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
+        .qa-t { display:inline-block; font-family:var(--ff-b); font-size:12px; font-weight:700; letter-spacing:.06em;
+                color:#1A1304; background:linear-gradient(135deg,var(--gold-lt),var(--gold));
+                padding:4px 11px; border-radius:var(--r-pill); flex-shrink:0; }
+        .qa-a { font-size:14.5px; color:var(--t70); line-height:1.75; margin-top:10px; padding-top:12px; border-top:1px solid var(--t06); }
+
+        .quote-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; }
+        .quote-txt { font-family:var(--ff-d); font-size:18px; font-style:italic; color:rgba(255,255,255,0.90); line-height:1.6; margin-bottom:14px; }
+        .quote-who { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-lt); }
+
+        .cs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+        .cs-card { background:#fff; border:1px solid var(--t06); border-radius:18px; padding:30px 30px 32px; box-shadow:0 2px 14px var(--t06); }
+        .cs-lbl { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:12px; }
+        .cs-val { font-family:var(--ff-d); font-size:27px; font-weight:600; color:var(--text); line-height:1.15; margin-bottom:10px; }
+        .cs-sub { font-size:14px; color:var(--t70); line-height:1.7; }
+
+        .tx-wrap { background:#fff; border:1px solid var(--t06); border-radius:18px; box-shadow:0 2px 14px var(--t06); overflow:hidden; margin-top:30px; }
+        .tx-toggle { cursor:pointer; list-style:none; padding:22px 30px; font-size:14px; font-weight:600; letter-spacing:.02em;
+                     color:var(--blue); display:flex; align-items:center; gap:10px; user-select:none; }
+        .tx-toggle::-webkit-details-marker { display:none; }
+        .tx-toggle::before { content:'+'; font-size:19px; line-height:1; font-weight:400; color:var(--gold-dk); }
+        details[open] .tx-toggle::before { content:'\2212'; }
+        .tx-body { padding:4px 30px 32px; border-top:1px solid var(--t06); max-height:620px; overflow-y:auto; }
+        .tx-turn { margin-top:20px; }
+        .tx-spk { font-size:11.5px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:5px; }
+        .tx-spk span { color:var(--t30); font-weight:600; letter-spacing:.04em; margin-left:8px; }
+        .tx-txt { font-size:14.5px; color:var(--t70); line-height:1.8; }
+        @media(max-width:680px){ .tx-toggle,.tx-body{padding-left:20px;padding-right:20px;} .cs-card{padding:24px 22px 26px;} }
+    </style>
+</head>
+<body>
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logos">
+        <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
+        <div class="nav-sep"></div>
+        <img src="../Chazak Logo.png" alt="Chazak" class="nav-logo">
+    </div>
+    <div class="nav-badge">July 30, 2026 &middot; Replay</div>
+    <a href="mailto:invest@milapennchazak.com" class="nav-cta">Email Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="rec-badge"><span class="rec-dot"></span> Closing Celebration &middot; Replay</div>
+            <h1 class="hero-title">We closed.<br><em>Then we celebrated.</em></h1>
+            <p class="hero-sub">The full recording of our Harmony Grove closing celebration, held Thursday, July 30, 2026. No slides and no pitch. Just the founders, our partner firms, and the community that made it happen, together on one call. If you could not join us live, this is the whole thing.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-pill">&#128197; July 30, 2026</div>
+                <div class="hero-meta-pill">33 minutes</div>
+                <div class="hero-meta-pill">Hosted by Mila Penn Chazak</div>
+            </div>
+            <div class="hero-ctas">
+                <a href="#video" class="btn btn-gold">Watch the Replay</a>
+                <a href="#moments" class="btn btn-primary">Jump to a Moment</a>
+            </div>
+        </div>
+        <div class="hero-cards">
+            <div class="hb-card hb-gold-card">
+                <span class="hb-lbl">The Community</span>
+                <span class="hb-val"><span class="hb-accent">Ours</span></span>
+                <span class="hb-sub">Harmony Grove, Marietta, Georgia</span>
+            </div>
+            <div class="hb-card hb-frost">
+                <span class="hb-lbl">Closed</span>
+                <span class="hb-val"><span class="hb-accent">Jul 14</span></span>
+                <span class="hb-sub">2026</span>
+            </div>
+            <div class="hb-card hb-navy-card">
+                <span class="hb-lbl">On the Call</span>
+                <span class="hb-val"><span class="hb-accent">Everyone</span></span>
+                <span class="hb-sub">Founders, partners and investors</span>
+            </div>
+            <div class="hb-card hb-tax-card">
+                <span class="hb-lbl">The Agenda</span>
+                <span class="hb-val"><span class="hb-accent">Thank you</span></span>
+                <span class="hb-sub">That was the whole point</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="sec" id="video">
+    <div class="container">
+        <div class="sec-lbl fu">Harmony Grove Closing Celebration &middot; July 30, 2026</div>
+        <h2 class="sec-title fu">Watch the <em>full recording</em></h2>
+        <p class="sec-body fu" style="text-align:center;max-width:720px;margin:0 auto 30px;">Thirty-three minutes, start to finish. Dr. Kirk A. Campbell and J. Claude Mouaffi open the call, our partner firms share what they are seeing on the ground in Atlanta, and the floor goes to the community for an open Q&amp;A.</p>
+        <div class="video-wrap fu">
+            <video controls preload="metadata" poster="../Property Photos/harmony-grove-marietta-ga-primary-photo.jpg">
+                <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Celebtration%20Harmony%20Grove.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="framing fu">
+            <div class="framing-q">"Today is a celebration. <b>Let's celebrate.</b> We have done a phenomenal job."</div>
+            <div class="framing-sub">J. Claude Mouaffi, joining the call on his way back from the property.</div>
+        </div>
+    </div>
+</section>
+
+<!-- MOMENTS -->
+<section class="sec" id="moments" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Chapters</div>
+        <h2 class="sec-title fu">Find a <em>moment</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">The call in order, with timestamps, so you can jump straight to the part you want.</p>
+        <div class="qa-list" style="margin-top:34px;">
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">00:07</span> Welcome, and why we are all here</div><div class="qa-a">Dr. Kirk A. Campbell opens the call, welcomes everyone into the partnership, and explains that the evening is a thank-you first and an update second.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">03:12</span> A milestone worth remembering</div><div class="qa-a">J. Claude Mouaffi, calling in from his trip back from the property, on what July 14 means and why he wanted everyone together to mark it.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">05:54</span> On the ground in Atlanta</div><div class="qa-a">Fedna Morency of EagleCap Ventures on the partner meeting, the property management team, and her standing offer to tour the property with anyone nearby.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">07:07</span> The floor opens</div><div class="qa-a">Dr. Kirk invites questions from the community. No script, no slides, just an open forum.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">08:36</span> Marketing, outreach and the new name</div><div class="qa-a">The property's rebrand, outreach to the nearby air base, local law enforcement and hospitals, and what the team is doing to introduce the community to its neighbors.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">13:10</span> The first weeks of work</div><div class="qa-a">J. Claude walks through what is already underway and what is scheduled: signage, exterior painting across all nine buildings, interior improvements, electrical work and landscaping.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">18:38</span> Adding value, not just extracting it</div><div class="qa-a">Dr. Kirk on giving residents a better place to live and raise a family, and why that comes first.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">20:32</span> A partner says thank you</div><div class="qa-a">Blaise Nzeda of Vanguard Consultants thanks the team and the investors who came into the deal through him.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">23:35</span> Where things stand today</div><div class="qa-a">A recap for anyone who joined late, covering how the property is performing and the work happening now.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">26:02</span> How you will be kept in the loop</div><div class="qa-a">Monthly written updates on the business plan and the financials, quarterly distributions per the plan, and an open door for questions in between.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">28:08</span> Welcome from Priority 1 Capital</div><div class="qa-a">Leah and Jeremy Krebs join and share what they are most looking forward to bringing back to the community.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">30:31</span> Gratitude from the community</div><div class="qa-a">Carine Achoundong congratulates the team and thanks the partner who brought her into the deal.</div></div>
+            <div class="qa-item fu"><div class="qa-q"><span class="qa-t">31:19</span> What comes next</div><div class="qa-a">Recordings to share, more educational sessions ahead, and an open invitation to visit the property any time.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- VOICES -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">From the Call</div>
+        <h2 class="sec-title fu">Lines worth <em>keeping</em></h2>
+        <div class="quote-grid" style="margin-top:34px;">
+            <div class="quote-card fu"><p class="quote-txt">"Today is a very, very important day. Because we are celebrating a milestone in our life. Together we came together to buy a community in Georgia."</p><div class="quote-who">J. Claude Mouaffi</div></div>
+            <div class="quote-card fu"><p class="quote-txt">"This is your asset. If you are in town and you want to go visit your property, just let us know."</p><div class="quote-who">Dr. Kirk A. Campbell</div></div>
+            <div class="quote-card fu"><p class="quote-txt">"I truly, truly love this team. This team is such a vibe. We are working well together."</p><div class="quote-who">Fedna Morency, EagleCap Ventures</div></div>
+            <div class="quote-card fu"><p class="quote-txt">"I want to thank the investors who came in through me, for the trust they brought in."</p><div class="quote-who">Blaise Nzeda, Vanguard Consultants</div></div>
+            <div class="quote-card fu"><p class="quote-txt">"I just wanted to congratulate the whole team, and look forward to working with this great and amazing leadership team."</p><div class="quote-who">Carine Achoundong</div></div>
+            <div class="quote-card fu"><p class="quote-txt">"Teamwork makes the dream work. This is a complete team effort."</p><div class="quote-who">Dr. Kirk A. Campbell</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT NEXT -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Staying Close</div>
+        <h2 class="sec-title fu">What happens <em>from here</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">Three things the team committed to on the call.</p>
+        <div class="cs-grid" style="margin-top:34px;">
+            <div class="cs-card fu"><div class="cs-lbl">Monthly</div><div class="cs-val">Written updates</div><div class="cs-sub">On the business plan and the financials, not one without the other.</div></div>
+            <div class="cs-card fu"><div class="cs-lbl">Quarterly</div><div class="cs-val">Distributions</div><div class="cs-sub">Paid according to the business plan, beginning after the third quarter.</div></div>
+            <div class="cs-card fu"><div class="cs-lbl">Any time</div><div class="cs-val">Come and see it</div><div class="cs-sub">Tours can be arranged with the property management team. Just ask.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSCRIPT -->
+<section class="sec" id="transcript">
+    <div class="container">
+        <div class="sec-lbl fu">For the Record</div>
+        <h2 class="sec-title fu">Full <em>transcript</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">The complete transcript of the call, lightly cleaned for readability. Open it to read or search the whole conversation.</p>
+        <details class="tx-wrap fu">
+            <summary class="tx-toggle">Read the full transcript</summary>
+            <div class="tx-body">
+                <div class="tx-turn">
+                    <div class="tx-spk">Mila Penn Chazak<span>00:00:03</span></div>
+                    <p class="tx-txt">Alright, we&#x27;re live.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:00:07</span></div>
+                    <p class="tx-txt">Hello, everyone. Thank you so much for joining us, for, this, celebration. Welcome to, the, partnership. We&#x27;re so excited, to partner with each and every one of you on Harmony Grove. So, things are off to a fantastic start, so far. Wanted to give you guys a little update, a chance to celebrate, but more importantly, we&#x27;re ready hard at work, carrying out the business plan. And, just to give you a quick update, Claude, Anita, Fedna and a couple of our other partners, were just at the asset, this week, making sure that things are running, very, very, smoothly. So, a quick, update. Business plan already, underway. We&#x27;ve already, had the contractors out. They&#x27;re prepping, to start, the exterior renovations, that we wanted. The excitement is extremely palpable in the property. All the residents are extremely happy. They love the fact that, the new ownership group is around. We&#x27;re visible, we&#x27;re improving, the way that the property looks. We&#x27;re improving, overall, safety. The rents are still coming in well above, what we projected would have happened, three years from now, right? We had somebody, come in just this week, they&#x27;re ready to sign, at, $1,450, with zero renovation, done. So, I think our underwriting was extremely conservative. And, we&#x27;re really, really bullish, on, this particular asset. So, we just wanted to bring everybody together, give you a quick update, and more importantly, to congratulate you, and thank you for your partnership, and joining, the, ownership, group. And, please, expect, monthly communications from us, going forward, giving you updates, not just on the financials. But also on the business plan, and as we&#x27;ve always said, if you have any questions, if you&#x27;re in town, you want to go visit your property, this is your asset, just let us know. A tour could be arranged with the property management team, so you could go and visit, your property and see all the fantastic work that we&#x27;re doing on your behalf, right? This is the way that you let your money scrub in for you, right? Let your money work harder, than, you, do. I&#x27;m gonna turn the floor over, to, one of our, principal partners, Claude, to see, if he has, anything to add. Claude?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">J. Claude Mouaffi<span>00:03:12</span></div>
+                    <p class="tx-txt">Yes, thank you everyone on the call. Today is a very, very important day. Why? Because we are celebrating a milestone in our life. Together we came, we came together to buy a community in Georgia. That was a few weeks ago, and… 14th of July will be a very, very important day to remember, for long, so I want to congratulate everyone who participated, who is part of that journey, whether you invested or not, It&#x27;s very important that we remember that they&#x27;re selling… And we come together and just share the beautiful thing that we have done. So, congratulations again. I apologize, I&#x27;m coming from the asset. I flew there, Wednesday, just to make sure that the transition is going according to the plan, that we are implement… that we have kick-started our business plan, and… from what I see, the excitement, like Dr. Campbell mentioned, is very high about this property. People are signing lease at $1,450, and they don&#x27;t even… like, trying to talk down the price. When they say $14.50, they&#x27;re like, where do I sign? And if you remember our business plan, we said we&#x27;re gonna sign 1424 by June 30th. 2029, so 3 years from now, and we are achieving already. So, we really, really appreciate the fact that, as a community, we came together to see this rare opportunity and decide that we&#x27;re gonna get it, and we get it. Now we are at work to… implement our business plan. I&#x27;m really, really proud of all of us on this call, and I just want to extend, again, my congratulations. Today is a Celebration, place. Any question. Throw it to us. We&#x27;re gonna try to, come with an answer, but let&#x27;s celebrate. Let&#x27;s celebrate, guys. We have done a phenomenal job. Congratulations.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:05:30</span></div>
+                    <p class="tx-txt">Yeah, thank you, Claude. So, as Claude mentioned, he&#x27;s literally on his way back from the airport right now, after, seeing the asset over the last, few, days, and, Fedna lives in Atlanta. Fedna, are you available to say a couple of words?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Fedna Morency<span>00:05:54</span></div>
+                    <p class="tx-txt">So sorry, I&#x27;m still here. Hello?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:05:58</span></div>
+                    <p class="tx-txt">Yeah, hi. You wanna say a few words?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Fedna Morency<span>00:06:02</span></div>
+                    <p class="tx-txt">Yes, I will definitely say a few words. I just want to thank everybody for joining us. We really appreciate you guys. Atlanta is poppin&#x27;, for all the right reasons, that is. I did not get a chance to go today. I had some, family stuff going on, but I live here around the corner. I will be going tomorrow. But, we had our meeting with the property manager, and then we had, we had our meeting as partners. We&#x27;re all in one accord, and things are moving fast. I can&#x27;t believe how fast it&#x27;s moving. And as soon as we took over, we went to work, and I am very excited, just the momentum gonna keep going. The property managers are amazing. They&#x27;re on top of things. You guys are part of a phenomenal… process and asset, and we can&#x27;t thank you enough. Thank you for… for celebrating and being exciting with us, and I&#x27;m happy to be part of a team that&#x27;s gonna bring you nothing but joy, and get your money back even more than what you invested.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:07:07</span></div>
+                    <p class="tx-txt">Fantastic. We&#x27;re gonna open the floor up, to any questions, comments, anything that anybody has to say, please drop it in the chat. More than happy to answer any questions. This is also, just an open forum for people to, ask questions. What has gone on, over the last, two weeks, since we&#x27;ve, had the asset? Just a lot of tremendous momentum. Moving, forward. So what questions do you have, guys? Open forum.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Tynisia Colon<span>00:07:50</span></div>
+                    <p class="tx-txt">I guess I can ask, apologize. I had to get some stuff in order, so I do want to celebrate with you guys, and hopefully on the next opportunity, I&#x27;m able to join. It&#x27;s Tunisia.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:08:00</span></div>
+                    <p class="tx-txt">Hey, absolutely, thank you so much.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Tynisia Colon<span>00:08:05</span></div>
+                    <p class="tx-txt">But I did want to know, I know one of the, things that had been discussed before signing was reaching out to Dobbins Air Force Base and trying to do that partnership. And I know that you said in the past two weeks that you are looking at first doing renovations, you already started getting interest, but, I guess my question is, what are you doing for marketing? And then… I don&#x27;t… I don&#x27;t want to poo-poo the celebrity, because I know that we&#x27;re all celebrating, but when is the next one now that I know I can join? Sorry.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:08:36</span></div>
+                    <p class="tx-txt">No, no, that&#x27;s… hey, Tanisha, thank you so much, for the questions. So we&#x27;re already working on the marketing plan, it&#x27;s already, on, track. So, firstly, Harmony Grove is now, all of residencies, at Marietta. We wanted to make it something that is boutique. Peak, something that is pretty fresh, so we rebranded the property as Olive Grove, at, Olive residencies, at, Marietta. We&#x27;ve been reaching out, to, our contacts at the Air Force Base, reaching out to, local law enforcement, as well, just to really generate interest. We&#x27;re all about serving those who serve us, local hospitals, as well, people who have, extremely high income, who want to be in the area. Part of, what&#x27;s happening is that over the last, in June, every single person who had a lease, renewal re-signed, right? Not only did they re-sign, they re-signed at a much higher rate, right? Everybody got an average of about, a $75 premium, on, the rent side that they are, paying. And, we&#x27;re already working very, very hard on bringing other opportunities, to our, investor, community. We&#x27;re, really, really excited. Another part of the reason why, Claude is traveling, because he&#x27;s really busy, touring assets. The reception we&#x27;ve received from the broker community, has been really unparalleled, right? We&#x27;re being offered a lot of really fantastic opportunities that are usually reserved, for, institutional-type investors, because they see our movement, they believe in us, they believe in our strategy, and that&#x27;s thanks to you, and everybody else, on this call and in our community. So, rest assured, future opportunities will be coming, very, very soon.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Tynisia Colon<span>00:11:00</span></div>
+                    <p class="tx-txt">Thank you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:11:05</span></div>
+                    <p class="tx-txt">Any other questions, comments, please let us know.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Mila Penn Chazak<span>00:11:12</span></div>
+                    <p class="tx-txt">Just a quick announcement, for all those who are joining us today, y&#x27;all have permission to speak, your mics are, turned on, so please, we would love, to, receive your feedback on the process, on the asset. Questions, any kind of thing that helps us all improve in what we do here every single day. And, and, kind of, we, we love taking feedback and, and putting it to work. So, thank you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:11:44</span></div>
+                    <p class="tx-txt">Thanks, Addy.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Fedna Morency<span>00:11:49</span></div>
+                    <p class="tx-txt">Well, I will add, since I do live in Atlanta, if anybody lives in Atlanta, if anybody, want to come here, I would absolutely love to meet up with you, and we can tour the asset together, so give me a heads up anytime, and be happy to show you around.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:12:07</span></div>
+                    <p class="tx-txt">Yeah, thank you, Fed. And that&#x27;s an open invitation for anyone, who, is interested in, touring, the, asset, you know. This is, something we&#x27;re really proud of. We&#x27;re an open book, communication is extremely important. To, us and, being not transparent. You want to go toward the asset, you want to see the work that&#x27;s been done. Please, please, please, just let us know. This will be, arranged, for you. Other questions? Hey, Claude, you want to give a quick, overview, on what, we have in store, in terms of our one-month, timeline?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">J. Claude Mouaffi<span>00:13:06</span></div>
+                    <p class="tx-txt">You mean in terms of,</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:13:10</span></div>
+                    <p class="tx-txt">The work that we&#x27;re gonna be, carrying out on, everybody&#x27;s behalf.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">J. Claude Mouaffi<span>00:13:13</span></div>
+                    <p class="tx-txt">Yes, yes, in… in nec… in the… next 3 to 4 weeks, we are going to, do a couple of very interesting things. We are working on putting a big sign, with our new, brand. Olive Residency at Marietta. We have a sign out now with that name, but… with that brand, but, we… we are working on a much better and bigger brand, and bigger sign for that. We are working, We are ready… Saw a couple of general contractors who are going to, start working, in… in August. Sorry, I… Yeah, we, we have… we already secured a couple of general contractors. We are going to kick off in August the painting on a building. All the nine… all the nine buildings are going to be painted in… in white. We have already decided what kind of color with the general… with the PM, the general contractor has sent their proposal, we review, and we, They are going to start as soon as possible in, August. In the same vein, we are… we approved the, some of the interior improvement that we, we saw during our due diligence, installing exhaust fan into a bathroom. The property doesn&#x27;t have, some bathroom doesn&#x27;t have that right now, so we are doing a property-wide, installation. We are That&#x27;s gonna start next week. Property-wide. We have, we have to… In August, we are going to start with the replacement of electrical panel. This is something that is going to reduce our, our operational expense when it comes to insurance. We talked with… we worked with our insurance guy, team, and they said if we replace our… if we replace our panel, we&#x27;re gonna have some, reduction in our insurance expense, so that would… Make our property better, better secure, and also, save on money. Those are the major ones, but we have things like, landscaping that we are working on, too. We target in September. And all those, and things like just bringing the property to a level where, people see that there are a new group who is owning this property. What does that mean? We are putting a fence where there is, a trash can, there is a giant trash can, we… But we asked the, property manager to Come up with a fan… with a general… to sign a general contractor who can bring fans to kind of cover that… that place, and that would, That will create not only a nice,</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kingsley Agbeyegbe<span>00:16:33</span></div>
+                    <p class="tx-txt">Index and Dan, how exactly,</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">J. Claude Mouaffi<span>00:16:37</span></div>
+                    <p class="tx-txt">Oh, sorry. So, we are going to fence, well, the trash area for… for the resident, and that is going also to be a base for, the trash collection fee that we are starting to implement in the next few weeks. So… A lot of things have been, discussed with our general contractors, and… And, and property manager, and, some of them have started. Some of them will start next week, like the exhaust fan. And the following week, like, the paintings and things like that. So, the major focus now is on the exterior, because that is where it&#x27;s easy to start. When we go to the interior, the interior renovation. It&#x27;s gonna be a little bit slow, just because people love that property. Dr. Campbell mentioned that, 6 rent in June, and everyone renew it. July, everyone renew it, and August, we had to split it up. People will renew, because so far, we haven&#x27;t received any person indicating that it doesn&#x27;t want to renew, and there is a timeline to to, give notice that you&#x27;re not gonna renew your rent. We haven&#x27;t received any for the, 8 rent that is coming to, a contract that is coming to an end in the month of August, so… We&#x27;re anticipating that those are going to be renewed, showing how people have, a lot of interest in staying that asset. So, the interior renovation is going to be a little bit slow when it comes to renovating our unit, but the exterior, we are pushing Aggressively to get it done, because that will capture a lot of value, bringing new, profile of tenant easily.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:18:38</span></div>
+                    <p class="tx-txt">That&#x27;s fantastic. Hey, thank you so much for the update. I&#x27;m gonna add a little bit of color to what he said. So, yes, we&#x27;re getting these bids, but these bids are for significantly less than we budgeted. For, right? For the electrical panel work, we budgeted over almost $250,000 for the electrical panel work. It&#x27;s gonna come out to be $75,000, right? So when we told you that we have contingencies upon contingencies built in, and that we&#x27;re gonna get, competitive bids, we really meant, what we said. Everything that we&#x27;ve gotten so far is coming in well under, budget. Which makes us really, really, excited about, this, project. And I think… starting on the exterior, people are getting excited, they&#x27;re able to see it, they&#x27;re able to see the change, that we&#x27;re, bringing. And even with the rental increases that we have, it&#x27;s still well below what the market will, tolerate. So that&#x27;s the reason why people are electing to stay, at this asset, because they already all the changes, that are happening very, very, quickly. We&#x27;re giving people a wonderful place to live, a wonderful place to raise their family, and just a tremendous community to call, home. So, we&#x27;re not only extracting value, more importantly, we&#x27;re adding value, to, them, in the community, which is critically important. To, us, right? And something we&#x27;re very, very proud, to, do and to really serve the community. Right? Any additional questions?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Blaise Nzeda<span>00:20:32</span></div>
+                    <p class="tx-txt">No, not a question, but just some comments. Good evening, everybody.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:20:36</span></div>
+                    <p class="tx-txt">Blaise.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Blaise Nzeda<span>00:20:37</span></div>
+                    <p class="tx-txt">Hey, Dr. Campbell. So, first, I wanted to thank you, Dr. Famberl. Claude and the team for bringing such a fantastic opportunity to us, to allow us to invest in it. Because, everybody who&#x27;s been listening to what&#x27;s been said all along this evening just shows that this asset is a really good one. And, the work that&#x27;s been going on is quite remarkable. I think the team&#x27;s been doing great, and we&#x27;re very hopeful about what we&#x27;re seeing, and the rent is coming in above what we expected, and the budget is coming in… the quotes are coming in below the budget, so all that just shows that, as investors. We are basically looking for a fantastic outlook, for a great outlook in terms of our return on investment, cash flow, and the things that we actually projected. So, and that is really good news. So, I have nothing else to add, just happy to be here. And also, I want to thank the investors who came in through me, for the opportunity to come in here, for the trust they brought in, for trusting us with this. And as one person said, I think this is just the first one, because when we do a fantastic job here, an excellent job here, they will see how well we perform, how well we execute, and they will be with us on the next one. And even bring more investors along, because we&#x27;re dreaming big, and we&#x27;re up to something very big here.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:22:05</span></div>
+                    <p class="tx-txt">Yeah. No, thank you so much. I think, to, add a little bit to, what Blaise just said, the excitement and the amount of people that were interested in this particular opportunity. We were oversubscribed, right? Unfortunately, we were not able to, offer an allocation to everyone who wanted to be a part of, this, opportunity, because I think a lot of people really recognize the vision. They recognized the location and the asset, and they really saw the business plan. So, for, those who may not have been able to join us on this particular deal, there&#x27;ll be definitely plenty of similarly outstanding opportunities, in the future, right? We look for needles in a haystack. Right? For every one opportunity, that we say yes to, we say no, to, hundreds of other, opportunities. It has to make sense, for us. We have to protect our investor capital. More importantly, we have to be able to, deliver on our business plan. So, thank you, thank you. Thank you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Mila Penn Chazak<span>00:23:20</span></div>
+                    <p class="tx-txt">Dr. Campbell, I think Dr. Kingsley asked a question, is the call over? I&#x27;m not sure if he was trying to say something, if he, I can see he&#x27;s still here.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:23:32</span></div>
+                    <p class="tx-txt">Oh, sorry, Dr. Kingsley.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kingsley Agbeyegbe<span>00:23:35</span></div>
+                    <p class="tx-txt">If you can hear me, sir.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:23:37</span></div>
+                    <p class="tx-txt">Yes, we can hear you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kingsley Agbeyegbe<span>00:23:37</span></div>
+                    <p class="tx-txt">8, forgive me, I was on another call, I had a little bit of a conflict, but then there was a blank screen, so I wasn&#x27;t sure if I had missed the first 15 minutes or not.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:23:47</span></div>
+                    <p class="tx-txt">Yeah, so there was just, a quick introduction, a quick update. This is a no slide, this is an open forum. I wanted to let people know that we&#x27;re hard at work. The asset is performing beautifully. Rents are still coming in well above, projections. In the asset is, 97% occupied, currently. When actually another lease, signed, so I think we&#x27;re pushing 99%. Occupied, everybody renewed in June, everybody renewed in July. August, we&#x27;ve gotten zero, indications from the 8 people, who have released, renewals, that they&#x27;re, planning on not renewing, which, so that means that 8 out of 8. Are gonna, renew. So we&#x27;re not spending any money on renovations, but we&#x27;re capturing a premium, on these, renewals, which is really fantastic. Other things, that are happening that we did not underwrite for that is gonna add revenue, to our business plan. The washer-dryer rental program, is gonna get, up and, running. The paid parking is gonna get up and running. We&#x27;re gonna start, billing people, for, gas and water, which is not currently being done. We&#x27;re gonna start doing that that was not underwritten for us. So those are other revenue streams, that we&#x27;re continuing to stack that was not a part of the business plan, that we Presented. So we&#x27;re just, really working hard to add value. To your, investment. So thank you, thank you, thank you for partnering, with us, and we&#x27;re really, really excited. And just an open forum for, any questions. If, if not today, whenever anybody has any questions, let us know. If you&#x27;re in the Atlanta area, you want to tour the property, this will be arranged, for you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kingsley Agbeyegbe<span>00:25:52</span></div>
+                    <p class="tx-txt">Great, thank you so much.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Blaise Nzeda<span>00:25:52</span></div>
+                    <p class="tx-txt">One question. Yeah, sorry, Dr. Kingsley, I think you went ahead. You were ahead of me.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kingsley Agbeyegbe<span>00:25:59</span></div>
+                    <p class="tx-txt">No, you can go ahead, I was just saying thanks.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Blaise Nzeda<span>00:26:02</span></div>
+                    <p class="tx-txt">So, with this… Celebration, and us getting together. Going forward, how will investors be updated about things happening with the assets? Are they getting written reports? Are we coming together to discuss the performance of the assets?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:26:22</span></div>
+                    <p class="tx-txt">Yes, so…</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Blaise Nzeda<span>00:26:23</span></div>
+                    <p class="tx-txt">And things like that. And a different question of distribution as well.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:26:28</span></div>
+                    <p class="tx-txt">Excellent question. So, our investor community will get, monthly, reports, financials, updates on the property, and where the business plan, stands. So there&#x27;ll be monthly written, communication. Anybody has any questions in between, just reach out, to us. We&#x27;re an open book. Happy to discuss in terms of distributions. Distributions are paid on a quarterly basis, according to our business plan. We&#x27;re planning on starting, to pay those distributions after the third, quarter as we&#x27;re carrying out our renovation, plans, but things are always being, modified. If there are opportunities. For us to, pay earlier, we&#x27;ll certainly, consider, that, but, that I would defer, to our corporate finance, expert, Claude, who&#x27;s our, money man, but, I certainly think if there are, opportunities. For earlier distributions, rather than, what we, underwrote for. That&#x27;s something we will happily, do, for our, investor, base. So there&#x27;ll be definitely frequent, communications, with, our, investors. Hopefully that answers the question.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Blaise Nzeda<span>00:27:52</span></div>
+                    <p class="tx-txt">Yes, you did. Thank you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:27:53</span></div>
+                    <p class="tx-txt">Yeah, alright, outstanding. Any other questions?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Mila Penn Chazak<span>00:28:03</span></div>
+                    <p class="tx-txt">Also, Dr. Campbell, Leah and Jeremy just joined.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:28:08</span></div>
+                    <p class="tx-txt">Leah, Jeremy, welcome, welcome, welcome. You want to say a few words?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Jeremy Krebs<span>00:28:14</span></div>
+                    <p class="tx-txt">Just that we are super excited about, this property. There&#x27;s so much upside, and I think one of the most exciting things is to be able to bring all of the things that we are doing and accomplishing, on this property to y&#x27;all, so… that&#x27;s really it. We&#x27;ve had multiple conversations, we&#x27;ve met with the property managers multiple, multiple times already. I&#x27;m not sure what y&#x27;all covered before we got on, but sorry we were late. That&#x27;s pretty much it, I think.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:28:45</span></div>
+                    <p class="tx-txt">Yeah. Oh, thank you. Jeremy?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Fedna Morency<span>00:28:48</span></div>
+                    <p class="tx-txt">And I just… oh, sorry, go ahead, Jeremy.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:28:50</span></div>
+                    <p class="tx-txt">Oh. Are you muted? You&#x27;re muted.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Jeremy Krebs<span>00:28:55</span></div>
+                    <p class="tx-txt">Just welcome everybody, we&#x27;re happy to be here. I echo everything that Leah said. So, excited to… to see how… how this all turns out, and move forward.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:29:10</span></div>
+                    <p class="tx-txt">Fedna?</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Fedna Morency<span>00:29:12</span></div>
+                    <p class="tx-txt">Yes, I have to go, but I just want to say, like, I truly, truly love this team. This team is such a vibe, we&#x27;re working well together, and just amazing job on the team, and I just want to thank all the investors. The leadership by Dr. Campbell is amazing, and thank you so much for… for… for having this, and thank you for having me.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:29:36</span></div>
+                    <p class="tx-txt">Yeah. Teamwork makes the dream work, right? This is a complete, team, effort. So, it&#x27;s, 7.01. I want to be respectful of everyone&#x27;s time. If anyone has any, questions, more than happy, to answer. If not, this was, again, just a quick, celebration, a quick congratulations. On, joining us on this, journey. There&#x27;ll be plenty of others, for those who may not have been able to join us on this particular asset. We&#x27;re hard at work on the next opportunity. But, as, we always say, we&#x27;re looking for that needle in a haystack, right? It has to be a really outstanding opportunity. I think, Carine, has a question. Go ahead.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Carine Achoundong<span>00:30:31</span></div>
+                    <p class="tx-txt">Actually, it&#x27;s not a question, it&#x27;s, I just wanted to congratulate the whole team, and particularly say thanks to, I don&#x27;t know if we can call you our mentor who brought us to this deal, Mr. Blaisea. I wanted to thank him for bringing us to the deal, and looking forward to working with this great and amazing leadership team.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:30:54</span></div>
+                    <p class="tx-txt">Well, thank you for joining us. We really appreciate it.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Carine Achoundong<span>00:31:00</span></div>
+                    <p class="tx-txt">Thank you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:31:01</span></div>
+                    <p class="tx-txt">Alright. All right, everyone, it&#x27;s a little after 7, quick celebration. Keep the good vibes going, have a nice bottle of, wine, red or white, or rose, your choice.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Jeremy Krebs<span>00:31:17</span></div>
+                    <p class="tx-txt">That&#x27;s right.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Mila Penn Chazak<span>00:31:19</span></div>
+                    <p class="tx-txt">Before we leave, quick update. Sorry, Dr. Kimball. Just a quick update for everyone joining, and those who could not attend, and they&#x27;ll be hearing this later. We&#x27;ll be sending out recordings within the next 24 hours. That&#x27;ll cover everything that we talked about today, so feel free to share it with your friends, family. And, and who is, whomever you think might benefit from from, being part of this community and investing with us in our next deals. Thank you.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:31:49</span></div>
+                    <p class="tx-txt">Absolutely, and just one last thing, I think, education is extremely important, and, we&#x27;re looking to, continue and build upon, our last, webinar where we had, a tax strategist, come and share, some tips. For us. So we&#x27;re going to be offering, more of that, in the future. We&#x27;re going to be able to add value, to you, right? I think, personal finance is extremely important, and, we&#x27;re looking to really offer opportunities for people to learn and grow, and if there&#x27;s anybody within your network that you think would benefit from it, the highest, Compliment, is certainly a referral to, any of the opportunities that we may have. Or any of the educational, webinars that we&#x27;ll be offering, in the, future. So again, thank you very much, everyone. Have a wonderful, Thursday, evening.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Blaise Nzeda<span>00:32:56</span></div>
+                    <p class="tx-txt">Thank you, and bye for now.</p>
+                </div>
+                <div class="tx-turn">
+                    <div class="tx-spk">Dr. Kirk A. Campbell<span>00:32:59</span></div>
+                    <p class="tx-txt">Alright, bye-bye for now.</p>
+                </div>
+            </div>
+        </details>
+    </div>
+</section>
+
+<!-- FINAL -->
+<section class="final-cta">
+    <div class="container">
+        <div class="sec-lbl" style="color:rgba(255,255,255,0.45);text-align:center;">Thank You</div>
+        <h2 class="sec-title" style="text-align:center;margin-bottom:16px;">You made this <em>happen</em></h2>
+        <p class="sec-body" style="text-align:center;max-width:600px;margin:0 auto 34px;">Whether you invested, joined a webinar, asked a hard question, or simply cheered us on, you are part of this. Thank you for being here. If anything comes to mind after watching, just reply to us. We read every email.</p>
+        <div style="text-align:center;">
+            <a href="mailto:invest@milapennchazak.com" class="btn btn-gold">Email the Team</a>
+        </div>
+    </div>
+</section>
+
+<p class="disc">
+    This recording and recap are shared with our investor community and guests for information only. They are not an offer to sell or a solicitation of an offer to buy any security, and nothing here is investment, tax, or legal advice. Statements made during the call reflect the team's views on July 30, 2026 and forward-looking plans are subject to change.
+</p>
+
+<footer>
+    <p class="footer-text">
+        Mila Penn Chazak &nbsp;&middot;&nbsp; invest@milapennchazak.com<br>
+        This is a private, unindexed page shared only with our community and invited guests.
+    </p>
+</footer>
+
+<script>
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
