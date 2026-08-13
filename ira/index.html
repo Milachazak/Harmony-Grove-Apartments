@@ -81,7 +81,8 @@
         .nav-link { font-size:13.5px; font-weight:500; color:var(--t70); text-decoration:none; letter-spacing:.02em; transition:color .2s; }
         .nav-link:hover { color:var(--text); }
         .nav-actions { display:flex; gap:10px; align-items:center; }
-        @media(max-width:980px){ .nav-links{display:none} }
+        @media(max-width:1180px){ .nav-links{display:none} }
+        .nav-links { gap:20px; }
 
         /* ── BUTTONS ── */
         .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
@@ -177,6 +178,11 @@
             html { scroll-behavior:auto; }
         }
 
+
+        /* six nav links need more room before collapsing */
+        @media(max-width:1180px){ .nav-links{display:none} }
+        @media(min-width:1181px){ .nav-links{display:flex} }
+        .nav-links { gap:20px; }
 
         /* ── SHARED RESPONSIVE ── */
         @media(max-width:680px){
@@ -304,6 +310,7 @@
         <a href="../#portfolio" class="nav-link">Portfolio</a>
         <a href="../events/" class="nav-link">Events</a>
         <a href="../ira/" class="nav-link" style="color:var(--text);font-weight:600;">Invest with your IRA</a>
+        <a href="../knowledge-base/" class="nav-link">Knowledge Base</a>
         <a href="../#team-section" class="nav-link">Team</a>
     </div>
     <div class="nav-actions">
@@ -563,6 +570,7 @@
                 <h4>Events</h4>
                 <ul>
                     <li><a href="../events/">All Events &amp; Replays</a></li>
+                    <li><a href="../knowledge-base/">Knowledge Base</a></li>
                     <li><a href="../tax-replay/">Tax Strategy Briefing</a></li>
                     <li><a href="../celebration-replay/">Closing Celebration</a></li>
                     <li><a href="../anpareplay/">ANPA Exclusive</a></li>
@@ -602,5 +610,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 </script>
+
 </body>
 </html>
