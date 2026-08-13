@@ -124,12 +124,14 @@
         .hero-vid-wrap video { width:100%; height:100%; object-fit:cover; object-position:center; }
         .hero-vid-wrap::after {
             content:''; position:absolute; inset:0;
+            /* deepened 2026-08-13: the aerial clip is much brighter than the old
+               property footage, so the right side needed more scrim to hold contrast */
             background: linear-gradient(
                 130deg,
-                rgba(5,14,31,0.94) 0%,
-                rgba(5,14,31,0.82) 38%,
-                rgba(5,14,31,0.55) 65%,
-                rgba(5,14,31,0.25) 100%
+                rgba(5,14,31,0.95) 0%,
+                rgba(5,14,31,0.87) 38%,
+                rgba(5,14,31,0.70) 65%,
+                rgba(5,14,31,0.52) 100%
             );
         }
         .hero-content {
@@ -137,7 +139,7 @@
             max-width:1200px; margin:0 auto;
             padding:130px 48px 80px; width:100%;
             display:grid;
-            grid-template-columns:1fr 460px;
+            grid-template-columns:1fr 520px;
             gap:48px;
             align-items:center;
         }
@@ -174,70 +176,39 @@
         .hero-press-lbl { font-size:10.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,0.40); margin-bottom:9px; }
         .hero-press-list { font-size:12.5px; color:rgba(255,255,255,0.62); letter-spacing:.05em; line-height:1.9; }
 
-        /* ── HERO BENTO CARDS ── */
-        .hero-bento {
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            grid-template-rows:auto auto auto;
-            gap:10px;
-        }
-        .hb-card {
-            border-radius:18px;
-            padding:22px 24px;
-            backdrop-filter:blur(32px) saturate(200%);
-            -webkit-backdrop-filter:blur(32px) saturate(200%);
-            position:relative; overflow:hidden;
-        }
-        .hb-frost {
-            background:rgba(240,246,255,0.16);
-            border:1px solid rgba(255,255,255,0.30);
-        }
-        .hb-navy-card {
-            background:rgba(5,14,31,0.80);
-            border:1px solid rgba(18,68,245,0.35);
-            display:flex; flex-direction:column; justify-content:space-between;
-        }
-        .hb-tax-card {
-            background:linear-gradient(135deg,rgba(16,185,129,0.38),rgba(4,120,87,0.28));
-            border:1px solid rgba(52,211,153,0.55);
-            box-shadow:0 0 24px rgba(16,185,129,0.18);
-        }
-        .hb-orange-card {
-            background:linear-gradient(135deg,rgba(232,101,26,0.40),rgba(180,55,8,0.32));
-            border:1px solid rgba(232,101,26,0.50);
-        }
-        .hb-wide {
-            grid-column:span 2;
-            background:rgba(240,246,255,0.12);
-            border:1px solid rgba(255,255,255,0.22);
-            display:flex; align-items:center; gap:24px;
-        }
-        .hb-lbl {
-            font-family:var(--ff-d); font-size:13.5px; font-style:italic;
-            color:rgba(255,255,255,0.55); margin-bottom:8px; display:block;
-        }
-        .hb-val {
-            font-family:var(--ff-d); font-size:clamp(30px,3.2vw,46px);
-            font-weight:700; color:#fff; line-height:1; margin-bottom:6px; display:block;
-        }
-        .hb-accent { color:#FF9A60; }
-        .hb-sub {
-            font-size:12px; color:rgba(255,255,255,0.50); line-height:1.45; display:block;
-        }
-        .hb-timeline {
-            display:flex; align-items:center; gap:0; margin:14px 0 10px; flex-wrap:nowrap;
-        }
-        .hb-yr-dot {
-            width:10px; height:10px; border-radius:50%;
-            background:rgba(255,255,255,0.22); border:1.5px solid rgba(255,255,255,0.30);
-            flex-shrink:0;
-        }
-        .hb-yr-dot.active { background:#FF9A60; border-color:#FF9A60; box-shadow:0 0 8px rgba(255,154,96,0.60); }
-        .hb-yr-line { flex:1; height:1.5px; background:rgba(255,255,255,0.18); min-width:8px; }
-        .hb-exit { font-size:10px; color:rgba(255,255,255,0.45); margin-left:8px; letter-spacing:.05em; }
-        .hb-wide-val { flex-shrink:0; }
-        .hb-wide-text { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.55; }
+        /* ── HERO PRESS CLIPPINGS CARD ── */
+        /* the graphic's own background is #050E1F, identical to --navy, so it
+           frames cleanly with no visible seam */
+        /* the label sits in a header bar, NOT overlaid: at mobile widths an
+           absolutely positioned badge covered the first clipping headline */
+        .hero-press-card { display:block; text-decoration:none; border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,0.20); box-shadow:0 20px 56px rgba(0,0,0,0.55); background:var(--navy); transition:border-color .25s, box-shadow .25s; }
+        .hero-press-card:hover { border-color:rgba(255,154,96,0.45); box-shadow:0 24px 64px rgba(0,0,0,0.62); }
+        .hero-press-card img { width:100%; display:block; }
+        .hpc-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 15px; background:rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.14); }
+        .hpc-badge { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#FF9A60; white-space:nowrap; }
+        .hpc-zoom { font-size:11.5px; font-weight:500; color:rgba(255,255,255,0.62); white-space:nowrap; transition:color .25s; }
+        .hero-press-card:hover .hpc-zoom { color:#FF9A60; }
 
+        /* ── HERO CONDENSED STAT STRIP ── */
+        .hero-stats {
+            display:flex; flex-wrap:wrap; margin-top:10px;
+            border-radius:16px; overflow:hidden;
+            background:rgba(240,246,255,0.12); border:1px solid rgba(255,255,255,0.22);
+            backdrop-filter:blur(28px) saturate(200%);
+            -webkit-backdrop-filter:blur(28px) saturate(200%);
+        }
+        .hs { flex:1 1 0; min-width:100px; padding:16px 8px; text-align:center; border-right:1px solid rgba(255,255,255,0.14); }
+        .hs:last-child { border-right:none; }
+        .hs-v { display:block; font-family:var(--ff-d); font-size:22px; font-weight:700; color:#fff; line-height:1; white-space:nowrap; }
+        .hs-v em { font-style:normal; color:#FF9A60; font-size:0.70em; }
+        .hs-l { display:block; font-size:9.5px; letter-spacing:.07em; text-transform:uppercase; color:rgba(255,255,255,0.52); margin-top:8px; line-height:1.4; }
+
+        /* ── LIGHTBOX (full-size press graphic) ── */
+        .lb { position:fixed; inset:0; z-index:2000; background:rgba(3,8,18,0.94); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; padding:34px 20px; cursor:zoom-out; }
+        .lb[hidden] { display:none; }
+        .lb img { max-width:min(1500px,96vw); max-height:92vh; width:auto; height:auto; border-radius:14px; box-shadow:0 30px 90px rgba(0,0,0,0.72); cursor:default; }
+        .lb-close { position:absolute; top:18px; right:22px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.30); color:#fff; font-size:24px; line-height:1; cursor:pointer; font-family:var(--ff-b); }
+        .lb-close:hover { background:rgba(255,255,255,0.24); }
         /* ── TICKER MARQUEE ── */
         .ticker { background:linear-gradient(135deg,#050E1F,#0A1830); border-top:1px solid rgba(18,68,245,0.28); border-bottom:1px solid rgba(18,68,245,0.28); overflow:hidden; position:relative; z-index:1; padding:15px 0; }
         .ticker-track { display:flex; width:max-content; animation:tick 46s linear infinite; }
@@ -303,7 +274,9 @@
         @media(max-width:1080px){ .why-grid { grid-template-columns:1fr 1fr; } }
 
         /* ── PORTFOLIO ── */
-        .pf-sec { background:linear-gradient(180deg,rgba(230,237,249,0.70) 0%,rgba(240,244,252,0.10) 100%); }
+        /* bottom padding trimmed: the photo marquee reads as part of this section,
+           so the default 76px + the marquee's own top padding left a dead white band */
+        .pf-sec { background:linear-gradient(180deg,rgba(230,237,249,0.70) 0%,rgba(240,244,252,0.10) 100%); padding-bottom:34px; }
         .pf-head { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:38px; }
         .pf-card { display:grid; grid-template-columns:1.15fr 1fr; overflow:hidden; padding:0; }
         .pf-photo-wrap { position:relative; overflow:hidden; min-height:340px; }
@@ -320,7 +293,7 @@
         @media(max-width:860px){ .pf-card { grid-template-columns:1fr; } .pf-photo-wrap { min-height:240px; } .pf-body { padding:32px 26px; } }
 
         /* ── PHOTO MARQUEE ── */
-        .photo-marquee { overflow:hidden; padding:34px 0 0; position:relative; z-index:1; }
+        .photo-marquee { overflow:hidden; padding:0 0 4px; position:relative; z-index:1; }
         .pm-track { display:flex; width:max-content; gap:12px; animation:tick 52s linear infinite; }
         .pm-track img { height:190px; width:290px; object-fit:cover; border-radius:14px; flex-shrink:0; box-shadow:0 8px 24px rgba(10,22,40,0.10); }
         .photo-marquee:hover .pm-track { animation-play-state:paused; }
@@ -483,24 +456,20 @@
         /* ── RESPONSIVE ── */
         @media(max-width:1024px){
             .hero-content { grid-template-columns:1fr; gap:36px; }
-            .hero-bento { max-width:500px; }
+            .hero-right { max-width:560px; }
         }
         @media(max-width:960px){
             .team-grid,.test-grid,.glance-grid { grid-template-columns:1fr !important; }
-            .hb-wide { grid-column:span 1; }
         }
         @media(max-width:680px){
             #nav { padding:13px 20px; }
             .nav-logo { height:22px; }
             .btn-ghost { display:none !important; }
             .hero-content,.container { padding-left:20px; padding-right:20px; }
-            .hero-bento { grid-template-columns:1fr; }
-            .hb-wide { grid-row:span 1; grid-column:span 1; }
             .sec,.team-sec,.contact-sec,.proc-sec,.story-sec { padding:52px 0; }
             .why-grid { grid-template-columns:1fr; margin-top:56px; }
             .pf-stat-val { font-size:21px; }
             .pf-stat-lbl { font-size:10.5px; }
-            .hb-wide { flex-direction:column; align-items:flex-start; gap:12px; }
             .glance-card { border-radius:18px; }
         }
 </style>
@@ -537,9 +506,9 @@
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero" id="hero">
     <div class="hero-vid-wrap">
-        <video autoplay muted loop playsinline poster="Property Photos/harmony-grove-marietta-ga-primary-photo.jpg">
-            <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Due%20Diligence.mov" type="video/mp4">
-            <img src="Property Photos/harmony-grove-marietta-ga-primary-photo.jpg" alt="Harmony Grove Apartments, Marietta, Georgia">
+        <video autoplay muted loop playsinline preload="auto" poster="hero-aerial-poster.jpg">
+            <source src="hero-aerial.mp4" type="video/mp4">
+            <img src="hero-aerial-poster.jpg" alt="Aerial view of a multifamily apartment community">
         </video>
     </div>
     <div class="hero-content">
@@ -547,9 +516,9 @@
         <div class="hero-text">
             <div class="live-badge">
                 <span class="live-dot"></span>
-                18 Investor Partners and Counting
+                60+ Investors and Counting
             </div>
-            <div class="hero-tag">Physician-Led · Multifamily · Metro Atlanta</div>
+            <div class="hero-tag">A Private Multifamily Investment Company</div>
             <h1 class="hero-title">
                 Where High Earners<br>Become <em>Owners.</em>
             </h1>
@@ -566,50 +535,31 @@
             </div>
         </div>
 
-        <!-- RIGHT: Bento stat cards -->
-        <div class="hero-bento">
-            <div class="hb-card hb-frost">
-                <span class="hb-lbl">Assets Acquired</span>
-                <span class="hb-val">$7.75<span class="hb-accent">MM</span></span>
-                <span class="hb-sub">Harmony Grove Apartments, closed July 2026</span>
-            </div>
-            <div class="hb-card hb-orange-card">
-                <span class="hb-lbl">Doors Owned</span>
-                <span class="hb-val">75</span>
-                <span class="hb-sub">Studio, 1BR and 2BR in Marietta, Georgia</span>
-            </div>
-            <div class="hb-card hb-tax-card">
-                <span class="hb-lbl">Tax Benefit</span>
-                <span class="hb-val">~<span class="hb-accent">$35K</span></span>
-                <span class="hb-sub">Year 1 benefit per $100K invested, Harmony Grove</span>
-            </div>
-            <div class="hb-card hb-navy-card">
-                <div>
-                    <span class="hb-lbl">Fully Subscribed</span>
-                    <span class="hb-val">65<span class="hb-accent"> Days</span></span>
-                </div>
-                <div class="hb-timeline">
-                    <div class="hb-yr-dot active"></div>
-                    <div class="hb-yr-line"></div>
-                    <div class="hb-yr-dot active"></div>
-                    <div class="hb-yr-line"></div>
-                    <div class="hb-yr-dot active"></div>
-                    <div class="hb-yr-line"></div>
-                    <div class="hb-yr-dot active"></div>
-                    <span class="hb-exit">→ CLOSED</span>
-                </div>
-                <span class="hb-sub">Launch to close, July 14, 2026</span>
-            </div>
-            <div class="hb-card hb-wide">
-                <div class="hb-wide-val">
-                    <span class="hb-lbl">Founder Experience</span>
-                    <span class="hb-val" style="font-size:clamp(26px,2.8vw,38px);">1,000<span class="hb-accent">+</span></span>
-                </div>
-                <div class="hb-wide-text">Multifamily units across the founders' combined portfolios, alongside hotel keys, mobile home pads, parking assets and ground-up development.</div>
+        <!-- RIGHT: Press clippings + condensed stat strip -->
+        <div class="hero-right">
+            <a class="hero-press-card" href="press-feature.jpg" id="press-open" aria-label="Open the full press coverage graphic">
+                <span class="hpc-head">
+                    <span class="hpc-badge">As featured in the press</span>
+                    <span class="hpc-zoom">Click to read →</span>
+                </span>
+                <img src="press-clippings.jpg" alt="Press coverage of Mila Penn Chazak in Business Insider, AP News, StreetInsider, NewsBreak, IPS News and Big News Network">
+            </a>
+            <div class="hero-stats">
+                <div class="hs"><span class="hs-v">$7.75<em>MM</em></span><span class="hs-l">Asset<br>Value</span></div>
+                <div class="hs"><span class="hs-v">75</span><span class="hs-l">Doors<br>Owned</span></div>
+                <div class="hs"><span class="hs-v">~<em>$35K</em></span><span class="hs-l">Yr 1 Tax<br>per $100K</span></div>
+                <div class="hs"><span class="hs-v">65</span><span class="hs-l">Days to<br>Full Raise</span></div>
+                <div class="hs"><span class="hs-v">1,000<em>+</em></span><span class="hs-l">Founder<br>Units</span></div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Full-size press graphic -->
+<div class="lb" id="press-lb" hidden>
+    <button class="lb-close" id="press-close" aria-label="Close">&times;</button>
+    <img src="press-feature.jpg" alt="Mila Penn Chazak press coverage: $4 million, 75 units, 65 days, featured in Business Insider, AP News, StreetInsider, NewsBreak, IPS News and Big News Network">
+</div>
 
 <!-- ═══════════════ TICKER ═══════════════ -->
 <div class="ticker">
@@ -830,7 +780,7 @@
                         <div class="g-lbl">Doors Under<br>Management</div>
                     </div>
                     <div class="g-stat">
-                        <div class="g-val orange-val">18</div>
+                        <div class="g-val orange-val">60+</div>
                         <div class="g-lbl">Investor Partners<br>In the community</div>
                     </div>
                     <div class="g-stat">
@@ -1167,6 +1117,20 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
     nav.style.background = window.scrollY > 60 ? 'rgba(255,255,255,0.80)' : 'rgba(255,255,255,0.65)';
 }, { passive: true });
+
+// ── Press graphic lightbox
+(function() {
+    const open = document.getElementById('press-open');
+    const lb = document.getElementById('press-lb');
+    const close = document.getElementById('press-close');
+    if (!open || !lb) return;
+    const show = e => { e.preventDefault(); lb.hidden = false; document.body.style.overflow = 'hidden'; close.focus(); };
+    const hide = () => { lb.hidden = true; document.body.style.overflow = ''; };
+    open.addEventListener('click', show);
+    close.addEventListener('click', hide);
+    lb.addEventListener('click', e => { if (e.target !== lb.querySelector('img')) hide(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden) hide(); });
+})();
 
 // ── Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
