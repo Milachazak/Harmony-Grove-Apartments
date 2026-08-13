@@ -278,19 +278,21 @@
            so the default 76px + the marquee's own top padding left a dead white band */
         .pf-sec { background:linear-gradient(180deg,rgba(230,237,249,0.70) 0%,rgba(240,244,252,0.10) 100%); padding-bottom:34px; }
         .pf-head { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:38px; }
-        .pf-card { display:grid; grid-template-columns:1.15fr 1fr; overflow:hidden; padding:0; }
-        .pf-photo-wrap { position:relative; overflow:hidden; min-height:340px; }
+        .pf-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
+        .pf-card { display:flex; flex-direction:column; overflow:hidden; padding:0; }
+        .pf-photo-wrap { position:relative; overflow:hidden; aspect-ratio:16/9; }
         .pf-photo-wrap img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
         .pf-card:hover .pf-photo-wrap img { transform:scale(1.05); }
-        .pf-status { position:absolute; top:18px; left:18px; padding:6px 15px; border-radius:var(--r-pill); background:rgba(232,101,26,0.94); color:#fff; font-size:11px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; }
-        .pf-body { padding:40px; display:flex; flex-direction:column; justify-content:center; }
+        .pf-no { position:absolute; top:16px; left:16px; padding:5px 13px; border-radius:var(--r-pill); background:rgba(5,14,31,0.78); border:1px solid rgba(255,255,255,0.22); backdrop-filter:blur(10px); color:#fff; font-size:10.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
+        .pf-status { position:absolute; top:16px; right:16px; padding:5px 14px; border-radius:var(--r-pill); background:rgba(232,101,26,0.94); color:#fff; font-size:10.5px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; }
+        .pf-body { padding:30px 32px 32px; display:flex; flex-direction:column; flex:1; }
         .pf-loc { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--t50); margin-bottom:10px; }
-        .pf-name { font-family:var(--ff-d); font-size:clamp(28px,3.2vw,40px); font-weight:600; line-height:1.10; margin-bottom:14px; }
-        .pf-desc { font-size:15px; color:var(--t70); line-height:1.74; margin-bottom:26px; }
-        .pf-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:28px; padding:22px 0; border-top:1px solid var(--t10); border-bottom:1px solid var(--t10); }
-        .pf-stat-val { font-family:var(--ff-d); font-size:27px; font-weight:700; color:var(--blue); line-height:1; }
-        .pf-stat-lbl { font-size:11px; color:var(--t50); letter-spacing:.04em; margin-top:6px; line-height:1.4; }
-        @media(max-width:860px){ .pf-card { grid-template-columns:1fr; } .pf-photo-wrap { min-height:240px; } .pf-body { padding:32px 26px; } }
+        .pf-name { font-family:var(--ff-d); font-size:clamp(25px,2.6vw,32px); font-weight:600; line-height:1.14; margin-bottom:12px; }
+        .pf-desc { font-size:14.5px; color:var(--t70); line-height:1.74; margin-bottom:22px; flex:1; }
+        .pf-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:24px; padding:20px 0; border-top:1px solid var(--t10); border-bottom:1px solid var(--t10); }
+        .pf-stat-val { font-family:var(--ff-d); font-size:19px; font-weight:700; color:var(--blue); line-height:1.2; }
+        .pf-stat-lbl { font-size:10px; color:var(--t50); letter-spacing:.07em; text-transform:uppercase; margin-top:6px; line-height:1.4; }
+        @media(max-width:860px){ .pf-grid { grid-template-columns:1fr; } .pf-body { padding:28px 24px 28px; } }
 
         /* ── PHOTO MARQUEE ── */
         .photo-marquee { overflow:hidden; padding:0 0 4px; position:relative; z-index:1; }
@@ -356,25 +358,18 @@
         @media(max-width:860px){ .glance-card { padding:32px 24px; } .glance-grid { grid-template-columns:1fr 1fr; } }
         @media(max-width:520px){ .glance-grid { grid-template-columns:1fr; } }
 
-        /* ── EVENTS / REPLAY LIBRARY ── */
-        .ev-sec { background:linear-gradient(180deg,rgba(230,237,249,0.60) 0%,rgba(240,244,252,0.10) 100%); }
-        .ev-head { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:38px; }
-        .ev-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-        .ev-card { padding:0; display:flex; flex-direction:column; overflow:hidden; text-decoration:none; color:inherit; }
-        .ev-top { padding:24px 26px 0; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-        .ev-date { font-size:11px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--blue); padding:5px 12px; background:var(--blue-dim); border:1px solid var(--blue-border); border-radius:var(--r-pill); }
-        .ev-kind { font-size:10.5px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:var(--t50); }
-        .ev-kind.hl { color:var(--orange); }
-        .ev-body { padding:16px 26px 24px; display:flex; flex-direction:column; flex:1; }
-        .ev-title { font-family:var(--ff-d); font-size:23px; font-weight:600; line-height:1.28; margin-bottom:11px; }
-        .ev-desc { font-size:14px; color:var(--t70); line-height:1.70; margin-bottom:20px; flex:1; }
-        .ev-foot { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:16px; border-top:1px solid var(--t10); }
-        .ev-meta { font-size:11.5px; color:var(--t40); letter-spacing:.03em; }
-        .ev-watch { font-size:13px; font-weight:600; color:var(--orange); letter-spacing:.02em; white-space:nowrap; transition:gap .2s; }
-        .ev-card:hover .ev-watch { color:var(--orange-dk); }
-        .ev-note { margin-top:26px; padding:20px 26px; display:flex; align-items:center; gap:14px; }
-        @media(max-width:1024px){ .ev-grid { grid-template-columns:1fr 1fr; } }
-        @media(max-width:680px){ .ev-grid { grid-template-columns:1fr; } }
+        /* ── EVENTS TEASER (library lives at /events/) ── */
+        .ev-teaser { padding:0 0 76px; position:relative; z-index:1; }
+        .evt-card { display:flex; align-items:center; justify-content:space-between; gap:34px; flex-wrap:wrap;
+            padding:38px 44px; border-radius:var(--r-card);
+            background:linear-gradient(135deg,#050E1F,#0A1830); position:relative; overflow:hidden; }
+        .evt-card::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 50%,rgba(18,68,245,0.20) 0%,transparent 66%); pointer-events:none; }
+        .evt-text { position:relative; z-index:2; max-width:640px; }
+        .evt-title { font-family:var(--ff-d); font-size:clamp(27px,3.2vw,40px); font-weight:600; color:#fff; line-height:1.12; margin-bottom:12px; }
+        .evt-title em { font-style:italic; color:#FF9A60; }
+        .evt-body { font-size:15.5px; color:rgba(255,255,255,0.62); line-height:1.72; font-weight:300; }
+        .evt-btn { position:relative; z-index:2; flex-shrink:0; }
+        @media(max-width:680px){ .evt-card { padding:30px 24px; } .ev-teaser { padding-bottom:52px; } }
 
         /* ── TEAM ── */
         .team-sec { padding:76px 0; }
@@ -493,7 +488,8 @@
     <div class="nav-links">
         <a href="#firm" class="nav-link">The Firm</a>
         <a href="#portfolio" class="nav-link">Portfolio</a>
-        <a href="#events" class="nav-link">Events</a>
+        <a href="https://www.milapennchazak.com/events/" class="nav-link">Events</a>
+        <a href="https://www.milapennchazak.com/ira/" class="nav-link">Invest with your IRA</a>
         <a href="#team-section" class="nav-link">Team</a>
         <a href="#contact" class="nav-link">Contact</a>
     </div>
@@ -641,33 +637,66 @@
             <p style="font-size:15px;color:var(--t70);line-height:1.74;max-width:400px;">We would rather own one community well than ten at arm's length. Every asset is underwritten, acquired and managed by the same three people who invest in it.</p>
         </div>
 
-        <div class="gc pf-card fu">
-            <div class="pf-photo-wrap">
-                <img src="Property Photos/harmony-grove-marietta-ga-primary-photo.jpg" alt="Harmony Grove Apartments, Marietta, Georgia">
-                <div class="pf-status">Now Acquired</div>
-            </div>
-            <div class="pf-body">
-                <div class="pf-loc">Marietta, Georgia &middot; Acquired July 14, 2026</div>
-                <h3 class="pf-name">Harmony Grove Apartments</h3>
-                <p class="pf-desc">A 75-unit community fifteen minutes from downtown Atlanta, bought at $1,092 average in-place rent against a $1,435 comparable set. One hundred percent of units are original, which is the entire point: the value-add plan is a renovation away, not a guess.</p>
-                <div class="pf-stats">
-                    <div>
-                        <div class="pf-stat-val">$7.75MM</div>
-                        <div class="pf-stat-lbl">Asset Value</div>
+        <div class="pf-grid">
+            <article class="gc pf-card fu">
+                <div class="pf-photo-wrap">
+                    <img src="Property Photos/harmony-grove-marietta-ga-primary-photo.jpg" alt="Harmony Grove Apartments, Marietta, Georgia">
+                    <span class="pf-no">Asset No. 01</span>
+                    <span class="pf-status">Now Acquired</span>
+                </div>
+                <div class="pf-body">
+                    <div class="pf-loc">Marietta, Georgia &middot; Acquired July 14, 2026</div>
+                    <h3 class="pf-name">Harmony Grove Apartments</h3>
+                    <p class="pf-desc">A 75-unit community fifteen minutes from downtown Atlanta, a $7.750 million asset bought at $1,092 average in-place rent against a $1,435 comparable set. One hundred percent of units are original, which is the entire point: the value-add plan is a renovation away, not a guess. Fully subscribed in 65 days.</p>
+                    <div class="pf-stats">
+                        <div>
+                            <div class="pf-stat-val">Marietta, GA</div>
+                            <div class="pf-stat-lbl">Market</div>
+                        </div>
+                        <div>
+                            <div class="pf-stat-val">75 Units</div>
+                            <div class="pf-stat-lbl">Size</div>
+                        </div>
+                        <div>
+                            <div class="pf-stat-val">Value-add</div>
+                            <div class="pf-stat-lbl">Strategy</div>
+                        </div>
                     </div>
                     <div>
-                        <div class="pf-stat-val">75</div>
-                        <div class="pf-stat-lbl">Residential Units</div>
-                    </div>
-                    <div>
-                        <div class="pf-stat-val">97%</div>
-                        <div class="pf-stat-lbl">Occupancy</div>
+                        <a href="https://www.milapennchazak.com/harmonygrove" class="btn btn-primary">Explore Harmony Grove →</a>
                     </div>
                 </div>
-                <div>
-                    <a href="https://www.milapennchazak.com/harmonygrove" class="btn btn-primary">Explore Harmony Grove →</a>
+            </article>
+
+            <article class="gc pf-card fu">
+                <div class="pf-photo-wrap">
+                    <img src="park-at-arlington.jpg" alt="The Park at Arlington, Covington, Georgia">
+                    <span class="pf-no">Asset No. 02</span>
+                    <span class="pf-status">Closed</span>
                 </div>
-            </div>
+                <div class="pf-body">
+                    <div class="pf-loc">Covington, Georgia</div>
+                    <h3 class="pf-name">The Park at Arlington</h3>
+                    <p class="pf-desc">A value-add community in the Covington submarket east of Atlanta, acquired and held for the long term. Amenity-led, with the same operating discipline we apply everywhere: buy well, improve deliberately, and let the rent roll do the work.</p>
+                    <div class="pf-stats">
+                        <div>
+                            <div class="pf-stat-val">Covington, GA</div>
+                            <div class="pf-stat-lbl">Market</div>
+                        </div>
+                        <div>
+                            <div class="pf-stat-val">Long-term</div>
+                            <div class="pf-stat-lbl">Hold</div>
+                        </div>
+                        <div>
+                            <div class="pf-stat-val">Value-add</div>
+                            <div class="pf-stat-lbl">Strategy</div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="mailto:invest@milapennchazak.com?subject=The%20Park%20at%20Arlington" class="btn btn-ghost">Ask About This Asset →</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </section>
@@ -797,142 +826,16 @@
     </div>
 </section>
 
-<!-- ═══════════════ EVENTS / REPLAY LIBRARY ═══════════════ -->
-<section class="sec ev-sec" id="events">
+<!-- ═══════════════ EVENTS TEASER (full library lives at /events/) ═══════════════ -->
+<section class="ev-teaser">
     <div class="container">
-        <div class="ev-head fu">
-            <div>
-                <div class="sec-lbl">Events &amp; Replays</div>
-                <h2 class="sec-title" style="margin-bottom:0;">Every session,<br><em>on demand.</em></h2>
+        <div class="evt-card fu">
+            <div class="evt-text">
+                <div class="sec-lbl" style="margin-bottom:10px;">Events &amp; Replays</div>
+                <h2 class="evt-title">Eight sessions, <em>on demand.</em></h2>
+                <p class="evt-body">Every live session we have run stays online with companion notes, the numbers and the full unedited Q&amp;A. Upcoming sessions are posted there first.</p>
             </div>
-            <p style="font-size:15px;color:var(--t70);line-height:1.74;max-width:420px;">We ran eight live sessions during the Harmony Grove raise. Every recording stays online with companion notes, the numbers, and the full unedited Q&amp;A. Nothing was trimmed.</p>
-        </div>
-
-        <div class="ev-grid">
-            <a href="https://www.milapennchazak.com/may4/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">May 4, 2026</span>
-                    <span class="ev-kind">Investor Webinar 01</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">Harmony Grove: The Full Picture</h3>
-                    <p class="ev-desc">The first live investor presentation. The asset, the market, the numbers and the team behind the deal, with the complete Q&amp;A from the chat.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">~75 minutes</span>
-                        <span class="ev-watch">Watch the recording →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.milapennchazak.com/may12/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">May 12, 2026</span>
-                    <span class="ev-kind">Investor Webinar 02</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">Share Classes and the Renovation Roadmap</h3>
-                    <p class="ev-desc">The second session introduced the Class A and Class B structure, the phased renovation plan built to protect occupancy, and the fixed 6.25% mortgage.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">Full recording and notes</span>
-                        <span class="ev-watch">Watch the recording →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.milapennchazak.com/may19/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">May 19, 2026</span>
-                    <span class="ev-kind">Investor Webinar 03</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">Downside Protection and On-Site Due Diligence</h3>
-                    <p class="ev-desc">How the asset performs through a downturn, a transparent walk through of the physical due diligence covering roof, HVAC and electrical, plus the full-cycle track record.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">Full recording and notes</span>
-                        <span class="ev-watch">Watch the recording →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.milapennchazak.com/june8/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">June 8, 2026</span>
-                    <span class="ev-kind">Investor Webinar 04</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">Rents Ahead of Underwriting</h3>
-                    <p class="ev-desc">New leases landing above the underwritten Year 3 target before a single renovation, a welcome to the ANPA physician network, and ground-level perspective from a practice nine minutes from the asset.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">Full recording and notes</span>
-                        <span class="ev-watch">Watch the recording →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.milapennchazak.com/june15/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">June 15, 2026</span>
-                    <span class="ev-kind">Investor Webinar 05</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">The Rent Roll Is In</h3>
-                    <p class="ev-desc">The May 2026 rent roll arrives. Two-bedroom units were already leasing at $1,450, above the underwritten Year 3 target, with the distribution timeline laid out.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">Full recording and notes</span>
-                        <span class="ev-watch">Watch the recording →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.milapennchazak.com/anpareplay/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">June 20, 2026</span>
-                    <span class="ev-kind hl">ANPA Exclusive</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">Built by Physicians, for Physicians</h3>
-                    <p class="ev-desc">An ANPA-exclusive session moderated by Dr. Adebola Giwa. A deep dive into the value-add plan and candid, unrehearsed answers on downside protection.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">Full recording and notes</span>
-                        <span class="ev-watch">Watch the recording →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.milapennchazak.com/tax-replay/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">June 29, 2026</span>
-                    <span class="ev-kind hl">Tax Strategy Briefing</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">Keep More of What You Earn</h3>
-                    <p class="ev-desc">Sixty focused minutes with Kim Hopkins, EA of Doc Wealth on depreciation, cost segregation, real estate professional status, entity selection, retirement leverage and the pitfalls to avoid.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">60 minutes &middot; Guest: Kim Hopkins, EA</span>
-                        <span class="ev-watch">Watch the replay →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.milapennchazak.com/celebration-replay/" class="gc ev-card fu">
-                <div class="ev-top">
-                    <span class="ev-date">July 30, 2026</span>
-                    <span class="ev-kind hl">Closing Celebration</span>
-                </div>
-                <div class="ev-body">
-                    <h3 class="ev-title">We Closed. Then We Celebrated.</h3>
-                    <p class="ev-desc">No slides and no pitch. Just the founders and the community that made it happen, together on one call. Includes 13 chapters and the full transcript.</p>
-                    <div class="ev-foot">
-                        <span class="ev-meta">33 minutes</span>
-                        <span class="ev-watch">Watch the replay →</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="gc ev-note fu">
-            <span style="font-size:24px;flex-shrink:0;">📩</span>
-            <p style="font-size:14.5px;color:var(--t70);line-height:1.68;">These sessions covered a raise that is now closed, so the numbers in them are historical. When we open the next opportunity, our community is invited first. <a href="mailto:invest@milapennchazak.com?subject=Please%20let%20me%20know%20about%20the%20next%20live%20session" style="color:var(--blue);font-weight:500;">Ask to be told about the next live session.</a></p>
+            <a href="https://www.milapennchazak.com/events/" class="btn btn-primary-lg evt-btn">See All Events →</a>
         </div>
     </div>
 </section>
@@ -1075,13 +978,14 @@
                 <ul>
                     <li><a href="https://www.milapennchazak.com/harmonygrove">Harmony Grove</a></li>
                     <li><a href="https://calendly.com/milapenncapital" target="_blank" rel="noopener">Book a Private Call</a></li>
+                    <li><a href="https://www.milapennchazak.com/ira/">Invest with your IRA</a></li>
                     <li><a href="mailto:invest@milapennchazak.com">Email the Team</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Events</h4>
                 <ul>
-                    <li><a href="#events">All Replays</a></li>
+                    <li><a href="https://www.milapennchazak.com/events/">All Events &amp; Replays</a></li>
                     <li><a href="https://www.milapennchazak.com/tax-replay/">Tax Strategy Briefing</a></li>
                     <li><a href="https://www.milapennchazak.com/celebration-replay/">Closing Celebration</a></li>
                     <li><a href="https://www.milapennchazak.com/anpareplay/">ANPA Exclusive</a></li>
@@ -1108,7 +1012,7 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fu').forEach(el => obs.observe(el));
 
 // Stagger grid children
-document.querySelectorAll('.why-grid,.team-grid,.test-grid,.ev-grid,.proc-grid').forEach(grid => {
+document.querySelectorAll('.why-grid,.team-grid,.test-grid,.pf-grid,.proc-grid').forEach(grid => {
     grid.querySelectorAll('.fu').forEach((child, i) => { child.style.transitionDelay = `${(i % 4) * 0.075}s`; });
 });
 
