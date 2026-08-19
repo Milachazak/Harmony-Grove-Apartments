@@ -240,13 +240,38 @@
         @media(max-width:1024px){ .ev-grid { grid-template-columns:1fr 1fr; } }
         @media(max-width:680px){ .ev-grid { grid-template-columns:1fr; } .ev-sec { padding:52px 0; } }
 
-        /* ── UPCOMING (empty state, built to take real events) ── */
+        /* ── UPCOMING (empty state, kept for when the calendar is clear) ── */
         .up-empty { padding:44px 46px; display:flex; align-items:center; gap:30px; flex-wrap:wrap; }
         .up-icon { width:66px; height:66px; border-radius:18px; background:var(--orange-dim); border:1px solid var(--orange-border); display:flex; align-items:center; justify-content:center; font-size:30px; flex-shrink:0; }
         .up-copy { flex:1; min-width:260px; }
         .up-copy h3 { font-family:var(--ff-d); font-size:26px; font-weight:600; margin-bottom:10px; }
         .up-copy p { font-size:15px; color:var(--t70); line-height:1.74; }
         @media(max-width:680px){ .up-empty { padding:30px 24px; gap:20px; } }
+
+        /* ── UPCOMING (live event card) ── */
+        .up-card { padding:0; overflow:hidden; display:grid; grid-template-columns:196px 1fr; text-decoration:none; color:inherit; }
+        .up-date { background:linear-gradient(135deg,#050E1F,#0A1830); color:#fff; padding:34px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; }
+        .up-date::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%,rgba(232,101,26,0.26) 0%,transparent 66%); pointer-events:none; }
+        .up-date > * { position:relative; z-index:2; }
+        .up-dow { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,0.56); }
+        /* body font, not the display serif: Cormorant's "1" has no flag and reads
+           as a Roman numeral when it stands alone as a date */
+        .up-day { font-family:var(--ff-b); font-size:56px; font-weight:600; letter-spacing:-.02em; line-height:1; color:#FF9A60; margin:8px 0 4px; }
+        .up-mon { font-size:13px; color:rgba(255,255,255,0.78); }
+        .up-time { margin-top:14px; padding:6px 14px; border-radius:var(--r-pill); background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.24); font-size:12px; white-space:nowrap; }
+        .up-body { padding:30px 34px; }
+        .up-badges { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+        .up-body h3 { font-family:var(--ff-d); font-size:27px; font-weight:600; line-height:1.24; margin-bottom:10px; }
+        .up-body > p { font-size:14.5px; color:var(--t70); line-height:1.72; margin-bottom:18px; }
+        .up-foot { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; padding-top:15px; border-top:1px solid var(--t10); }
+        .up-card:hover .ev-watch { color:var(--orange-dk); }
+        @media(max-width:680px){
+            .up-card { grid-template-columns:1fr; }
+            .up-date { flex-direction:row; gap:14px; padding:22px 24px; }
+            .up-day { font-size:40px; margin:0; }
+            .up-time { margin-top:0; }
+            .up-body { padding:26px 22px; }
+        }
 
 </style>
 </head>
@@ -299,13 +324,30 @@
             <div class="sec-lbl">Upcoming</div>
             <h2 class="sec-title">What is <em>coming next.</em></h2>
         </div>
-        <div class="gc up-empty fu">
-            <div class="up-icon">📅</div>
-            <div class="up-copy">
-                <h3>No sessions on the calendar right now</h3>
-                <p>Harmony Grove closed in July 2026 and we are underwriting what comes next. When we schedule the next live session, our community is invited first and it is posted here. Ask to be on that list and you will hear about it before it goes public.</p>
+        <a href="self-directed-ira/" class="gc up-card fu">
+            <div class="up-date">
+                <div>
+                    <div class="up-dow">Tuesday</div>
+                    <div class="up-day">1</div>
+                    <div class="up-mon">September 2026</div>
+                </div>
+                <div class="up-time">6:30 PM ET</div>
             </div>
-            <a href="mailto:invest@milapennchazak.com?subject=Please%20tell%20me%20about%20the%20next%20live%20session" class="btn btn-primary-lg">Notify Me →</a>
+            <div class="up-body">
+                <div class="up-badges">
+                    <span class="ev-date">Live Webinar</span>
+                    <span class="ev-kind hl">Guest: Jeff Minnick, Directed IRA</span>
+                </div>
+                <h3>Your retirement account is allowed to own apartments</h3>
+                <p>A plain-English evening on the self-directed IRA. What the account is allowed to hold, how to move an old 401(k) or 403(b) without triggering a tax bill, and the rules that quietly cost people money when they learn them late. All three founding principals are on the call, and the last stretch belongs to your questions.</p>
+                <div class="up-foot">
+                    <span class="ev-meta">60 minutes &middot; Live on Zoom &middot; Complimentary</span>
+                    <span class="ev-watch">Save my seat →</span>
+                </div>
+            </div>
+        </a>
+        <div class="gc ev-note fu">
+            <p style="font-size:14.5px;color:var(--t70);line-height:1.68;">Want to hear about sessions before they are posted here? <a href="mailto:invest@milapennchazak.com?subject=Please%20tell%20me%20about%20the%20next%20live%20session" style="color:var(--blue);font-weight:500;">Ask to be on that list</a> and you will hear about the next one first.</p>
         </div>
     </div>
 </section>
