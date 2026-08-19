@@ -288,6 +288,78 @@
         .ph-chip { display:inline-flex; align-items:center; gap:9px; padding:10px 18px; border-radius:var(--r-pill); background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.20); font-size:13.5px; color:rgba(255,255,255,0.82); }
         .ph-chip::before { content:'✓'; color:#FF9A60; font-weight:700; }
 
+
+        /* ── CONTACT FORM (Tenth Avenue builder markup, restyled) ── */
+        .cf-wrap { max-width:520px; margin:0 auto; text-align:left; }
+        .ta-form { display:grid; gap:14px; max-width:none; font-family:var(--ff-b); }
+        /* the builder renders its own heading and an author-facing helper note;
+           the section already carries the heading, so both are hidden */
+        .ta-form__title, .ta-form__desc, .ta-form__helper { display:none !important; }
+        /* ⚠️ duplicate phone field in the builder: both map to `phone`, so the
+           optional one is hidden and mirrored from the required one by JS */
+        .ta-dupe-phone { display:none !important; }
+        .ta-form__field { display:grid; gap:7px; }
+        .ta-form__label { font-size:11px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:var(--t50); }
+        .ta-form input[type=text], .ta-form input[type=email], .ta-form input[type=tel],
+        .ta-form input[type=number], .ta-form input[type=date], .ta-form textarea, .ta-form select {
+            font:inherit; font-size:15px; width:100%; padding:13px 15px; box-sizing:border-box;
+            background:rgba(255,255,255,0.70); border:1px solid var(--t10);
+            border-radius:12px; color:var(--text); transition:border-color .2s, background .2s, box-shadow .2s;
+        }
+        .ta-form textarea { resize:vertical; min-height:96px; }
+        .ta-form input::placeholder, .ta-form textarea::placeholder { color:var(--t30); }
+        .ta-form input:focus, .ta-form select:focus, .ta-form textarea:focus {
+            outline:none; border-color:var(--orange); background:#fff;
+            box-shadow:0 0 0 3px rgba(232,101,26,0.18);
+        }
+        .ta-form__phone { display:flex; gap:8px; }
+        .ta-form__phone .ta-form__phone-country { flex:0 0 auto; max-width:44%; width:auto; }
+        .ta-form__phone input[type=tel] { flex:1 1 auto; }
+        .ta-form__check { display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--t50); line-height:1.62; }
+        .ta-form__check input[type=checkbox] { width:17px; height:17px; flex-shrink:0; margin-top:2px; accent-color:#E8651A; }
+        .ta-form__field p { color:var(--t40) !important; line-height:1.6; max-width:none !important; margin:4px 0 0 !important; text-align:left; }
+        .ta-form a { color:var(--blue); }
+        .ta-form__submit {
+            font:inherit; font-size:15.5px; font-weight:600; letter-spacing:.02em;
+            width:100%; padding:16px 30px; margin-top:4px; border:0; border-radius:var(--r-pill);
+            cursor:pointer; color:#fff; background:linear-gradient(135deg,#F07030,#C84A10);
+            box-shadow:0 6px 28px rgba(232,101,26,0.40); transition:all .26s ease;
+        }
+        .ta-form__submit:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(232,101,26,0.50); }
+        .ta-form__submit[disabled] { opacity:.62; cursor:progress; transform:none; }
+
+        /* on the dark contact / CTA cards */
+        .cf-wrap.on-dark .ta-form__label { color:rgba(255,255,255,0.58); }
+        .cf-wrap.on-dark .ta-form input[type=text], .cf-wrap.on-dark .ta-form input[type=email],
+        .cf-wrap.on-dark .ta-form input[type=tel], .cf-wrap.on-dark .ta-form textarea,
+        .cf-wrap.on-dark .ta-form select {
+            background:rgba(255,255,255,0.07); border-color:rgba(255,255,255,0.22); color:#fff;
+        }
+        .cf-wrap.on-dark .ta-form input::placeholder, .cf-wrap.on-dark .ta-form textarea::placeholder { color:rgba(255,255,255,0.34); }
+        .cf-wrap.on-dark .ta-form input:focus, .cf-wrap.on-dark .ta-form select:focus, .cf-wrap.on-dark .ta-form textarea:focus {
+            border-color:#FF9A60; background:rgba(255,255,255,0.12); box-shadow:0 0 0 3px rgba(232,101,26,0.22);
+        }
+        .cf-wrap.on-dark .ta-form input:-webkit-autofill { -webkit-text-fill-color:#fff; -webkit-box-shadow:0 0 0 40px #0A1830 inset; }
+        .cf-wrap.on-dark .ta-form select option { color:#0A1628; background:#fff; }
+        .cf-wrap.on-dark .ta-form__check { color:rgba(255,255,255,0.60); }
+        .cf-wrap.on-dark .ta-form__field p { color:rgba(255,255,255,0.40) !important; }
+        .cf-wrap.on-dark .ta-form a { color:#FF9A60; }
+
+        .cf-error { margin-top:4px; padding:13px 16px; border-radius:12px; background:rgba(232,101,26,0.14); border:1px solid rgba(232,101,26,0.40); font-size:13.5px; color:#B4470F; line-height:1.6; }
+        .cf-wrap.on-dark .cf-error { background:rgba(232,101,26,0.16); color:#FFC7A3; }
+        .cf-note { font-size:12.5px; color:var(--t50); line-height:1.66; margin-top:10px; }
+        .cf-wrap.on-dark .cf-note { color:rgba(255,255,255,0.46); }
+        .cf-done { text-align:center; max-width:520px; margin:0 auto; padding:14px 0; }
+        .cf-done-tick { width:56px; height:56px; margin:0 auto 18px; border-radius:50%; background:rgba(232,101,26,0.16); border:1px solid rgba(232,101,26,0.44); color:#C84A10; font-size:26px; display:flex; align-items:center; justify-content:center; }
+        .cf-done h3 { font-family:var(--ff-d); font-size:29px; font-weight:600; margin-bottom:10px; line-height:1.2; }
+        .cf-done p { font-size:15px; line-height:1.74; }
+        .cf-done h3 { color:var(--text); }
+        .cf-done p { color:var(--t70); }
+        .cf-done.on-dark-done .cf-done-tick { color:#FF9A60; }
+        .cf-done.on-dark-done h3 { color:#fff; }
+        .cf-done.on-dark-done p { color:rgba(255,255,255,0.66); }
+        [hidden] { display:none !important; }
+
 </style>
 </head>
 <body>
@@ -314,8 +386,7 @@
         <a href="../#team-section" class="nav-link">Team</a>
     </div>
     <div class="nav-actions">
-        <a href="https://calendly.com/milapenncapital" target="_blank" rel="noopener" class="btn btn-ghost">Book a Call</a>
-        <a href="mailto:invest@milapennchazak.com" class="btn btn-primary">Email Us →</a>
+        <a href="#contact" class="btn btn-primary">Get Started →</a>
     </div>
 </nav>
 
@@ -508,15 +579,34 @@
 </section>
 
 <!-- ═══════════════ CTA ═══════════════ -->
-<section class="cta-sec">
+<section class="cta-sec" id="contact">
     <div class="container">
         <div class="cta-card fu">
             <div class="cta-inner">
                 <h2>Not sure whether<br><em>your account qualifies?</em></h2>
                 <p>Send us a note with the type of account you hold and roughly what you are considering. We will tell you plainly whether it can be used, what it would involve and what it would cost, before you commit to anything.</p>
-                <div class="cta-btns">
-                    <a href="mailto:invest@milapennchazak.com?subject=Investing%20with%20my%20IRA%20or%20old%20401(k)" class="btn btn-orange-lg">Email Our Team →</a>
-                    <a href="https://calendly.com/milapenncapital" target="_blank" rel="noopener" class="btn btn-hero-white">Book a Private Call</a>
+                <div class="cf-wrap on-dark" id="cf-wrap">
+                <form action="https://tenthavenue.io/api/forms/milapenncazakweb/submit" method="POST" class="ta-form" novalidate>
+                <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label></div>
+                
+                
+                <div class="ta-form__field"><label for="f_first_name" class="ta-form__label">First name *</label><input id="f_first_name" type="text" name="first_name"  required></div>
+                <div class="ta-form__field"><label for="f_email" class="ta-form__label">Email *</label><input id="f_email" type="email" name="email"  required></div>
+                <div class="ta-form__field ta-dupe-phone"><label for="f_phone" class="ta-form__label">Phone</label><div class="ta-form__phone"><select name="phone__country" class="ta-form__phone-country" aria-label="Country code"><option value="US">United States (+1)</option><option value="CA">Canada (+1)</option><option value="GB">United Kingdom (+44)</option><option value="AU">Australia (+61)</option><option value="IN">India (+91)</option><option value="AE">United Arab Emirates (+971)</option><option value="DE">Germany (+49)</option><option value="FR">France (+33)</option><option value="ES">Spain (+34)</option><option value="IT">Italy (+39)</option><option value="NL">Netherlands (+31)</option><option value="IE">Ireland (+353)</option><option value="NZ">New Zealand (+64)</option><option value="SG">Singapore (+65)</option><option value="HK">Hong Kong (+852)</option><option value="ZA">South Africa (+27)</option><option value="NG">Nigeria (+234)</option><option value="KE">Kenya (+254)</option><option value="MX">Mexico (+52)</option><option value="BR">Brazil (+55)</option><option value="AR">Argentina (+54)</option><option value="JP">Japan (+81)</option><option value="CN">China (+86)</option><option value="KR">South Korea (+82)</option><option value="SA">Saudi Arabia (+966)</option><option value="PK">Pakistan (+92)</option><option value="BD">Bangladesh (+880)</option><option value="PH">Philippines (+63)</option><option value="SE">Sweden (+46)</option><option value="CH">Switzerland (+41)</option></select><input id="f_phone" type="tel" inputmode="tel" name="phone" placeholder="Phone number" ></div></div>
+                <div class="ta-form__field"><label for="f_field_9fbl9" class="ta-form__label">Phone *</label><div class="ta-form__phone"><select name="field_9fbl9__country" class="ta-form__phone-country" aria-label="Country code"><option value="US">United States (+1)</option><option value="CA">Canada (+1)</option><option value="GB">United Kingdom (+44)</option><option value="AU">Australia (+61)</option><option value="IN">India (+91)</option><option value="AE">United Arab Emirates (+971)</option><option value="DE">Germany (+49)</option><option value="FR">France (+33)</option><option value="ES">Spain (+34)</option><option value="IT">Italy (+39)</option><option value="NL">Netherlands (+31)</option><option value="IE">Ireland (+353)</option><option value="NZ">New Zealand (+64)</option><option value="SG">Singapore (+65)</option><option value="HK">Hong Kong (+852)</option><option value="ZA">South Africa (+27)</option><option value="NG">Nigeria (+234)</option><option value="KE">Kenya (+254)</option><option value="MX">Mexico (+52)</option><option value="BR">Brazil (+55)</option><option value="AR">Argentina (+54)</option><option value="JP">Japan (+81)</option><option value="CN">China (+86)</option><option value="KR">South Korea (+82)</option><option value="SA">Saudi Arabia (+966)</option><option value="PK">Pakistan (+92)</option><option value="BD">Bangladesh (+880)</option><option value="PH">Philippines (+63)</option><option value="SE">Sweden (+46)</option><option value="CH">Switzerland (+41)</option></select><input id="f_field_9fbl9" type="tel" inputmode="tel" name="field_9fbl9" placeholder="Phone number" required></div></div>
+                <div class="ta-form__field"><label for="f_message" class="ta-form__label">How can we help?</label><textarea id="f_message" name="message" rows="4"  ></textarea></div>
+                <div class="ta-form__field"><label class="ta-form__check"><input type="checkbox" id="f_field_hh073" name="field_hh073" > I agree to receive recurring automated text messages from Mila Penn Chazak. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help.</label><p style="font-size:12px;color:#6b7280;margin-top:4px"><a href="https://tenthavenue.io/legal/mila-penn-chazak/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> · <a href="https://tenthavenue.io/legal/mila-penn-chazak/terms" target="_blank" rel="noreferrer">SMS Terms</a></p><small class="ta-form__helper">Requires a Phone field on this form to capture the number.</small></div>
+                <button type="submit" class="ta-form__submit">Get Started &rarr;</button>
+                </form>
+                    <div class="cf-error" id="cf-error" hidden role="alert"></div>
+                    <noscript>
+                        <p class="cf-note">This form needs JavaScript. If it is switched off, write to <a href="mailto:invest@milapennchazak.com">invest@milapennchazak.com</a> or <a href="https://tenthavenue.io/f/milapenncazakweb" target="_blank" rel="noopener">use our hosted form</a>.</p>
+                    </noscript>
+                </div>
+                <div class="cf-done" id="cf-done" hidden>
+                    <div class="cf-done-tick">✓</div>
+                    <h3>Thank you.</h3>
+                    <p id="cf-done-msg">Thanks, we will be in touch shortly.</p>
                 </div>
                 <div class="cta-sig">Kirk, Rosanmi &amp; Claude &middot; Founding Principals, Mila Penn Chazak</div>
             </div>
@@ -562,7 +652,6 @@
                 <ul>
                     <li><a href="../harmonygrove">Harmony Grove</a></li>
                     <li><a href="../ira/">Invest with your IRA</a></li>
-                    <li><a href="https://calendly.com/milapenncapital" target="_blank" rel="noopener">Book a Private Call</a></li>
                     <li><a href="mailto:invest@milapennchazak.com">Email the Team</a></li>
                 </ul>
             </div>
@@ -581,8 +670,7 @@
             <div class="footer-copy">© 2026 Mila Penn Chazak · All Rights Reserved</div>
             <div class="footer-links">
                 <a href="../" class="fl">Home</a>
-                <a href="mailto:invest@milapennchazak.com" class="fl">Email Us</a>
-                <a href="https://calendly.com/milapenncapital" target="_blank" rel="noopener" class="fl">Book a Call</a>
+                <a href="#contact" class="fl">Get Started</a>
             </div>
         </div>
     </div>
@@ -609,6 +697,65 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 88, behavior: 'smooth' }); }
     });
 });
+
+/* Contact form. The builder's embed is a plain <form> that POSTs to its API and
+   answers with JSON, so a native submit would land the visitor on a raw JSON
+   blob. Intercept it, post the same urlencoded body over fetch, and swap in a
+   thank-you in place. */
+(function () {
+    var wrap = document.getElementById('cf-wrap');
+    var form = wrap && wrap.querySelector('.ta-form');
+    if (!form) return;
+    var errBox = document.getElementById('cf-error');
+    var done = document.getElementById('cf-done');
+    var doneMsg = document.getElementById('cf-done-msg');
+    var btn = form.querySelector('.ta-form__submit');
+    var btnText = btn ? btn.innerHTML : 'Get Started';
+    if (wrap.classList.contains('on-dark') && done) done.classList.add('on-dark-done');
+
+    /* The builder has a duplicate, hidden phone field that maps to the same CRM
+       field. Mirror the visible one into it so the payload agrees with itself. */
+    var real = form.querySelector('#f_field_9fbl9'), dupe = form.querySelector('#f_phone');
+    var realC = form.querySelector('[name="field_9fbl9__country"]'), dupeC = form.querySelector('[name="phone__country"]');
+    if (real && dupe) {
+        var mirror = function () {
+            dupe.value = real.value;
+            if (realC && dupeC) dupeC.value = realC.value;
+        };
+        real.addEventListener('input', mirror);
+        if (realC) realC.addEventListener('change', mirror);
+        mirror();
+    }
+
+    function fail(msg) {
+        errBox.innerHTML = msg + ' You can also email <a href="mailto:invest@milapennchazak.com">invest@milapennchazak.com</a>.';
+        errBox.hidden = false;
+        if (btn) { btn.disabled = false; btn.innerHTML = btnText; }
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errBox.hidden = true;
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (btn) { btn.disabled = true; btn.innerHTML = 'Sending...'; }
+        fetch(form.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+            body: new URLSearchParams(new FormData(form)).toString()
+        }).then(function (r) {
+            return r.json().then(function (d) { return { ok: r.ok, data: d }; });
+        }).then(function (res) {
+            if (!res.ok || !res.data || res.data.ok === false) {
+                fail((res.data && (res.data.message || res.data.error)) || 'That did not go through.');
+                return;
+            }
+            if (res.data.message) doneMsg.textContent = res.data.message;
+            wrap.hidden = true;
+            done.hidden = false;
+            done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }).catch(function () { fail('We could not reach us just now.'); });
+    });
+})();
 </script>
 
 </body>
