@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Directed IRA Session | Replay &amp; Notes | Mila Penn Chazak</title>
+    <meta name="description" content="The full replay, chapters, notes, Q&amp;A and transcript from the self-directed IRA session with Jeff Minnick of Directed IRA, hosted by Mila Penn Chazak on September 1, 2026.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="video.other">
+    <meta property="og:title" content="Self-Directed IRA Session with Directed IRA: Replay &amp; Notes">
+    <meta property="og:description" content="What a retirement account can hold, the six plans you can self-direct, the rules, the three steps to get started, and the live Q&amp;A. September 1, 2026.">
+    <meta property="og:image" content="https://www.milapennchazak.com/sdira-webinar-og.jpg">
+    <meta property="og:url" content="https://www.milapennchazak.com/ira-replay/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg: #F4F6FB; --bg-sec: #ECEFF7;
+            --blue: #1244F5; --blue-dk: #0A2ECC; --blue-xl: #4A78FF; --blue-dim: rgba(18,68,245,0.09);
+            --orange: #E8651A; --orange-dk: #BF4A0C; --orange-lt: #FF8640;
+            --orange-dim: rgba(232,101,26,0.12); --orange-border: rgba(232,101,26,0.30);
+            --navy: #050E1F; --navy-2: #0A1830;
+            --text: #0A1628; --t70: rgba(10,22,40,0.70); --t50: rgba(10,22,40,0.50);
+            --t30: rgba(10,22,40,0.30); --t10: rgba(10,22,40,0.10); --t06: rgba(10,22,40,0.06);
+            --r-card: 20px; --r-pill: 100px;
+            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-b: 'Jost', -apple-system, sans-serif;
+        }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+        .amb { position:fixed; border-radius:50%; pointer-events:none; z-index:0; filter:blur(90px); }
+        .amb-1 { width:800px;height:800px;top:-10%;right:-5%; background:radial-gradient(circle,rgba(232,101,26,0.10) 0%,transparent 68%); }
+        .amb-2 { width:600px;height:600px;bottom:10%;left:-8%; background:radial-gradient(circle,rgba(18,68,245,0.06) 0%,transparent 68%); }
+
+        /* NAV */
+        #nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:14px 48px;
+            display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+            background:rgba(255,255,255,0.70); backdrop-filter:blur(40px) saturate(200%); -webkit-backdrop-filter:blur(40px) saturate(200%);
+            border-bottom:1px solid rgba(255,255,255,0.90); box-shadow:0 2px 20px rgba(10,22,40,0.06); }
+        .nav-logos { display:flex; align-items:center; gap:14px; }
+        .nav-logo { height:30px; width:auto; object-fit:contain; }
+        .nav-sep { width:1px; height:24px; background:var(--t10); }
+        .nav-badge { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+            color:#fff; background:linear-gradient(135deg,var(--orange-lt),var(--orange)); padding:6px 16px; border-radius:var(--r-pill); }
+        .nav-cta { padding:10px 22px; font-size:13px; font-weight:600; border-radius:var(--r-pill);
+            background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; text-decoration:none;
+            box-shadow:0 4px 16px rgba(18,68,245,0.30); transition:all .25s; white-space:nowrap; }
+        .nav-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(18,68,245,0.42); }
+        @media(max-width:680px){ #nav{padding:11px 18px;} .nav-badge{display:none;} .nav-logo{height:24px;} }
+
+        /* BUTTONS */
+        .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
+        .btn-primary { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,#1A52FF,#0A2ECC); color:#fff; border-radius:var(--r-pill); box-shadow:0 4px 20px rgba(18,68,245,0.36); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(18,68,245,0.48); }
+        .btn-orange { padding:14px 34px; font-size:14.5px; font-weight:600; background:linear-gradient(135deg,var(--orange-lt),var(--orange)); color:#fff; border-radius:var(--r-pill); box-shadow:0 6px 22px rgba(232,101,26,0.40); }
+        .btn-orange:hover { transform:translateY(-2px); box-shadow:0 10px 34px rgba(232,101,26,0.52); }
+        .btn-ghost { padding:13px 30px; font-size:14px; font-weight:600; background:transparent; color:var(--text); border:1.5px solid var(--t10); border-radius:var(--r-pill); }
+        .btn-ghost:hover { border-color:var(--orange); }
+
+        /* HERO */
+        .hero { position:relative; min-height:60vh; display:flex; align-items:flex-end; overflow:hidden;
+            background:linear-gradient(135deg, #050E1F 0%, #0A1830 55%, #0D2050 100%); }
+        .hero-bg-img { position:absolute; inset:0; z-index:0; background:url('../hero-aerial-poster.jpg') center/cover no-repeat; opacity:0.16; }
+        .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(130deg,rgba(5,14,31,0.96) 0%,rgba(5,14,31,0.84) 50%,rgba(5,14,31,0.62) 100%); }
+        .hero-inner { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:130px 48px 70px; width:100%;
+            display:grid; grid-template-columns:1fr 460px; gap:56px; align-items:center; }
+        .rec-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; margin-bottom:18px;
+            background:rgba(232,101,26,0.18); border:1px solid rgba(232,101,26,0.45); border-radius:var(--r-pill);
+            font-size:11.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#FFB37A; width:fit-content; }
+        .rec-dot { width:8px; height:8px; background:var(--orange-lt); border-radius:50%; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .hero-title { font-family:var(--ff-d); font-size:clamp(38px,5vw,68px); font-weight:600; line-height:1.10; letter-spacing:-.02em; color:#fff; margin-bottom:18px; }
+        .hero-title em { font-style:italic; color:var(--orange-lt); }
+        .hero-sub { font-size:clamp(15px,1.6vw,16.5px); color:rgba(255,255,255,0.70); max-width:520px; line-height:1.78; font-weight:300; margin-bottom:26px; }
+        .hero-meta { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:30px; }
+        .hero-meta-pill { display:inline-flex; align-items:center; gap:7px; padding:8px 15px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:10px; font-size:12.5px; color:rgba(255,255,255,0.78); font-weight:500; }
+        .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
+        .hero-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .hb-card { border-radius:16px; padding:20px 22px; position:relative; overflow:hidden; }
+        .hb-frost { background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.18); backdrop-filter:blur(20px); }
+        .hb-orange-card { background:linear-gradient(135deg,rgba(232,101,26,0.40),rgba(191,74,12,0.28)); border:1px solid rgba(255,134,64,0.55); box-shadow:0 0 24px rgba(232,101,26,0.18); }
+        .hb-navy-card { background:rgba(5,14,31,0.80); border:1px solid rgba(18,68,245,0.35); }
+        .hb-blue-card { background:linear-gradient(135deg,rgba(18,68,245,0.42),rgba(10,46,204,0.30)); border:1px solid rgba(74,120,255,0.55); box-shadow:0 0 24px rgba(18,68,245,0.20); }
+        .hb-lbl { display:block; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:6px; }
+        .hb-val { display:block; font-family:var(--ff-d); font-size:clamp(24px,3vw,36px); font-weight:700; color:#fff; line-height:1; margin-bottom:6px; }
+        .hb-accent { color:var(--orange-lt); }
+        .hb-sub { display:block; font-size:11px; color:rgba(255,255,255,0.50); font-weight:400; line-height:1.4; }
+        @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:110px 24px 50px;gap:36px;} .hero-cards{max-width:420px;} }
+
+        /* SECTIONS */
+        .sec { padding:78px 0; position:relative; }
+        .container { max-width:1100px; margin:0 auto; padding:0 48px; }
+        .sec-lbl { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--orange-dk); margin-bottom:13px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(30px,3.8vw,48px); font-weight:600; line-height:1.12; letter-spacing:-.02em; color:var(--text); margin-bottom:16px; }
+        .sec-title em { font-style:italic; color:var(--orange-dk); }
+        .sec-body { font-size:16px; color:var(--t70); line-height:1.78; }
+        @media(max-width:700px){ .container{padding:0 20px;} .sec{padding:56px 0;} }
+
+        /* VIDEO + CHAPTERS */
+        .video-wrap { border-radius:20px; overflow:hidden; box-shadow:0 12px 60px rgba(10,22,40,0.22); background:#000; position:relative; }
+        .video-wrap video { width:100%; display:block; max-height:560px; }
+        .framing { margin-top:30px; background:linear-gradient(135deg,rgba(232,101,26,0.12),rgba(18,68,245,0.05)); border:1px solid var(--orange-border); border-radius:18px; padding:26px 32px; text-align:center; }
+        .framing-q { font-family:var(--ff-d); font-size:clamp(22px,3vw,30px); font-style:italic; color:var(--text); line-height:1.3; }
+        .framing-q b { font-style:normal; color:var(--orange-dk); }
+        .framing-sub { margin-top:8px; font-size:13.5px; color:var(--t50); }
+        .chap-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:26px; }
+        .chap { display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--t06); border-radius:14px; padding:14px 16px; text-decoration:none; color:inherit; transition:border-color .2s, transform .2s; }
+        .chap:hover { border-color:var(--orange); transform:translateY(-1px); }
+        .chap-t { flex:none; font-family:var(--ff-d); font-weight:700; font-size:18px; color:var(--orange-dk); min-width:52px; line-height:1.2; padding-top:1px; }
+        .chap-body { display:flex; flex-direction:column; gap:2px; }
+        .chap-title { font-size:14px; font-weight:600; color:var(--text); line-height:1.35; }
+        .chap-sub { font-size:12.5px; color:var(--t50); line-height:1.5; }
+        @media(max-width:760px){ .chap-grid{grid-template-columns:1fr;} }
+
+        /* SPEAKER */
+        .spk-wrap { display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:center; margin-top:10px; }
+        .spk-photo { width:100%; max-width:260px; aspect-ratio:1/1; height:auto; object-fit:cover; border-radius:20px; box-shadow:0 12px 40px rgba(10,22,40,0.18); }
+        .spk-name { font-family:var(--ff-d); font-size:34px; font-weight:600; color:var(--text); line-height:1.1; margin-bottom:4px; }
+        .spk-role { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--orange-dk); margin-bottom:16px; }
+        .spk-bio { font-size:15px; color:var(--t70); line-height:1.78; margin-bottom:12px; }
+        .spk-contact { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:6px; font-size:13.5px; }
+        .spk-contact a { color:var(--blue); text-decoration:none; font-weight:500; }
+        .spk-contact a:hover { text-decoration:underline; }
+        @media(max-width:760px){ .spk-wrap{grid-template-columns:1fr;gap:22px;text-align:center;} .spk-photo{margin:0 auto;max-width:200px;} .spk-role{margin-left:auto;margin-right:auto;} .spk-contact{justify-content:center;} }
+
+        /* PANEL */
+        .panel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:30px; }
+        .panel-card { background:white; border-radius:14px; padding:18px 20px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); display:flex; align-items:center; gap:14px; }
+        .panel-card img { width:56px; height:56px; border-radius:50%; object-fit:cover; flex:none; }
+        .panel-name { font-family:var(--ff-d); font-size:19px; font-weight:600; color:var(--text); line-height:1.2; margin-bottom:3px; }
+        .panel-role { font-size:10.5px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--orange-dk); }
+        @media(max-width:860px){ .panel-grid{grid-template-columns:1fr;} }
+
+        /* COVERED */
+        .reasons-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:38px; }
+        .reason-card { background:white; border-radius:18px; padding:28px 30px; border:1px solid var(--t06); box-shadow:0 3px 20px var(--t06); }
+        .reason-num { font-family:var(--ff-d); font-size:40px; font-weight:700; color:var(--orange-dim); line-height:1; margin-bottom:10px; }
+        .reason-title { font-size:15px; font-weight:700; color:var(--text); margin-bottom:9px; letter-spacing:.01em; }
+        .reason-body { font-size:14px; color:var(--t70); line-height:1.72; }
+        @media(max-width:700px){ .reasons-grid{grid-template-columns:1fr;} }
+
+        /* STATS BAND */
+        .stats-band { background:var(--navy); padding:54px 0; }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+        .stat-item { padding:28px 24px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); }
+        .stat-item:last-child { border-right:none; }
+        .stat-num { font-family:var(--ff-d); font-size:clamp(30px,3.6vw,48px); font-weight:700; color:var(--orange-lt); line-height:1; margin-bottom:8px; }
+        .stat-lbl { font-size:11.5px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:rgba(255,255,255,0.45); line-height:1.4; }
+        @media(max-width:700px){ .stats-grid{grid-template-columns:repeat(2,1fr);} .stat-item{border-right:none; border-bottom:1px solid rgba(255,255,255,0.07);} }
+
+        /* Q&A */
+        .qa-item { background:white; border-radius:16px; padding:26px 30px; margin-bottom:14px; border:1px solid var(--t06); box-shadow:0 2px 12px var(--t06); }
+        .qa-question { font-size:16px; font-weight:600; color:var(--text); line-height:1.5; margin-bottom:5px; }
+        .qa-asker { font-size:12px; color:var(--orange-dk); font-weight:600; letter-spacing:.03em; margin-bottom:14px; }
+        .qa-answer { margin-top:10px; padding-top:14px; border-top:1px solid var(--t06); }
+        .qa-text { font-size:14.5px; color:var(--t70); line-height:1.75; }
+        .qa-text em { color:var(--text); font-style:italic; }
+
+        /* CHEAT SHEET */
+        .cheat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
+        .cheat-card { background:white; border-radius:14px; padding:22px 24px; border:1px solid var(--t06); box-shadow:0 2px 10px var(--t06); }
+        .cheat-card-title { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--orange-dk); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--t06); }
+        .cheat-row { display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-bottom:1px solid var(--t06); }
+        .cheat-row:last-child { border-bottom:none; }
+        .cheat-key { font-size:12.5px; color:var(--t50); font-weight:500; }
+        .cheat-val { font-size:12.5px; color:var(--text); font-weight:600; text-align:right; }
+        @media(max-width:760px){ .cheat-grid{grid-template-columns:1fr;} }
+
+        /* QUOTES */
+        .quotes-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+        .quote-card { background:var(--navy); border-radius:16px; padding:28px 30px; border:1px solid rgba(255,255,255,0.07); }
+        .quote-text { font-family:var(--ff-d); font-size:18px; font-style:italic; color:rgba(255,255,255,0.90); line-height:1.6; margin-bottom:14px; }
+        .quote-attr { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--orange-lt); }
+        @media(max-width:700px){ .quotes-grid{grid-template-columns:1fr;} }
+
+        /* TIE-IN + OFFER */
+        .tiein { background:linear-gradient(135deg,rgba(18,68,245,0.08),rgba(232,101,26,0.08)); border:1px solid rgba(18,68,245,0.22); border-radius:20px; padding:40px 44px; margin-top:8px; }
+        .tiein h3 { font-family:var(--ff-d); font-size:28px; font-weight:600; color:var(--text); margin-bottom:14px; line-height:1.2; }
+        .tiein p { font-size:15px; color:var(--t70); line-height:1.78; margin-bottom:14px; }
+        .tiein .ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+        .offer { margin-top:18px; background:#fff; border:1px solid var(--orange-border); border-radius:18px; padding:26px 30px; display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center; }
+        .offer-code { font-family:var(--ff-d); font-size:34px; font-weight:700; color:var(--orange-dk); letter-spacing:.02em; line-height:1; }
+        .offer-lbl { font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--t50); margin-bottom:6px; }
+        .offer p { font-size:14.5px; color:var(--t70); line-height:1.7; }
+        .offer a { color:var(--blue); text-decoration:none; font-weight:500; }
+        @media(max-width:700px){ .tiein{padding:30px 24px;} .offer{grid-template-columns:1fr;} }
+
+        /* TRANSCRIPT */
+        .tx-wrap { background:#fff; border:1px solid var(--t06); border-radius:18px; box-shadow:0 2px 12px var(--t06); margin-top:26px; }
+        .tx-toggle { cursor:pointer; list-style:none; padding:22px 28px; font-size:15px; font-weight:600; color:var(--text); display:flex; align-items:center; justify-content:space-between; }
+        .tx-toggle::-webkit-details-marker { display:none; }
+        .tx-toggle::after { content:"+"; font-size:22px; color:var(--orange-dk); font-weight:400; }
+        details[open] .tx-toggle::after { content:"\2212"; }
+        .tx-body { padding:0 28px 28px; border-top:1px solid var(--t06); max-height:70vh; overflow:auto; }
+        .tx-turn { margin-top:22px; }
+        .tx-spk { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--orange-dk); margin-bottom:6px; }
+        .tx-turn p { font-size:14.5px; color:var(--t70); line-height:1.75; margin-bottom:10px; }
+
+        /* FINAL CTA */
+        .final-cta { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%); padding:78px 0; text-align:center; }
+        .final-cta .sec-title { color:#fff; }
+        .final-cta .sec-title em { color:var(--orange-lt); }
+        .final-cta .sec-body { color:rgba(255,255,255,0.62); margin-bottom:34px; }
+        .cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+        /* DISCLAIMER + FOOTER */
+        .disc { max-width:1100px; margin:0 auto; padding:26px 48px 0; font-size:11.5px; color:var(--t50); line-height:1.7; text-align:center; }
+        footer { background:var(--navy-2); padding:30px 48px; text-align:center; margin-top:40px; }
+        .footer-text { font-size:12px; color:rgba(255,255,255,0.32); line-height:1.8; }
+
+        .fu { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+        .vis { opacity:1; transform:none; }
+    </style>
+</head>
+<body>
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logos">
+        <a href="../"><img src="../Mila-Penn-Logo.png" alt="Mila Penn Chazak" class="nav-logo"></a>
+        <div class="nav-sep"></div>
+        <a href="../"><img src="../Chazak-Logo.png" alt="Chazak" class="nav-logo"></a>
+    </div>
+    <div class="nav-badge">September 1, 2026 &middot; Replay</div>
+    <a href="../#contact" class="nav-cta">Get Started</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="rec-badge"><span class="rec-dot"></span> Self-Directed IRA Session &middot; Replay</div>
+            <h1 class="hero-title">Another page<br><em>of the menu.</em></h1>
+            <p class="hero-sub">The full replay and companion notes from our self-directed IRA session with Jeff Minnick, Vice President of Relationship Management at Directed IRA, on Tuesday, September 1, 2026. Seventy minutes on what a retirement account is actually allowed to own, the six plans you can self-direct, the rules that trip people up, the three steps to get started, and the questions our community asked.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-pill">📅 September 1, 2026</div>
+                <div class="hero-meta-pill">Jeff Minnick &middot; Directed IRA</div>
+                <div class="hero-meta-pill">Hosted by Mila Penn Chazak</div>
+            </div>
+            <div class="hero-ctas">
+                <a href="#video" class="btn btn-orange">Watch the Replay</a>
+                <a href="#qa" class="btn btn-primary">Jump to the Q&amp;A</a>
+            </div>
+        </div>
+        <div class="hero-cards">
+            <div class="hb-card hb-orange-card">
+                <span class="hb-lbl">Who Self-Directs Today</span>
+                <span class="hb-val">Only <span class="hb-accent">2%</span></span>
+                <span class="hb-sub">Of Americans, per Jeff's opening number</span>
+            </div>
+            <div class="hb-card hb-blue-card">
+                <span class="hb-lbl">Penalty-Free Access</span>
+                <span class="hb-val"><span class="hb-accent">59&frac12;</span></span>
+                <span class="hb-sub">The age distributions begin without penalty</span>
+            </div>
+            <div class="hb-card hb-frost">
+                <span class="hb-lbl">Getting Started</span>
+                <span class="hb-val"><span class="hb-accent">3</span> steps</span>
+                <span class="hb-sub">Open, fund, invest</span>
+            </div>
+            <div class="hb-card hb-navy-card">
+                <span class="hb-lbl">Attendee Offer</span>
+                <span class="hb-val"><span class="hb-accent">$200</span> off</span>
+                <span class="hb-sub">First-year fee with code MILAPENN200</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="sec" id="video">
+    <div class="container">
+        <div class="sec-lbl fu">Self-Directed IRA Session &middot; September 1, 2026</div>
+        <h2 class="sec-title fu">Watch the <em>full replay</em></h2>
+        <p class="sec-body fu" style="text-align:center;max-width:720px;margin:0 auto 30px;">The complete recording. Dr. Kirk Campbell opens, Jeff Minnick of Directed IRA walks through the whole self-directed playbook from what the account can hold to how the paperwork is titled, and the last stretch belongs to the questions from Claude, Kirk and the audience.</p>
+        <div class="video-wrap fu">
+            <video id="replay" controls preload="metadata" poster="../sdira-webinar-og.jpg">
+                <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/video1573462401.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="framing fu">
+            <div class="framing-q">"Only <b>2% of people in America</b> self-direct their retirement account."</div>
+            <div class="framing-sub">Jeff's opening number, and the reason this session exists: the other page of the menu that most of us were never shown.</div>
+        </div>
+        <div class="sec-lbl fu" style="margin-top:46px;">Chapters</div>
+        <h3 class="sec-title fu" style="font-size:clamp(26px,3vw,36px);">Jump to a <em>chapter</em></h3>
+        <p class="sec-body fu" style="max-width:700px;">Sixteen markers, read off the slides in the recording. Click one and the player above jumps there.</p>
+        <div class="chap-grid">
+<a href="#video" class="chap fu" data-t="0"><span class="chap-t">0:00</span><span class="chap-body"><span class="chap-title">Welcome: another page of the menu</span><span class="chap-sub">Dr. Kirk Campbell on the account most high earners never learn about.</span></span></a>
+<a href="#video" class="chap fu" data-t="240"><span class="chap-t">4:00</span><span class="chap-body"><span class="chap-title">Meet Jeff Minnick and Directed IRA</span><span class="chap-sub">Fourteen years in the industry, an Arizona-chartered trust company, and the Self-Directed IRA Handbook.</span></span></a>
+<a href="#video" class="chap fu" data-t="540"><span class="chap-t">9:00</span><span class="chap-body"><span class="chap-title">The roadmap, and why a plan can own almost anything</span><span class="chap-sub">Four questions for the evening, and the 1974 rule that opened the door.</span></span></a>
+<a href="#video" class="chap fu" data-t="600"><span class="chap-t">10:00</span><span class="chap-body"><span class="chap-title">What a retirement account can own</span><span class="chap-sub">Private funds, real estate, notes, metals, crypto and more. Only three things are off the table.</span></span></a>
+<a href="#video" class="chap fu" data-t="810"><span class="chap-t">13:30</span><span class="chap-body"><span class="chap-title">Six plans you can self-direct</span><span class="chap-sub">Traditional and Roth IRAs, SEP IRA, Solo 401(k), HSA and Coverdell ESA, and what each one is for.</span></span></a>
+<a href="#video" class="chap fu" data-t="1440"><span class="chap-t">24:00</span><span class="chap-body"><span class="chap-title">Why investors hold private funds in a retirement account</span><span class="chap-sub">Diversification, tax shelter, passive by design, and terms disclosed up front.</span></span></a>
+<a href="#video" class="chap fu" data-t="1650"><span class="chap-t">27:30</span><span class="chap-body"><span class="chap-title">The rules: no self-dealing, and who is disqualified</span><span class="chap-sub">You and your IRA are not one and the same. Up and down the family tree is off limits.</span></span></a>
+<a href="#video" class="chap fu" data-t="1800"><span class="chap-t">30:00</span><span class="chap-body"><span class="chap-title">How you actually benefit</span><span class="chap-sub">Distributions after 59 and a half, and the 10-year window for your heirs.</span></span></a>
+<a href="#video" class="chap fu" data-t="1920"><span class="chap-t">32:00</span><span class="chap-body"><span class="chap-title">Getting started in three steps</span><span class="chap-sub">Open in a day. Fund by transfer, rollover or contribution. Invest with a Direction of Investment form.</span></span></a>
+<a href="#video" class="chap fu" data-t="2790"><span class="chap-t">46:30</span><span class="chap-body"><span class="chap-title">Inside the client portal</span><span class="chap-sub">Submitting an investment online, and parking cash in public markets between deals.</span></span></a>
+<a href="#video" class="chap fu" data-t="2910"><span class="chap-t">48:30</span><span class="chap-body"><span class="chap-title">A real example: Jeff&#x27;s Roth IRA and HSA as the lender</span><span class="chap-sub">A $100,000 private loan, 10% interest paid monthly, two points, and every dollar back tax-free.</span></span></a>
+<a href="#video" class="chap fu" data-t="3255"><span class="chap-t">54:15</span><span class="chap-body"><span class="chap-title">Checkbook control and UBIT</span><span class="chap-sub">When an IRA-owned LLC helps, when it does not, and the tax that can apply to leveraged deals.</span></span></a>
+<a href="#video" class="chap fu" data-t="3570"><span class="chap-t">59:30</span><span class="chap-body"><span class="chap-title">Jeff&#x27;s offer: $200 off with code MILAPENN200</span><span class="chap-sub">How to reach Jeff and open an account.</span></span></a>
+<a href="#video" class="chap fu" data-t="3630"><span class="chap-t">60:30</span><span class="chap-body"><span class="chap-title">Q&amp;A: how much to move, and Peter Thiel&#x27;s Roth IRA</span><span class="chap-sub">Claude and Kirk put the first questions to Jeff.</span></span></a>
+<a href="#video" class="chap fu" data-t="3930"><span class="chap-t">65:30</span><span class="chap-body"><span class="chap-title">Kirk&#x27;s homework: check up on your forgotten accounts</span><span class="chap-sub">The resident-era account that grew, and the Solo 401(k) and SEP for 1099 income.</span></span></a>
+<a href="#video" class="chap fu" data-t="4050"><span class="chap-t">67:30</span><span class="chap-body"><span class="chap-title">Q&amp;A: the 401(k) at your current employer, and the close</span><span class="chap-sub">In-service rollovers, and a little chance.</span></span></a>
+        </div>
+    </div>
+</section>
+
+<!-- SPEAKER -->
+<section class="sec" style="background:var(--bg-sec);padding-top:64px;">
+    <div class="container">
+        <div class="sec-lbl fu">Your Speaker</div>
+        <h2 class="sec-title fu">Jeff <em>Minnick</em></h2>
+        <div class="spk-wrap fu">
+            <img src="../jeff-minnick-web.jpg" alt="Jeff Minnick, Directed IRA" class="spk-photo" width="620" height="620">
+            <div>
+                <div class="spk-name">Jeff Minnick, CISP, CIP</div>
+                <div class="spk-role">Vice President of Relationship Management &middot; Directed IRA</div>
+                <p class="spk-bio">Jeff has spent more than fourteen years in the self-directed retirement industry, including time at some of its largest custodians, and holds the Certified IRA Services Professional and Certified IRA Professional designations along with certification from the Retirement Industry Trust Association. At Directed IRA he works directly with investors who want to use retirement dollars for private funds, real estate, notes and other alternative assets.</p>
+                <p class="spk-bio">Directed IRA is an Arizona-chartered trust company, audited and regulated the same way as the large brokerage custodians, with more than $3.5 billion in assets under custody and over 35,000 clients. It was founded by Mat Sorensen, author of The Self-Directed IRA Handbook, and tax attorney Mark J. Kohler, both partners at KKOS Lawyers. As Jeff put it, the difference from a Fidelity or a Schwab is not what the law allows. It is what the custodian is willing to hold.</p>
+                <div class="spk-contact">
+                    <a href="mailto:jeff.minnick@directedira.com">jeff.minnick@directedira.com</a>
+                    <a href="tel:+16023042848">(602) 304-2848</a>
+                    <a href="https://www.directedira.com" target="_blank" rel="noopener">directedira.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="sec-lbl fu" style="margin-top:46px;">Your Hosts</div>
+        <div class="panel-grid">
+            <div class="panel-card fu"><img src="../Kirk-web.jpg" alt="Dr. Kirk A. Campbell" width="620" height="620"><div><div class="panel-name">Dr. Kirk A. Campbell</div><div class="panel-role">Host &middot; Founding Principal</div></div></div>
+            <div class="panel-card fu"><img src="../JClaude-web.jpg" alt="J. Claude Mouaffi" width="620" height="620"><div><div class="panel-name">J. Claude Mouaffi</div><div class="panel-role">Host &middot; Founding Principal</div></div></div>
+            <div class="panel-card fu"><img src="../Rosanmi-web.jpg" alt="Rosanmi M. Campbell" width="620" height="620"><div><div class="panel-name">Rosanmi M. Campbell</div><div class="panel-role">Host &middot; Founding Principal</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT JEFF COVERED -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">The Playbook</div>
+        <h2 class="sec-title fu">What Jeff <em>covered</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">The evening moved from what is allowed to how it is done. Here is the path, in the order he walked it.</p>
+        <div class="reasons-grid">
+            <div class="reason-card fu">
+                <div class="reason-num">01</div>
+                <div class="reason-title">What a self-directed account is</div>
+                <div class="reason-body">Since ERISA in 1974 a retirement plan has been able to own almost anything. The IRS names only three things it cannot hold: life insurance contracts, S-corporation stock and collectibles. The big custodians limit you to their menu of public assets as a business decision, not a legal one. A self-directed custodian is regulated the same way but is willing to hold the rest.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">02</div>
+                <div class="reason-title">What it can own</div>
+                <div class="reason-body">Private funds and private companies, real estate and land, oil and gas, precious metals, cryptocurrency, tax liens, promissory notes and debt-leveraged real estate. The creative end of the list included Super Bowl tickets bought and resold inside a Roth IRA, and a co-founder's Roth IRA that raised cattle.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">03</div>
+                <div class="reason-title">Six plans you can self-direct</div>
+                <div class="reason-body">Traditional IRA (tax-deferred) and Roth IRA (tax-free growth, pay tax on the seed, not the crop). SEP IRA and Solo 401(k) for the self-employed, with far higher limits and a Roth option in the 401(k). And the specialty plans: the HSA with its triple tax benefit, and the Coverdell ESA for education.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">04</div>
+                <div class="reason-title">Why investors do it</div>
+                <div class="reason-body">True diversification away from assets that all move with the market. The tax shelter of a qualified plan. Investing in what you actually understand, the deal on the street you can name rather than the mutual fund you cannot. Passive by design, with an operator doing the work, and terms disclosed up front.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">05</div>
+                <div class="reason-title">The rules</div>
+                <div class="reason-body">You and your IRA are not one and the same, so it cannot buy from you, lend to you or hold a property you already own. Disqualified persons run up and down the family tree: you, your spouse, parents, grandparents, children, grandchildren and their spouses. Siblings, aunts, uncles, nieces, nephews and your in-laws are not disqualified.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">06</div>
+                <div class="reason-title">Three steps to get started</div>
+                <div class="reason-body">Open online, processed in a business day. Fund by IRA-to-IRA transfer (about five to seven business days), by rollover from an old employer plan (two to three weeks, still by paper check) or by contribution. Then invest by submitting a Direction of Investment with the subscription documents titled to the custodian for the benefit of your IRA.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">07</div>
+                <div class="reason-title">A real example</div>
+                <div class="reason-body">Jeff's own Roth IRA and HSA became the lender on a $100,000 private loan to a local investor: 75% from the Roth, 25% from the HSA, 10% simple interest paid monthly, two points at closing, an 18-month term, secured by a deed of trust. About 12% cash on cash, every payment back into the accounts tax-free, and the principal returned at the refinance.</div>
+            </div>
+            <div class="reason-card fu">
+                <div class="reason-num">08</div>
+                <div class="reason-title">Checkbook control and UBIT</div>
+                <div class="reason-body">An IRA-owned LLC gives you a checking account for high-volume or hands-on investing like auctions and rentals, but adds cost and complexity a passive fund investor does not need. And when a fund uses bank leverage, the debt-financed share of the return can owe unrelated business income tax, filed by the IRA on Form 990-T, with the first $1,000 exempt.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-num">1974</div><div class="stat-lbl">ERISA opens the door</div></div>
+            <div class="stat-item"><div class="stat-num">1997</div><div class="stat-lbl">The Roth IRA arrives</div></div>
+            <div class="stat-item"><div class="stat-num">10 yrs</div><div class="stat-lbl">Window for inherited accounts</div></div>
+            <div class="stat-item"><div class="stat-num">$1,000</div><div class="stat-lbl">Of profit exempt from UBIT</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Q&A -->
+<section class="sec" id="qa" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Live Q&amp;A &middot; September 1, 2026</div>
+        <h2 class="sec-title fu">Every question. <em>Every answer.</em></h2>
+        <p class="sec-body fu" style="margin-bottom:40px;">The questions put to Jeff during the live session, summarized for clarity. This is educational and is not tax, legal or investment advice; confirm specifics for your own situation with a professional.</p>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Many of us have hundreds of thousands of dollars sitting in a retirement account. How does someone decide what portion to move into alternatives?</div>
+            <div class="qa-asker">Asked by J. Claude Mouaffi</div>
+            <div class="qa-answer"><div class="qa-text">It is a personal decision, but the studies are consistent: the further up the wealth ladder you look, the larger the share allocated to alternatives, with institutional investors averaging around 40%. In practice the investment sets the number. Clients keep the balance of the 401(k) or IRA where it is and transfer exactly what the opportunity needs, so a fund with a $50,000 minimum typically means a $50,000 transfer, with more moved later as new opportunities come up.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">Peter Thiel reportedly used a self-directed account to buy founder shares of PayPal and turned a few thousand dollars into billions. Can you add any color to that?</div>
+            <div class="qa-asker">Asked by Dr. Kirk Campbell</div>
+            <div class="qa-answer"><div class="qa-text">Correct, and he is the poster child for maximizing the tool. Thiel's Roth IRA is worth several billion dollars because it bought early-stage founder shares, PayPal among them, with Facebook and Palantir among the others. Once he passes 59 and a half he could pull the entire balance out completely tax-free. <em>"Is the self-directed IRA right for everyone? If you are a set-it-and-forget-it person, that is why there are great financial advisors. For those who want a more active role, or that true diversification, what a wonderful tool."</em></div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">I could not catch most of the webinar because of a scheduling conflict. Will the recording be sent out?</div>
+            <div class="qa-asker">Asked by an attendee, relayed by the moderator</div>
+            <div class="qa-answer"><div class="qa-text">Yes. Everyone who registered receives the recording and the meeting notes within 24 hours, so you can hear Jeff share his wisdom all over again at your convenience. This page is that recording, with the chapters, notes and full transcript alongside it.</div></div>
+        </div>
+
+        <div class="qa-item fu">
+            <div class="qa-question">The question we hear most often: can you use the 401(k) at the employer you currently work for?</div>
+            <div class="qa-asker">Asked by an attendee, relayed by the moderator</div>
+            <div class="qa-answer"><div class="qa-text">That is the one situation with a homework assignment. Every company writes its own 401(k) plan rules, so you have to ask your plan administrator whether it allows an <em>in-service rollover</em>, meaning a rollover to an IRA while you are still working there. Some plans allow it, some do not, and more allow it every year. Ask for it by that name. As Kirk summarized it: so you are saying there is a chance. <em>"There is a little chance."</em></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CHEAT SHEET -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Single-Page Summary</div>
+        <h2 class="sec-title fu">Self-directed <em>cheat sheet</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">The key numbers from the evening in one place, as Jeff quoted them live. Contribution limits change each year, so confirm the current figures with your tax professional or custodian before you act.</p>
+        <div class="cheat-grid">
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">Accounts &amp; Limits</div>
+                <div class="cheat-row"><span class="cheat-key">Traditional / Roth IRA</span><span class="cheat-val">$7,500 ($8,600 at 50+)</span></div>
+                <div class="cheat-row"><span class="cheat-key">SEP IRA</span><span class="cheat-val">up to 25% of business income</span></div>
+                <div class="cheat-row"><span class="cheat-key">Solo 401(k)</span><span class="cheat-val">up to ~$72K (~$80K at 50+)</span></div>
+                <div class="cheat-row"><span class="cheat-key">Coverdell ESA</span><span class="cheat-val">$2,000 per year</span></div>
+                <div class="cheat-row"><span class="cheat-key">HSA</span><span class="cheat-val">needs an HSA-eligible plan</span></div>
+                <div class="cheat-row"><span class="cheat-key">Penalty-free distributions</span><span class="cheat-val">age 59&frac12;</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">Moving Money</div>
+                <div class="cheat-row"><span class="cheat-key">Open an account</span><span class="cheat-val">1 business day</span></div>
+                <div class="cheat-row"><span class="cheat-key">IRA-to-IRA transfer</span><span class="cheat-val">5 to 7 business days</span></div>
+                <div class="cheat-row"><span class="cheat-key">Employer-plan rollover</span><span class="cheat-val">12 to 15 business days</span></div>
+                <div class="cheat-row"><span class="cheat-key">Current employer's 401(k)</span><span class="cheat-val">ask about in-service rollover</span></div>
+                <div class="cheat-row"><span class="cheat-key">SIMPLE IRA</span><span class="cheat-val">open 2 years first</span></div>
+                <div class="cheat-row"><span class="cheat-key">Investment funded</span><span class="cheat-val">within 3 business days</span></div>
+            </div>
+            <div class="cheat-card fu">
+                <div class="cheat-card-title">Rules to Remember</div>
+                <div class="cheat-row"><span class="cheat-key">Cannot hold</span><span class="cheat-val">life insurance, S-corp stock, collectibles</span></div>
+                <div class="cheat-row"><span class="cheat-key">Disqualified persons</span><span class="cheat-val">you, spouse, parents, kids, their spouses</span></div>
+                <div class="cheat-row"><span class="cheat-key">Not disqualified</span><span class="cheat-val">siblings, aunts, uncles, in-laws</span></div>
+                <div class="cheat-row"><span class="cheat-key">How to title an investment</span><span class="cheat-val">Custodian FBO [You] Roth IRA</span></div>
+                <div class="cheat-row"><span class="cheat-key">UBIT on leveraged deals</span><span class="cheat-val">Form 990-T, first $1,000 exempt</span></div>
+                <div class="cheat-row"><span class="cheat-key">Inherited account</span><span class="cheat-val">10 years to distribute</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUOTES -->
+<section class="sec" style="background:var(--bg-sec);">
+    <div class="container">
+        <div class="sec-lbl fu">Direct from the Session</div>
+        <h2 class="sec-title fu">Lines worth <em>remembering</em></h2>
+        <div class="quotes-grid">
+            <div class="quote-card fu">
+                <div class="quote-text">"We spend such a long time learning our craft. College, medical school, business school, law school. But at no point do any of us learn this basic personal finance."</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"Where is that idle capital they can use for an investment? It is not typically in their checking or savings account. It is usually in their retirement savings."</div>
+                <div class="quote-attr">Jeff Minnick</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"Pay tax on the seed, on the contribution going in. Build the account with investments. Don't have to pay tax on the crop."</div>
+                <div class="quote-attr">Jeff Minnick, on the Roth IRA</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"You and your IRA are not one and the same."</div>
+                <div class="quote-attr">Jeff Minnick, on the self-dealing rule</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"Yes, it's 2026 and rollovers are still being issued as checks through the mail. So plan ahead and plan accordingly."</div>
+                <div class="quote-attr">Jeff Minnick</div>
+            </div>
+            <div class="quote-card fu">
+                <div class="quote-text">"The custodian is very much just that. It's a custodian. You're the one who has to make that final investment decision."</div>
+                <div class="quote-attr">Dr. Kirk Campbell</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PUTTING IT TO WORK -->
+<section class="sec">
+    <div class="container">
+        <div class="sec-lbl fu">Putting It to Work</div>
+        <h2 class="sec-title fu">Where this meets <em>Mila Penn Chazak</em></h2>
+        <div class="tiein fu">
+            <h3>Your retirement account can hold a stake in a multifamily community.</h3>
+            <p>In our last deal, a significant number of investors funded their position with retirement dollars exactly the way Jeff described: a self-directed account, a subscription agreement titled to the custodian for the benefit of the IRA, and the returns flowing back into the account rather than into a taxable one. As Kirk said in closing, the custodian is just the custodian. The decision, and the homework, is yours.</p>
+            <p>Harmony Grove is closed, so nothing on this page is an offer. When the next opportunity opens, our community hears first, and the accounts you open and fund now are the ones that will be ready to move when it does.</p>
+            <div class="ctas">
+                <a href="../ira/" class="btn btn-orange">Invest with your IRA</a>
+                <a href="../#contact" class="btn btn-ghost">Get Started &rarr;</a>
+            </div>
+        </div>
+        <div class="offer fu">
+            <div><div class="offer-lbl">Attendee offer from Directed IRA</div><div class="offer-code">MILAPENN200</div></div>
+            <p>Jeff's promo code takes $200 off the first-year annual fee on a new Directed IRA account. Book a new-account call or send him your scenario at <a href="mailto:jeff.minnick@directedira.com">jeff.minnick@directedira.com</a>, <a href="tel:+16023042848">(602) 304-2848</a>, or <a href="https://www.directedira.com" target="_blank" rel="noopener">directedira.com</a>. The offer is Directed IRA's, on its terms.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSCRIPT -->
+<section class="sec" id="transcript" style="background:var(--bg-sec);padding-top:64px;">
+    <div class="container">
+        <div class="sec-lbl fu">Read Along</div>
+        <h2 class="sec-title fu">Full <em>transcript</em></h2>
+        <p class="sec-body fu" style="max-width:700px;">The complete transcript of the session, lightly cleaned for readability: names and terms corrected, filler removed, nothing rewritten. Open it to read or search the whole conversation.</p>
+        <details class="tx-wrap fu">
+            <summary class="tx-toggle">Read the full transcript</summary>
+            <div class="tx-body">
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>To be talking and learning about self-directed IRA and the things that we could use these types of accounts to invest in for a very long time I did not know that this other page of the menu existed. Right. I thought all we could do is leave it in our employer accounts, invest in the stock market, stocks and bonds. However a couple of years ago I learned that you could actually buy alternative assets, right. With your retirement account. And my mind was completely blown. You could invest in real estate, you can invest in oil, you can invest in other alternative assets, private companies. So there&#x27;s really another page of the menu that a lot of us don&#x27;t learn. We spend such a long time learning our craft, right? College, medical school, business school, law school, we end up with really high paying jobs, but at no point do any of us learn this basic personal finance.</p><p>So we&#x27;re super excited to have you join us tonight. We have Jeff Minnick with Directed IRA. We&#x27;ll give it a couple more minutes and I&#x27;ll do a very brief introduction of Jeff and we&#x27;ll get started. So now let&#x27;s give it another two minutes or so, give people an opportunity to come in. We have a lot of people join us so far, but let&#x27;s give a couple more minutes and we&#x27;ll get started. All right, Jeff, just maybe another minute. Thank you so much for joining us. We&#x27;re super excited to hear everything you have to share. This is a topic that until very recently, I knew nothing about. So we&#x27;re super excited to have you. And</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>Dr. Campbell, thank you so much for having me. Claude, thanks for having me on. Happy to present here to the community. And yeah, just share a little bit of knowledge about this. As you said, other page of the menu that many people just are not aware of. Only 2% of people in America self direct their retirement account. So excited to share that with everyone here tonight.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>There&#x27;s so many people who have these old retirement accounts that they&#x27;ve completely forgotten about from old employers that they&#x27;re not even fully utilizing. So just the fact that we could use it to really help us along in our wealth building journey is something that&#x27;s super exciting.</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>Powerful tools. And when I speak with a lot of investors where is that idle capital that they can use for an investment? It&#x27;s not typically in their checking or their savings account. It&#x27;s usually in their retirement savings. So we&#x27;ll help teach you how you can unlock and access some of that.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>All right, so maybe another 30 seconds, we&#x27;ll get started.</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>Great.</p></div>
+<div class="tx-turn"><div class="tx-spk">Addie Agarwal</div><p>Jeff, in the interim, do you want to pull up your screen so we can get set up?</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>Sure.</p></div>
+<div class="tx-turn"><div class="tx-spk">Addie Agarwal</div><p>Perfect. Thank you, Jeff. I think we can move now, Dr. Campbell?</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>All right, perfect. So welcome again. Hi everyone. Thank you so much for joining us. We have a really fantastic talk today with Jeff Minnick, who&#x27;s the vice president for relationship management for Directed IRA. And Jeff works extremely closely with investors who are looking to use the retirement dollars in a much broader way. Right. This includes investment in private real estate and other alternative assets. Tonight he&#x27;s going to really help us understand what&#x27;s possible, what investors need to know, how self-directed retirement accounts can become another powerful tool in our long term wealth building strategy. So without further ado Jeff, we&#x27;re really excited to have you join us. Jeff, you want to take it away?</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>Excellent. Thank you, Dr. Campbell. Happy to be here guys and happy to discuss this topic of self-directed retirement accounts. What I&#x27;m going to cover today is how you can use some of those qualified retirement savings. You have to essentially invest in something that is outside of just stocks, bonds, mutual funds, maybe something you&#x27;re more comfortable with, maybe something you have a bit more interest in. So excited to get started and share that with everyone today.</p><p>All right, I&#x27;ll give you a brief introduction on myself, my background. I&#x27;m our Vice President of Relationship Management here at Directed IRA. We are the industry&#x27;s leading self-directed IRA custodian based in sunny Phoenix, Arizona. We have our trust license here in the state of Arizona and I&#x27;ve been working in the space for over 14 years. So I&#x27;ve worked for some of the larger competitors in our industry and happy to be on board here with Directed IRA. I have some certifications, Certified IRA Service Professional and Certified IRA Professional certifications and I&#x27;m also certified with RITA, which is the Retirement Industry Trust Association. Got my contact information here in the QR code after this webinar. If there are any specific questions that you would like to ask or you have a scenario or an investment idea you&#x27;d like to go over, please reach out.</p><p>I&#x27;m happy to help and I know sometimes we have some creative ideas. We want to see if that&#x27;s something you could possibly use your retirement account to invest in. So happy to go over that with you and talk through that with you.</p><p>As I mentioned, working here with Directed IRA Trust Company based in Arizona. We are an Arizona licensed regulated custodian, audited and examined. We managed a little over $3.5 billion assets under custody and we have over 35,000 clients here at Directed IRA. Essentially Directed IRA, we are audited and regulated the exact same way as the larger IRA custodians. Charles Schwab, Fidelity Vanguard the key difference is we&#x27;re willing to hold some investments that those larger firms typically don&#x27;t hold their custody in. Your retirement Account Directed IRA was founded by Mat Sorensen. He&#x27;s our CEO and founder. Our other co founder is Mark J. Kohler. He&#x27;s also a tax attorney. They are both partners in the law firm KKOS Lawyers. Mat Sorensen wrote the self-directed IRA Handbook. It is the best selling book on this industry. If anybody here has a self-directed IRA account, this is the guidebook that you should have.</p><p>It teaches you all of the legal ramifications of having a self-directed account, all the investments that can be made. It&#x27;s an extremely deep dive into self-directed accounts. So if anyone here is interested in learning more after the presentation, reach out to me. But also maybe check out the self-directed IRA Handbook now in its third edition. This is an excellent resource for anyone that&#x27;s interested in what we&#x27;re about to talk about.</p><p>Now being founded by tax attorneys, I have to make sure that I give our disclaimer here. So any of the information I&#x27;m going to cover today, it&#x27;s for educational purposes. If anyone&#x27;s interested in making an investment, we strongly suggest consult with your attorneys, accountants, other financial professionals. By no means is this presentation meant to be investment advice whatsoever.</p><p>All right, today we&#x27;re going to cover quite a few topics, but we&#x27;ll start out with what is a self-directed IRA and what investments can it make. We&#x27;ll also go over the different types of plans, retirement plans that you could self direct, and the rules about self directing so you can invest successfully and build your retirement wealth by following the rules and not running afoul of them. We&#x27;ll also discuss what are the benefits of investing in private funds and other alternative assets in your retirement account. And then lastly, I&#x27;ll cover how to get started. So for those of you that are interested and want to take action, it&#x27;s an easy three step process that I&#x27;ll cover with you in depth. We&#x27;ll go over the cost, the timeframe, so that you&#x27;re equipped and ready to get going if that&#x27;s what you choose.</p><p>Ever since 1974 when ERISA enacted the rules to create retirement accounts, your retirement plan has been able to invest in almost anything. Now if you read those IRS rules, they will specifically call out a few things that you cannot hold in a retirement account. That includes everything you see here in red life insurance contracts, S corporations and collectibles Think alcoholic beverages like wine collections, maybe certain firearm collections. The IRS specifically says those are not assets that you can hold in a retirement account. But outside of that, you can be very creative and invest in almost anything else.</p><p>Now if you were to open your IRA account with a traditional custodian, we&#x27;ll use Fidelity as the example here. Fidelity has chosen and made the business decision not to hold certain private investments. So Fidelity IRAs, even if it&#x27;s a self-directed IRA at Fidelity, where there&#x27;s maybe no advisor managing or managing an account for you and charging an advisor fee, they still limit you to their menu of options. And that includes all of the publicly traded assets. Think stocks, bonds, mutual funds, ETFs, certain publicly traded REITs. Those are typically the options that you&#x27;re presented with when you have an IRA with a Fidelity, with a Charles Schwab with a Vanguard. It&#x27;s not that Fidelity couldn&#x27;t hold alternative investments. Again, they made the business decision not to.</p><p>So that&#x27;s where Directed IRA comes in. Again, we&#x27;re a custodian, audited, regulated the same way as those larger firms. But we are willing to custody and hold all of these different alternative investments that you see here. And I&#x27;ve listed out just a few. I&#x27;ve seen some extremely creative investments. But typically most of our clients are setting up a self-directed IRA because they want to invest in a private fund, maybe a private company. They want to invest in real estate like you were talking about, Dr. Campbell, oil and gas or other energy, natural resources, precious metals. So gold and silver bullion is another common investment. We see cryptocurrency, tax liens, promissory notes. Actually lending or buying paper is a very popular investment here. And then other creative investments.</p><p>I&#x27;ll usually get asked what&#x27;s the most creative investment that you&#x27;ve seen? We actually had a client invest in Super Bowl tickets with their Roth IRA. So not a very common investment. But they were able to purchase them with their Roth IRA, sold them at a premium, and the Delta was tax free profit back in their Roth IRA account. So I mentioned that to say while these, this list here is probably the more common alternative investments held in an account, you could still be extremely creative when it comes to investing. I&#x27;ll give you one other kind of creative investment. Our co founder, Mark J. Kohler, the tax attorney, and actually invested his Roth IRA in cattle. The cattle were raised, they eventually were generated some profits and returns back to his Roth IRA account. And so not a very common investment, but something that he had seen Another client do and was interested enough to try it himself and made the investment in his Roth IRA account.</p><p>So some pretty cool investments that can be made.</p><p>All of the different types of plans that you see here can be self-directed. So I think when a lot of people think about their retirement account they&#x27;re used to hearing this of first column here. Traditional IRAs, Roth IRAs, these are very common IRA accounts. As long as you&#x27;re working, you have earned income, you can make a contribution to your IRA and start building and saving for retirement. The traditional IRA is the more common type of retirement account because it&#x27;s been around longer. Traditional IRAs are tax deferred accounts, meaning that when you put money into a traditional IRA, you haven&#x27;t paid taxes on that money yet. You can then take that money that&#x27;s saved, invest it, whether it&#x27;s in alternatives or publicly traded assets. And any growth is tax sheltered. That growth will then compound and grow under the umbrella of that IRA account, that traditional IRA.</p><p>And eventually when you reach retirement age, which is 59 and a half years of age, you can begin to distribute money and take money out of that IRA. The concept with the traditional IRA is that it&#x27;s tax deferred. So you&#x27;re not paying tax on money now, you&#x27;re paying tax later after you hit retirement age and distributing money and paying tax at that point. I&#x27;d say the one maybe downside to the traditional IRA is what&#x27;s to say you&#x27;re going to be retired at 59 and a half years of age. What&#x27;s to say your income is going to be lower at that age? What&#x27;s to say tax rates are going to be lower at that point?</p><p>The Roth IRA came about in 1997 and this is a very, very popular account. I personally and Directed IRA as a whole, we are huge proponents of the Roth IRA account. This is your after tax or tax free IRA. With the Roth IRA account, when you make a contribution, you&#x27;re actually contributing money after taxes have been paid. So the taxes are paid up front on the contribution or the seed, if you will. That money can be invested and grow. It&#x27;ll compound and grow inside of the Roth IRA as you invest. And the beauty of that is when you begin to take distributions from the Roth IRA, you don&#x27;t have to pay any taxes on the growth. So pay tax on the seed, on the contribution going in, build the account with investments. Don&#x27;t have to pay tax on the crop or whatever it grows to when you begin to take your distributions.</p><p>There are very few Vehicles that the US Government will give you where you can grow wealth truly tax free. So the Roth IRA is a very important account to understand and if you can take advantage of.</p><p>Now, there are some other types of retirement plans for individuals that are self employed, so I&#x27;m going to cover this middle column here. SEP IRAs and Solo 401(k) plans. For those of us that are self employed or we work for maybe a small employer, they may offer a SEP IRA. This IRA account is similar to a traditional IRA and that it grows tax deferred. But the SEP IRA allows you to make a larger contribution. With the traditional IRA and the Roth IRA, the current contribution limits are capped at $7,500 or $8,600, depending if you&#x27;re over or under 50 years of age. With the SEP IRA, you&#x27;re actually allowed to contribute several tens of thousands of dollars to the account because it&#x27;s taking income from your business and allowing you to contribute 25% of that. So it has a much higher contribution limit, but it does allow you to grow that money tax deferred, just like a traditional IRA.</p><p>Again, not everyone qualifies for a SEP IRA. Not everyone&#x27;s necessarily self employed or works for a small employer that offers a SEP IRA. But again, just think of this as an employer plan that offers that much larger contribution amount.</p><p>Another account type that&#x27;s available to you is a Solo 401(k) plan. If anybody works for a W-2 employer has a large number of employees, you may be familiar with having a 401(k). A Solo 401(k) plan is very similar, but the Solo 401(k) plan is for an individual that&#x27;s self employed without any employees, no full time or part time employees. This allows you to contribute a very large amount to your retirement account over and above what you can contribute to a SEP IRA. And the Solo 401(k) plan has really a combination of both a traditional and a Roth IRA in that it has a tax deferred option and a Roth option. So if you are a small business owner, you&#x27;re probably the greatest employee that business has ever had. You can decide to contribute to a Solo 401(k) plan as a employee and then your business can also contribute as the employer.</p><p>Your personal contribution as the employee can either be after tax into a Roth component or tax deferred into a more traditional type of component of the plan. The business match is typically going to be a tax deferred contribution, but the Solo 401(k) plan allows you to put up to potentially 72,000 or $80,000 a year as a contribution to the plan. So almost 10 times the amount that you could contribute to a traditional Roth IRA. Again, not everyone qualifies for the Solo 401(k) plan, but if you are a self employed individual without any full time employees, you should absolutely. I recommend bringing this conversation up, talking about it with either your CPA or your tax attorney, because a Solo 401(k) plan is an extremely powerful tool. High contribution limit and again can be self-directed and invested in alternative assets.</p><p>The last column I want to cover here are the specialty plans. These are the plans that when we&#x27;re having a retirement conversation, people may or may not think of these accounts immediately. That&#x27;s the Health Savings Account and the Coverdell Education Savings Account. Now the Coverdell Education Savings Account is very similar to like a 529 plan. It allows you to save money for certain education expenses. Oftentimes our clients will set these up for their children or their grandchildren. They can make a $2,000 a year contribution and then that account grows tax free like a Roth IRA. As long as distributions are being used for qualified medical expenses. Again, it&#x27;s tax free distributions like a Roth IRA. So a really, really kind of neat account type that&#x27;s out there maybe in addition to saving in a 529 plan, again that can be self-directed.</p><p>We all know the cost of education is just continuing to go up. So anything you can do to hedge against that, maybe by saving in a Coverdell is something that you&#x27;d like to consider.</p><p>The other account, the Health Savings Account. Pretty soon here we&#x27;re going to have the option to enroll in different healthcare plans for the year. In order to qualify to have a Health Savings Account, you need to have what&#x27;s called a high deductible healthcare plan. Now just because your deductible high is high doesn&#x27;t necessarily mean it&#x27;s an HSA specific plan. So if you do have your healthcare plan already locked in, I would say consult with your healthcare provider. They can let if that plan is a high deductible healthcare plan that is HSA eligible. If your plan qualifies. The HSA has three times the tax benefits. So when you make a contribution to an HSA, you&#x27;ll get a tax deduction similar to a traditional IRA. So you&#x27;re not paying taxes on the contribution. That plan can be invested in publicly traded assets or alternative assets and grow and compound tax free.</p><p>And again, if you&#x27;re pulling money out for qualified or qualified health care Expenses, it has completely tax free distributions. I&#x27;ve read a statistic that employers just a few years ago, about 19% offered health savings accounts or high deductible healthcare plans that were HSA eligible. That is increased to about 60% now. So if it&#x27;s something that you haven&#x27;t looked into recently, maybe now&#x27;s a great time to check out your healthcare plan, see if there&#x27;s an HSA eligible option because it&#x27;s another great vehicle that the government affords us to help build some wealth tax free, in this case for those qualified healthcare expenses.</p><p>Again, the key here is there&#x27;s lots of different vehicles out there to help you save and build wealth. Do you qualify for all of these vehicles? Maybe not. But make sure that you&#x27;re talking with your accountant, your CPA, your tax professionals about what accounts you do qualify for so that you can establish them, max out contributions as much as possible, and then start investing and building and compounding those accounts. When we have these different types of plans working for us invested in alternative assets we&#x27;re really just building wealth again for retirement years, for education expenses, for health care expenses. So they all have tax benefits, but some just have those extra benefits that we talked about being tax free, like the Roth, the Coverdell, the HSA and the component of the Solo 401(k) plan now we&#x27;ve talked about.</p><p>Yes, these are the different account types that are available to you and investing them in private or alternative assets. What, what are the benefits of investing outside of just publicly traded investments and actually setting up one of these separated vehicles and investing in private funds or alternatives for that matter.</p><p>I think one of the main reasons when I talk with clients about why they get started is they&#x27;re looking for diversification. If your retirement account is invested in stocks, bonds and mutual funds and has a good mix, I&#x27;d say you could argue it&#x27;s pretty well diversified. But then all of those assets are still tied to the market. When you&#x27;re looking for some true diversification into other asset classes, that&#x27;s where the self-directed IRA can really help. Many of the private funds that our clients use their accounts for, they&#x27;re not correlated to the market or interest rates. The private funds essentially just allow investors to invest in something they know are more comfortable with. I can&#x27;t tell you how many clients I speak with that are real estate investors. They&#x27;ve been investing in real estate their entire life.</p><p>They just never knew they could invest their traditional IRA or Roth IRA, the same types of assets and get those tax benefits. So just having that knowledge that they can invest in something they know are more comfortable with helps them invest in something that they feel comfortable with and that they truly understand. I&#x27;ll talk with clients and ask them if you&#x27;re invested in a mutual fund, which companies this is that mutual fund. What companies is it comprised of? They may or may not know. Maybe the top three. If I ask them about maybe a real estate investment they did, they can tell me exactly what street it was on their down payment, the terms of the deal. They have a passion about that. So having a self-directed account allows you to invest in something that you&#x27;re perhaps much more passionate about.</p><p>Another benefit like we&#x27;ve already highlighted is the tax savings. IRAs, 401(k)s, Health Savings Accounts, they all are qualified plans that are essentially tax exempt trust. They allow the investment income to grow completely tax sheltered and allow you to have those returns growing and compounding within the account. Another great benefit of investing in private funds within self-directed account is it&#x27;s passive. As an investor, you don&#x27;t have to source the deals or develop the underlying investment strategy. You can invest with an operator that has a track record of doing all of that work. And so your IRA account or your Health Savings Account gets to be a very passive investor and share in the returns. It can also be a bit more predictable than the market. So when your IRA account is investing in a private fund, your IRA is going to grow based on the terms and performance of that fund and its operator.</p><p>These terms are often disclosed up front, so exactly the intention of the fund and when it expects to have payouts. So again, just an excellent way to diversify, still get some tremendous tax savings, invest passively and have some predictable returns by having a self-directed IRA and considering some of these alternative opportunities that are out there.</p><p>Now, let&#x27;s go ahead and make sure we cover all the plan rules. When you have a self-directed account, there are absolutely some key important rules that you need to be aware of so that you can invest properly and not put your retirement funds at risk. The first rule I want to cover is that your IRA cannot transact with you. So you and your IRA are not one and the same. The IRS unfortunately thought of this and they would consider this self dealing. But I&#x27;ll give you a very concrete example. Let&#x27;s say you own a rental property personally and you said, Jeff I would really like to have that rental property maybe held under my Roth IRA where it can appreciate and all my cash flow could be tax free. I would like to sell that property to my Roth IRA account.</p><p>Well, who owns that property? Currently you as an individual, you cannot transact with your own IRA. So unfortunately this would be great if the IRS hadn&#x27;t thought of this, but they did. I think what they&#x27;re trying to avoid here is maybe giving yourself a sweetheart deal. Now that property may be worth $300,000, but I&#x27;m going to sell it to my Roth IRA at a tremendous discount of 100,000. So key rule here, cannot transact with your own IRA. Black and white rule that you need to definitely follow.</p><p>There are a few other individuals that the IRS has outlined that your IRA cannot transact with as well. This would include the IRA account owner and their spouse, their parents and grandparents, their children and grandchildren, and their son and daughter in law. So essentially anyone that you see here on this graphic that&#x27;s in red, these would be considered disqualified persons. People that your IRA cannot transact with. Now this does not mean that family members are disqualified. People your brothers, your sisters, your aunts, your uncles, your niece, your nephew, other different distant family members could do transactions with your IRA. Even father in laws and mother in laws could transact with your retirement account. The way I think of disqualified persons is up and down your family tree. You, your spouse, parents, grandparents, children, grandchildren, those are disqualified.</p><p>But outside of that, I could do a creative investment and my Roth IRA could do a transaction with my brother or sister and that would be completely acceptable.</p><p>Now how do you personally benefit from all of these investments that you&#x27;re making in your retirement account or in your Health Savings Account? The benefit to you and your heirs is coming from the distributions. So I always like to remind individuals that when you&#x27;re investing with, let&#x27;s say your self-directed IRA account, this is going to grow your retirement account. When will you benefit? After you reach 59 and a half years of age, which is the legal retirement age when you can begin taking distributions without a penalty. So if you&#x27;re looking to invest, let&#x27;s say in a private fund, and you would like that private fund to generate income that you can use right now, the self-directed IRA account is not the right vehicle. If you&#x27;re looking for income that you can use right now, that&#x27;s where you may want to invest personally outside of your retirement account.</p><p>But if you&#x27;re looking for the tax benefits and to be able to build some wealth for after 59 and a half years of age, those golden years when you&#x27;re retired, this is absolutely the right vehicle for you. And as we know with retirement accounts, these can be passed on to your beneficiaries. So imagine building up a tax free self-directed Roth IRA account and being able to pass that on to your loved ones. They get the tax free benefits of that account as well. And the current rules allow them to maintain that account for a 10-year period before they have to fully distribute the account. Could be an extremely powerful estate planning tool. So just another great aspect of retirement accounts that need to be considered when you&#x27;re building and growing that generation of wealth.</p><p>How do we get started with the self-directed account? It&#x27;s really three easy steps. We need to open the account, we need to get that account funded, and then we can invest that account in the different opportunities that we&#x27;ve done our due diligence on. Opening an account is extremely simple. We have an online application. You can fill out your address, your beneficiary information, and sign your application electronically. We&#x27;ll process that application within a single business day. And we always send out a welcome email just confirming your accounts open with your new account number. That is step one and that is a step that your custodian, someone like Directed IRA, will have complete control over.</p><p>The next step, funding your account. Now, this is the step that usually takes the most amount of time when you&#x27;re funding your account. Many clients are going to be funding by transferring or rolling over some existing retirement funds that they have saved. You can also fund it with a new contribution. But again, most of the clients that I&#x27;m working with, they&#x27;ve already been saving in retirement accounts and now they want to choose to invest in something alternative. So they&#x27;re going to take a portion of their existing retirement account and move it to a self-directed IRA here for anyone that has traditional IRAs, Roth IRAs, or even SEP IRA accounts. IRA funds are portable. That means you can transfer those funds at any time and you can move any portion. I&#x27;ll sometimes have clients ask Jeff, do I have to move my entire IRA account to Directed IRA if I want to self direct?</p><p>Absolutely not. You could do a partial transfer of any dollar amount that you choose if you have identified an alternative investment opportunity and there&#x27;s a minimum investment amount. It&#x27;s not uncommon for clients to liquidate some of their stocks, bonds, mutual fund holdings into cash and transfer that exact cash dollar amount to their account here so they can deploy it into their alternative investment.</p><p>For those of you that maybe have a simple IRA account. It&#x27;s another account type for individuals that are self employed. Simple IRA accounts have to be open and funded for a minimum of two years before you&#x27;re eligible to transfer a portion of those funds. If you have a simple IRA and you would like to use money from that account to fund your self-Directed IRA, get with a member of Directed IRA&#x27;s team. We have a great funding team here that oversees this entire step. Walks you through the process hand in hand, so they can absolutely help you identify if your account qualifies for the transfer.</p><p>Transferring IRA funds is a relatively frictionless process. I would say on average transfers are typically complete within about five to seven business days. It does require some paperwork though. We actually have a form called the Transfer Request Form. You&#x27;ll need to fill out that form 99% of the time. It has to be wet-ink signed and then return back to Directed IRA. If you think about it from the IRA custodian that is losing the money, they may not be very excited to see this money leave and transfer it out. So transferring funds from another IRA custodian, some will drag their feet, make the process more difficult than it needs to be. So some are more difficult than others, but on average, I would say again, five to seven business days. And if you&#x27;re moving money from a larger, more well known custodian like a Fidelity or a Vanguard, they usually don&#x27;t give you too much grief.</p><p>They&#x27;ll process those requests relatively quickly and send funds here for deposit.</p><p>If you&#x27;re going to be making a new contribution out of pocket, you can send funds via check wire or ACH. We even have the ability to link up a bank account using Plaid to make a contribution to your account here. So contributing is very easy. Depending on how the money is sent, that&#x27;ll kind of determine the time frame. Obviously, if you&#x27;re going to mail us a check, we&#x27;ll be waiting for that check to arrive. We&#x27;ll have to wait for those funds to deposit and then eventually they&#x27;ll clear and post to your account. An ACH is quicker, A wire is even faster. Since it&#x27;s guaranteed funds, it&#x27;s usually available that same day or the next business day, depending on what time the wire was received.</p><p>I purposely have left the rollover process here for last. For all of those out there that have employer plans, you have a 401(k), a 403(b), a thrift savings plan, a 457 plan, any kind of a pension plan. When you&#x27;re moving money from an employer plan to an IRA account, it&#x27;s actually considered a rollover. A lot of people will use that term transfer and rollover interchangeably, but they are very different. Again, transfer is IRA to IRA. Movement rollover is employer plans like 401(k)s to IRAs. If I&#x27;m speaking with a client and they say, Jeff, I have money in a 401(k) plan that I would like to use to fund my self-directed account, my very next question is, is that through your current employer or is it from a previous employer? If it&#x27;s a previous employer, you can absolutely access that money and roll it into an IRA account.</p><p>If it&#x27;s through your current employer, you have a little homework. You&#x27;ll have to check with your 401 plan administrator and see if you&#x27;re eligible to roll money into an IRA. Every company that sets up their 401(k) plan for their employees sets up their plan rules. So unfortunately there&#x27;s no universal rollover rules. Every plan is a little different. So you really have to check to see does your plan allow you to rollover funds while you&#x27;re still in service or working. So essentially what you would need to do is check and confirm your rollover eligibility. Now the question you want to ask is, does my plan allow me to do an in-service rollover? Basically, can I move some of the funds while I&#x27;m still working for this employer?</p><p>Another important thing that you may want to ask is your 401(k) plan, is it all tax deferred or is there a Roth component like the Solo 401(k) I was talking about earlier. You have that option of saving maybe Roth dollars in that type of plan. Your employer plan at work, your 401(k) plan may have a Roth component as well. And that&#x27;s important to know because when you go to move money to an IRA, you want to match the tax environment. If your 401(k) plan is all tax deferred savings, you would roll that money to the tax deferred IRA, the traditional IRA. If there is a Roth component and there are some after tax savings or Roth savings in that plan, that portion would roll to a self-directed Roth IRA. So again, it can continue to be invested and grow tax free.</p><p>Very common for plans now to have that Roth component and very common for employees to be saving in both of these buckets. Maybe they&#x27;re making their contributions, their employee deferrals to a Roth component, and the business or employer is making a contribution to the tax deferred component. So just something to be considerate of when you are rolling over employer plan funds, you may actually need to set up two IRA accounts to house the different tax environments.</p><p>The rollover process also is not started by Directed IRA or your IRA custodian. When you&#x27;re ready to roll over funds, you&#x27;ll have to work with your 401(k) plan administrator and likely fill out a rollover request form, basically telling them where you&#x27;ve set up an IRA so they know where to send the check. You always want to have that IRA account open. First and foremost, though, I need a destination point somewhere to roll the money to. So make sure you have your IRA account established before you begin to attempt to fill out the rollover paperwork. When you fill out that rollover request form, it may take some time for that request to be responded to a rollover check to be issued and then mailed to your IRA custodian. So don&#x27;t be surprised if a Rollover takes about 12 to 15 business days, two to three weeks sometimes.</p><p>Sometimes longer. I&#x27;ve worked with a number of clients where their employer, they only process rollovers once a month. So even if you completed your rollover request at the beginning of the month, they may not issue the check until the end of the month. And yes, it&#x27;s 2026 and rollovers are still being issued as checks through the mail. They&#x27;re very, very rarely sent electronically via ACH or wire. So plan ahead and plan accordingly. If you have a great alternative investment opportunity, you want to be prepared to execute and act on that investment. Setting up your account and funding it in advance is going to make sure that you&#x27;re prepared when you come across a good investment opportunity that you can act and respond to it quickly. So again, this process of funding the account not controlled by Directed IRA, but we do have an excellent funding team here that will hold your hand and walk you through this step by step.</p><p>We understand this is people&#x27;s life savings, their retirement account. They don&#x27;t want to do this wrong and potentially put these funds at risk. So they may have questions or need help with their rollover. Our team will actually get on the phone with you and talk with your representatives and help assist with the rollover process if that&#x27;s what it takes. So don&#x27;t feel as if you&#x27;re going at this alone. Many people don&#x27;t move their retirement funds very often. If you have questions or there&#x27;s some hesitation there, you need help, just know we&#x27;ve got a great team that can make sure you get your account funded properly. And you may be funding from a Transfer and rollover, a variety of these methods. So having someone there to support you through this, I think is extremely important.</p><p>The final step here is investing the account. Now, this is the fun part. You&#x27;ve gotten your account open, you&#x27;ve gotten it funded, now you need to invest. Anytime you make an investment here, this is where the account becomes self-directed. So you, as the account owner are controlling this. You are researching your investment options, doing your due diligence, and then deciding what investment you want to make. Self-directed IRA custodians, like Directed IRA do not have a menu of options to choose from. We don&#x27;t sell investments or give investment advice. So it&#x27;s truly up to the account owner and the owners and responsibility is on them to kind of instruct us as custodian where they want to invest. It&#x27;s a very easy process of submitting what we call a direction of investment form. What&#x27;s the name of your investment?</p><p>What&#x27;s the dollar amount needed? Where do we need to send the capital? And that&#x27;s accompanied by some additional documents, some supporting documents for the investment. If you&#x27;re going to invest in a private fund, this would be your subscription agreement. The key here is again, you and your IRA are not one and the same. So on your subscription agreement, who is subscribing? For me, it wouldn&#x27;t be Jeff Minnick subscribing. It would be directed trust company FBO, for the benefit of, Jeff Minnick Roth IRA, for example. So again, custodian Directed IRA for the benefit of my Roth IRA account. That&#x27;s who&#x27;s subscribing. This is extremely important because again, this is not an investment that I want to hold personally and receive the profits personally as income. I want it titled invested properly in my IRA account, in this case my Roth IRA account, so that all of my profits and return on investment go back into that Roth IRA and grow and compound tax free.</p><p>So again, we have an investments team here that&#x27;s going to help work with you, the investment sponsor or operator to make sure that all paperwork is in good order so that we can then send the capital, we process an investment as long as all the documents are in good order within three business days. And oftentimes it could be 24 or 48 hours. There&#x27;s the ability to expedite this if you needed to move very quickly. But again, the key here is having your account open and funded in advance, providing the correct documentation with the correct titling in the name of your IRA account so that we can then fund that investment and hold it as the asset in your account in place of cash, let&#x27;s say in a cash balance in your account, you would now see your alternative asset and whatever the value of that investment is in your account.</p><p>So that&#x27;ll be reflected when you log in and view your account online. So similar to those larger custodians, a lot of these different steps that I&#x27;ve outlined here can all be directed through our online portal and you can view your account balance and your investments. We even send quarterly statements out to clients that will show the alternative assets and the publicly traded assets that are in their account.</p><p>Just wanted to show this screen quickly. Our portal that we have here at Directed IRA is called Directed Connect. It&#x27;s our proprietary portal for helping manage your account and your investments. Once your account is open and funded, if you were to log in and you wanted to make an investment, this is what you would see here. So these different types of assets that you can invest in, you&#x27;ll see for a private fund, you have that option right there on the top right. You click that, enter some information about the name of the fund, the dollar amount needed. You can actually upload your subscription agreement right there as well. Now we can review those documents and get that investment process.</p><p>I&#x27;ve talked a lot about investing in alternative assets, but I also want to make it known that you can still hold publicly traded assets in your account here. If you want to invest in a stock or a mutual fund, you can absolutely still do that with your self-directed IRA. Now, are we set up and as cost efficient as Fidelity or Vanguard? No. So if all you were doing was trading publicly traded assets there are custodians that specialize in that and that are more cost effective to do that. The reason I mentioned publicly traded assets, though, is oftentimes when you&#x27;re in between alternative investments, you don&#x27;t want funds sitting in a cash position not working for you. You want to put that money to work. You could quickly, let&#x27;s say, invest in a private fund. Maybe it&#x27;s run its course.</p><p>You receive profit back to your account. You could easily deploy that money and invest, let&#x27;s say, in the S&amp;P 500 while you&#x27;re out looking and identifying your next alternative investment opportunity. Once you&#x27;ve identified it, sell your position back into cash, redeploy the cash to the next alternative investment. So you&#x27;ll see in the bottom left corner here, stocks, ETFs, mutual funds, all of those publicly traded investments can be held in the same account. And you can switch between the Two, at your discretion.</p><p>I&#x27;d like to go through this example, this is a real life example, an investment that I made with my own Roth IRA and HSA account. I think this is a great example to really demonstrate the three step process and the power of using some of these accounts to invest this way. So this particular investment was a promissory note investment that I made. Not as passive as, let&#x27;s say, an investment in a private fund where the operator kind of manages the entire strategy for you. But again, I think this just kind of demonstrates the options that are available to you. This particular investment I was working with a friend of mine at our local real estate investment association and the gentleman that I&#x27;m working with routinely buys and flips real estate. So my colleague here had bought a property, took out a lot of funding from a bank for the renovation of the property, but unfortunately was coming up short and needed some additional capital.</p><p>Ran into some unforeseen problems with the property that needed to be corrected before he he could get the property ready to rent or sell. So he&#x27;s looking for some extra capital.</p><p>Now this individual could have gone to a hard money lender and borrowed money at the hard money lending rates. In this scenario though, my Roth IRA and my Health Savings account actually became the lender. So the initial loan balance, $100,000 was needed. I decided to fund this with my Roth IRA account and my Health Savings Account. So essentially 75% of this deal was going to be my Roth IRA was going to fund. And then I used my Health Savings account to fund the other 25%. There was an initial loan amount of $75,000, some additional rehab advances, 25,000 held in escrow. And this note, because me, on behalf of my IRA and this colleague of mine, we could agree to whatever terms we wanted. We chose simple interest payments, 10% annually, interest-only payments made monthly. There were some points that were charged up front, so 2% paid closing.</p><p>And then this was an 18 month term. So again, the cash on cash annual return from this investment was going to be roughly 12%.</p><p>When we drafted the promissory note, the lenders read as follows, Directed Trust Company FBO, for the benefit of, Jeff Minnick Roth IRA and in this case as to the undivided interest of 75% comma, Directed Trust Company FBO, Jeff Minnick HSA as to the undivided interest of 25%. So the lender here is showing that it&#x27;s my Roth IRA and my Health Savings account, not Jeff Minnick as The individual, we end up closing in a local title company Directed IRA sends the capital from my respective accounts. This particular note secured by deed of trust on the property. The promissory note, the deed of trust. Copies of those documents are held here in safekeeping at Directed IRA because that&#x27;s the asset held in my Roth IRA and Health Savings Account. All of the interest payments that were made monthly were paid back to Directed IRA.</p><p>75% was deposited in my Roth IRA. 25% was deposited in my Health Savings Account. Because I was using a Roth IRA and Health Savings Account, that interest was completely tax free. Now the borrower ended up keeping the property as a rental. They refinanced the longer term financing. My Roth IRA and Health Savings Account were made whole through the payoff of the note. That allowed me to then take my Roth IRA funds and my Health Savings account funds and deploy them into other deals.</p><p>Some key points we got to remember here. You can&#x27;t loan money to yourself or disqualified person. So again, I wouldn&#x27;t have been able to loan money on a property that I personally owned or my spouse owned going back to that disqualified persons like we covered. With note investments, you and the borrower are free to set terms. Now I can&#x27;t loan money at 0% interest. That would be a gift. That would not be an investment. So they need to be reasonable terms. But again, two points up front, two points on the back. We can get creative with our terms here.</p><p>And then the last thing I would mention is we do help certain clients with an IRA LLC structure for this particular investment. For investments in private funds, an IRA LLC may not be needed. But there is a structure. It&#x27;s often referred to as having checkbook control. You will take your self-directed IRA account, invest in a newly formed private company that has its own EIN and its own bank account. Your IRA is essentially the member of the LLC. You as the account owner could be the manager. And then you can set up a checking account for that entity. So you now have checkbook control of your funds.</p><p>This can be very helpful for certain types of investments. It can be used as a volume play. You may be investing quite often with your self-directed accounts. Rather than going back to your custodian, submitting a direction of an investment form and waiting for that. You may not have time. Imagine if you&#x27;re buying like tax liens or deeds at auction. You need access to funds immediately. Having your own checking account can be helpful. It&#x27;s also very helpful if you&#x27;re buying something like a rental property. If I was Purchasing a rental property with my IRA, I&#x27;ll need to collect rent, pay expenses, pay taxes, utility bills. A lot of activity to maintain that type of investment or asset. So having my own checking account where I have access to right checks with qualified funds could be extremely helpful just to make managing that type of investment more efficient.</p><p>But again, I would say for an individual investing, let&#x27;s say in a private fund that&#x27;s very passive, do they need an IRA LLC with a checking account? Probably not. It&#x27;s adding cost and complexity that&#x27;s not needed to make a very passive investment. Funding that initial investment by deploying capital and then simply receiving payments back to their account on new returns on their investment. So if anyone here is interested in a deeper dive into an IRA LLC conversation, you can absolutely help. It&#x27;s great being founded by tax attorneys. The law firm is the company that actually helps form that entity properly. So for anybody that has more questions on that, happy to discuss it with you further. I&#x27;ll have one other,</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>I&#x27;m sorry, Go ahead.</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>One other topic I just want to cover with you guys and it kind of relates with investing in private funds and it&#x27;s related to unrelated business income tax. So we&#x27;ve been talking about how great these accounts are, how the all the returns on investment grow tax free. Now I&#x27;m going to tell you about a tax that can apply to your IRA self-directed IRA account investments. When you are investing in real estate that is leveraged, there can be a tax applied to a portion of the profits that come back to your IRA account. So this happens when you&#x27;re investing in real estate or investing in private funds. But let&#x27;s just say that the particular real estate fund that you&#x27;re investing in, they&#x27;re bringing in capital from IRA investors and other investors, but they may also be bringing in other financing, let&#x27;s say from a bank and using leverage to go ahead and acquire an asset.</p><p>Maybe it&#x27;s a multifamily apartment complex that&#x27;s being acquired. The debt leverage portion of that investment could kick off this unrelated business income tax. So let&#x27;s say maybe the investment was 40% leveraged. The operator starts paying returns back to your IRA account. 40% of those returns could be subject to this unrelated business income tax.</p><p>It&#x27;s not a tax that you pay as an individual. It&#x27;s essentially a tax that your self-directed IRA pays. You would calculate whatever that tax may be, it follows the trust tax schedule. And then you&#x27;d probably work with a CPA or a tax attorney to prepare a 990-T. It&#x27;s a tax form. So your IRA still receives the profit, but because there was leverage on that property, the debt leverage portion could be subject to UBIT tax. So your IRA will file a 990-T and then pay that tax from the IRA profits.</p><p>I mentioned this because it&#x27;s something you need to be aware of everyone&#x27;s situation. Every investment that you&#x27;re making is going to have different terms. So something to definitely be aware of, calculate, but it&#x27;s not something to be scared of or afraid of. Oftentimes what I find is there may not be profit paid back to the IRA and so much of that leverage has been paid off. There&#x27;s also an exception for the first thousand dollars of profit that&#x27;s not subject to UBIT. And when calculating this, I think when clients calculate their UBIT tax, the tax sometimes can be very minimal and it still makes financial sense to make the investment with their retirement account and be able to tax shelter the vast majority of the profit that they&#x27;re receiving back to their IRA account. So just something to be aware of.</p><p>Obviously, if you&#x27;re in a scenario where you have unrelated business income tax, again we have tax attorneys and resources that we can connect you with to help calculate that UBIT tax and Even file the 990-T if necessary. All right guys, I&#x27;ve talked a lot about self-directed IRAs All right guys, I&#x27;ve talked a lot about self-directed IRAs today. The last thing I want to mention to you is for anyone that is interested in getting started, we have a special offer for you. When you create a self-directed account here, you&#x27;ll pay an annual fee. You use this promotion code that I have up on the screen in green, that&#x27;ll save you $200 off your first year annual fee. If you scan that QR code, it&#x27;ll actually take you to my calendar link where you can schedule a call.</p><p>So again, if you have investment ideas or questions, you have your personal scenario you want to run through, or you just want to get started with an account, feel free to book some time with me. You also have my direct contact information, phone number, email. So reach out to me if you have questions or need help. Happy to open it up to questions though and address any of those that are here with us today.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>Jeff, that was really fantastic. Really comprehensive, a lot of really fantastic information. Thank you so much. Any questions from the audience? Addie. Okay,</p></div>
+<div class="tx-turn"><div class="tx-spk">Addie Agarwal</div><p>Not yet. I&#x27;m just scouring the Q&amp;A tab.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>No worries. Claude, any questions?</p></div>
+<div class="tx-turn"><div class="tx-spk">J. Claude Mouaffi</div><p>Yes, Jeff, thank you so much. A lot of beautiful information, very important information has been shared today. I just have a question, Jeff. Many of us on this call today may have thousands, hundreds of thousands of dollars sitting in an IRA account, in a retirement account right now. And how tonight someone could determine what dollar of his retirement account he could start using to invest in alternative asset.</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>It&#x27;s interesting, there are many studies that are done about the wealthiest 1% of Americans, institutional investors, and how much is allocated to alternative investments. And as you kind of graduate or go up the rung of the ladder in wealth saved or created, the portion or percentage that&#x27;s allocated to alternatives gets greater and greater institutional investors. I think on average are 40% of their account is invested in alternative assets. So what is the right amount for you? That&#x27;s at your discretion. That&#x27;s a personal decision you&#x27;ll have to make. What I often find is when you identify an investment, once you&#x27;ve identified, let&#x27;s say the private fund that you want to invest in, and there&#x27;s a certain minimum that usually dictates how much a client will fund their self-directed account with initially. Again, they want that money working for them.</p><p>So they may keep the balance of their 401(k) or IRA in the market with their advisor what it&#x27;s currently invested in and they just transfer a rollover exactly what&#x27;s needed for an alternative opportunity. So for example, if there was like a $50,000 minimum investment per fund, that&#x27;s typically what I would see clients transferring to their self-directed account. And then as they identify other investment opportunities, they could always transfer additional funds as needed.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>Thank you. Hey, this reminds me of kind of a famous story. So Peter Thiel, who&#x27;s the founder of PayPal, I think like back in the late 90s, I think he used like a self-directed account to buy like founder share of PayPal. Right. And I think he turns 60 soon, so he&#x27;s not going to pay any taxes on probably five or six billion dollars. Can you add any color to that? That kind of just shows the power of a self-directed account. He&#x27;s going to have this money. I think he started with less than 2,000 bucks and he&#x27;s turned that through self-directing into over $5 billion by investing in private investments.</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>That is absolutely correct. So Peter Thiel is kind of the poster child for taking a self-directed IRA and really maximizing that tool. You&#x27;re absolutely correct. Peter Thiel has a Roth IRA that is worth several billion dollars. And the way he was able to do that was by investing into early stage companies, getting those founder shares. PayPal was obviously one of the big ones. Facebook, There are several others. Palantir I think was another one that more recently he invested into. But yes, imagine now you have a billion dollar Roth IRA and it&#x27;s 60 years, 59 and a half years of age. If he wanted to, he could pull out the entire balance completely tax free.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>That goes to show the power of self-directed IRAs. Right. We&#x27;re able to invest in these early stage companies. You&#x27;re able to invest in real estate and really allow your money to have outsized returns which there&#x27;s nothing in the stock market that will kind of give you that type of return that&#x27;s tax advantaged.</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>Exactly correct. And again I would say is the self-directed IRA right for everyone. If you&#x27;re a set it and forget it kind of person that&#x27;s why they have great financial advisors that can help manage it for you. But for those that want to take a little more active role, they want to invest in something they&#x27;re more comfortable with or get that true diversification. What a wonderful tool to self direct.</p></div>
+<div class="tx-turn"><div class="tx-spk">Addie Agarwal</div><p>We got a question. Due to a scheduling conflict, I wasn&#x27;t able to catch most of the webinar. Will the recording be sent out? Yes. Within the next 24 hours, everyone who registered will get the recording alongside meeting notes from today, so you can hear Jeff share his wisdom all over again at your convenience.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>This was really fantastic. I think the thing I would encourage everybody to do from today&#x27;s webinar is to just have kind of a checkup of their investment accounts. Right. Whether it&#x27;s an old employer me, for example, I had a retirement account from when I was a resident. Right. I completely forgot about it until about two years ago. I invested the bare minimum because I was a resident living in New York City. But that money had grown a decent amount. And I was able to move that to a self-directed custodian and subsequently invest that into private companies where now that money&#x27;s working very hard. Another personal story for anybody who&#x27;s a 1099 employee Jeff mentioned, you&#x27;re able to really utilize Solo 401(k). Right. You have a SEP account. Right. So I was able to leverage those accounts to invest into real estate.</p><p>Right. It&#x27;s a personal decision and I think the important thing that Jeff mentioned here is that the custodian is very much just that it&#x27;s a custodian. You&#x27;re the one who has to make that final investment decision to decide if it&#x27;s something that works for you. In our last deal, we had a significant amount of people who decided to use the retirement accounts to invest into real estate in a more tax advantaged manner.</p></div>
+<div class="tx-turn"><div class="tx-spk">Addie Agarwal</div><p>Jeff, last question, which has been the most regularly asked on IRAs: can you leverage your existing 401(k) where you&#x27;re currently working?</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>So when it&#x27;s that current employer plan, that&#x27;s where you have that little bit of a homework assignment. You really need to confirm your rollover eligibility. So they&#x27;re every company, when they establish their 401(k) plan, sets up its plan rules and kind of determines whether or not they&#x27;re going to allow in-service rollovers. So if that&#x27;s the scenario you&#x27;re in, you have a 401(k) plan, but it&#x27;s through your current employer. You just have to check with them. Can I roll it over to an IRA? Some plans allow it, some plans don&#x27;t. But the terminology you want to use is in-service rollover, while I&#x27;m still in service, still working, am I eligible to roll it over to an IRA? Well, why would you want to do that? I want to invest in something outside of just whatever the 401(k) menu of options has for me. So definitely worth looking into. More and more plans are allowing in-service rollovers.</p></div>
+<div class="tx-turn"><div class="tx-spk">Addie Agarwal</div><p>Thank you.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>So you&#x27;re saying there&#x27;s a chance.</p></div>
+<div class="tx-turn"><div class="tx-spk">Jeff Minnick</div><p>There&#x27;s a little chance.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>No, this has been truly wonderful. Thank you so much for sharing really amazing information with us. Thank you to everyone who has attended hopefully you&#x27;re able to gather some actionable advice as you continue on your wealth building journey. Stay tuned. We&#x27;ll have other educational webinars upcoming. We&#x27;re just really trying to broaden everybody&#x27;s personal finance education. So thank you so much, everyone.</p></div>
+<div class="tx-turn"><div class="tx-spk">Addie Agarwal</div><p>Thank you. Have a great evening. And thank you for spending time with us today.</p></div>
+<div class="tx-turn"><div class="tx-spk">Dr. Kirk Campbell</div><p>Right, thank you. Bye bye.</p></div>
+            </div>
+        </details>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container">
+        <div class="sec-lbl" style="color:rgba(255,255,255,0.45);text-align:center;">Next Steps</div>
+        <h2 class="sec-title" style="text-align:center;margin-bottom:16px;">Put your retirement dollars <em>to work</em></h2>
+        <p class="sec-body" style="text-align:center;max-width:600px;margin:0 auto 34px;">Two ways to act on tonight: open and fund a self-directed account so you are ready when the next opportunity opens, and tell us you want to hear about it first.</p>
+        <div class="cta-btns">
+            <a href="../#contact" class="btn btn-orange">Get Started &rarr;</a>
+            <a href="../ira/" class="btn btn-primary">Invest with your IRA</a>
+        </div>
+        <p style="text-align:center;margin-top:22px;font-size:13px;color:rgba(255,255,255,0.50);">To open an account, reach Jeff Minnick at <a href="https://www.directedira.com" target="_blank" rel="noopener" style="color:#FFB37A;text-decoration:none;">directedira.com</a></p>
+    </div>
+</section>
+
+<p class="disc">
+    This session and recap are for educational purposes only and are not tax, legal or investment advice. Figures were shared live by the speaker and may reflect prior-year limits; confirm current limits and your own eligibility with a qualified professional. Directed IRA is a third-party custodian; Mila Penn Chazak does not provide custodial, tax or legal services. Harmony Grove is a closed offering. Nothing on this page is an offer to sell or a solicitation of an offer to buy any security.
+</p>
+
+<footer>
+    <p class="footer-text">
+        Mila Penn Chazak &nbsp;&middot;&nbsp; invest@milapennchazak.com<br>
+        This is a private, unindexed page shared only with invited guests and attendees.
+    </p>
+</footer>
+
+<script>
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+    const player = document.getElementById('replay');
+    document.querySelectorAll('.chap').forEach(a => a.addEventListener('click', e => {
+        e.preventDefault();
+        player.currentTime = Number(a.dataset.t);
+        player.play();
+        document.getElementById('video').scrollIntoView({ behavior: 'smooth' });
+    }));
+</script>
+</body>
+</html>
