@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <title>Events &amp; Replays | Mila Penn Chazak</title>
     <meta name="description" content="Upcoming live sessions and the full replay library from Mila Penn Chazak, including all eight sessions from the Harmony Grove raise and the September self-directed IRA session, with companion notes and the complete Q&amp;A.">
     <link rel="canonical" href="https://www.milapennchazak.com/events/">
@@ -346,7 +349,15 @@
         .cf-done.on-dark-done p { color:rgba(255,255,255,0.66); }
         [hidden] { display:none !important; }
 
-</style>
+        /* brand lockup (mpc-4g identity, 2026-09-03) */
+        .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+        .brand-mark { display:block; height:40px; width:40px; }
+        .brand-word { font-family:'Jost', sans-serif; font-weight:400; font-size:12.5px; line-height:1; letter-spacing:.34em; text-transform:uppercase; color:#0A1830; white-space:nowrap; position:relative; padding-bottom:7px; }
+        .brand-word::after { content:""; position:absolute; left:0; bottom:0; width:22px; height:1px; background:#E8651A; }
+        .brand.on-dark .brand-word { color:#fff; }
+        .brand.brand-lg { gap:14px; } .brand.brand-lg .brand-mark { height:48px; width:48px; } .brand.brand-lg .brand-word { font-size:13.5px; }
+        @media(max-width:680px){ .brand { gap:9px; } .brand-mark { height:32px; width:32px; } .brand-word { font-size:10.5px; letter-spacing:.26em; padding-bottom:6px; } }
+    </style>
 </head>
 <body>
 
@@ -354,15 +365,7 @@
 <div class="amb amb-2"></div>
 
 <nav id="nav">
-    <div class="nav-logos">
-        <a href="../">
-            <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="nav-logo">
-        </a>
-        <div class="nav-sep"></div>
-        <a href="../">
-            <img src="../Chazak Logo.png" alt="Mila Penn Chazak" class="nav-logo">
-        </a>
-    </div>
+    <div class="nav-logos"><a href="../" class="brand" aria-label="Mila Penn Chazak"><img src="../mpc-mark-navy.svg" alt="" class="brand-mark" width="100" height="100"><span class="brand-word">Mila Penn Chazak</span></a></div>
     <div class="nav-links">
         <a href="../#firm" class="nav-link">The Firm</a>
         <a href="../#portfolio" class="nav-link">Portfolio</a>
@@ -621,10 +624,7 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <div class="footer-logos">
-                    <img src="../Mila Penn Logo.png" alt="Mila Penn Chazak" class="footer-logo">
-                    <img src="../Chazak Logo.png" alt="Mila Penn Chazak" class="footer-logo">
-                </div>
+                <div class="footer-logos"><a href="../" class="brand brand-lg" aria-label="Mila Penn Chazak"><img src="../mpc-mark-navy.svg" alt="" class="brand-mark" width="100" height="100"><span class="brand-word">Mila Penn Chazak</span></a></div>
                 <p class="footer-blurb">A physician-led multifamily investment firm, creating real asset ownership for busy professionals.</p>
                 <div class="footer-addr">
                     7017 Berry Rd, Ste C1 PMB 1006<br>

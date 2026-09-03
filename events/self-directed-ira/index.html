@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
     <title>Self-Directed IRA Webinar with Jeff Minnick | Tuesday, September 1, 2026 | Mila Penn Chazak</title>
     <meta name="description" content="Tuesday, September 1, 2026 at 6:30 PM ET. Live on Zoom, complimentary. Jeff Minnick of Directed IRA explains how a self-directed IRA actually works: what the account can hold, how to move an old 401(k) without a tax bill, and the rules that cost people money when they learn them late. Hosted by the three founding principals of Mila Penn Chazak.">
     <link rel="canonical" href="https://www.milapennchazak.com/events/self-directed-ira/">
@@ -451,7 +454,15 @@
         /* ── CTA META ── */
         .cta-meta { margin-top:20px; font-size:13.5px; color:rgba(255,255,255,0.56); letter-spacing:.02em; }
 
-</style>
+        /* brand lockup (mpc-4g identity, 2026-09-03) */
+        .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+        .brand-mark { display:block; height:40px; width:40px; }
+        .brand-word { font-family:'Jost', sans-serif; font-weight:400; font-size:12.5px; line-height:1; letter-spacing:.34em; text-transform:uppercase; color:#0A1830; white-space:nowrap; position:relative; padding-bottom:7px; }
+        .brand-word::after { content:""; position:absolute; left:0; bottom:0; width:22px; height:1px; background:#E8651A; }
+        .brand.on-dark .brand-word { color:#fff; }
+        .brand.brand-lg { gap:14px; } .brand.brand-lg .brand-mark { height:48px; width:48px; } .brand.brand-lg .brand-word { font-size:13.5px; }
+        @media(max-width:680px){ .brand { gap:9px; } .brand-mark { height:32px; width:32px; } .brand-word { font-size:10.5px; letter-spacing:.26em; padding-bottom:6px; } }
+    </style>
 </head>
 <body>
 
@@ -459,15 +470,7 @@
 <div class="amb amb-2"></div>
 
 <nav id="nav">
-    <div class="nav-logos">
-        <a href="../../">
-            <img src="../../Mila-Penn-Logo.png" alt="Mila Penn Chazak" class="nav-logo">
-        </a>
-        <div class="nav-sep"></div>
-        <a href="../../">
-            <img src="../../Chazak-Logo.png" alt="Mila Penn Chazak" class="nav-logo">
-        </a>
-    </div>
+    <div class="nav-logos"><a href="../../" class="brand" aria-label="Mila Penn Chazak"><img src="../../mpc-mark-navy.svg" alt="" class="brand-mark" width="100" height="100"><span class="brand-word">Mila Penn Chazak</span></a></div>
     <div class="nav-links">
         <a href="../../#firm" class="nav-link">The Firm</a>
         <a href="../../#portfolio" class="nav-link">Portfolio</a>
@@ -898,10 +901,7 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <div class="footer-logos">
-                    <img src="../../Mila-Penn-Logo.png" alt="Mila Penn Chazak" class="footer-logo">
-                    <img src="../../Chazak-Logo.png" alt="Mila Penn Chazak" class="footer-logo">
-                </div>
+                <div class="footer-logos"><a href="../../" class="brand brand-lg" aria-label="Mila Penn Chazak"><img src="../../mpc-mark-navy.svg" alt="" class="brand-mark" width="100" height="100"><span class="brand-word">Mila Penn Chazak</span></a></div>
                 <p class="footer-blurb">A physician-led multifamily investment firm, creating real asset ownership for busy professionals.</p>
                 <div class="footer-addr">
                     7017 Berry Rd, Ste C1 PMB 1006<br>
