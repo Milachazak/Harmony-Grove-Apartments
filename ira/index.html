@@ -14,7 +14,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,7 +50,7 @@
             --glass-b: rgba(255,255,255,0.82);
             --r-card: 20px;
             --r-pill: 100px;
-            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-d: 'Newsreader', Georgia, serif;
             --ff-b: 'Jost', -apple-system, sans-serif;
         }
 
@@ -121,7 +121,7 @@
         .container { max-width:1200px; margin:0 auto; padding:0 48px; }
         .sec { padding:76px 0; }
         .sec-lbl { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
-        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,54px); font-weight:600; line-height:1.13; letter-spacing:-.012em; margin-bottom:22px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,54px); font-weight:500; line-height:1.13; letter-spacing:-.012em; margin-bottom:22px; }
         .sec-title em { font-style:italic; color:var(--orange); }
         .sec-body { font-size:17px; color:var(--t70); line-height:1.78; max-width:680px; }
         .rule { width:44px; height:2.5px; background:linear-gradient(90deg,var(--orange),transparent); margin-bottom:22px; border-radius:2px; }
@@ -198,7 +198,7 @@
         .ph::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 40%,rgba(18,68,245,0.20) 0%,transparent 66%); pointer-events:none; }
         .ph .container { position:relative; z-index:2; }
         .ph-tag { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(232,101,26,0.22); border:1px solid rgba(232,101,26,0.45); border-radius:var(--r-pill); font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:#FF9A60; margin-bottom:22px; }
-        .ph-title { font-family:var(--ff-d); font-size:clamp(38px,5vw,66px); font-weight:600; color:#fff; line-height:1.10; letter-spacing:-.018em; margin-bottom:20px; }
+        .ph-title { font-family:var(--ff-d); font-size:clamp(38px,5vw,66px); font-weight:500; color:#fff; line-height:1.10; letter-spacing:-.018em; margin-bottom:20px; }
         .ph-title em { font-style:italic; color:#FF9A60; }
         .ph-sub { font-size:17.5px; color:rgba(255,255,255,0.66); line-height:1.76; font-weight:300; max-width:660px; }
         .ph-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
@@ -209,7 +209,7 @@
         .cta-card { background:linear-gradient(135deg,#050E1F,#0A1830); border-radius:24px; padding:52px 44px; text-align:center; position:relative; overflow:hidden; }
         .cta-card::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%,rgba(232,101,26,0.15) 0%,transparent 64%); pointer-events:none; }
         .cta-inner { position:relative; z-index:2; }
-        .cta-card h2 { font-family:var(--ff-d); font-size:clamp(30px,3.8vw,48px); font-weight:600; color:#fff; margin-bottom:16px; line-height:1.12; }
+        .cta-card h2 { font-family:var(--ff-d); font-size:clamp(30px,3.8vw,48px); font-weight:500; color:#fff; margin-bottom:16px; line-height:1.12; }
         .cta-card h2 em { font-style:italic; color:#FF9A60; }
         .cta-card p { font-size:16.5px; color:rgba(255,255,255,0.62); max-width:560px; margin:0 auto 30px; line-height:1.74; font-weight:300; }
         .cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
@@ -229,11 +229,11 @@
         .mkt-card::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 25% 40%,rgba(232,101,26,0.16) 0%,transparent 62%); pointer-events:none; }
         .mkt-inner { position:relative; z-index:2; }
         .mkt-eyebrow { font-family:var(--ff-d); font-style:italic; font-size:14.5px; color:rgba(255,255,255,0.50); margin-bottom:8px; }
-        .mkt-title { font-family:var(--ff-d); font-size:clamp(26px,3.2vw,40px); font-weight:600; color:#fff; line-height:1.14; margin-bottom:32px; max-width:760px; }
+        .mkt-title { font-family:var(--ff-d); font-size:clamp(26px,3.2vw,40px); font-weight:500; color:#fff; line-height:1.14; margin-bottom:32px; max-width:760px; }
         .mkt-title em { font-style:italic; color:#FF9A60; }
         .mkt-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.10); border-radius:16px; overflow:hidden; }
         .mkt-stat { padding:26px 24px; background:#050E1F; }
-        .mkt-val { font-family:var(--ff-d); font-size:clamp(30px,3.4vw,46px); font-weight:700; line-height:1; margin-bottom:9px; color:#FF9A60; }
+        .mkt-val { font-family:var(--ff-d); font-size:clamp(30px,3.4vw,46px); font-weight:600; line-height:1; margin-bottom:9px; color:#FF9A60; }
         .mkt-val.blue { color:#5A9AFF; }
         .mkt-lbl { font-size:12px; color:rgba(255,255,255,0.52); letter-spacing:.03em; line-height:1.45; }
         .mkt-src { margin-top:22px; font-size:11.5px; color:rgba(255,255,255,0.38); line-height:1.65; }
@@ -244,7 +244,7 @@
         .ira-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:38px; }
         .ira-card { padding:32px 30px; }
         .ira-no { font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin-bottom:16px; }
-        .ira-card h3 { font-family:var(--ff-d); font-size:23px; font-weight:600; margin-bottom:11px; line-height:1.28; }
+        .ira-card h3 { font-family:var(--ff-d); font-size:23px; font-weight:500; margin-bottom:11px; line-height:1.28; }
         .ira-card p { font-size:14.5px; color:var(--t70); line-height:1.74; }
         @media(max-width:960px){ .ira-grid { grid-template-columns:1fr 1fr; } }
         @media(max-width:680px){ .ira-grid { grid-template-columns:1fr; } .ira-sec { padding:52px 0; } }
@@ -254,13 +254,13 @@
         .acct-band::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 50%,rgba(18,68,245,0.18) 0%,transparent 64%); pointer-events:none; }
         .acct-band .container { position:relative; z-index:2; }
         .acct-head { display:flex; align-items:flex-end; justify-content:space-between; gap:28px; flex-wrap:wrap; margin-bottom:34px; }
-        .acct-title { font-family:var(--ff-d); font-size:clamp(28px,3.6vw,44px); font-weight:600; color:#fff; line-height:1.14; }
+        .acct-title { font-family:var(--ff-d); font-size:clamp(28px,3.6vw,44px); font-weight:500; color:#fff; line-height:1.14; }
         .acct-title em { font-style:italic; color:#FF9A60; }
         .acct-note { font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.38); }
         .acct-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
         .acct { padding:26px 24px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.14); border-radius:16px; transition:background .3s, transform .3s; }
         .acct:hover { background:rgba(255,255,255,0.09); transform:translateY(-4px); }
-        .acct h4 { font-family:var(--ff-d); font-size:22px; font-weight:600; color:#fff; margin-bottom:8px; }
+        .acct h4 { font-family:var(--ff-d); font-size:22px; font-weight:500; color:#fff; margin-bottom:8px; }
         .acct p { font-size:13.5px; color:rgba(255,255,255,0.58); line-height:1.66; }
         .acct-foot { margin-top:26px; padding:20px 24px; background:rgba(232,101,26,0.12); border:1px solid rgba(232,101,26,0.32); border-radius:14px; font-size:14px; color:rgba(255,255,255,0.76); line-height:1.7; }
         @media(max-width:900px){ .acct-grid { grid-template-columns:1fr 1fr; } }
@@ -271,7 +271,7 @@
         .step-card { padding:30px 28px; }
         .step-no { font-family:var(--ff-d); font-size:46px; font-weight:300; color:rgba(232,101,26,0.55); line-height:1; margin-bottom:14px; }
         .step-lbl { font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin-bottom:11px; }
-        .step-card h3 { font-family:var(--ff-d); font-size:21px; font-weight:600; margin-bottom:10px; line-height:1.28; }
+        .step-card h3 { font-family:var(--ff-d); font-size:21px; font-weight:500; margin-bottom:10px; line-height:1.28; }
         .step-card p { font-size:14px; color:var(--t70); line-height:1.72; }
         @media(max-width:960px){ .step-grid { grid-template-columns:1fr 1fr; } }
         @media(max-width:560px){ .step-grid { grid-template-columns:1fr; } }
@@ -279,7 +279,7 @@
         /* candid caveats */
         .warn-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:38px; }
         .warn-card { padding:30px 32px; border-left:3px solid var(--orange); }
-        .warn-card h3 { font-family:var(--ff-d); font-size:22px; font-weight:600; margin-bottom:10px; line-height:1.3; }
+        .warn-card h3 { font-family:var(--ff-d); font-size:22px; font-weight:500; margin-bottom:10px; line-height:1.3; }
         .warn-card p { font-size:14.5px; color:var(--t70); line-height:1.74; }
         @media(max-width:760px){ .warn-grid { grid-template-columns:1fr; } }
 
@@ -351,7 +351,7 @@
         .cf-wrap.on-dark .cf-note { color:rgba(255,255,255,0.46); }
         .cf-done { text-align:center; max-width:520px; margin:0 auto; padding:14px 0; }
         .cf-done-tick { width:56px; height:56px; margin:0 auto 18px; border-radius:50%; background:rgba(232,101,26,0.16); border:1px solid rgba(232,101,26,0.44); color:#C84A10; font-size:26px; display:flex; align-items:center; justify-content:center; }
-        .cf-done h3 { font-family:var(--ff-d); font-size:29px; font-weight:600; margin-bottom:10px; line-height:1.2; }
+        .cf-done h3 { font-family:var(--ff-d); font-size:29px; font-weight:500; margin-bottom:10px; line-height:1.2; }
         .cf-done p { font-size:15px; line-height:1.74; }
         .cf-done h3 { color:var(--text); }
         .cf-done p { color:var(--t70); }

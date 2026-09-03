@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://www.milapennchazak.com/celebrate">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         :root {
@@ -19,7 +19,7 @@
             --text:#0A1628; --t70:rgba(10,22,40,0.70); --t50:rgba(10,22,40,0.50); --t30:rgba(10,22,40,0.30); --t10:rgba(10,22,40,0.10); --t06:rgba(10,22,40,0.06);
             --glass-b:rgba(255,255,255,0.82);
             --r-card:20px; --r-pill:100px;
-            --ff-d:'Cormorant Garamond', Georgia, serif;
+            --ff-d:'Newsreader', Georgia, serif;
             --ff-b:'Jost', -apple-system, sans-serif;
         }
         html { scroll-behavior:smooth; }
@@ -44,13 +44,13 @@
         #confetti { position:absolute; inset:0; z-index:1; pointer-events:none; }
         .hero-content { position:relative; z-index:2; max-width:1000px; margin:0 auto; padding:130px 48px 80px; width:100%; text-align:center; }
         .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; padding:7px 18px; margin-bottom:24px; background:rgba(232,101,26,0.22); border:1px solid rgba(232,101,26,0.45); border-radius:var(--r-pill); font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#FFB085; }
-        .hero-title { font-family:var(--ff-d); font-size:clamp(46px,7vw,92px); font-weight:600; line-height:1.06; letter-spacing:-.02em; margin-bottom:22px; color:#fff; }
+        .hero-title { font-family:var(--ff-d); font-size:clamp(46px,7vw,92px); font-weight:500; line-height:1.06; letter-spacing:-.02em; margin-bottom:22px; color:#fff; }
         .hero-title em { font-style:italic; color:#FF9A60; }
         .hero-sub { font-size:clamp(16px,1.9vw,19px); color:rgba(255,255,255,0.75); max-width:620px; margin:0 auto 30px; line-height:1.75; font-weight:300; }
         .hero-stats { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; margin:0 auto 36px; max-width:680px; }
         .hstat { padding:0 34px; }
         .hstat + .hstat { border-left:1px solid rgba(255,255,255,0.14); }
-        .hstat-val { font-family:var(--ff-d); font-size:clamp(34px,4.6vw,54px); font-weight:700; color:#fff; line-height:1; }
+        .hstat-val { font-family:var(--ff-d); font-size:clamp(34px,4.6vw,54px); font-weight:600; color:#fff; line-height:1; }
         .hstat-val .accent { color:#FF9A60; }
         .hstat-lbl { font-size:11.5px; color:rgba(255,255,255,0.55); letter-spacing:.10em; text-transform:uppercase; margin-top:8px; }
         .hero-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
@@ -63,7 +63,7 @@
         .sec { padding:72px 0; }
         .sec-head { text-align:center; margin-bottom:44px; }
         .sec-lbl { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
-        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,52px); font-weight:600; line-height:1.14; letter-spacing:-.012em; margin-bottom:18px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,52px); font-weight:500; line-height:1.14; letter-spacing:-.012em; margin-bottom:18px; }
         .sec-body { font-size:17px; color:var(--t70); line-height:1.78; max-width:620px; margin:0 auto; }
 
         /* WHAT TO EXPECT CARDS */
@@ -71,7 +71,7 @@
         .gc { background:rgba(255,255,255,0.55); backdrop-filter:blur(32px) saturate(220%); -webkit-backdrop-filter:blur(32px) saturate(220%); border:1px solid rgba(255,255,255,0.82); border-radius:var(--r-card); box-shadow:0 8px 32px rgba(10,22,40,0.07),inset 0 1px 0 rgba(255,255,255,0.96); }
         .exp-card { padding:34px 30px; text-align:center; }
         .exp-icon { font-size:38px; margin-bottom:16px; display:block; }
-        .exp-card h3 { font-family:var(--ff-d); font-size:22px; font-weight:600; margin-bottom:10px; }
+        .exp-card h3 { font-family:var(--ff-d); font-size:22px; font-weight:500; margin-bottom:10px; }
         .exp-card p { font-size:14.5px; color:var(--t70); line-height:1.7; }
         @media(max-width:820px){ .exp-grid { grid-template-columns:1fr; max-width:420px; margin:0 auto; } }
 
@@ -100,7 +100,7 @@
         .reg-error { font-size:13px; color:#C0392B; text-align:center; display:none; padding:8px 12px; background:rgba(192,57,43,0.08); border-radius:8px; border:1px solid rgba(192,57,43,0.20); }
         .reg-success { display:none; padding:52px 32px; text-align:center; flex-direction:column; align-items:center; }
         .reg-success-icon { font-size:56px; margin-bottom:18px; }
-        .reg-success h3 { font-family:var(--ff-d); font-size:28px; font-weight:600; margin-bottom:14px; }
+        .reg-success h3 { font-family:var(--ff-d); font-size:28px; font-weight:500; margin-bottom:14px; }
         .reg-success p { font-size:15px; color:var(--t70); line-height:1.75; max-width:380px; margin:0 auto 10px; }
         .reg-success .sig { font-size:13px; color:var(--t30); margin-top:8px; }
         @media(max-width:560px){ .reg-name-row { grid-template-columns:1fr; } .reg-form { padding:22px 20px; } }
@@ -109,15 +109,15 @@
         .ty-sec { background:linear-gradient(135deg,#050E1F,#0A1830); color:#fff; }
         .ty-head { text-align:center; margin-bottom:38px; }
         .ty-lbl { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#FF9A60; margin-bottom:14px; }
-        .ty-title { font-family:var(--ff-d); font-size:clamp(30px,4vw,48px); font-weight:600; color:#fff; margin-bottom:16px; }
+        .ty-title { font-family:var(--ff-d); font-size:clamp(30px,4vw,48px); font-weight:500; color:#fff; margin-bottom:16px; }
         .ty-body { font-size:16px; color:rgba(255,255,255,0.66); max-width:640px; margin:0 auto; line-height:1.78; font-weight:300; }
         .ty-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:12px; }
         .ty-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px 24px; }
-        .ty-name { font-family:var(--ff-d); font-size:20px; font-weight:600; color:#fff; margin-bottom:4px; }
+        .ty-name { font-family:var(--ff-d); font-size:20px; font-weight:500; color:#fff; margin-bottom:4px; }
         .ty-firm { font-size:12.5px; color:rgba(255,255,255,0.55); letter-spacing:.03em; }
         .ty-founders { text-align:center; margin-top:34px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.12); }
         .ty-founders .ty-lbl { color:rgba(255,255,255,0.45); }
-        .ty-founders-names { font-family:var(--ff-d); font-size:clamp(20px,2.6vw,28px); font-weight:500; color:#fff; font-style:italic; line-height:1.5; }
+        .ty-founders-names { font-family:var(--ff-d); font-size:clamp(20px,2.6vw,28px); font-weight:400; color:#fff; font-style:italic; line-height:1.5; }
         @media(max-width:760px){ .ty-grid { grid-template-columns:1fr; max-width:400px; margin:12px auto 0; } }
 
         /* FOOTER */

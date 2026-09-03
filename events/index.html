@@ -14,7 +14,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,7 +50,7 @@
             --glass-b: rgba(255,255,255,0.82);
             --r-card: 20px;
             --r-pill: 100px;
-            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-d: 'Newsreader', Georgia, serif;
             --ff-b: 'Jost', -apple-system, sans-serif;
         }
 
@@ -121,7 +121,7 @@
         .container { max-width:1200px; margin:0 auto; padding:0 48px; }
         .sec { padding:76px 0; }
         .sec-lbl { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
-        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,54px); font-weight:600; line-height:1.13; letter-spacing:-.012em; margin-bottom:22px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,54px); font-weight:500; line-height:1.13; letter-spacing:-.012em; margin-bottom:22px; }
         .sec-title em { font-style:italic; color:var(--orange); }
         .sec-body { font-size:17px; color:var(--t70); line-height:1.78; max-width:680px; }
         .rule { width:44px; height:2.5px; background:linear-gradient(90deg,var(--orange),transparent); margin-bottom:22px; border-radius:2px; }
@@ -198,7 +198,7 @@
         .ph::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 40%,rgba(18,68,245,0.20) 0%,transparent 66%); pointer-events:none; }
         .ph .container { position:relative; z-index:2; }
         .ph-tag { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(232,101,26,0.22); border:1px solid rgba(232,101,26,0.45); border-radius:var(--r-pill); font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:#FF9A60; margin-bottom:22px; }
-        .ph-title { font-family:var(--ff-d); font-size:clamp(38px,5vw,66px); font-weight:600; color:#fff; line-height:1.10; letter-spacing:-.018em; margin-bottom:20px; }
+        .ph-title { font-family:var(--ff-d); font-size:clamp(38px,5vw,66px); font-weight:500; color:#fff; line-height:1.10; letter-spacing:-.018em; margin-bottom:20px; }
         .ph-title em { font-style:italic; color:#FF9A60; }
         .ph-sub { font-size:17.5px; color:rgba(255,255,255,0.66); line-height:1.76; font-weight:300; max-width:660px; }
         .ph-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
@@ -209,7 +209,7 @@
         .cta-card { background:linear-gradient(135deg,#050E1F,#0A1830); border-radius:24px; padding:52px 44px; text-align:center; position:relative; overflow:hidden; }
         .cta-card::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%,rgba(232,101,26,0.15) 0%,transparent 64%); pointer-events:none; }
         .cta-inner { position:relative; z-index:2; }
-        .cta-card h2 { font-family:var(--ff-d); font-size:clamp(30px,3.8vw,48px); font-weight:600; color:#fff; margin-bottom:16px; line-height:1.12; }
+        .cta-card h2 { font-family:var(--ff-d); font-size:clamp(30px,3.8vw,48px); font-weight:500; color:#fff; margin-bottom:16px; line-height:1.12; }
         .cta-card h2 em { font-style:italic; color:#FF9A60; }
         .cta-card p { font-size:16.5px; color:rgba(255,255,255,0.62); max-width:560px; margin:0 auto 30px; line-height:1.74; font-weight:300; }
         .cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
@@ -231,7 +231,7 @@
         .ev-kind { font-size:10.5px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:var(--t50); }
         .ev-kind.hl { color:var(--orange); }
         .ev-body { padding:16px 26px 24px; display:flex; flex-direction:column; flex:1; }
-        .ev-title { font-family:var(--ff-d); font-size:23px; font-weight:600; line-height:1.28; margin-bottom:11px; }
+        .ev-title { font-family:var(--ff-d); font-size:23px; font-weight:500; line-height:1.28; margin-bottom:11px; }
         .ev-desc { font-size:14px; color:var(--t70); line-height:1.70; margin-bottom:20px; flex:1; }
         .ev-foot { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:16px; border-top:1px solid var(--t10); }
         .ev-meta { font-size:11.5px; color:var(--t40); letter-spacing:.03em; }
@@ -245,7 +245,7 @@
         .up-empty { padding:44px 46px; display:flex; align-items:center; gap:30px; flex-wrap:wrap; }
         .up-icon { width:66px; height:66px; border-radius:18px; background:var(--orange-dim); border:1px solid var(--orange-border); display:flex; align-items:center; justify-content:center; font-size:30px; flex-shrink:0; }
         .up-copy { flex:1; min-width:260px; }
-        .up-copy h3 { font-family:var(--ff-d); font-size:26px; font-weight:600; margin-bottom:10px; }
+        .up-copy h3 { font-family:var(--ff-d); font-size:26px; font-weight:500; margin-bottom:10px; }
         .up-copy p { font-size:15px; color:var(--t70); line-height:1.74; }
         @media(max-width:680px){ .up-empty { padding:30px 24px; gap:20px; } }
 
@@ -255,14 +255,14 @@
         .up-date::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%,rgba(232,101,26,0.26) 0%,transparent 66%); pointer-events:none; }
         .up-date > * { position:relative; z-index:2; }
         .up-dow { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,0.56); }
-        /* body font, not the display serif: Cormorant's "1" has no flag and reads
+        /* body font, not the display serif: a lone serif "1" has no flag and reads
            as a Roman numeral when it stands alone as a date */
         .up-day { font-family:var(--ff-b); font-size:56px; font-weight:600; letter-spacing:-.02em; line-height:1; color:#FF9A60; margin:8px 0 4px; }
         .up-mon { font-size:13px; color:rgba(255,255,255,0.78); }
         .up-time { margin-top:14px; padding:6px 14px; border-radius:var(--r-pill); background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.24); font-size:12px; white-space:nowrap; }
         .up-body { padding:30px 34px; }
         .up-badges { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
-        .up-body h3 { font-family:var(--ff-d); font-size:27px; font-weight:600; line-height:1.24; margin-bottom:10px; }
+        .up-body h3 { font-family:var(--ff-d); font-size:27px; font-weight:500; line-height:1.24; margin-bottom:10px; }
         .up-body > p { font-size:14.5px; color:var(--t70); line-height:1.72; margin-bottom:18px; }
         .up-foot { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; padding-top:15px; border-top:1px solid var(--t10); }
         .up-card:hover .ev-watch { color:var(--orange-dk); }
@@ -337,7 +337,7 @@
         .cf-wrap.on-dark .cf-note { color:rgba(255,255,255,0.46); }
         .cf-done { text-align:center; max-width:520px; margin:0 auto; padding:14px 0; }
         .cf-done-tick { width:56px; height:56px; margin:0 auto 18px; border-radius:50%; background:rgba(232,101,26,0.16); border:1px solid rgba(232,101,26,0.44); color:#C84A10; font-size:26px; display:flex; align-items:center; justify-content:center; }
-        .cf-done h3 { font-family:var(--ff-d); font-size:29px; font-weight:600; margin-bottom:10px; line-height:1.2; }
+        .cf-done h3 { font-family:var(--ff-d); font-size:29px; font-weight:500; margin-bottom:10px; line-height:1.2; }
         .cf-done p { font-size:15px; line-height:1.74; }
         .cf-done h3 { color:var(--text); }
         .cf-done p { color:var(--t70); }
@@ -399,7 +399,7 @@
         <div class="gc up-empty fu">
             <span style="font-size:40px;flex-shrink:0;">📅</span>
             <div>
-                <h3 style="font-family:var(--ff-d);font-size:26px;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:6px;">No sessions on the calendar right now.</h3>
+                <h3 style="font-family:var(--ff-d);font-size:26px;font-weight:500;color:var(--text);line-height:1.2;margin-bottom:6px;">No sessions on the calendar right now.</h3>
                 <p style="font-size:15px;color:var(--t70);line-height:1.7;max-width:640px;">The September 1 self-directed IRA session with Jeff Minnick of Directed IRA has moved into the replay library below, chapters and transcript included. The next live session will be posted here the moment it is scheduled.</p>
             </div>
         </div>
