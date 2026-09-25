@@ -568,7 +568,7 @@
             <div class="reg-copy">
                 <h2>Save your <em>seat.</em></h2>
                 <p>This workshop is for the Mila Penn Chazak community only. It is not open to the public.</p>
-                <p>Saving a seat takes one short email. We reply with your private Zoom link.</p>
+                <p>Registration takes about 20 seconds. Your Zoom link arrives in your inbox right away.</p>
                 <div class="cd" id="countdown" hidden>
                     <div class="cd-unit"><div class="cd-num" id="cd-d">0</div><div class="cd-lbl">Days</div></div>
                     <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Hours</div></div>
@@ -583,13 +583,31 @@
                     <div class="reg-when">Thursday, October 8, 2026</div>
                     <div class="reg-when-sub">6:30&nbsp;PM&nbsp;ET &middot; 70&nbsp;minutes &middot; Live&nbsp;on&nbsp;Zoom</div>
 
-                    <ol class="rsvp-steps">
-                        <li>Tap the button below.</li>
-                        <li>Send the short email it opens.</li>
-                        <li>We reply with your Zoom link.</li>
-                    </ol>
-                    <a href="mailto:invest@milapennchazak.com?subject=Save%20my%20seat%3A%20The%20Wealth%20Gap%20%28Oct%208%29&amp;body=Hi%20team%2C%0A%0APlease%20save%20me%20a%20seat%20for%20The%20Wealth%20Gap%20workshop%20with%20Derick%20Van%20Ness%20on%20Thursday%20October%208%20at%206%3A30%20PM%20ET.%0A%0AName%3A%0APhone%3A%0A%0AThank%20you%21" class="btn btn-orange-lg rsvp-btn">Save My Seat &rarr;</a>
-                    <p class="reg-note">No email app on this device? Write to <a href="mailto:invest@milapennchazak.com">invest@milapennchazak.com</a> with the subject &ldquo;Save my seat&rdquo;.</p>
+                    <div id="reg-form-wrap">
+                        <form action="https://tenthavenue.io/api/forms/the-wealth-gap-with-derick-van-2133/submit" method="POST" class="ta-form" novalidate>
+                        <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label></div>
+                        <h2 class="ta-form__title">The Wealth Gap · with Derick Van Ness</h2>
+                        <p class="ta-form__desc">Save your seat: Thu, Oct 8, 6:30 PM.</p>
+                        <div class="ta-form__field"><label for="f_first_name" class="ta-form__label">First name *</label><input id="f_first_name" type="text" name="first_name"  required></div>
+                        <div class="ta-form__field"><label for="f_last_name" class="ta-form__label">Last name *</label><input id="f_last_name" type="text" name="last_name"  required></div>
+                        <div class="ta-form__field"><label for="f_email" class="ta-form__label">Email *</label><input id="f_email" type="email" name="email"  required></div>
+                        <div class="ta-form__field"><label for="f_field_sggof" class="ta-form__label">Phone *</label><div class="ta-form__phone"><select name="field_sggof__country" class="ta-form__phone-country" aria-label="Country code"><option value="US">United States (+1)</option><option value="CA">Canada (+1)</option><option value="GB">United Kingdom (+44)</option><option value="AU">Australia (+61)</option><option value="IN">India (+91)</option><option value="AE">United Arab Emirates (+971)</option><option value="DE">Germany (+49)</option><option value="FR">France (+33)</option><option value="ES">Spain (+34)</option><option value="IT">Italy (+39)</option><option value="NL">Netherlands (+31)</option><option value="IE">Ireland (+353)</option><option value="NZ">New Zealand (+64)</option><option value="SG">Singapore (+65)</option><option value="HK">Hong Kong (+852)</option><option value="ZA">South Africa (+27)</option><option value="NG">Nigeria (+234)</option><option value="KE">Kenya (+254)</option><option value="MX">Mexico (+52)</option><option value="BR">Brazil (+55)</option><option value="AR">Argentina (+54)</option><option value="JP">Japan (+81)</option><option value="CN">China (+86)</option><option value="KR">South Korea (+82)</option><option value="SA">Saudi Arabia (+966)</option><option value="PK">Pakistan (+92)</option><option value="BD">Bangladesh (+880)</option><option value="PH">Philippines (+63)</option><option value="SE">Sweden (+46)</option><option value="CH">Switzerland (+41)</option></select><input id="f_field_sggof" type="tel" inputmode="tel" name="field_sggof" placeholder="Phone number" required></div></div>
+                        <button type="submit" class="ta-form__submit">Save My Seat &rarr;</button>
+                        </form>
+                        <div class="reg-error" id="reg-error" hidden role="alert"></div>
+                        <noscript>
+                            <p class="reg-note">This form needs JavaScript. If it is switched off <a href="https://tenthavenue.io/f/the-wealth-gap-with-derick-van-2133" target="_blank" rel="noopener">register on our booking page instead</a>.</p>
+                        </noscript>
+                    </div>
+
+                    <div class="reg-done" id="reg-done" hidden>
+                        <div class="reg-done-tick">✓</div>
+                        <h3>Your seat is saved.</h3>
+                        <p id="reg-done-msg">Check your inbox for the Zoom link and the calendar hold.</p>
+                        <a class="btn btn-orange-lg" id="reg-done-link" hidden target="_blank" rel="noopener">Open your join link &rarr;</a>
+                    </div>
+
+                    <p class="reg-note" id="reg-note">By registering you agree to receive the join link and reminders for this session.</p>
                 </div>
             </div>
         </div>
@@ -1001,6 +1019,59 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
     tick();
     setInterval(tick, 1000);
+})();
+
+/* Registration. The builder's embed is a plain <form> that POSTs to its API and
+   answers with JSON, so a native submit would land the visitor on a raw JSON
+   blob. Intercept it, post the same urlencoded body over fetch, and render the
+   confirmation in place. Any failure falls back to the hosted form or email. */
+(function () {
+    const form = document.querySelector('#reg-form-wrap .ta-form');
+    if (!form) return;
+    const wrap = document.getElementById('reg-form-wrap');
+    const errBox = document.getElementById('reg-error');
+    const done = document.getElementById('reg-done');
+    const doneMsg = document.getElementById('reg-done-msg');
+    const doneLink = document.getElementById('reg-done-link');
+    const note = document.getElementById('reg-note');
+    const btn = form.querySelector('.ta-form__submit');
+    const btnText = btn ? btn.textContent : 'Submit';
+    const HOSTED = 'https://tenthavenue.io/f/the-wealth-gap-with-derick-van-2133';
+    function findUrl(v, depth) {
+        if (depth > 4 || v == null) return null;
+        if (typeof v === 'string') return /^https?:\/\//.test(v.trim()) ? v.trim() : null;
+        if (Array.isArray(v)) { for (const x of v) { const u = findUrl(x, depth + 1); if (u) return u; } return null; }
+        if (typeof v === 'object') { for (const k in v) { const u = findUrl(v[k], depth + 1); if (u) return u; } }
+        return null;
+    }
+    function fail(msg) {
+        errBox.innerHTML = msg + ' You can also <a href="' + HOSTED + '" target="_blank" rel="noopener">register here</a> or email <a href="mailto:invest@milapennchazak.com">invest@milapennchazak.com</a>.';
+        errBox.hidden = false;
+        if (btn) { btn.disabled = false; btn.textContent = btnText; }
+    }
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        errBox.hidden = true;
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (btn) { btn.disabled = true; btn.textContent = 'Saving your seat...'; }
+        let res, data;
+        try {
+            res = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+                body: new URLSearchParams(new FormData(form)).toString()
+            });
+            data = await res.json();
+        } catch (err) { fail('We could not reach the registration service just now.'); return; }
+        if (!res.ok || !data || data.ok === false) { fail((data && (data.message || data.error)) || 'That did not go through.'); return; }
+        if (data.message) doneMsg.textContent = data.message;
+        const url = findUrl(data, 0);
+        if (url) { doneLink.href = url; doneLink.hidden = false; }
+        wrap.hidden = true;
+        done.hidden = false;
+        if (note) note.textContent = 'A confirmation is on its way. Not there in a few minutes? Check spam or email invest@milapennchazak.com.';
+        done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
 })();
 </script>
 
