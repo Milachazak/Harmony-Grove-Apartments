@@ -262,6 +262,15 @@
         .ph-title .line { display:block; }
         .ph-sub + .ph-sub { margin-top:16px; }
         .ph-meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+        /* purpose highlight (Dr. Kirk, 2026-10-26: workforce housing, purpose and profit) */
+        .ph-purpose { display:flex; gap:16px; align-items:flex-start; max-width:620px; margin-top:26px; padding:18px 22px 18px 18px; border-radius:18px;
+            background:linear-gradient(135deg,rgba(232,101,26,0.16),rgba(232,101,26,0.05)); border:1px solid rgba(255,154,96,0.34); border-left:3px solid #FF9A60; }
+        .ph-purpose-ic { flex:0 0 44px; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(255,154,96,0.16); border:1px solid rgba(255,154,96,0.40); color:#FF9A60; }
+        .ph-purpose-ic svg { width:22px; height:22px; }
+        .ph-purpose-lbl { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#FF9A60; margin-bottom:6px; }
+        .ph-purpose p { font-size:16px; line-height:1.6; color:rgba(255,255,255,0.88); font-weight:400; }
+        .ph-purpose p b { color:#fff; font-weight:600; }
+        @media(max-width:680px){ .ph-purpose { padding:16px 16px 16px 14px; gap:12px; } .ph-purpose-ic { flex-basis:38px; width:38px; height:38px; } .ph-purpose p { font-size:15px; } }
         .ph-pill { display:inline-flex; align-items:center; gap:9px; padding:10px 18px; border-radius:var(--r-pill); background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.20); font-size:13.5px; color:rgba(255,255,255,0.86); }
         .ph-pill b { font-weight:600; color:#fff; }
         .ph-hosts { display:flex; align-items:center; gap:14px; margin-top:28px; flex-wrap:wrap; }
@@ -589,6 +598,13 @@
                 <h1 class="ph-title"><span class="line">Super Bowl champion.</span><em class="line">Real estate investor.</em></h1>
                 <p class="ph-sub">Kenny Anunike was on the Denver Broncos team that won Super Bowl 50. Before the NFL he studied anatomy at Duke. He planned to become a heart surgeon. After football he and his wife began building a real estate portfolio. Today he invests in single family homes and multifamily apartments.</p>
                 <p class="ph-sub">On November 5 he sits down with <strong style="color:rgba(255,255,255,0.92);font-weight:600;">Dr. Kirk Campbell</strong> for one hour. Live. You will hear the money lessons the league taught him. And what he has learned investing in single family and multifamily real estate.</p>
+                <div class="ph-purpose">
+                    <div class="ph-purpose-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg></div>
+                    <div>
+                        <div class="ph-purpose-lbl">Investing with purpose</div>
+                        <p>Kenny invests in <b>workforce housing in his community</b>. He is proof you can invest for both purpose and profit.</p>
+                    </div>
+                </div>
                 <div class="ph-meta">
                     <span class="ph-pill">📅 <b>Thursday, November 5, 2026</b></span>
                     <span class="ph-pill">🕡 <b>6:30 PM ET</b> &middot; 60 minutes</span>
@@ -843,7 +859,7 @@
                 <div class="spk-role">Super Bowl 50 Champion &middot; Former NFL Defensive End</div>
                 <p>Kenny made the Denver Broncos in 2014 as an undrafted free agent. He played defensive end and wore number 91. He was on the Broncos team that won Super Bowl 50.</p>
                 <p>Before the NFL he starred at Duke. He was named All-ACC. He left as the school's career sacks leader. He earned a degree in biological anthropology and anatomy. He was studying to become a heart surgeon.</p>
-                <p>After the NFL he coached at Ohio State and Fordham. At Ohio State he worked with future NFL stars Chase Young and Nick Bosa. He also earned master's degrees at Duke and Ohio State. Today he and his wife are building a real estate portfolio of their own. He invests in single family homes and multifamily apartments.</p>
+                <p>After the NFL he coached at Ohio State and Fordham. At Ohio State he worked with future NFL stars Chase Young and Nick Bosa. He also earned master's degrees at Duke and Ohio State. Today he and his wife are building a real estate portfolio of their own. He invests in single family homes and multifamily apartments. He also invests in workforce housing in his community. For Kenny, real estate is about purpose and profit.</p>
                 <div class="spk-pull">He played at the highest level. Now he plays a longer game.</div>
                 <div class="spk-creds">
                     <span class="spk-cred">Super Bowl 50 champion</span>
@@ -852,6 +868,7 @@
                     <span class="spk-cred">Coached at Ohio State and Fordham</span>
                     <span class="spk-cred">Real estate investor and developer</span>
                     <span class="spk-cred">Single family and multifamily</span>
+                    <span class="spk-cred">Workforce housing in his community</span>
                 </div>
             </div>
         </div>
