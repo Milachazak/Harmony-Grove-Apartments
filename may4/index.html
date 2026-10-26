@@ -292,6 +292,20 @@
         .brand-img { display:block; height:52px; width:auto; }
         .brand.brand-lg .brand-img { height:58px; }
         @media(max-width:680px){ .brand-img { height:40px; } .brand.brand-lg .brand-img { height:46px; } }
+        /* ── MOBILE FIX: cheat sheet rows (apply_mobile_fixes.py) ── */
+        @media(max-width:600px){
+            .cheat-row { display:grid; grid-template-columns:minmax(0,42%) minmax(0,1fr); gap:14px; align-items:baseline; }
+            .cheat-key { max-width:none; }
+            .cheat-val { text-align:left; }
+        }
+        /* ── MOBILE FIX: replay nav button (apply_mobile_fixes.py) ── */
+        @media(max-width:520px){
+            #nav { gap:12px; }
+            #nav .brand-img { height:34px; }
+            .nav-cta { padding:10px 16px; font-size:12.5px; white-space:nowrap; }
+            .nav-cta-long { display:none; }
+            .nav-cta-extra { display:none; }
+        }
     </style>
 </head>
 <body>
@@ -303,8 +317,8 @@
 <nav id="nav">
     <div class="nav-logos"><a href="../" class="brand" aria-label="Mila Penn Chazak"><img src="../mpc-lockup-navy.png" alt="Mila Penn Chazak" class="brand-img" width="1400" height="342"></a></div>
     <div class="nav-badge">May 4, 2026 Recording</div>
-    <a href="../harmonygrove/" class="nav-cta">Register for May 12th →</a>
-    <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="nav-cta" style="background:linear-gradient(135deg,#1A52FF,#0A2ECC);color:#fff;border-color:transparent;margin-left:8px;">Create your investment account</a>
+    <a href="../harmonygrove/" class="nav-cta nav-cta-extra">Register for May 12th →</a>
+    <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="nav-cta" style="background:linear-gradient(135deg,#1A52FF,#0A2ECC);color:#fff;border-color:transparent;margin-left:8px;">Create <span class="nav-cta-long">your investment </span>account</a>
 </nav>
 
 <!-- HERO -->

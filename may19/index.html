@@ -246,6 +246,35 @@
         .brand-img { display:block; height:52px; width:auto; }
         .brand.brand-lg .brand-img { height:58px; }
         @media(max-width:680px){ .brand-img { height:40px; } .brand.brand-lg .brand-img { height:46px; } }
+        /* ── MOBILE FIX: cheat sheet rows (apply_mobile_fixes.py) ── */
+        @media(max-width:600px){
+            .cheat-row { display:grid; grid-template-columns:minmax(0,42%) minmax(0,1fr); gap:14px; align-items:baseline; }
+            .cheat-key { max-width:none; }
+            .cheat-val { text-align:left; }
+        }
+        /* ── MOBILE FIX: snapshot grid (apply_mobile_fixes.py) ── */
+        .snap-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:8px; }
+        .snap-grid > div { min-width:0; }
+        @media(max-width:700px){ .snap-grid { grid-template-columns:1fr; gap:8px; } }
+        /* ── MOBILE FIX: replay tables and stats (apply_mobile_fixes.py) ── */
+        @media(max-width:520px){
+            .stat-item { padding:24px 10px; min-width:0; }
+            .stat-lbl { font-size:11px; letter-spacing:.06em; }
+            .class-table th, .class-table td { padding:12px 10px; }
+            .class-table th { font-size:10px; letter-spacing:.06em; }
+            .data-table th, .data-table td { padding:10px 8px; font-size:12.5px; }
+            .data-table th { font-size:10px; letter-spacing:.06em; }
+        }
+        /* ── MOBILE FIX: renovation roadmap (apply_mobile_fixes.py) ── */
+        @media(max-width:600px){ .reno-item { grid-template-columns:1fr; gap:6px; padding:20px 0; } }
+        /* ── MOBILE FIX: replay nav button (apply_mobile_fixes.py) ── */
+        @media(max-width:520px){
+            #nav { gap:12px; }
+            #nav .brand-img { height:34px; }
+            .nav-cta { padding:10px 16px; font-size:12.5px; white-space:nowrap; }
+            .nav-cta-long { display:none; }
+            .nav-cta-extra { display:none; }
+        }
     </style>
 </head>
 <body>
@@ -256,7 +285,7 @@
 <nav id="nav">
     <div class="nav-logos"><a href="../" class="brand" aria-label="Mila Penn Chazak"><img src="../mpc-lockup-navy.png" alt="Mila Penn Chazak" class="brand-img" width="1400" height="342"></a></div>
     <div class="nav-badge">May 19, 2026 Recording</div>
-    <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="nav-cta">Create your investment account</a>
+    <a href="https://milapenncapital.cashflowportal.com/offering/eeea5de3a7b94026a84a9f5efb78372a" target="_blank" rel="noopener" class="nav-cta">Create <span class="nav-cta-long">your investment </span>account</a>
 </nav>
 
 <!-- HERO -->
@@ -378,7 +407,7 @@
         <div class="sec-lbl fu">Property Details</div>
         <h2 class="sec-title fu">The asset, <em>by the numbers</em></h2>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px;" class="fu">
+        <div class="fu snap-grid">
             <div>
                 <p style="font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--t50);margin-bottom:8px;">Asset Snapshot</p>
                 <table class="data-table">

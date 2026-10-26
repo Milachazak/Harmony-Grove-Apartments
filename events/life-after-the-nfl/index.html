@@ -7,19 +7,19 @@
     <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
     <title>Life After the NFL with Super Bowl 50 Champion Kenny Anunike | Thursday, November 5, 2026 | Mila Penn Chazak</title>
-    <meta name="description" content="Thursday, November 5, 2026 at 6:30 PM ET. A free 60-minute live conversation on Zoom, open to all. Super Bowl 50 champion Kenny Anunike talks with Dr. Kirk Campbell about money lessons from the NFL and building wealth through multifamily real estate.">
+    <meta name="description" content="Thursday, November 5, 2026 at 6:30 PM ET. A free 60-minute live conversation on Zoom, open to all. Super Bowl 50 champion Kenny Anunike talks with Dr. Kirk Campbell about money lessons from the NFL and building wealth through single family and multifamily real estate.">
     <link rel="canonical" href="https://www.milapennchazak.com/events/life-after-the-nfl/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.milapennchazak.com/events/life-after-the-nfl/">
     <meta property="og:site_name" content="Mila Penn Chazak">
     <meta property="og:title" content="Life After the NFL · A live conversation with Super Bowl 50 champion Kenny Anunike">
-    <meta property="og:description" content="Thursday, November 5, 2026 at 6:30 PM ET. A free 60-minute live conversation on Zoom, open to all. Super Bowl 50 champion Kenny Anunike talks with Dr. Kirk Campbell about money lessons from the NFL and building wealth through multifamily real estate.">
+    <meta property="og:description" content="Thursday, November 5, 2026 at 6:30 PM ET. A free 60-minute live conversation on Zoom, open to all. Super Bowl 50 champion Kenny Anunike talks with Dr. Kirk Campbell about money lessons from the NFL and building wealth through single family and multifamily real estate.">
     <meta property="og:image" content="https://www.milapennchazak.com/nfl-webinar-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Life After the NFL · A live conversation with Super Bowl 50 champion Kenny Anunike">
-    <meta name="twitter:description" content="Thursday, November 5, 2026 at 6:30 PM ET. A free 60-minute live conversation on Zoom, open to all. Super Bowl 50 champion Kenny Anunike talks with Dr. Kirk Campbell about money lessons from the NFL and building wealth through multifamily real estate.">
+    <meta name="twitter:description" content="Thursday, November 5, 2026 at 6:30 PM ET. A free 60-minute live conversation on Zoom, open to all. Super Bowl 50 champion Kenny Anunike talks with Dr. Kirk Campbell about money lessons from the NFL and building wealth through single family and multifamily real estate.">
     <meta name="twitter:image" content="https://www.milapennchazak.com/nfl-webinar-og.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "Life After the NFL: Building Wealth Through Multifamily Real Estate",
-  "description": "A free 60-minute live conversation, open to all, with Super Bowl 50 champion Kenny Anunike and Dr. Kirk Campbell: his road from Duke to the NFL, the money lessons of a pro career and why he chose multifamily real estate. Hosted by the founding principals of Mila Penn Chazak.",
+  "description": "A free 60-minute live conversation, open to all, with Super Bowl 50 champion Kenny Anunike and Dr. Kirk Campbell: his road from Duke to the NFL, the money lessons of a pro career and what he has learned investing in single family and multifamily real estate. Hosted by the founding principals of Mila Penn Chazak.",
   "startDate": "2026-11-05T18:30:00-05:00",
   "endDate": "2026-11-05T19:30:00-05:00",
   "eventStatus": "https://schema.org/EventScheduled",
@@ -514,6 +514,39 @@
         @media(max-width:680px){ .brand-img { height:40px; } .brand.brand-lg .brand-img { height:46px; } }
         @media (prefers-reduced-motion: reduce){ .field img, .team-photo { transition:none; } }
 
+        /* ── MOBILE MENU (apply_mobile_nav.py) ── */
+        .nav-burger { display:none; position:relative; width:44px; height:44px; flex:0 0 44px; padding:0; border-radius:50%; border:1px solid var(--t10); background:rgba(255,255,255,0.72); cursor:pointer; -webkit-tap-highlight-color:transparent; }
+        .nav-burger span { position:absolute; left:12px; width:18px; height:2px; border-radius:2px; background:var(--navy); transition:transform .28s ease, opacity .2s ease, top .28s ease; }
+        .nav-burger span:nth-child(1) { top:14px; }
+        .nav-burger span:nth-child(2) { top:20px; }
+        .nav-burger span:nth-child(3) { top:26px; }
+        #nav.nav-open .nav-burger span:nth-child(1) { top:20px; transform:rotate(45deg); }
+        #nav.nav-open .nav-burger span:nth-child(2) { opacity:0; }
+        #nav.nav-open .nav-burger span:nth-child(3) { top:20px; transform:rotate(-45deg); }
+        .nav-burger:focus-visible { outline:2px solid var(--blue); outline-offset:3px; }
+        @media(max-width:1180px){
+            .nav-burger { display:block; }
+            #nav .nav-links { position:absolute; top:calc(100% + 8px); left:12px; right:12px; flex-direction:column; gap:0; padding:8px; background:#fff; border:1px solid var(--t06); border-radius:22px; box-shadow:0 24px 64px rgba(10,22,40,0.18); max-height:calc(100vh - 110px); overflow-y:auto; }
+            #nav.nav-open .nav-links { display:flex; animation:navDrop .22s ease; }
+            /* dims the page under the open menu and catches the tap that closes it (the nav's backdrop-filter makes it the containing block) */
+            #nav.nav-open::after { content:""; position:fixed; left:0; right:0; top:100%; height:100vh; z-index:-1; background:rgba(5,14,31,0.30); }
+            #nav .nav-links .nav-link { display:block; padding:15px 18px; font-size:16px; color:var(--text); border-radius:14px; }
+            #nav .nav-links .nav-link + .nav-link { border-top:1px solid var(--t06); }
+            #nav .nav-links .nav-link:active { background:var(--t06); }
+        }
+        /* when logo + button + burger do not fit (measured by the script), the button moves into the panel */
+        .nav-menu-cta { display:none; }
+        #nav.nav-tight .nav-actions .btn { display:none; }
+        #nav.nav-tight .nav-links .nav-menu-cta { display:block; margin:10px 6px 6px; text-align:center; }
+        @keyframes navDrop { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
+        @media(max-width:480px){
+            #nav { padding:12px 16px; }
+            #nav .brand-img { height:34px; }
+            #nav .nav-actions { gap:8px; }
+            #nav .nav-actions .btn { padding:11px 18px; font-size:13px; white-space:nowrap; }
+        }
+        @media (prefers-reduced-motion: reduce){ #nav.nav-open .nav-links { animation:none; } .nav-burger span { transition:none; } }
+        /* ── /MOBILE MENU ── */
     </style>
 </head>
 <body>
@@ -523,16 +556,18 @@
 
 <nav id="nav">
     <div class="nav-logos"><a href="../../" class="brand" aria-label="Mila Penn Chazak"><img src="../../mpc-lockup-navy.png" alt="Mila Penn Chazak" class="brand-img" width="1400" height="342"></a></div>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-menu">
         <a href="../../#firm" class="nav-link">The Firm</a>
         <a href="../../#portfolio" class="nav-link">Portfolio</a>
         <a href="../../events/" class="nav-link" style="color:var(--text);font-weight:600;">Events</a>
         <a href="../../ira/" class="nav-link">Invest with your IRA</a>
         <a href="../../knowledge-base/" class="nav-link">Knowledge Base</a>
         <a href="../../#team-section" class="nav-link">Team</a>
+        <a href="#register" class="btn btn-primary nav-menu-cta">Save My Seat &rarr;</a>
     </div>
     <div class="nav-actions">
         <a href="#register" class="btn btn-primary">Save My Seat &rarr;</a>
+        <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
 
@@ -545,8 +580,8 @@
                 <div class="ph-tag">🏈 Live Fireside Chat &middot; Thu, Nov 5</div>
                 <div class="ph-kicker"><b>Life After the NFL</b> &middot; with Kenny Anunike</div>
                 <h1 class="ph-title"><span class="line">Super Bowl champion.</span><em class="line">Real estate investor.</em></h1>
-                <p class="ph-sub">Kenny Anunike was on the Denver Broncos team that won Super Bowl 50. Before the NFL he studied anatomy at Duke. He planned to become a heart surgeon. After football he and his wife began building a real estate portfolio.</p>
-                <p class="ph-sub">On November 5 he sits down with <strong style="color:rgba(255,255,255,0.92);font-weight:600;">Dr. Kirk Campbell</strong> for one hour. Live. You will hear the money lessons the league taught him. And why he chose multifamily real estate to build wealth for his family.</p>
+                <p class="ph-sub">Kenny Anunike was on the Denver Broncos team that won Super Bowl 50. Before the NFL he studied anatomy at Duke. He planned to become a heart surgeon. After football he and his wife began building a real estate portfolio. Today he invests in single family homes and multifamily apartments.</p>
+                <p class="ph-sub">On November 5 he sits down with <strong style="color:rgba(255,255,255,0.92);font-weight:600;">Dr. Kirk Campbell</strong> for one hour. Live. You will hear the money lessons the league taught him. And what he has learned investing in single family and multifamily real estate.</p>
                 <div class="ph-meta">
                     <span class="ph-pill">📅 <b>Thursday, November 5, 2026</b></span>
                     <span class="ph-pill">🕡 <b>6:30 PM ET</b> &middot; 60 minutes</span>
@@ -589,7 +624,7 @@
             <div class="cred"><b>Super Bowl 50</b><span>Champion with the Denver Broncos</span></div>
             <div class="cred"><b>#91</b><span>NFL defensive end</span></div>
             <div class="cred"><b>Duke</b><span>All-ACC and an anatomy degree</span></div>
-            <div class="cred"><b>Real estate</b><span>Investor and developer</span></div>
+            <div class="cred"><b>Real estate</b><span>Single family and multifamily</span></div>
         </div>
     </div>
 </section>
@@ -601,7 +636,7 @@
             <div class="reg-copy">
                 <h2>One hour with <em>a champion.</em></h2>
                 <p>This conversation is free and open to all. Share it with a friend who loves the game.</p>
-                <p>Saving a seat takes one short email. We reply with your private Zoom link.</p>
+                <p>Registration takes about 20 seconds. Your Zoom link arrives in your inbox right away.</p>
                 <div class="cd" id="countdown" hidden>
                     <div class="cd-unit"><div class="cd-num" id="cd-d">0</div><div class="cd-lbl">Days</div></div>
                     <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Hours</div></div>
@@ -616,13 +651,32 @@
                     <div class="reg-when">Thursday, November 5, 2026</div>
                     <div class="reg-when-sub">6:30&nbsp;PM&nbsp;ET &middot; 60&nbsp;minutes &middot; Live&nbsp;on&nbsp;Zoom</div>
 
-                    <ol class="rsvp-steps">
-                        <li>Tap the button below.</li>
-                        <li>Send the short email it opens.</li>
-                        <li>We reply with your Zoom link.</li>
-                    </ol>
-                    <a href="mailto:invest@milapennchazak.com?subject=Save%20my%20seat%3A%20Life%20After%20the%20NFL%20with%20Kenny%20Anunike%20%28Nov%205%29&amp;body=Hi%20team%2C%0A%0APlease%20save%20me%20a%20seat%20for%20Life%20After%20the%20NFL%20with%20Kenny%20Anunike%20on%20Thursday%20November%205%20at%206%3A30%20PM%20ET.%0A%0AName%3A%0APhone%3A%0A%0AThank%20you%21" class="btn btn-orange-lg rsvp-btn">Save My Seat &rarr;</a>
-                    <p class="reg-note">No email app on this device? Write to <a href="mailto:invest@milapennchazak.com">invest@milapennchazak.com</a> with the subject &ldquo;Save my seat&rdquo;.</p>
+                    <div id="reg-form-wrap">
+                        <form action="https://tenthavenue.io/api/forms/super-bowl-champion-to-real-es-c353/submit" method="POST" class="ta-form" novalidate>
+                        <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label></div>
+                        <h2 class="ta-form__title">Super Bowl champion to real estate investor.</h2>
+                        <p class="ta-form__desc">Save your seat: Thu, Nov 5, 6:30 PM.</p>
+                        <div class="ta-form__field"><label for="f_first_name" class="ta-form__label">First name *</label><input id="f_first_name" type="text" name="first_name"  required></div>
+                        <div class="ta-form__field"><label for="f_last_name" class="ta-form__label">Last name *</label><input id="f_last_name" type="text" name="last_name"  required></div>
+                        <div class="ta-form__field"><label for="f_email" class="ta-form__label">Email *</label><input id="f_email" type="email" name="email"  required></div>
+                        <div class="ta-form__field"><label for="f_phone" class="ta-form__label">Mobile number</label><div class="ta-form__phone"><select name="phone__country" class="ta-form__phone-country" aria-label="Country code"><option value="US">United States (+1)</option><option value="CA">Canada (+1)</option><option value="GB">United Kingdom (+44)</option><option value="AU">Australia (+61)</option><option value="IN">India (+91)</option><option value="AE">United Arab Emirates (+971)</option><option value="DE">Germany (+49)</option><option value="FR">France (+33)</option><option value="ES">Spain (+34)</option><option value="IT">Italy (+39)</option><option value="NL">Netherlands (+31)</option><option value="IE">Ireland (+353)</option><option value="NZ">New Zealand (+64)</option><option value="SG">Singapore (+65)</option><option value="HK">Hong Kong (+852)</option><option value="ZA">South Africa (+27)</option><option value="NG">Nigeria (+234)</option><option value="KE">Kenya (+254)</option><option value="MX">Mexico (+52)</option><option value="BR">Brazil (+55)</option><option value="AR">Argentina (+54)</option><option value="JP">Japan (+81)</option><option value="CN">China (+86)</option><option value="KR">South Korea (+82)</option><option value="SA">Saudi Arabia (+966)</option><option value="PK">Pakistan (+92)</option><option value="BD">Bangladesh (+880)</option><option value="PH">Philippines (+63)</option><option value="SE">Sweden (+46)</option><option value="CH">Switzerland (+41)</option></select><input id="f_phone" type="tel" inputmode="tel" name="phone" placeholder="Phone number" ></div><small class="ta-form__helper">For event reminders by text.</small></div>
+                        <div class="ta-form__field"><label class="ta-form__check"><input type="checkbox" id="f_sms_consent" name="sms_consent" > I agree to receive recurring automated text messages from Mila Penn Chazak. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. Consent is not a condition of purchase. No mobile information will be shared with third parties or affiliates for marketing purposes.</label><p style="font-size:12px;color:#6b7280;margin-top:4px"><a href="https://tenthavenue.io/legal/mila-penn-chazak/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> · <a href="https://tenthavenue.io/legal/mila-penn-chazak/terms" target="_blank" rel="noreferrer">SMS Terms</a></p></div>
+                        <button type="submit" class="ta-form__submit">Save My Seat &rarr;</button>
+                        </form>
+                        <div class="reg-error" id="reg-error" hidden role="alert"></div>
+                        <noscript>
+                            <p class="reg-note">This form needs JavaScript. If it is switched off <a href="https://tenthavenue.io/f/super-bowl-champion-to-real-es-c353" target="_blank" rel="noopener">register on our booking page instead</a>.</p>
+                        </noscript>
+                    </div>
+
+                    <div class="reg-done" id="reg-done" hidden>
+                        <div class="reg-done-tick">✓</div>
+                        <h3>Your seat is saved.</h3>
+                        <p id="reg-done-msg">Check your inbox for the Zoom link and the calendar hold.</p>
+                        <a class="btn btn-orange-lg" id="reg-done-link" hidden target="_blank" rel="noopener">Open your join link &rarr;</a>
+                    </div>
+
+                    <p class="reg-note" id="reg-note">By registering you agree to receive the join link and reminders for this session.</p>
                 </div>
             </div>
         </div>
@@ -696,9 +750,9 @@
             <div class="gc les-row fu">
                 <div class="les-no">04</div>
                 <div>
-                    <div class="les-tag">Why Multifamily</div>
-                    <h3>Why he chose apartments</h3>
-                    <p>Kenny had many choices for his money. He chose multifamily real estate. He will explain why. One property holds many homes. So it collects many rents. And everyone needs a place to live.</p>
+                    <div class="les-tag">Single Family and Multifamily</div>
+                    <h3>Why he invests in both</h3>
+                    <p>Kenny invests in all kinds of real estate. That includes single family homes and multifamily apartments. He will compare the two. A single family home is one home and one rent. One apartment property holds many homes. So it collects many rents.</p>
                 </div>
                 <div class="les-why">
                     <div class="les-why-lbl">Why it matters to you</div>
@@ -782,7 +836,7 @@
                 <div class="spk-role">Super Bowl 50 Champion &middot; Former NFL Defensive End</div>
                 <p>Kenny made the Denver Broncos in 2014 as an undrafted free agent. He played defensive end and wore number 91. He was on the Broncos team that won Super Bowl 50.</p>
                 <p>Before the NFL he starred at Duke. He was named All-ACC. He left as the school's career sacks leader. He earned a degree in biological anthropology and anatomy. He was studying to become a heart surgeon.</p>
-                <p>After the NFL he coached at Ohio State and Fordham. At Ohio State he worked with future NFL stars Chase Young and Nick Bosa. He also earned master's degrees at Duke and Ohio State. Today he and his wife are building a real estate portfolio of their own.</p>
+                <p>After the NFL he coached at Ohio State and Fordham. At Ohio State he worked with future NFL stars Chase Young and Nick Bosa. He also earned master's degrees at Duke and Ohio State. Today he and his wife are building a real estate portfolio of their own. He invests in single family homes and multifamily apartments.</p>
                 <div class="spk-pull">He played at the highest level. Now he plays a longer game.</div>
                 <div class="spk-creds">
                     <span class="spk-cred">Super Bowl 50 champion</span>
@@ -790,6 +844,7 @@
                     <span class="spk-cred">All-ACC at Duke</span>
                     <span class="spk-cred">Coached at Ohio State and Fordham</span>
                     <span class="spk-cred">Real estate investor and developer</span>
+                    <span class="spk-cred">Single family and multifamily</span>
                 </div>
             </div>
         </div>
@@ -860,7 +915,7 @@
             </details>
             <details class="gc faq-item fu">
                 <summary class="faq-q">How do I join?<span class="faq-chev">▾</span></summary>
-                <div class="faq-a"><p>Tap Save My Seat and send the short email it opens. We reply with your private Zoom link.</p></div>
+                <div class="faq-a"><p>Register at the top of this page. Your Zoom link arrives in your inbox right away.</p></div>
             </details>
             <details class="gc faq-item fu">
                 <summary class="faq-q">What does it cost?<span class="faq-chev">▾</span></summary>
@@ -1016,7 +1071,86 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     tick();
     setInterval(tick, 1000);
 })();
+
+/* Registration. The builder's embed is a plain <form> that POSTs to its API and
+   answers with JSON, so a native submit would land the visitor on a raw JSON
+   blob. Intercept it, post the same urlencoded body over fetch, and render the
+   confirmation in place. Any failure falls back to the hosted form or email. */
+(function () {
+    const form = document.querySelector('#reg-form-wrap .ta-form');
+    if (!form) return;
+    const wrap = document.getElementById('reg-form-wrap');
+    const errBox = document.getElementById('reg-error');
+    const done = document.getElementById('reg-done');
+    const doneMsg = document.getElementById('reg-done-msg');
+    const doneLink = document.getElementById('reg-done-link');
+    const note = document.getElementById('reg-note');
+    const btn = form.querySelector('.ta-form__submit');
+    const btnText = btn ? btn.textContent : 'Submit';
+    const HOSTED = 'https://tenthavenue.io/f/super-bowl-champion-to-real-es-c353';
+    function findUrl(v, depth) {
+        if (depth > 4 || v == null) return null;
+        if (typeof v === 'string') return /^https?:\/\//.test(v.trim()) ? v.trim() : null;
+        if (Array.isArray(v)) { for (const x of v) { const u = findUrl(x, depth + 1); if (u) return u; } return null; }
+        if (typeof v === 'object') { for (const k in v) { const u = findUrl(v[k], depth + 1); if (u) return u; } }
+        return null;
+    }
+    function fail(msg) {
+        errBox.innerHTML = msg + ' You can also <a href="' + HOSTED + '" target="_blank" rel="noopener">register here</a> or email <a href="mailto:invest@milapennchazak.com">invest@milapennchazak.com</a>.';
+        errBox.hidden = false;
+        if (btn) { btn.disabled = false; btn.textContent = btnText; }
+    }
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        errBox.hidden = true;
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (btn) { btn.disabled = true; btn.textContent = 'Saving your seat...'; }
+        let res, data;
+        try {
+            res = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+                body: new URLSearchParams(new FormData(form)).toString()
+            });
+            data = await res.json();
+        } catch (err) { fail('We could not reach the registration service just now.'); return; }
+        if (!res.ok || !data || data.ok === false) { fail((data && (data.message || data.error)) || 'That did not go through.'); return; }
+        if (data.message) doneMsg.textContent = data.message;
+        const url = findUrl(data, 0);
+        if (url) { doneLink.href = url; doneLink.hidden = false; }
+        wrap.hidden = true;
+        done.hidden = false;
+        if (note) note.textContent = 'A confirmation is on its way. Not there in a few minutes? Check spam or email invest@milapennchazak.com.';
+        done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+})();
 </script>
 
+<!-- mobile menu (apply_mobile_nav.py) -->
+<script>
+(function () {
+    var nav = document.getElementById('nav');
+    var btn = nav && nav.querySelector('.nav-burger');
+    var menu = document.getElementById('nav-menu');
+    if (!btn || !menu) return;
+    function set(open) {
+        nav.classList.toggle('nav-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    btn.addEventListener('click', function (e) { e.stopPropagation(); set(!nav.classList.contains('nav-open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    document.addEventListener('click', function (e) { if (nav.classList.contains('nav-open') && (e.target === nav || !nav.contains(e.target))) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('nav-open')) { set(false); btn.focus(); } });
+    function fit() {
+        nav.classList.remove('nav-tight');
+        if (getComputedStyle(btn).display === 'none') return;
+        if (btn.getBoundingClientRect().right > document.documentElement.clientWidth - 6) nav.classList.add('nav-tight');
+    }
+    window.addEventListener('resize', function () { if (getComputedStyle(btn).display === 'none') set(false); fit(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    fit();
+})();
+</script>
 </body>
 </html>
