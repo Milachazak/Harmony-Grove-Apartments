@@ -238,17 +238,17 @@
         .brand.brand-lg .brand-img { height:58px; }
         @media(max-width:680px){ .brand-img { height:40px; } .brand.brand-lg .brand-img { height:46px; } }
         /* ── MOBILE FIX: cheat sheet rows (apply_mobile_fixes.py) ── */
-        @media(max-width:600px){
-            .cheat-row { display:grid; grid-template-columns:minmax(0,42%) minmax(0,1fr); gap:14px; align-items:baseline; }
-            .cheat-key { max-width:none; }
-            .cheat-val { text-align:left; }
-        }
+        .cheat-row { display:grid; grid-template-columns:minmax(0,42%) minmax(0,1fr); gap:14px; align-items:baseline; }
+        .cheat-key { max-width:none; }
+        .cheat-val { text-align:left; }
         /* ── MOBILE FIX: replay nav on small phones (apply_mobile_fixes.py) ── */
         @media(max-width:400px){
             #nav { flex-wrap:nowrap; padding:11px 14px; }
             #nav .brand-img { height:34px; }
             .nav-cta { padding:9px 14px; font-size:12px; }
         }
+        /* ── MOBILE FIX: tablet: replay hero cards (apply_mobile_fixes.py) ── */
+        @media(max-width:960px){ .hero-cards { max-width:none; } }
     </style>
 </head>
 <body>

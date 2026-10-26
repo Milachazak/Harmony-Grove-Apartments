@@ -527,6 +527,12 @@
         }
         @media (prefers-reduced-motion: reduce){ #nav.nav-open .nav-links { animation:none; } .nav-burger span { transition:none; } }
         /* ── /MOBILE MENU ── */
+        /* ── MOBILE FIX: tablet: guest hero (apply_mobile_fixes.py) ── */
+        @media(min-width:761px) and (max-width:1080px){
+            .ph-grid { grid-template-columns:minmax(0,1fr) 300px; gap:36px; }
+            .ph-guest { max-width:none; }
+        }
+        @media(max-width:760px){ .ph-guest { margin-left:auto; margin-right:auto; width:100%; } }
     </style>
 </head>
 <body>

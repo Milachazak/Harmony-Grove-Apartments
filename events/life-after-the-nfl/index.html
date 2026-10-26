@@ -547,6 +547,13 @@
         }
         @media (prefers-reduced-motion: reduce){ #nav.nav-open .nav-links { animation:none; } .nav-burger span { transition:none; } }
         /* ── /MOBILE MENU ── */
+        /* ── MOBILE FIX: tablet: nfl hero (apply_mobile_fixes.py) ── */
+        @media(min-width:761px) and (max-width:1080px){
+            .ph-grid { grid-template-columns:minmax(0,1fr) minmax(0,0.8fr); gap:36px; }
+            .shot-wrap { order:0; max-width:none; }
+            .shot { aspect-ratio:4/5; }
+        }
+        @media(max-width:760px){ .shot-wrap { margin-left:auto; margin-right:auto; width:100%; } .shot-credit { text-align:center; } }
     </style>
 </head>
 <body>

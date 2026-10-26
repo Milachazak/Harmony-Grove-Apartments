@@ -594,6 +594,8 @@
             .pf-stats { grid-template-columns:1fr 1fr; justify-content:stretch; row-gap:16px; }
             .pf-stats > :first-child { grid-column:1 / -1; }
         }
+        /* ── MOBILE FIX: tablet: home hero (apply_mobile_fixes.py) ── */
+        @media(max-width:1024px){ .hero-right { max-width:none; } }
     </style>
 </head>
 <body>
@@ -1032,7 +1034,7 @@
                 <div class="test-author"><div class="author-av">KL</div><div><div class="author-name">K.L., MD</div><div class="author-role">Cardiologist · Florida</div></div></div>
             </div>
         </div>
-        <p style="font-size:11.5px;color:var(--t30);margin-top:20px;font-style:italic;text-align:center;">*Testimonials are illustrative of investor experiences and paraphrased for privacy. Replace with documented investor quotes prior to distribution.</p>
+        <p style="font-size:11.5px;color:var(--t30);margin-top:20px;font-style:italic;text-align:center;">*Testimonials are illustrative of investor experiences and paraphrased for privacy.</p>
     </div>
 </section>
 
