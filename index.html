@@ -378,15 +378,17 @@
         /* ── TEAM ── */
         .team-sec { padding:76px 0; }
         .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:36px; }
-        .team-card { overflow:hidden; padding:0; }
+        .team-card { overflow:hidden; padding:0; display:flex; flex-direction:column; }
         .team-photo-wrap { overflow:hidden; }
         .team-photo { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center 12%; transition:transform .6s ease; }
         .team-card:hover .team-photo { transform:scale(1.04); }
-        .team-info { padding:30px; }
+        .team-info { padding:30px; flex:1; display:flex; flex-direction:column; }
         .team-firm { font-size:11px; color:var(--t50); letter-spacing:.09em; text-transform:uppercase; margin-bottom:8px; }
         .team-name { font-family:var(--ff-d); font-size:22px; font-weight:500; margin-bottom:4px; }
         .team-role { font-size:12px; color:var(--orange); letter-spacing:.07em; text-transform:uppercase; font-weight:500; margin-bottom:18px; }
         .team-bio { font-size:14px; color:var(--t70); line-height:1.74; }
+        .team-link { align-self:flex-start; margin-top:auto; padding-top:20px; font-size:12px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:var(--orange); text-decoration:none; transition:color .2s; }
+        .team-link:hover { color:var(--orange-dk); }
         .mission-quote { margin-top:36px; padding:30px 40px; background:rgba(255,255,255,0.40); backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.82); box-shadow:0 6px 28px rgba(10,22,40,0.06),inset 0 1px 0 rgba(255,255,255,0.96); border-radius:18px; font-family:var(--ff-d); font-size:18px; font-style:italic; color:var(--t70); line-height:1.80; text-align:center; }
 
         /* ── TESTIMONIALS ── */
@@ -980,6 +982,7 @@
                     <h3 class="team-name">Dr. Kirk A. Campbell</h3>
                     <div class="team-role">Founding Principal</div>
                     <p class="team-bio">Associate Professor of Orthopedic Surgery at NYU Langone Health. His real estate portfolio spans 1,000+ multifamily units, boutique hotel keys, mobile home pads, parking assets and ground-up developments, built alongside a full-time academic medical practice.</p>
+                    <a href="speakers/kirk-campbell/" class="team-link">View speaker profile →</a>
                 </div>
             </div>
             <div class="gc team-card fu">
@@ -998,6 +1001,7 @@
                     <h3 class="team-name">J. Claude Mouaffi</h3>
                     <div class="team-role">Founding Principal</div>
                     <p class="team-bio">Deep expertise in real estate capital formation and alternative investment structuring. He brings a proven deal-sourcing framework and a capital markets perspective that complements the firm's operational strength.</p>
+                    <a href="speakers/claude-mouaffi/" class="team-link">View speaker profile →</a>
                 </div>
             </div>
         </div>
